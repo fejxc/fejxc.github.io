@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>github与gitee代码同步push教程</title>
+      <link href="2020/10/29/github-yu-gitee-dai-ma-tong-bu-push-jiao-cheng/"/>
+      <url>2020/10/29/github-yu-gitee-dai-ma-tong-bu-push-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<h1 id="github与gitee代码同步push教程"><a href="#github与gitee代码同步push教程" class="headerlink" title="github与gitee代码同步push教程"></a>github与gitee代码同步push教程</h1><h2 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h2><pre><code>在gitee在已经有仓库复制该仓库的 https://gitee.com/*******.git 的https地址</code></pre><h2 id="步骤2"><a href="#步骤2" class="headerlink" title="步骤2:"></a>步骤2:</h2><p><img src="https://i.loli.net/2020/10/29/AUy38BqXa6MwRLb.png"></p><p>选择<code>Import repository</code></p><h2 id="步骤3"><a href="#步骤3" class="headerlink" title="步骤3:"></a>步骤3:</h2><p><img src="https://i.loli.net/2020/10/29/GXzfPomnd5WZ4bK.png"></p><p>``URL 输入刚刚gitee上的 <a href="https://gitee.com/*******.git%60">https://gitee.com/*******.git`</a></p><p><code>fejxc/写你在github上的仓库名</code></p><p><code>然后点击 Begin import 即可</code></p><h2 id="步骤4"><a href="#步骤4" class="headerlink" title="步骤4:"></a>步骤4:</h2><p>1.先将gitee项目的代码克隆到本地电脑</p><p>2.然后修改config文件   文件在 <code>.git/concig</code></p><p>3.修改如下</p><pre><code>[core]    repositoryformatversion = 0    filemode = true    bare = false    logallrefupdates = true    ignorecase = true    precomposeunicode = true[remote &quot;origin&quot;]    # github    url = git@github.com:*****.git  #add code    # gitee    url = https://gitee.com/*****.git    fetch = +refs/heads/*:refs/remotes/origin/*[branch &quot;master&quot;]  #add code    remote = origin    merge = refs/heads/master</code></pre><h2 id="步骤5"><a href="#步骤5" class="headerlink" title="步骤5:"></a>步骤5:</h2><p>验证：</p><pre><code>git add .git commit -m &quot;init&quot;git push</code></pre><h2 id="成功图示："><a href="#成功图示：" class="headerlink" title="成功图示："></a>成功图示：</h2><p><img src="https://i.loli.net/2020/10/29/ewKI8izumR6JkhV.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>github pages的Custom domain配置</title>
       <link href="2020/10/29/hexo-fa-bu-hou-wen-ti/"/>
       <url>2020/10/29/hexo-fa-bu-hou-wen-ti/</url>
@@ -29,31 +54,6 @@
     
     
     <entry>
-      <title>VUE使用axios数据请求时报错 TypeError Cannot set property &#39;xxxx&#39; of undefined 的解决办法</title>
-      <link href="2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/"/>
-      <url>2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/</url>
-      
-        <content type="html"><![CDATA[<h1 id="vue中使用bootstrap的两种方法"><a href="#vue中使用bootstrap的两种方法" class="headerlink" title="vue中使用bootstrap的两种方法"></a>vue中使用bootstrap的两种方法</h1><h1 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h1><p>在index.html页面中引入即可</p><h1 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h1><p>npm i bootstrap –save下载以后<br> 在src/main.js中导入即可：<br> <code>import &#39;bootstrap/dist/css/bootstrap.min.css&#39;</code></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Vue </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>openWrt卸载已经安装的ipk安装包教程</title>
       <link href="2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/"/>
       <url>2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/</url>
@@ -71,6 +71,31 @@
         <tags>
             
             <tag> 路由器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VUE使用axios数据请求时报错 TypeError Cannot set property &#39;xxxx&#39; of undefined 的解决办法</title>
+      <link href="2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/"/>
+      <url>2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h1 id="vue中使用bootstrap的两种方法"><a href="#vue中使用bootstrap的两种方法" class="headerlink" title="vue中使用bootstrap的两种方法"></a>vue中使用bootstrap的两种方法</h1><h1 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h1><p>在index.html页面中引入即可</p><h1 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h1><p>npm i bootstrap –save下载以后<br> 在src/main.js中导入即可：<br> <code>import &#39;bootstrap/dist/css/bootstrap.min.css&#39;</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
             
         </tags>
       
