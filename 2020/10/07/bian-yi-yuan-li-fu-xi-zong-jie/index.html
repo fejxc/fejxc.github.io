@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 风儿继续吹">
+    <meta name="keywords" content="编译原理复习总结, 风儿继续吹">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 风儿继续吹</title>
+    <title>编译原理复习总结 | 风儿继续吹</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -202,12 +202,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/10/07/6o9dbsaELkDfOUr.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">编译原理复习总结</h1>
                 </div>
             </div>
         </div>
@@ -322,12 +322,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E4%B8%89/">
+                                <span class="chip bg-color">大三</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">知识总结</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="post-category">
+                                编译原理
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -336,21 +353,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-29
+                    2020-10-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-29
+                    2020-10-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.3k
                 </div>
                 
 
@@ -367,15 +384,63 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="一、编译器概述"><a href="#一、编译器概述" class="headerlink" title="一、编译器概述"></a>一、编译器概述</h2><h3 id="1、名词解释"><a href="#1、名词解释" class="headerlink" title="1、名词解释"></a>1、名词解释</h3><p>1.1解释下列名词</p>
+<p>源语言：被翻译器翻译的语言，用于书写源程序的语言。<br>目标语言：被翻译器翻译之后得到的语言，用于书写目标程序的语言<br>翻译器：能够完成从一种语言到另一种语言的变换的软件<br>编译器：一种特殊的翻译器，要求目标语言比源语言低级<br>解释器：解释器是不同于编译器的另一种语言处理器。解释器不像编译器那样通过翻译来生成目标程序，而是直接执行源程序所指定的运算。</p>
+<h3 id="2、编译阶段"><a href="#2、编译阶段" class="headerlink" title="2、编译阶段"></a>2、编译阶段</h3><p>1.2典型的编译器可以划分成几个主要的逻辑阶段？各阶段的主要功能是什么？<br>典型的编译器可以划分成七个主要的逻辑阶段，分别是<strong>词法分析器、语法分析器、语义分析器、中间代码生成器、独立于机器的代码优化器、代码生成器、依赖于机器的代码优化器</strong>。各阶段的主要功能：</p>
+<p>（1）词法分析器：词法分析阅读构成源程序的字符流，按编程语言的词法规则把它们组成词法记号流。</p>
+<p>（2）语法分析器：按编程语言的语法规则检查词法分析输出的记号流是否符合这些规则，并依据这些规则所体现出的该语言的各种语言构造的层次性，用各记号的第一元建成一种树形的中间表示，这个中间表示用抽象语法的方式描绘了该记号流的语法情况。</p>
+<p>（3）语义分析器：使用语法树和符号表中的信息，依据语言定义来检查源程序的语义一致性，以保证程序各部分能有意义地结合在一起。它还收集类型信息，把它们保存在符号表或语法树中。</p>
+<p>（4）中间代码生成器:为源程序产生更低级的显示中间表示，可以认为这种中间表示是一种抽象机的程序。</p>
+<p>（5）独立于机器的代码优化器：试图改进中间代码，以便产生较好的目标代码。通常，较好是指执行较快，但也可能是其他目标，如目标代码较短或目标代码执行时能耗较低。</p>
+<p>（6）代码生成器：取源程序的一种中间表示作为输入并把它映射到一种目标语言。如果目标语言是机器代码，则需要为源程序所用的变量选择寄存器或内存单元，然后把中间指令序列翻译为完成同样任务的机器指令序列。</p>
+<p>（7）依赖于机器的代码优化器：试图改进目标机器代码，以便产生较好的目标机器代码。</p>
+<p><img src="https://i.loli.net/2020/10/07/MnPfJIyd5gHk9O7.jpg" alt="编译的各个阶段"></p>
+<h3 id="3、有限自动机"><a href="#3、有限自动机" class="headerlink" title="3、有限自动机"></a>3、有限自动机</h3><p>有限怎么理解？</p>
+<p>DFA和NAF区别？</p>
+<h2 id="二、词法分析"><a href="#二、词法分析" class="headerlink" title="二、词法分析"></a>二、词法分析</h2><h3 id="1、正规式"><a href="#1、正规式" class="headerlink" title="1、正规式"></a>1、正规式</h3><p><img src="https://i.loli.net/2020/10/07/i5GdvVDb7n3QTug.jpg"></p>
+<h4 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h4><p><img src="https://i.loli.net/2020/10/07/4ayfoIJP2KhFvmV.png"></p>
+<h4 id="例2"><a href="#例2" class="headerlink" title="例2"></a>例2</h4><p><img src="https://i.loli.net/2020/10/07/TxoV4HmzGUBrPeQ.jpg"></p>
+<p>至少含有一个1，因而需要正闭包1+，在出现1后面就会对其后是1还是0选择状态，如果是1，则停留在q2状态上，如果是0进入q3状态。在q3状态上，如果选择0进入q2状态，则实现了1后面两个0，如果是选择1进行q2状态，后面没有0，同样也是符合1后面偶数个0的，这样q2与q3本质是一种等价状态</p>
+<p><img src="https://i.loli.net/2020/10/07/L3GJwuRWPe4692p.jpg"></p>
+<h4 id="例3"><a href="#例3" class="headerlink" title="例3"></a>例3</h4><p><img src="https://i.loli.net/2020/10/07/eGdDkVhPj9Wt2o7.jpg"></p>
+<p>换个意思理解，<strong>就是任何一个1后面都有偶数个0</strong></p>
+<h4 id="例4"><a href="#例4" class="headerlink" title="例4"></a>例4</h4><p><img src="https://i.loli.net/2020/10/07/7oZyRakN6su4Czr.jpg"></p>
+<p>解释：对于L来说描述的语言意思是0的个数是偶数并且1的个数是偶数，原因在于11、00必然是0偶1偶，而01、10要至少出现两次无论是0101,1010,0110,1001都能保证0偶1偶</p>
+<p>对于L1</p>
+<p>对于L2</p>
+<p>对于L3</p>
+<p>L2的另外一种表达形式</p>
+<p><img src="https://i.loli.net/2020/10/07/Wx2rtOjsHJfG8d3.jpg"></p>
+<h4 id="习题2-3"><a href="#习题2-3" class="headerlink" title="习题2.3"></a>习题2.3</h4><p>叙述下列正规式描述的语言</p>
+<p>a) 0(0|1)<em>0<br>b) ((ε|0)1</em>)*<br>c) (0|1)<em>0(0|1)(0|1)<br>d) 0</em>10<em>10</em>10*<br>e) (00|11)<em>((01|10)(00|11)</em>(01|10)(00|11)<em>)</em></p>
+<p>答案：<br>a)以0开始和结尾，而且长度大于等于2的0、1串<br>b)所有0,1串（含空串）<br>c)倒数第三位是0的0、1串<br>d) 仅含3个1的0、1串<br>e) 偶数个0和偶数个1的0、1串（含空串）</p>
+<h3 id="2、有限自动机"><a href="#2、有限自动机" class="headerlink" title="2、有限自动机"></a>2、有限自动机</h3><p>NFA：不确定的有限自动机</p>
+<p><img src="https://i.loli.net/2020/10/07/2Lkxh1Gat6peKRX.jpg"></p>
+<p><img src="https://i.loli.net/2020/10/07/63xP9DJZMLC7GwS.jpg"></p>
+<p>DFA：确定的有限自动机</p>
+<p><img src="https://i.loli.net/2020/10/07/hcPH9qt63KQ71Ez.jpg"></p>
+<h4 id="例1-1"><a href="#例1-1" class="headerlink" title="例1"></a>例1</h4><p><img src="https://i.loli.net/2020/10/07/lXCYcbJHoVLN1EP.jpg"></p>
+<h4 id="例2-1"><a href="#例2-1" class="headerlink" title="例2"></a>例2</h4><p><img src="https://i.loli.net/2020/10/07/9Gqcsx3v4uNiO87.jpg"></p>
+<p>还能表示的正规式是*<em>(b\</em>a+b)+**</p>
+<p><strong>例题3</strong></p>
+<p><img src="https://i.loli.net/2020/10/07/tp83CvyOWdzFRe4.jpg"></p>
+<p><strong>例题4</strong></p>
+<p><img src="https://i.loli.net/2020/10/07/cRArfuYDxCjd4KX.jpg"></p>
+<h4 id="习题2-7"><a href="#习题2-7" class="headerlink" title="习题2.7"></a>习题2.7</h4><p>用算法2.4为下列正规式构造非确定的有限自动机，给出它们处理输入串ababbab的转换序列。<br>a) (a|b)*<br>b) (a*|b*)*<br>c)（（ε|a）b<em>）</em><br>d)(a|b)<em>abb(a|b)</em></p>
+<p>答案：</p>
+<p>a) (a|b)*</p>
+<p><img src="https://i.loli.net/2020/10/12/6RiJeBmNOlvr2cM.png"></p>
+<p>输入串ababbab 的转换序列：<br>0 1236 1456 1236 1456 1456 1236 14567</p>
+<p>b) (a*|b*)*</p>
+<p><img src="https://i.loli.net/2020/10/12/vUNf7stBg5X2hAE.png"></p>
+<p>输入串ababbab 的转换序列：<br>0 1234510 1678910 1234510 167878910 12345610 167891011</p>
+<p>c) ((ε|a)b*)*</p>
+<p><img src="https://i.loli.net/2020/10/12/nfDp5F6PbMYNWe9.png"></p>
+<p>输入串ababbab 的转换序列：<br>0 1456789 145678 789 1456789 10</p>
+<p>D)（a|b)<em>abb(a|b)</em></p>
+<p>NAF:</p>
+<p><img src="https://i.loli.net/2020/10/12/lXaOgyNG2mDeMqh.png"></p>
+<p>输入串ababbab 的转换序列：<br>0 1236 1456 789 10 11 12 13 16 11 14 15 16 17</p>
 
             </div>
             <hr/>
@@ -391,7 +456,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
+                    <a href="/about" rel="external nofollow noreferrer">孙昀</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -401,7 +466,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fejxc.github.io/2020/10/29/hello-world/">https://fejxc.github.io/2020/10/29/hello-world/</a>
+                    <a href="https://fejxc.github.io/2020/10/07/bian-yi-yuan-li-fu-xi-zong-jie/">https://fejxc.github.io/2020/10/07/bian-yi-yuan-li-fu-xi-zong-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -414,7 +479,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">fejxc</a>
+                    <a href="/about" target="_blank">孙昀</a>
                     !
                 </span>
             </div>
@@ -438,7 +503,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%A4%A7%E4%B8%89/">
+                                    <span class="chip bg-color">大三</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">知识总结</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -741,18 +814,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/29/hello-world/">
+                <a href="/2020/10/07/jie-jue-hexo-d-fa-bu-git-not-found/">
                     <div class="card-image">
                         
+                        <img src="https://i.loli.net/2020/10/07/nrtFTQd5fHJi6Ys.jpg" class="responsive-img" alt="解决 hexo d 发布 git not found.md">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">解决 hexo d 发布 git not found.md</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -762,18 +833,33 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-07
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fejxc
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Bug/" class="post-category">
+                                    Bug
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">踩坑记录</span>
+                    </a>
+                    
+                    <a href="/tags/hexo-bug/">
+                        <span class="chip bg-color">hexo-bug</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -781,16 +867,15 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/29/hello-world/">
+                <a href="/2020/10/07/linux-chang-yong-ming-ling/">
                     <div class="card-image">
                         
+                        <img src="https://i.loli.net/2020/10/07/at9qwmySnv65cBY.jpg" class="responsive-img" alt="Linux常用命令">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Linux常用命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,17 +886,32 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fejxc
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-category">
+                                    常用命令
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%91%BD%E4%BB%A4/">
+                        <span class="chip bg-color">命令</span>
+                    </a>
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
