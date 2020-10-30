@@ -5,10 +5,10 @@
     
     <entry>
       <title>github pages的Custom domain配置</title>
-      <link href="2020/10/29/hexo-fa-bu-hou-wen-ti/"/>
-      <url>2020/10/29/hexo-fa-bu-hou-wen-ti/</url>
+      <link href="2020/10/29/github-pages-de-custom-domain-pei-zhi/"/>
+      <url>2020/10/29/github-pages-de-custom-domain-pei-zhi/</url>
       
-        <content type="html"><![CDATA[<h1 id="hexo发布后，github-pages的Custom-domain配置项被清空"><a href="#hexo发布后，github-pages的Custom-domain配置项被清空" class="headerlink" title="hexo发布后，github pages的Custom domain配置项被清空"></a>hexo发布后，github pages的Custom domain配置项被清空</h1><pre><code>hexo cleanhexo ghexo d</code></pre><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p><code>命令执行，每次发布可以成功，但是发布成功之后github pages的Custom domain配置项就被清空了，要手动进入setting上重新设置好然后save</code></p><h3 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h3><p><code>在source目录下 心间 CNAME文件 不指定类型</code></p><p><code>在CNAME里写你的域名地址</code></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="hexo发布后，github-pages的Custom-domain配置项被清空"><a href="#hexo发布后，github-pages的Custom-domain配置项被清空" class="headerlink" title="hexo发布后，github pages的Custom domain配置项被清空"></a>hexo发布后，github pages的Custom domain配置项被清空</h1><pre><code>hexo cleanhexo ghexo d</code></pre><h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p><code>命令执行，每次发布可以成功，但是发布成功之后github pages的Custom domain配置项就被清空了，要手动进入setting上重新设置好然后save</code></p><h3 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h3><p><code>在source目录下 新建 CNAME文件 不指定类型</code></p><p><code>在CNAME里写你的域名地址</code></p>]]></content>
       
       
       <categories>
