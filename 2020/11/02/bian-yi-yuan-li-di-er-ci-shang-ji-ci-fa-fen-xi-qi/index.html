@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="风儿继续吹">
+    <meta name="keywords" content="编译原理第二次上机, 风儿继续吹">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>风儿继续吹</title>
+    <title>编译原理第二次上机 | 风儿继续吹</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/awesome/css/all.css">
@@ -202,12 +202,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/11/02/hSrfRCQql8gb4Vx.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">编译原理第二次上机</h1>
                 </div>
             </div>
         </div>
@@ -322,12 +322,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E4%B8%89/">
+                                <span class="chip bg-color">大三</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/">
+                                <span class="chip bg-color">上机实验</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="post-category">
+                                编译原理
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -350,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    878
+                    838
                 </div>
                 
 
@@ -367,12 +384,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>title: 编译原理第二次上机<br>date: 2020-11-2 22:37:32<br>author: 孙昀<br>img: <a target="_blank" rel="noopener" href="https://i.loli.net/2020/11/02/hSrfRCQql8gb4Vx.png">https://i.loli.net/2020/11/02/hSrfRCQql8gb4Vx.png</a><br>categories: 编译原理<br>tags:</p>
-<ul>
-<li>大三</li>
-<li>上机实验</li>
-</ul>
-<h1 id="编译原理第二次上机-词法分析器"><a href="#编译原理第二次上机-词法分析器" class="headerlink" title="编译原理第二次上机-词法分析器"></a>编译原理第二次上机-词法分析器</h1><h2 id="1-环境："><a href="#1-环境：" class="headerlink" title="1.环境："></a>1.环境：</h2><h3 id="MAC-11-0-JDK1-8-Idea2019-2"><a href="#MAC-11-0-JDK1-8-Idea2019-2" class="headerlink" title="MAC 11.0 JDK1.8 Idea2019.2"></a><code>MAC 11.0 JDK1.8 Idea2019.2</code></h3><h2 id="2-代码实现-Java"><a href="#2-代码实现-Java" class="headerlink" title="2.代码实现(Java)"></a>2.代码实现(Java)</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
+                <h1 id="编译原理第二次上机-词法分析器"><a href="#编译原理第二次上机-词法分析器" class="headerlink" title="编译原理第二次上机-词法分析器"></a>编译原理第二次上机-词法分析器</h1><h2 id="1-环境："><a href="#1-环境：" class="headerlink" title="1.环境："></a>1.环境：</h2><h3 id="MAC-11-0-JDK1-8-Idea2019-2"><a href="#MAC-11-0-JDK1-8-Idea2019-2" class="headerlink" title="MAC 11.0 JDK1.8 Idea2019.2"></a><code>MAC 11.0 JDK1.8 Idea2019.2</code></h3><h2 id="2-代码实现-Java"><a href="#2-代码实现-Java" class="headerlink" title="2.代码实现(Java)"></a>2.代码实现(Java)</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span>
 <span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Set<span class="token punctuation">;</span>
@@ -551,7 +563,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
+                    <a href="/about" rel="external nofollow noreferrer">孙昀</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -574,7 +586,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">fejxc</a>
+                    <a href="/about" target="_blank">孙昀</a>
                     !
                 </span>
             </div>
@@ -598,7 +610,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%A4%A7%E4%B8%89/">
+                                    <span class="chip bg-color">大三</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/">
+                                    <span class="chip bg-color">上机实验</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -909,10 +929,9 @@
                 <a href="/2020/11/02/bian-yi-yuan-li-di-er-ci-shang-ji-ci-fa-fen-xi-qi/">
                     <div class="card-image">
                         
+                        <img src="https://i.loli.net/2020/11/02/hSrfRCQql8gb4Vx.png" class="responsive-img" alt="编译原理第二次上机">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">编译原理第二次上机</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -927,13 +946,29 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            fejxc
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="post-category">
+                                    编译原理
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E4%B8%89/">
+                        <span class="chip bg-color">大三</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%8A%E6%9C%BA%E5%AE%9E%E9%AA%8C/">
+                        <span class="chip bg-color">上机实验</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
