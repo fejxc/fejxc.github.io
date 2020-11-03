@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    823
+                    719
                 </div>
                 
 
@@ -399,38 +399,38 @@
 studentid<span class="token operator">=</span><span class="token string">''</span> <span class="token comment" spellcheck="true"># 用户名</span>
 password<span class="token operator">=</span><span class="token string">''</span>      <span class="token comment" spellcheck="true"># 密码</span>
 
-IP<span class="token operator">=</span><span class="token punctuation">$(</span>ubus call network.interface.wan status <span class="token operator">|</span> <span class="token function">grep</span> \<span class="token string">"address\" | grep -oE '[0-9]&amp;#123;1,3&amp;#125;\.[0-9]&amp;#123;1,3&amp;#125;\.[0-9]&amp;#123;1,3&amp;#125;\.[0-9]&amp;#123;1,3&amp;#125;')
+IP<span class="token operator">=</span><span class="token punctuation">$(</span>ubus call network.interface.wan status <span class="token operator">|</span> <span class="token function">grep</span> \<span class="token string">"address\" | grep -oE '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 
-function login() &amp;#123;
+function login() {
     #IP="</span>10.73.11.167<span class="token string">"
-    echo "</span>DDDDD<span class="token operator">=</span>$<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;studentid&amp;#125;&amp;upass=$&amp;#123;password&amp;#125;&amp;R1=0&amp;R2=&amp;R6=0&amp;para=00&amp;0MKKey=123456&amp;buttonClicked=&amp;redirect_url=&amp;err_flag=&amp;username=&amp;password=&amp;user=&amp;cmd=&amp;Login=&amp;R7=0"</span>
-    statusfull<span class="token operator">=</span><span class="token punctuation">$(</span>curl <span class="token string">'http://192.168.167.46/a70.htm'</span> \
+    echo "</span>DDDDD<span class="token operator">=</span><span class="token variable">${studentid}</span><span class="token operator">&amp;</span>upass<span class="token operator">=</span><span class="token variable">${password}</span><span class="token operator">&amp;</span>R1<span class="token operator">=</span>0<span class="token operator">&amp;</span>R2<span class="token operator">=</span><span class="token operator">&amp;</span>R6<span class="token operator">=</span>0<span class="token operator">&amp;</span>para<span class="token operator">=</span>00<span class="token operator">&amp;</span>0MKKey<span class="token operator">=</span>123456<span class="token operator">&amp;</span>buttonClicked<span class="token operator">=</span><span class="token operator">&amp;</span>redirect_url<span class="token operator">=</span><span class="token operator">&amp;</span>err_flag<span class="token operator">=</span><span class="token operator">&amp;</span>username<span class="token operator">=</span><span class="token operator">&amp;</span>password<span class="token operator">=</span><span class="token operator">&amp;</span>user<span class="token operator">=</span><span class="token operator">&amp;</span>cmd<span class="token operator">=</span><span class="token operator">&amp;</span>Login<span class="token operator">=</span><span class="token operator">&amp;</span>R7<span class="token operator">=</span>0<span class="token string">"
+    statusfull=$(curl 'http://192.168.167.46/a70.htm' \
         -X POST \
-        -H <span class="token string">"Cookie: program=ip; vlan=0; md5_login2=$&amp;#123;studentid&amp;#125;%7C$&amp;#123;password&amp;#125;; ip=$&amp;#123;IP&amp;#125;"</span> \
-        --data-raw <span class="token string">"DDDDD=$&amp;#123;studentid&amp;#125;&amp;upass=$&amp;#123;password&amp;#125;&amp;R1=0&amp;R2=&amp;R6=0&amp;para=00&amp;0MKKey=123456&amp;buttonClicked=&amp;redirect_url=&amp;err_flag=&amp;username=&amp;password=&amp;user=&amp;cmd=&amp;Login=&amp;R7=0"</span><span class="token punctuation">)</span>
-    <span class="token keyword">echo</span> <span class="token string">"$&amp;#123;statusfull&amp;#125;"</span>
-    status<span class="token operator">=</span><span class="token punctuation">$(</span>echo <span class="token string">"$&amp;#123;statusfull&amp;#125;"</span> <span class="token operator">|</span> <span class="token function">grep</span> -a -oE <span class="token string">'&lt;!--Dr.COMWebLoginID_[0-9]\.htm-->'</span><span class="token punctuation">)</span>
-    <span class="token keyword">echo</span> $<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;status&amp;#125;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$status</span> <span class="token operator">==</span> <span class="token string">'&lt;!--Dr.COMWebLoginID_2.htm-->'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-        errormsg<span class="token operator">=</span><span class="token punctuation">$(</span>echo <span class="token string">"$&amp;#123;statusfull&amp;#125;"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'msga'</span> <span class="token operator">|</span> <span class="token function">grep</span> -oE <span class="token string">"msga='.*'"</span><span class="token punctuation">)</span>
-        logger -t <span class="token string">"校园网认证"</span> <span class="token string">"Login Failed:$&amp;#123;errormsg&amp;#125;"</span>
-        <span class="token keyword">echo</span> <span class="token string">"Log Failed:$&amp;#123;errormsg&amp;#125;"</span>
-        <span class="token function">sleep</span> 1
+        -H "</span>Cookie: program<span class="token operator">=</span>ip<span class="token punctuation">;</span> vlan<span class="token operator">=</span>0<span class="token punctuation">;</span> md5_login2<span class="token operator">=</span><span class="token variable">${studentid}</span>%7C<span class="token variable">${password}</span><span class="token punctuation">;</span> ip<span class="token operator">=</span><span class="token variable">${IP}</span><span class="token string">" \
+        --data-raw "</span>DDDDD<span class="token operator">=</span><span class="token variable">${studentid}</span><span class="token operator">&amp;</span>upass<span class="token operator">=</span><span class="token variable">${password}</span><span class="token operator">&amp;</span>R1<span class="token operator">=</span>0<span class="token operator">&amp;</span>R2<span class="token operator">=</span><span class="token operator">&amp;</span>R6<span class="token operator">=</span>0<span class="token operator">&amp;</span>para<span class="token operator">=</span>00<span class="token operator">&amp;</span>0MKKey<span class="token operator">=</span>123456<span class="token operator">&amp;</span>buttonClicked<span class="token operator">=</span><span class="token operator">&amp;</span>redirect_url<span class="token operator">=</span><span class="token operator">&amp;</span>err_flag<span class="token operator">=</span><span class="token operator">&amp;</span>username<span class="token operator">=</span><span class="token operator">&amp;</span>password<span class="token operator">=</span><span class="token operator">&amp;</span>user<span class="token operator">=</span><span class="token operator">&amp;</span>cmd<span class="token operator">=</span><span class="token operator">&amp;</span>Login<span class="token operator">=</span><span class="token operator">&amp;</span>R7<span class="token operator">=</span>0<span class="token string">")
+    echo "</span><span class="token variable">${statusfull}</span><span class="token string">"
+    status=$(echo "</span><span class="token variable">${statusfull}</span><span class="token string">" | grep -a -oE '&lt;!--Dr.COMWebLoginID_[0-9]\.htm-->')
+    echo <span class="token variable">${status}</span>
+    if [ <span class="token variable">$status</span> == '&lt;!--Dr.COMWebLoginID_2.htm-->' ]; then
+        errormsg=$(echo "</span><span class="token variable">${statusfull}</span><span class="token string">" | grep 'msga' | grep -oE "</span>msga<span class="token operator">=</span><span class="token string">'.*'</span><span class="token string">")
+        logger -t "</span>校园网认证<span class="token string">" "</span>Login Failed:<span class="token variable">${errormsg}</span><span class="token string">"
+        echo "</span>Log Failed:<span class="token variable">${errormsg}</span><span class="token string">"
+        sleep 1
         login
-    <span class="token keyword">else</span>
-        lasturl<span class="token operator">=</span><span class="token punctuation">$(</span>echo <span class="token string">"$&amp;#123;statusfull&amp;#125;"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'UL'</span> <span class="token operator">|</span> <span class="token function">grep</span> -oE <span class="token string">"UL='.*'"</span><span class="token punctuation">)</span>
-        logger -t <span class="token string">"校园网认证"</span> <span class="token string">"Login Success:$&amp;#123;lasturl&amp;#125;"</span>
+    else
+        lasturl=$(echo "</span><span class="token variable">${statusfull}</span><span class="token string">" | grep 'UL' | grep -oE "</span>UL<span class="token operator">=</span><span class="token string">'.*'</span><span class="token string">")
+        logger -t "</span>校园网认证<span class="token string">" "</span>Login Success:<span class="token variable">${lasturl}</span><span class="token string">"
 
-    <span class="token keyword">fi</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
-<span class="token keyword">function</span> checkstatus<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-    status<span class="token operator">=</span><span class="token punctuation">$(</span>curl <span class="token string">'http://192.168.167.46/'</span> \
-        -H <span class="token string">"Cookie: program=ip; vlan=0; md5_login2=$&amp;#123;studentid&amp;#125;%7C$&amp;#123;password&amp;#125;; ip=$&amp;#123;IP&amp;#125;"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'Dr.COMWebLoginID'</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+    fi
+}
+function checkstatus() {
+    status=$(curl 'http://192.168.167.46/' \
+        -H "</span>Cookie: program<span class="token operator">=</span>ip<span class="token punctuation">;</span> vlan<span class="token operator">=</span>0<span class="token punctuation">;</span> md5_login2<span class="token operator">=</span><span class="token variable">${studentid}</span>%7C<span class="token variable">${password}</span><span class="token punctuation">;</span> ip<span class="token operator">=</span><span class="token variable">${IP}</span>" <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'Dr.COMWebLoginID'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true"># 3成功2失败</span>
-<span class="token keyword">function</span> oneloop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+<span class="token keyword">function</span> oneloop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     checkstatus
-    <span class="token keyword">echo</span> $<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;status&amp;#125;</span>
+    <span class="token keyword">echo</span> <span class="token variable">${status}</span>
     <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$status</span> <span class="token operator">==</span> <span class="token string">'&lt;!--Dr.COMWebLoginID_1.htm-->'</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
         <span class="token keyword">echo</span> <span class="token string">'Normal'</span>
         logger <span class="token string">'Normal'</span>
@@ -442,7 +442,7 @@ function login() &amp;#123;
         login
         <span class="token keyword">echo</span> <span class="token string">'Logged'</span>
     <span class="token keyword">fi</span>
-<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+<span class="token punctuation">}</span>
 
 <span class="token keyword">while</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
     oneloop

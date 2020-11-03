@@ -29,7 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    242
+                    238
                 </div>
                 
 
@@ -387,13 +387,13 @@
                 <h1 id="踩坑记录：pageHelp的pageSize属性不生效解决方案"><a href="#踩坑记录：pageHelp的pageSize属性不生效解决方案" class="headerlink" title="踩坑记录：pageHelp的pageSize属性不生效解决方案"></a>踩坑记录：pageHelp的pageSize属性不生效解决方案</h1><h3 id="开发环境："><a href="#开发环境：" class="headerlink" title="开发环境："></a>开发环境：</h3><p>当前环境说明：<br>开发工具：idea2019.2 Mac 11.0<br>框架：springboot、mybatis<br>功能：采用springboot整合mybatis实现对查询到的数据进行分页显示</p>
 <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>pagesize属性不生效</p>
 <pre class="line-numbers language-java"><code class="language-java">  <span class="token keyword">public</span> String <span class="token function">listCategory</span><span class="token punctuation">(</span>Model m <span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"start"</span><span class="token punctuation">,</span>defaultValue <span class="token operator">=</span> <span class="token string">"0"</span><span class="token punctuation">)</span><span class="token keyword">int</span> start<span class="token punctuation">,</span>
-                               <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"size"</span><span class="token punctuation">,</span>defaultValue <span class="token operator">=</span> <span class="token string">"5"</span><span class="token punctuation">)</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                               <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"size"</span><span class="token punctuation">,</span>defaultValue <span class="token operator">=</span> <span class="token string">"5"</span><span class="token punctuation">)</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
         PageHelper<span class="token punctuation">.</span><span class="token function">startPage</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span>size<span class="token punctuation">,</span><span class="token string">"id desc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         List<span class="token operator">&lt;</span>User<span class="token operator">></span> cs <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         PageInfo<span class="token operator">&lt;</span>User<span class="token operator">></span> page <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PageInfo</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>cs<span class="token punctuation">)</span><span class="token punctuation">;</span>
         m<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">,</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token string">"list"</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>size=5</code> 按效果数据每页会显示5条数据</p>
 <img src="https://i.loli.net/2020/10/12/J6tE3xib45lNpA9.png" alt="分页没有生效" style="zoom: 50%;" />
 
