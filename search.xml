@@ -108,31 +108,6 @@
     
     
     <entry>
-      <title>openWrt卸载已经安装的ipk安装包教程</title>
-      <link href="2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/"/>
-      <url>2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/</url>
-      
-        <content type="html"><![CDATA[<h1 id="openWrt卸载已经安装的ipk安装包教程"><a href="#openWrt卸载已经安装的ipk安装包教程" class="headerlink" title="openWrt卸载已经安装的ipk安装包教程"></a>openWrt卸载已经安装的ipk安装包教程</h1><h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p> 系统：OpenWrt 18.06.4</p><p>内核版本：4.14.131</p><h2 id="2-安装ipk"><a href="#2-安装ipk" class="headerlink" title="2.安装ipk"></a>2.安装ipk</h2><p><code>cd /ipk的文件路径</code></p><p><code>opkg install ***.ipk</code></p><h2 id="3-卸载ipk"><a href="#3-卸载ipk" class="headerlink" title="3.卸载ipk"></a>3.卸载ipk</h2><p><code>opkg list_installed</code>  查看已经安装的ipk</p><p><img src="https://i.loli.net/2020/10/28/M36mUtJCkWwxuSc.png"></p><p><code>opkg remove ***.ipk</code></p><p><img src="https://i.loli.net/2020/10/28/ROX9uAfQLcNTVSC.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 路由器 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>VUE使用axios数据请求时报错 TypeError Cannot set property &#39;xxxx&#39; of undefined 的解决办法</title>
       <link href="2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/"/>
       <url>2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/</url>
@@ -150,6 +125,31 @@
         <tags>
             
             <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>openWrt卸载已经安装的ipk安装包教程</title>
+      <link href="2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/"/>
+      <url>2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/</url>
+      
+        <content type="html"><![CDATA[<h1 id="openWrt卸载已经安装的ipk安装包教程"><a href="#openWrt卸载已经安装的ipk安装包教程" class="headerlink" title="openWrt卸载已经安装的ipk安装包教程"></a>openWrt卸载已经安装的ipk安装包教程</h1><h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p> 系统：OpenWrt 18.06.4</p><p>内核版本：4.14.131</p><h2 id="2-安装ipk"><a href="#2-安装ipk" class="headerlink" title="2.安装ipk"></a>2.安装ipk</h2><p><code>cd /ipk的文件路径</code></p><p><code>opkg install ***.ipk</code></p><h2 id="3-卸载ipk"><a href="#3-卸载ipk" class="headerlink" title="3.卸载ipk"></a>3.卸载ipk</h2><p><code>opkg list_installed</code>  查看已经安装的ipk</p><p><img src="https://i.loli.net/2020/10/28/M36mUtJCkWwxuSc.png"></p><p><code>opkg remove ***.ipk</code></p><p><img src="https://i.loli.net/2020/10/28/ROX9uAfQLcNTVSC.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 路由器 </tag>
             
         </tags>
       
