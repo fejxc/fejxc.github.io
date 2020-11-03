@@ -366,7 +366,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.3k
                 </div>
                 
 
@@ -391,7 +391,7 @@
 <li><p>通过 <code>@vue/cli</code> + <code>@vue/cli-service-global</code> 实现的零配置原型开发。vuejs vuerouter axios(一条命令)</p>
 </li>
 <li><p>一个运行时依赖 (</p>
-<pre class="line-numbers language-none"><code class="language-none">@vue&#x2F;cli-service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@vue&#x2F;cli-service</span><br></pre></td></tr></table></figure>
 
 <p>)，该依赖：</p>
 <ul>
@@ -406,133 +406,29 @@
 <li><p>一套完全图形化的创建和管理 Vue.js 项目的用户界面。</p>
 </li>
 </ul>
-<h3 id="1-4Vue-CLI安装"><a href="#1-4Vue-CLI安装" class="headerlink" title="1.4Vue CLI安装"></a>1.4Vue CLI安装</h3><h4 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h4><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"># 1.下载nodejs
-	http:&#x2F;&#x2F;nodejs.cn&#x2F;download&#x2F;
-	windows .msi(exe)  .zip（压缩包）直接解压路径
-	mac .pkg(安装包)自动配置  .tar.gz（压缩包)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-4Vue-CLI安装"><a href="#1-4Vue-CLI安装" class="headerlink" title="1.4Vue CLI安装"></a>1.4Vue CLI安装</h3><h4 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 1.下载nodejs</span></span><br><span class="line"><span class="code">	http://nodejs.cn/download/</span></span><br><span class="line"><span class="code">	windows .msi(exe)  .zip（压缩包）直接解压路径</span></span><br><span class="line"><span class="code">	mac .pkg(安装包)自动配置  .tar.gz（压缩包)</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.loli.net/2020/10/27/lQuBxM9ntbTaGzP.png"></p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"># 2.nodejs环境配置
-	windows系统：
-		1.计算机属性---》 高级属性 ----》 环境变量 添加如下配置：
-			NODE_HOME &#x3D; nodejs安装目录
-			PATH &#x3D; xxxx;%NODE_HOME%&#x2F;bin
-	mac系统：
-		pkg 自动配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 2.nodejs环境配置</span></span><br><span class="line"><span class="code">	windows系统：</span></span><br><span class="line"><span class="code">		1.计算机属性---》 高级属性 ----》 环境变量 添加如下配置：</span></span><br><span class="line"><span class="code">			NODE_HOME = nodejs安装目录</span></span><br><span class="line"><span class="code">			PATH = xxxx;%NODE_HOME%/bin</span></span><br><span class="line"><span class="code">	mac系统：</span></span><br><span class="line"><span class="code">		pkg 自动配置</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.loli.net/2020/10/27/7zgK4GMbOTFHlJq.png" alt="mac下pkg安装"></p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"># 3.检查安装
-	node -v
-
-# 4.npm的介绍
-	node package mangager nodejs包的管理工具  前端主流技术都可以用npm 进行同意管理
-	maven 管理java后端依赖  远程仓库  阿里云镜像
-	npm 管理前端系统依赖    远程仓库(中心仓库，在国外) 淘宝镜像
-	
-# 5.配置淘宝镜像
-	npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org
- 
-# 6配置后可通过下面方式来验证是否成功
-	npm config get registry
-	或 npm info express
-	
-# 7.配置npm下载依赖的位置  (不推荐配置 配置后mac输入vue会报错)
-	查看默认位置：npm config ls  
-	npm config set cache &#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;...
-	npm config set prefix &#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 3.检查安装</span></span><br><span class="line"><span class="code">	node -v</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code"># 4.npm的介绍</span></span><br><span class="line"><span class="code">	node package mangager nodejs包的管理工具  前端主流技术都可以用npm 进行同意管理</span></span><br><span class="line"><span class="code">	maven 管理java后端依赖  远程仓库  阿里云镜像</span></span><br><span class="line"><span class="code">	npm 管理前端系统依赖    远程仓库(中心仓库，在国外) 淘宝镜像</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code"># 5.配置淘宝镜像</span></span><br><span class="line"><span class="code">	npm config set registry https://registry.npm.taobao.org</span></span><br><span class="line"><span class="code"> </span></span><br><span class="line"><span class="code"># 6配置后可通过下面方式来验证是否成功</span></span><br><span class="line"><span class="code">	npm config get registry</span></span><br><span class="line"><span class="code">	或 npm info express</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code"># 7.配置npm下载依赖的位置  (不推荐配置 配置后mac输入vue会报错)</span></span><br><span class="line"><span class="code">	查看默认位置：npm config ls  </span></span><br><span class="line"><span class="code">	npm config set cache /Users/sunyun/Documents/nodereps/...</span></span><br><span class="line"><span class="code">	npm config set prefix /Users/sunyun/Documents/nodereps/...</span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.loli.net/2020/10/27/CKLpm31hOYTUXM7.png"></p>
-<h4 id="2-安装脚手架"><a href="#2-安装脚手架" class="headerlink" title="2.安装脚手架"></a>2.安装脚手架</h4><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"># 0.删除旧的版本的脚手架
-	npm uninstall -g @vue&#x2F;cli  &#x2F;&#x2F;3版本
-	num uninstall -g vue-cli &#x2F;&#x2F;2版本
-# 1.Vue CLI的安装
-	https:&#x2F;&#x2F;github.com&#x2F;vuejs&#x2F;vue-cli&#x2F;tree&#x2F;v2#vue-cli--
-# 2.安装Vue CLI
-	npm install -g vue-cli  &#x2F;&#x2F;2版本的脚手架
-# 3. mac 提示Vue not found
-exoprt PATH&#x3D;&quot;$PATH:&#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;npm_global&#x2F;bin&#x2F;vue&quot;
-Last login: Tue Oct 27 13:15:56 on ttys000
-sunyun@MacBook-Pro ~ % npm install -g vue-cli
-npm WARN deprecated vue-cli@2.9.6: This package has been deprecated in favour of @vue&#x2F;cli
-npm WARN deprecated coffee-script@1.12.7: CoffeeScript on NPM has moved to &quot;coffeescript&quot; (no hyphen)
-npm WARN deprecated har-validator@5.1.5: this
-&#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;npm_global&#x2F;bin&#x2F;vue -&gt; &#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;npm_global&#x2F;lib&#x2F;node_modules&#x2F;vue-cli&#x2F;bin&#x2F;vue
-&#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;npm_global&#x2F;bin&#x2F;vue-init -&gt; &#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;npm_global&#x2F;lib&#x2F;node_modules&#x2F;vue-cli&#x2F;bin&#x2F;vue-init
-&#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;npm_global&#x2F;bin&#x2F;vue-list -&gt; &#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;nodereps&#x2F;npm_global&#x2F;lib&#x2F;node_modules&#x2F;vue-cli&#x2F;bin&#x2F;vue-list
-+ vue-cli@2.9.6
-updated 1 package in 6.825s
-sunyun@MacBook-Pro ~ % 
-	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-安装脚手架"><a href="#2-安装脚手架" class="headerlink" title="2.安装脚手架"></a>2.安装脚手架</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 0.删除旧的版本的脚手架</span></span><br><span class="line"><span class="code">	npm uninstall -g @vue/cli  //3版本</span></span><br><span class="line"><span class="code">	num uninstall -g vue-cli //2版本</span></span><br><span class="line"><span class="code"># 1.Vue CLI的安装</span></span><br><span class="line"><span class="code">	https://github.com/vuejs/vue-cli/tree/v2#vue-cli--</span></span><br><span class="line"><span class="code"># 2.安装Vue CLI</span></span><br><span class="line"><span class="code">	npm install -g vue-cli  //2版本的脚手架</span></span><br><span class="line"><span class="code"># 3. mac 提示Vue not found</span></span><br><span class="line"><span class="code">exoprt PATH=&quot;$PATH:/Users/sunyun/Documents/nodereps/npm_global/bin/vue&quot;</span></span><br><span class="line"><span class="code">Last login: Tue Oct 27 13:15:56 on ttys000</span></span><br><span class="line"><span class="code">sunyun@MacBook-Pro ~ % npm install -g vue-cli</span></span><br><span class="line"><span class="code">npm WARN deprecated vue-cli@2.9.6: This package has been deprecated in favour of @vue/cli</span></span><br><span class="line"><span class="code">npm WARN deprecated coffee-script@1.12.7: CoffeeScript on NPM has moved to &quot;coffeescript&quot; (no hyphen)</span></span><br><span class="line"><span class="code">npm WARN deprecated har-validator@5.1.5: this</span></span><br><span class="line"><span class="code">/Users/sunyun/Documents/nodereps/npm_global/bin/vue -&gt; /Users/sunyun/Documents/nodereps/npm_global/lib/node_modules/vue-cli/bin/vue</span></span><br><span class="line"><span class="code">/Users/sunyun/Documents/nodereps/npm_global/bin/vue-init -&gt; /Users/sunyun/Documents/nodereps/npm_global/lib/node_modules/vue-cli/bin/vue-init</span></span><br><span class="line"><span class="code">/Users/sunyun/Documents/nodereps/npm_global/bin/vue-list -&gt; /Users/sunyun/Documents/nodereps/npm_global/lib/node_modules/vue-cli/bin/vue-list</span></span><br><span class="line"><span class="code">+ vue-cli@2.9.6</span></span><br><span class="line"><span class="code">updated 1 package in 6.825s</span></span><br><span class="line"><span class="code">sunyun@MacBook-Pro ~ % </span></span><br><span class="line"><span class="code">	</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="3-第一个Vue-CLI脚手架项目"><a href="#3-第一个Vue-CLI脚手架项目" class="headerlink" title="3.第一个Vue CLI脚手架项目"></a>3.第一个Vue CLI脚手架项目</h4><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"># 1.创建vue脚手架的第一个项目
-	vue init webpack hello(项目名)
-# 2.创建第一个项目
-	sunyun@MacBook-Pro Vue_CLI % vue init webpack hello
-
-? Project name hello
-? Project description A Vue.js project
-? Author 风儿继续吹 &lt;1031364436@qq.com&gt;
-? Vue build standalone
-? Install vue-router? Yes
-? Use ESLint to lint your code? No
-? Set up unit tests No
-? Setup e2e tests with Nightwatch? No
-? Should we run &#96;npm install&#96; for you after the project has been created? (recommended) npm
-   vue-cli · Generated &quot;hello&quot;
-# Project initialization finished!
-# &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-
-To get started:
-
-  cd hello
-  npm run dev
-  
-Documentation can be found at https:&#x2F;&#x2F;vuejs-templates.github.io&#x2F;webpack
-
-
-sunyun@MacBook-Pro Vue_CLI % 
-
-# 3.如何运行
- 	cd 到项目名 package.json 同级目录下 (根目录)
- 	npm start
- 	Your application is running here: http:&#x2F;&#x2F;localhost:8080     
- 
-# 4.vue cli 中项目的开发方式
-	 注意⚠️：一切皆组件，一个组件 js代码 html代码 css样式
-	1. VueCli开发方式是在项目中开发一个一个组件的对应一个业务功能模块，日后可以将多个组件组合一起形成一个前端系		统
-	2.日后在使用不饿cli开发时候，不再书写html，编写的是一个组件，日后打包成vue时，cli会将vue编译成运行的html
-	
- 	
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-第一个Vue-CLI脚手架项目"><a href="#3-第一个Vue-CLI脚手架项目" class="headerlink" title="3.第一个Vue CLI脚手架项目"></a>3.第一个Vue CLI脚手架项目</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 1.创建vue脚手架的第一个项目</span></span><br><span class="line"><span class="code">	vue init webpack hello(项目名)</span></span><br><span class="line"><span class="code"># 2.创建第一个项目</span></span><br><span class="line"><span class="code">	sunyun@MacBook-Pro Vue_CLI % vue init webpack hello</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">? Project name hello</span></span><br><span class="line"><span class="code">? Project description A Vue.js project</span></span><br><span class="line"><span class="code">? Author 风儿继续吹 &lt;1031364436@qq.com&gt;</span></span><br><span class="line"><span class="code">? Vue build standalone</span></span><br><span class="line"><span class="code">? Install vue-router? Yes</span></span><br><span class="line"><span class="code">? Use ESLint to lint your code? No</span></span><br><span class="line"><span class="code">? Set up unit tests No</span></span><br><span class="line"><span class="code">? Setup e2e tests with Nightwatch? No</span></span><br><span class="line"><span class="code">? Should we run `npm install` for you after the project has been created? (recommended) npm</span></span><br><span class="line"><span class="code">   vue-cli · Generated &quot;hello&quot;</span></span><br><span class="line"><span class="code"># Project initialization finished!</span></span><br><span class="line"><span class="code"># ========================</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">To get started:</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">  cd hello</span></span><br><span class="line"><span class="code">  npm run dev</span></span><br><span class="line"><span class="code">  </span></span><br><span class="line"><span class="code">Documentation can be found at https://vuejs-templates.github.io/webpack</span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code">sunyun@MacBook-Pro Vue_CLI % </span></span><br><span class="line"><span class="code"></span></span><br><span class="line"><span class="code"># 3.如何运行</span></span><br><span class="line"><span class="code"> 	cd 到项目名 package.json 同级目录下 (根目录)</span></span><br><span class="line"><span class="code"> 	npm start</span></span><br><span class="line"><span class="code"> 	Your application is running here: http://localhost:8080     </span></span><br><span class="line"><span class="code"> </span></span><br><span class="line"><span class="code"># 4.vue cli 中项目的开发方式</span></span><br><span class="line"><span class="code">	 注意⚠️：一切皆组件，一个组件 js代码 html代码 css样式</span></span><br><span class="line"><span class="code">	1. VueCli开发方式是在项目中开发一个一个组件的对应一个业务功能模块，日后可以将多个组件组合一起形成一个前端系		统</span></span><br><span class="line"><span class="code">	2.日后在使用不饿cli开发时候，不再书写html，编写的是一个组件，日后打包成vue时，cli会将vue编译成运行的html</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code"> 	</span></span><br><span class="line"><span class="code"></span></span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.loli.net/2020/10/27/XQJvBfLFRThwSrC.png" alt="运行成功界面"></p>
 <p><img src="https://i.loli.net/2020/10/27/YZ9rn3gXTh4tuM8.png" alt="vue cli项目文件结构"></p>
 <h3 id="1-5vue-CLI的第一个入门案例"><a href="#1-5vue-CLI的第一个入门案例" class="headerlink" title="1.5vue CLI的第一个入门案例"></a>1.5vue CLI的第一个入门案例</h3><p><a target="_blank" rel="noopener" href="https://gitee.com/fejxc/vue-cli">源码在码云Gitee上</a></p>
-<h2 id="2-在脚手架中安装axios"><a href="#2-在脚手架中安装axios" class="headerlink" title="2.在脚手架中安装axios"></a>2.在脚手架中安装axios</h2><h3 id="2-1安装axios"><a href="#2-1安装axios" class="headerlink" title="2.1安装axios"></a>2.1安装axios</h3><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"># 1.安装axios
-	npm install axios --save-dev
-	
-# 2.配置main.js中引入axios
-	import axios from &#39;axios&#39;
-	Vue.prototype.$http&#x3D;axios; &#x2F;&#x2F;修改内部的$http为axios
-	注意：$http 是vue内部的异步，没有axios好
- 
-# 3.使用axios
-	在需要发异步请求的地方： this.$http.get(&quot;url&quot;).then((res))&#x3D;&gt;&#123;&#125;)
-	this.$http.post(&quot;url&quot;).then((res))&#x3D;&gt;&#123;&#125;)
-	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-在脚手架中安装axios"><a href="#2-在脚手架中安装axios" class="headerlink" title="2.在脚手架中安装axios"></a>2.在脚手架中安装axios</h2><h3 id="2-1安装axios"><a href="#2-1安装axios" class="headerlink" title="2.1安装axios"></a>2.1安装axios</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 1.安装axios</span></span><br><span class="line"><span class="code">	npm install axios --save-dev</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code"># 2.配置main.js中引入axios</span></span><br><span class="line"><span class="code">	import axios from &#x27;axios&#x27;</span></span><br><span class="line"><span class="code">	Vue.prototype.$http=axios; //修改内部的$http为axios</span></span><br><span class="line"><span class="code">	注意：$http 是vue内部的异步，没有axios好</span></span><br><span class="line"><span class="code"> </span></span><br><span class="line"><span class="code"># 3.使用axios</span></span><br><span class="line"><span class="code">	在需要发异步请求的地方： this.$http.get(&quot;url&quot;).then((res))=&gt;&#123;&#125;)</span></span><br><span class="line"><span class="code">	this.$http.post(&quot;url&quot;).then((res))=&gt;&#123;&#125;)</span></span><br><span class="line"><span class="code">	</span></span><br></pre></td></tr></table></figure>
 
 
 
-<h2 id="3-Vue-CLI脚手架项目的打包和部署"><a href="#3-Vue-CLI脚手架项目的打包和部署" class="headerlink" title="3.Vue CLI脚手架项目的打包和部署"></a>3.Vue CLI脚手架项目的打包和部署</h2><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"># 1.在项目的根目录，就是有package.json文件的同级目录，执行如下命令
-	npm run build
-	b
-	注意：vue cli 打包的项目必须在服务器上运行，不能直接双击运行
-	
-# 2.大包之后变化
-	在打包后，项目中出现dist目录，就是vue cli 的部署目录
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-Vue-CLI脚手架项目的打包和部署"><a href="#3-Vue-CLI脚手架项目的打包和部署" class="headerlink" title="3.Vue CLI脚手架项目的打包和部署"></a>3.Vue CLI脚手架项目的打包和部署</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 1.在项目的根目录，就是有package.json文件的同级目录，执行如下命令</span></span><br><span class="line"><span class="code">	npm run build</span></span><br><span class="line"><span class="code">	b</span></span><br><span class="line"><span class="code">	注意：vue cli 打包的项目必须在服务器上运行，不能直接双击运行</span></span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code"># 2.大包之后变化</span></span><br><span class="line"><span class="code">	在打包后，项目中出现dist目录，就是vue cli 的部署目录</span></span><br><span class="line"><span class="code"></span></span><br></pre></td></tr></table></figure>
 
 
             </div>

@@ -366,7 +366,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    287
+                    275
                 </div>
                 
 
@@ -385,33 +385,18 @@
             <div id="articleContent">
                 <h1 id="踩坑记录：pageHelp的pageSize属性不生效解决方案"><a href="#踩坑记录：pageHelp的pageSize属性不生效解决方案" class="headerlink" title="踩坑记录：pageHelp的pageSize属性不生效解决方案"></a>踩坑记录：pageHelp的pageSize属性不生效解决方案</h1><h3 id="开发环境："><a href="#开发环境：" class="headerlink" title="开发环境："></a>开发环境：</h3><p>当前环境说明：<br>开发工具：idea2019.2 Mac 11.0<br>框架：springboot、mybatis<br>功能：采用springboot整合mybatis实现对查询到的数据进行分页显示</p>
 <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>pagesize属性不生效</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public String listCategory(Model m , @RequestParam(value &#x3D; &quot;start&quot;,defaultValue &#x3D; &quot;0&quot;)int start,
-                             @RequestParam(value &#x3D; &quot;size&quot;,defaultValue &#x3D; &quot;5&quot;)int size)throws Exception&#123;
-      PageHelper.startPage(start,size,&quot;id desc&quot;);
-      List&lt;User&gt; cs &#x3D; userMapper.queryAll();
-      PageInfo&lt;User&gt; page &#x3D; new PageInfo&lt;&gt;(cs);
-      m.addAttribute(&quot;page&quot;,page);
-      return &quot;list&quot;;
-  &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">listCategory</span><span class="params">(Model m , <span class="meta">@RequestParam(value = &quot;start&quot;,defaultValue = &quot;0&quot;)</span><span class="keyword">int</span> start,</span></span></span><br><span class="line"><span class="function"><span class="params">                             <span class="meta">@RequestParam(value = &quot;size&quot;,defaultValue = &quot;5&quot;)</span><span class="keyword">int</span> size)</span><span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">      PageHelper.startPage(start,size,<span class="string">&quot;id desc&quot;</span>);</span><br><span class="line">      List&lt;User&gt; cs = userMapper.queryAll();</span><br><span class="line">      PageInfo&lt;User&gt; page = <span class="keyword">new</span> PageInfo&lt;&gt;(cs);</span><br><span class="line">      m.addAttribute(<span class="string">&quot;page&quot;</span>,page);</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&quot;list&quot;</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>size=5</code> 按效果数据每页会显示5条数据</p>
 <img src="https://i.loli.net/2020/10/12/J6tE3xib45lNpA9.png" alt="分页没有生效" style="zoom: 50%;" />
 
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>打开pom.xml文件</p>
 <p>修改当前pagehelper的版本</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&lt;dependency&gt;
-			&lt;groupId&gt;com.github.pagehelper&lt;&#x2F;groupId&gt;
-			&lt;artifactId&gt;pagehelper&lt;&#x2F;artifactId&gt;
-			&lt;version&gt;5.2.0&lt;&#x2F;version&gt;
-		&lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;5.2.0&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
 <p><code>5.2.0</code> 最新版本，分页不生效</p>
 <p>换成<code>4.1.6</code> 即可</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&lt;dependency&gt;
-			&lt;groupId&gt;com.github.pagehelper&lt;&#x2F;groupId&gt;
-			&lt;artifactId&gt;pagehelper&lt;&#x2F;artifactId&gt;
-			&lt;version&gt;4.1.6&lt;&#x2F;version&gt;
-		&lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.6&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="验证结果："><a href="#验证结果：" class="headerlink" title="验证结果："></a>验证结果：</h3><p><img src="https://i.loli.net/2020/10/12/RuzMyhqnlW9Trbm.png" alt="正确结果"></p>
 <h3 id="小总结："><a href="#小总结：" class="headerlink" title="小总结："></a>小总结：</h3><p>一定要注意依赖的版本之间的对应关系！</p>
