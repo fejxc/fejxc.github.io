@@ -366,7 +366,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    838
+                    1.1k
                 </div>
                 
 
@@ -383,167 +383,167 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="编译原理第二次上机-词法分析器"><a href="#编译原理第二次上机-词法分析器" class="headerlink" title="编译原理第二次上机-词法分析器"></a>编译原理第二次上机-词法分析器</h1><h2 id="1-环境："><a href="#1-环境：" class="headerlink" title="1.环境："></a>1.环境：</h2><h3 id="MAC-11-0-JDK1-8-Idea2019-2"><a href="#MAC-11-0-JDK1-8-Idea2019-2" class="headerlink" title="MAC 11.0 JDK1.8 Idea2019.2"></a><code>MAC 11.0 JDK1.8 Idea2019.2</code></h3><h2 id="2-代码实现-Java"><a href="#2-代码实现-Java" class="headerlink" title="2.代码实现(Java)"></a>2.代码实现(Java)</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>*<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Arrays<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>HashSet<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Set<span class="token punctuation">;</span>
+                <h1 id="编译原理第二次上机-词法分析器"><a href="#编译原理第二次上机-词法分析器" class="headerlink" title="编译原理第二次上机-词法分析器"></a>编译原理第二次上机-词法分析器</h1><h2 id="1-环境："><a href="#1-环境：" class="headerlink" title="1.环境："></a>1.环境：</h2><h3 id="MAC-11-0-JDK1-8-Idea2019-2"><a href="#MAC-11-0-JDK1-8-Idea2019-2" class="headerlink" title="MAC 11.0 JDK1.8 Idea2019.2"></a><code>MAC 11.0 JDK1.8 Idea2019.2</code></h3><h2 id="2-代码实现-Java"><a href="#2-代码实现-Java" class="headerlink" title="2.代码实现(Java)"></a>2.代码实现(Java)</h2><pre><code class="java">import java.io.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+public class Test &#123;
 
-    <span class="token comment" spellcheck="true">//保留字表</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> Set<span class="token operator">&lt;</span>String<span class="token operator">></span> ReserveWord <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//界符表</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> Set<span class="token operator">&lt;</span>Character<span class="token operator">></span> JiefuTable <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//标识符表</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> Set<span class="token operator">&lt;</span>String<span class="token operator">></span> IDentifierTable <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//常数表</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> Set<span class="token operator">&lt;</span>String<span class="token operator">></span> DigitBTable <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    //保留字表
+    public static Set&lt;String&gt; ReserveWord = new HashSet&lt;&gt;();
+    //界符表
+    public static Set&lt;Character&gt; JiefuTable = new HashSet&lt;&gt;();
+    //标识符表
+    public static Set&lt;String&gt; IDentifierTable = new HashSet&lt;&gt;();
+    //常数表
+    public static Set&lt;String&gt; DigitBTable = new HashSet&lt;&gt;();
 
-    <span class="token keyword">static</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//保留字32个</span>
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> strs <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                <span class="token string">"auto"</span><span class="token punctuation">,</span> <span class="token string">"break"</span><span class="token punctuation">,</span> <span class="token string">"case"</span><span class="token punctuation">,</span> <span class="token string">"char"</span><span class="token punctuation">,</span> <span class="token string">"const"</span><span class="token punctuation">,</span> <span class="token string">"continue"</span><span class="token punctuation">,</span>
-                <span class="token string">"default"</span><span class="token punctuation">,</span> <span class="token string">"do"</span><span class="token punctuation">,</span> <span class="token string">"double"</span><span class="token punctuation">,</span> <span class="token string">"else"</span><span class="token punctuation">,</span> <span class="token string">"enum"</span><span class="token punctuation">,</span> <span class="token string">"extern"</span><span class="token punctuation">,</span>
-                <span class="token string">"float"</span><span class="token punctuation">,</span> <span class="token string">"for"</span><span class="token punctuation">,</span> <span class="token string">"goto"</span><span class="token punctuation">,</span> <span class="token string">"if"</span><span class="token punctuation">,</span> <span class="token string">"int"</span><span class="token punctuation">,</span> <span class="token string">"long"</span><span class="token punctuation">,</span>
-                <span class="token string">"register"</span><span class="token punctuation">,</span> <span class="token string">"return"</span><span class="token punctuation">,</span> <span class="token string">"short"</span><span class="token punctuation">,</span> <span class="token string">"signed"</span><span class="token punctuation">,</span> <span class="token string">"sizeof"</span><span class="token punctuation">,</span> <span class="token string">"static"</span><span class="token punctuation">,</span>
-                <span class="token string">"struct"</span><span class="token punctuation">,</span> <span class="token string">"switch"</span><span class="token punctuation">,</span> <span class="token string">"typedef"</span><span class="token punctuation">,</span> <span class="token string">"union"</span><span class="token punctuation">,</span> <span class="token string">"unsigned"</span><span class="token punctuation">,</span> <span class="token string">"void"</span><span class="token punctuation">,</span>
-                <span class="token string">"volatile"</span><span class="token punctuation">,</span> <span class="token string">"while"</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    static &#123;
+        //保留字32个
+        String[] strs = &#123;
+                &quot;auto&quot;, &quot;break&quot;, &quot;case&quot;, &quot;char&quot;, &quot;const&quot;, &quot;continue&quot;,
+                &quot;default&quot;, &quot;do&quot;, &quot;double&quot;, &quot;else&quot;, &quot;enum&quot;, &quot;extern&quot;,
+                &quot;float&quot;, &quot;for&quot;, &quot;goto&quot;, &quot;if&quot;, &quot;int&quot;, &quot;long&quot;,
+                &quot;register&quot;, &quot;return&quot;, &quot;short&quot;, &quot;signed&quot;, &quot;sizeof&quot;, &quot;static&quot;,
+                &quot;struct&quot;, &quot;switch&quot;, &quot;typedef&quot;, &quot;union&quot;, &quot;unsigned&quot;, &quot;void&quot;,
+                &quot;volatile&quot;, &quot;while&quot;
+        &#125;;
 
-        <span class="token comment" spellcheck="true">//界符表12个</span>
-        Character<span class="token punctuation">[</span><span class="token punctuation">]</span> Jiefu <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            <span class="token string">';'</span><span class="token punctuation">,</span> <span class="token string">'('</span><span class="token punctuation">,</span> <span class="token string">')'</span><span class="token punctuation">,</span> <span class="token string">'^'</span><span class="token punctuation">,</span> <span class="token string">','</span><span class="token punctuation">,</span> <span class="token string">'#'</span><span class="token punctuation">,</span> <span class="token string">'%'</span><span class="token punctuation">,</span> <span class="token string">'['</span><span class="token punctuation">,</span> <span class="token string">']'</span><span class="token punctuation">,</span> <span class="token string">'&amp;#123;'</span><span class="token punctuation">,</span> <span class="token string">'&amp;#125;'</span><span class="token punctuation">,</span> <span class="token string">'.'</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//java.until.Arrays提供了asList()方法将数组转换成List对象，但该List是不可变的</span>
-        ReserveWord<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>strs<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        JiefuTable<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span>Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>Jiefu<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//并运算</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        //界符表12个
+        Character[] Jiefu = &#123;
+            &#39;;&#39;, &#39;(&#39;, &#39;)&#39;, &#39;^&#39;, &#39;,&#39;, &#39;#&#39;, &#39;%&#39;, &#39;[&#39;, &#39;]&#39;, &#39;&#123;&#39;, &#39;&#125;&#39;, &#39;.&#39;
+        &#125;;
+        //java.until.Arrays提供了asList()方法将数组转换成List对象，但该List是不可变的
+        ReserveWord.addAll(Arrays.asList(strs));
+        JiefuTable.addAll(Arrays.asList(Jiefu));//并运算
+    &#125;
 
-    <span class="token comment" spellcheck="true">//判断是否是：字母</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">Isletter</span><span class="token punctuation">(</span><span class="token keyword">char</span> x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token punctuation">(</span>x <span class="token operator">>=</span> <span class="token string">'a'</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;=</span> <span class="token string">'z'</span><span class="token punctuation">)</span><span class="token operator">||</span><span class="token punctuation">(</span>x <span class="token operator">>=</span> <span class="token string">'A'</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;=</span> <span class="token string">'Z'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    //判断是否是：字母
+    public static boolean Isletter(char x) &#123; return (x &gt;= &#39;a&#39; &amp;&amp; x &lt;= &#39;z&#39;)||(x &gt;= &#39;A&#39; &amp;&amp; x &lt;= &#39;Z&#39;); &#125;
 
-    <span class="token comment" spellcheck="true">//判断是否是：数字</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">IsDigit</span><span class="token punctuation">(</span><span class="token keyword">char</span> x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> x <span class="token operator">>=</span> <span class="token string">'0'</span> <span class="token operator">&amp;&amp;</span> x <span class="token operator">&lt;=</span> <span class="token string">'9'</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    //判断是否是：数字
+    public static boolean IsDigit(char x) &#123; return x &gt;= &#39;0&#39; &amp;&amp; x &lt;= &#39;9&#39;; &#125;
 
-    <span class="token comment" spellcheck="true">//判断是否是：界符</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">IsJiefu</span><span class="token punctuation">(</span><span class="token keyword">char</span> x<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> JiefuTable<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    //判断是否是：界符
+    public static boolean IsJiefu(char x)
+    &#123;
+        return JiefuTable.contains(x);
+    &#125;
 
-    <span class="token comment" spellcheck="true">//判断是否是 算数运算符：加减乘</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">IsSuanshuyunsuanfu</span><span class="token punctuation">(</span><span class="token keyword">char</span> x<span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> x <span class="token operator">==</span> <span class="token string">'+'</span> <span class="token operator">||</span> x <span class="token operator">==</span> <span class="token string">'-'</span> <span class="token operator">||</span> x <span class="token operator">==</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    //判断是否是 算数运算符：加减乘
+    public static boolean IsSuanshuyunsuanfu(char x)
+    &#123;
+        return x == &#39;+&#39; || x == &#39;-&#39; || x == &#39;*&#39;;
+    &#125;
 
-    <span class="token comment" spellcheck="true">//判断是否是 关系运算符：等于（赋值），大于小于（大于等于，小于等于，大于小于）</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">IsGuanxiyunsuanfu</span><span class="token punctuation">(</span><span class="token keyword">char</span> x<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> x <span class="token operator">==</span> <span class="token string">'='</span> <span class="token operator">||</span> x <span class="token operator">==</span> <span class="token string">'&lt;'</span> <span class="token operator">||</span> x <span class="token operator">==</span> <span class="token string">'>'</span><span class="token punctuation">;</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    //判断是否是 关系运算符：等于（赋值），大于小于（大于等于，小于等于，大于小于）
+    public static boolean IsGuanxiyunsuanfu(char x) &#123; return x == &#39;=&#39; || x == &#39;&lt;&#39; || x == &#39;&gt;&#39;; &#125;
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">read_write_File</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        FileReader reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token string">"in.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        BufferedReader bReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    public static void read_write_File () throws IOException &#123;
+        FileReader reader = new FileReader(&quot;in.txt&quot;);
+        BufferedReader bReader = new BufferedReader(reader);
 
-        FileWriter writer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">"out.txt"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        BufferedWriter bWriter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedWriter</span><span class="token punctuation">(</span>writer<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-        String content<span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-        <span class="token keyword">boolean</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//readLine一行一行的读取</span>
-        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token punctuation">(</span>content <span class="token operator">=</span> bReader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        FileWriter writer = new FileWriter(&quot;out.txt&quot;);
+        BufferedWriter bWriter = new BufferedWriter(writer);
 
 
-            <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        String content= &quot;&quot;;
+        boolean flag = false;
 
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> content<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        //readLine一行一行的读取
+        while((content = bReader.readLine()) != null) &#123;
 
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">' '</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    count<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//判断是字母或者'_'开头</span>
-                <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">Isletter</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'_'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    String str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-                    str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> content<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token function">Isletter</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">IsDigit</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">||</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">'_'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    <span class="token comment" spellcheck="true">//判断是不是保留字</span>
-                    <span class="token keyword">if</span><span class="token punctuation">(</span>ReserveWord<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"&lt;\t"</span><span class="token operator">+</span>str<span class="token operator">+</span><span class="token string">"\t,\t"</span><span class="token operator">+</span><span class="token string">"0(保留字)"</span><span class="token operator">+</span><span class="token string">"\t>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        bWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"("</span> <span class="token operator">+</span> <span class="token string">"0"</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">")"</span> <span class="token operator">+</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token keyword">continue</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    <span class="token comment" spellcheck="true">//判断是不是标识符</span>
-                    IDentifierTable<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"&lt;\t"</span><span class="token operator">+</span>str<span class="token operator">+</span><span class="token string">"\t,\t"</span><span class="token operator">+</span><span class="token string">"1(标识符)"</span><span class="token operator">+</span><span class="token string">"\t>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    bWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"("</span> <span class="token operator">+</span> <span class="token string">"1"</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">")"</span> <span class="token operator">+</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//判断是不是算数运算符</span>
-                <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">IsSuanshuyunsuanfu</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    String str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-                    str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"&lt;\t"</span><span class="token operator">+</span>str<span class="token operator">+</span><span class="token string">"\t,\t"</span><span class="token operator">+</span><span class="token string">"2(算数运算符)"</span><span class="token operator">+</span><span class="token string">"\t>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    bWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"("</span> <span class="token operator">+</span> <span class="token string">"2"</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">")"</span> <span class="token operator">+</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//判断是不是数字</span>
-                <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">IsDigit</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    String str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-                    str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token keyword">while</span><span class="token punctuation">(</span>count <span class="token operator">&lt;</span> content<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">IsDigit</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    DigitBTable<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"&lt;\t"</span><span class="token operator">+</span>str<span class="token operator">+</span><span class="token string">"\t,\t"</span><span class="token operator">+</span><span class="token string">"3(数字)"</span><span class="token operator">+</span><span class="token string">"\t>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    bWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"("</span> <span class="token operator">+</span> <span class="token string">"3"</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">")"</span> <span class="token operator">+</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//判断是不是分界符</span>
-                <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">IsJiefu</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    String str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-                    str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"&lt;\t"</span><span class="token operator">+</span>str<span class="token operator">+</span><span class="token string">"\t,\t"</span><span class="token operator">+</span><span class="token string">"4(界符)"</span><span class="token operator">+</span><span class="token string">"\t>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    bWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"("</span> <span class="token operator">+</span> <span class="token string">"4"</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">")"</span> <span class="token operator">+</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    count<span class="token operator">++</span><span class="token punctuation">;</span>
 
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//判断是不是关系运算</span>
-                <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">IsGuanxiyunsuanfu</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                    String str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'&lt;'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        count<span class="token operator">++</span><span class="token punctuation">;</span>
-                        <span class="token keyword">if</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">'>'</span> <span class="token operator">||</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">'='</span><span class="token punctuation">)</span>
-                        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                            str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                            count<span class="token operator">++</span><span class="token punctuation">;</span>
-                        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    <span class="token keyword">else</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                        str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        count<span class="token operator">++</span><span class="token punctuation">;</span>
-                        <span class="token keyword">if</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">'='</span><span class="token punctuation">)</span>
-                        <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-                            str <span class="token operator">+=</span> content<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>count<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"&lt;\t"</span><span class="token operator">+</span>str<span class="token operator">+</span><span class="token string">"\t,\t"</span><span class="token operator">+</span><span class="token string">"5(关系运算符)"</span><span class="token operator">+</span><span class="token string">"\t>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    bWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"("</span> <span class="token operator">+</span> <span class="token string">"5"</span> <span class="token operator">+</span> <span class="token string">","</span> <span class="token operator">+</span> str <span class="token operator">+</span> <span class="token string">")"</span> <span class="token operator">+</span> <span class="token string">"\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//关闭文件</span>
-        reader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        bReader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        bWriter<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        writer<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+            int count = 0;
 
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token function">read_write_File</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            while (count &lt; content.length()) &#123;
+
+                if (content.charAt(count) == &#39; &#39;) &#123;
+                    count++;
+                &#125;
+                //判断是字母或者&#39;_&#39;开头
+                else if (Isletter(content.charAt(count)) || content.charAt(count) == &#39;_&#39;) &#123;
+                    String str = &quot;&quot;;
+                    str += content.charAt(count++);
+                    while (count &lt; content.length() &amp;&amp; (Isletter(content.charAt(count)) || IsDigit(content.charAt(count)) || content.charAt(count)==&#39;_&#39;)) &#123;
+                        str += content.charAt(count++);
+                    &#125;
+                    //判断是不是保留字
+                    if(ReserveWord.contains(str))
+                    &#123;
+                        System.out.println(&quot;&lt;\t&quot;+str+&quot;\t,\t&quot;+&quot;0(保留字)&quot;+&quot;\t&gt;&quot;);
+                        bWriter.write(&quot;(&quot; + &quot;0&quot; + &quot;,&quot; + str + &quot;)&quot; + &quot;\r\n&quot;);
+                        continue;
+                    &#125;
+                    //判断是不是标识符
+                    IDentifierTable.add(str);
+                    System.out.println(&quot;&lt;\t&quot;+str+&quot;\t,\t&quot;+&quot;1(标识符)&quot;+&quot;\t&gt;&quot;);
+                    bWriter.write(&quot;(&quot; + &quot;1&quot; + &quot;,&quot; + str + &quot;)&quot; + &quot;\r\n&quot;);
+                &#125;
+                //判断是不是算数运算符
+                else if(IsSuanshuyunsuanfu(content.charAt(count))) &#123;
+                    String str = &quot;&quot;;
+                    str += content.charAt(count++);
+                    System.out.println(&quot;&lt;\t&quot;+str+&quot;\t,\t&quot;+&quot;2(算数运算符)&quot;+&quot;\t&gt;&quot;);
+                    bWriter.write(&quot;(&quot; + &quot;2&quot; + &quot;,&quot; + str + &quot;)&quot; + &quot;\r\n&quot;);
+                &#125;
+                //判断是不是数字
+                else if(IsDigit(content.charAt(count))) &#123;
+                    String str = &quot;&quot;;
+                    str += content.charAt(count++);
+                    while(count &lt; content.length() &amp;&amp; IsDigit(content.charAt(count))) &#123;
+                        str += content.charAt(count++);
+                    &#125;
+                    DigitBTable.add(str);
+                    System.out.println(&quot;&lt;\t&quot;+str+&quot;\t,\t&quot;+&quot;3(数字)&quot;+&quot;\t&gt;&quot;);
+                    bWriter.write(&quot;(&quot; + &quot;3&quot; + &quot;,&quot; + str + &quot;)&quot; + &quot;\r\n&quot;);
+                &#125;
+                //判断是不是分界符
+                else if(IsJiefu(content.charAt(count))) &#123;
+                    String str = &quot;&quot;;
+                    str += content.charAt(count);
+                    System.out.println(&quot;&lt;\t&quot;+str+&quot;\t,\t&quot;+&quot;4(界符)&quot;+&quot;\t&gt;&quot;);
+                    bWriter.write(&quot;(&quot; + &quot;4&quot; + &quot;,&quot; + str + &quot;)&quot; + &quot;\r\n&quot;);
+                    count++;
+
+                &#125;
+                //判断是不是关系运算
+                else if(IsGuanxiyunsuanfu(content.charAt(count))) &#123;
+                    String str = &quot;&quot;;
+                    if (content.charAt(count) == &#39;&lt;&#39;) &#123;
+                        str += content.charAt(count);
+                        count++;
+                        if(content.charAt(count)==&#39;&gt;&#39; || content.charAt(count)==&#39;=&#39;)
+                        &#123;
+                            str += content.charAt(count);
+                            count++;
+                        &#125;
+                    &#125;
+                    else &#123;
+                        str += content.charAt(count);
+                        count++;
+                        if(content.charAt(count)==&#39;=&#39;)
+                        &#123;
+                            str += content.charAt(count++);
+                        &#125;
+                    &#125;
+                    System.out.println(&quot;&lt;\t&quot;+str+&quot;\t,\t&quot;+&quot;5(关系运算符)&quot;+&quot;\t&gt;&quot;);
+                    bWriter.write(&quot;(&quot; + &quot;5&quot; + &quot;,&quot; + str + &quot;)&quot; + &quot;\r\n&quot;);
+                &#125;
+            &#125;
+        &#125;
+        //关闭文件
+        reader.close();
+        bReader.close();
+        bWriter.close();
+        writer.close();
+    &#125;
+
+    public static void main(String[] args) throws IOException &#123;
+        read_write_File();
+    &#125;
+&#125;</code></pre>
 <h2 id="3-运行示意图"><a href="#3-运行示意图" class="headerlink" title="3.运行示意图"></a>3.运行示意图</h2><p><img src="https://i.loli.net/2020/11/02/Yg9NLKv7FOb4kaH.png"></p>
 <h2 id="4-源码在Gitee和Github上自取"><a href="#4-源码在Gitee和Github上自取" class="headerlink" title="4.源码在Gitee和Github上自取"></a>4.源码在Gitee和Github上自取</h2><p><a target="_blank" rel="noopener" href="https://github.com/fejxc/Compilation-principle">Github</a></p>
 <p><a target="_blank" rel="noopener" href="https://gitee.com/fejxc/Compilation-principle">Gitee</a></p>
