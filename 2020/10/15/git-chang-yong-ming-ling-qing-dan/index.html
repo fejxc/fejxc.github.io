@@ -29,7 +29,8 @@
 
     <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -366,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    292
+                    282
                 </div>
                 
 
@@ -383,54 +384,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="git常用命令清单"><a href="#git常用命令清单" class="headerlink" title="git常用命令清单"></a>git常用命令清单</h3><pre><code class="bash">git init
-git status
+                <h3 id="git常用命令清单"><a href="#git常用命令清单" class="headerlink" title="git常用命令清单"></a>git常用命令清单</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> init
+<span class="token function">git</span> status
 /**
 红色 文件修改 还没添加到版本库
 绿色 文件已经添加到版本库 还没有提交
 */
-git config --global user.name &quot;&quot;
-git config --global user.email &quot;&quot;
-git add xxx
-git commit -m &quot;&quot;
+<span class="token function">git</span> config --global user.name <span class="token string">""</span>
+<span class="token function">git</span> config --global user.email <span class="token string">""</span>
+<span class="token function">git</span> add xxx
+<span class="token function">git</span> commit -m <span class="token string">""</span>
 
-git log
-git log --pretty=oneline
-git reflog //显示所有历史版本记录
+<span class="token function">git</span> log
+<span class="token function">git</span> log --pretty<span class="token operator">=</span>oneline
+<span class="token function">git</span> reflog //显示所有历史版本记录
 
-git reset --hard 版本id //回退版本
+<span class="token function">git</span> reset --hard 版本id //回退版本
 
-git checkout -- 文件 //撤回工作区的修改
+<span class="token function">git</span> checkout -- 文件 //撤回工作区的修改
 
-git reset HEAD 文件 //撤回暂存区的修改，要先reset 然后 checkout
-git checkout --文件
+<span class="token function">git</span> reset HEAD 文件 //撤回暂存区的修改，要先reset 然后 checkout
+<span class="token function">git</span> checkout --文件
 
 //版本库的删除
-rm 文件 目录
-git rm 文件 目录
-git commit -m &quot;&quot;
+<span class="token function">rm</span> 文件 目录
+<span class="token function">git</span> <span class="token function">rm</span> 文件 目录
+<span class="token function">git</span> commit -m <span class="token string">""</span>
 //取消删除
-git checkout -- 文件名
+<span class="token function">git</span> checkout -- 文件名
 
 //创建分支
-git checkout -b 分支名
+<span class="token function">git</span> checkout -b 分支名
 //切换分支
-git checkout 分支名
+<span class="token function">git</span> checkout 分支名
 //合并分支（先切换到主分支）
-git merge 要合并的分支名
+<span class="token function">git</span> merge 要合并的分支名
 
 //远程仓库操作
-git clone url
-git remote add origin url  //将对本地git添加远程仓库
-git remote remove origin //删除原有的仓库地址
-git push -u origin 分支名 //本地分支推送到远程仓库
-git push -f origin 分支名  //-u更新 -f强制更新
-git push -d origin 分支名
-git pull origin 分支名    
+<span class="token function">git</span> clone url
+<span class="token function">git</span> remote add origin url  //将对本地git添加远程仓库
+<span class="token function">git</span> remote remove origin //删除原有的仓库地址
+<span class="token function">git</span> push -u origin 分支名 //本地分支推送到远程仓库
+<span class="token function">git</span> push -f origin 分支名  //-u更新 -f强制更新
+<span class="token function">git</span> push -d origin 分支名
+<span class="token function">git</span> pull origin 分支名    
 
-ssh-keygen -t rsa -C &quot;gitee/github用户名&quot;
+ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
