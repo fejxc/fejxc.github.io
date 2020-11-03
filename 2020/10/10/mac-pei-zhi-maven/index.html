@@ -387,19 +387,19 @@
 <p><img src="https://i.loli.net/2020/10/10/hoeBp35WAyNaE4P.png"></p>
 <p>下载后，解压到自己喜欢放的位置，我放在了文稿里头。</p>
 <p><img src="https://i.loli.net/2020/10/10/PSuoU4K2kXF178H.png"></p>
-<h3 id="2-编辑终端的配置文件"><a href="#2-编辑终端的配置文件" class="headerlink" title="2.编辑终端的配置文件"></a>2.编辑终端的配置文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">vim ~/.bash_profile<br></code></pre></td></tr></table></figure>
+<h3 id="2-编辑终端的配置文件"><a href="#2-编辑终端的配置文件" class="headerlink" title="2.编辑终端的配置文件"></a>2.编辑终端的配置文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.loli.net/2020/10/10/hp3QcqRK9rlSbLY.png"></p>
 <p>选择E</p>
 <p>然后添加如下代码：</p>
-<figure class="highlight plain"><figcaption><span>M2_HOME</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs export">export M2_HOME&#x3D;&#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;apache-maven-3.6.3<br>export PATH&#x3D;$PATH:$M2_HOME&#x2F;bin<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>M2_HOME</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export M2_HOME&#x3D;&#x2F;Users&#x2F;sunyun&#x2F;Documents&#x2F;apache-maven-3.6.3</span><br><span class="line">export PATH&#x3D;$PATH:$M2_HOME&#x2F;bin</span><br></pre></td></tr></table></figure>
 
 <p><code>/Users/sunyun/Documents/apache-maven-3.6.3</code>换成你自己刚刚解压放的路径</p>
 <p><img src="https://i.loli.net/2020/10/10/RQE5LqWPJm4vOzI.png"></p>
-<h3 id="3-保存文件，执行命令使之生效"><a href="#3-保存文件，执行命令使之生效" class="headerlink" title="3.保存文件，执行命令使之生效"></a>3.保存文件，执行命令使之生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">source ~&#x2F;.bash_profile<br></code></pre></td></tr></table></figure>
+<h3 id="3-保存文件，执行命令使之生效"><a href="#3-保存文件，执行命令使之生效" class="headerlink" title="3.保存文件，执行命令使之生效"></a>3.保存文件，执行命令使之生效</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~&#x2F;.bash_profile</span><br></pre></td></tr></table></figure>
 
 <h3 id="4-验证是否配置成功"><a href="#4-验证是否配置成功" class="headerlink" title="4.验证是否配置成功"></a>4.验证是否配置成功</h3><p>终端输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">mvn -v<br></code></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -v</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.loli.net/2020/10/10/jtSVhIAZN4Tb7d1.png"></p>
 <p>出现以上的图片就说明配置成功！</p>
