@@ -29,8 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
 
 <body>
@@ -367,7 +366,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    230
+                    231
                 </div>
                 
 
@@ -384,9 +383,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="idea中git使用ssh的url后push报错"><a href="#idea中git使用ssh的url后push报错" class="headerlink" title="idea中git使用ssh的url后push报错"></a>idea中git使用ssh的url后push报错</h2><h3 id="开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128"><a href="#开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128" class="headerlink" title="开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)"></a>开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)</h3><h3 id="1-报错代码"><a href="#1-报错代码" class="headerlink" title="1.报错代码"></a>1.报错代码</h3><pre><code>Please make sure you have the correct access rights
+                <h2 id="idea中git使用ssh的url后push报错"><a href="#idea中git使用ssh的url后push报错" class="headerlink" title="idea中git使用ssh的url后push报错"></a>idea中git使用ssh的url后push报错</h2><h3 id="开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128"><a href="#开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128" class="headerlink" title="开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)"></a>开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)</h3><h3 id="1-报错代码"><a href="#1-报错代码" class="headerlink" title="1.报错代码"></a>1.报错代码</h3><pre class="line-numbers language-none"><code class="language-none">Please make sure you have the correct access rights
 and the repository exists.
-sunyun@sunyundeMBP ch009-springboot-ems % git remote add origin git@gitee.com:fejxc/spring-boot-page-help.git
+sunyun@sunyundeMBP ch009-springboot-ems % git remote add origin git@gitee.com:fejxc&#x2F;spring-boot-page-help.git
 fatal: remote origin already exists.
 sunyun@sunyundeMBP ch009-springboot-ems % git push -u origin master
 git@gitee.com: Permission denied (publickey).
@@ -397,7 +396,8 @@ and the repository exists.
 sunyun@sunyundeMBP ch009-springboot-ems % git status
 On branch master
 nothing to commit, working tree clean
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="2-解决办法，在git上或者gitee上添加SSH公钥"><a href="#2-解决办法，在git上或者gitee上添加SSH公钥" class="headerlink" title="2.解决办法，在git上或者gitee上添加SSH公钥"></a>2.解决办法，在git上或者gitee上添加SSH公钥</h3><p>1)输入代码生成ssh公匙</p>
 <p><code> ssh-keygen -t rsa -C &quot;输入你的github或者gitee的用户名&quot;</code></p>
 <p><img src="https://i.loli.net/2020/10/15/lWu4BtRZnCz8eTU.png"></p>
