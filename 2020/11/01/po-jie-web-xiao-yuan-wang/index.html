@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-01
+                    2020-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    719
+                    820
                 </div>
                 
 
@@ -384,7 +384,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="破解Web校园网"><a href="#破解Web校园网" class="headerlink" title="破解Web校园网"></a>破解Web校园网</h1><h2 id="1-准备一个已经刷好不死鸟的路由器"><a href="#1-准备一个已经刷好不死鸟的路由器" class="headerlink" title="1.准备一个已经刷好不死鸟的路由器"></a>1.准备一个已经刷好不死鸟的路由器</h2><p>K2 ，K2P ，小米， 新三路由等等 都可以</p>
+                <h1 id="破解Web校园网"><a href="#破解Web校园网" class="headerlink" title="破解Web校园网"></a>破解Web校园网</h1><blockquote>
+<p>putty用来登陆路由器后台 下方百度云链接打开可以下载</p>
+<p>WinSCP可以上传脚本到路由器   下方百度云链接打开可以下载</p>
+<p>百度云资源里的OpenWrt固件是适用于K2的 （官方版本，英文界面）</p>
+</blockquote>
+<p><a href="https://pan.baidu.com/s/15C-GkWNPfrpeziyup_IbnQ" target="_blank" rel="noopener">百度云链接:</a> 密码:<code> h38h</code></p>
+<p><a href="https://www.bilibili.com/video/BV1ea411c7te/" target="_blank" rel="noopener">b站视频教程</a></p>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1ea411c7te&cid=252581465&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+
+<h2 id="1-准备一个已经刷好不死鸟的路由器"><a href="#1-准备一个已经刷好不死鸟的路由器" class="headerlink" title="1.准备一个已经刷好不死鸟的路由器"></a>1.准备一个已经刷好不死鸟的路由器</h2><p>K2 ，K2P ，小米， 新三路由等等 都可以</p>
 <h2 id="2-去OpenWrt官网下载对应自己路由版本的固件"><a href="#2-去OpenWrt官网下载对应自己路由版本的固件" class="headerlink" title="2.去OpenWrt官网下载对应自己路由版本的固件"></a>2.去OpenWrt官网下载对应自己路由版本的固件</h2><h2 id="3-将固件刷好"><a href="#3-将固件刷好" class="headerlink" title="3.将固件刷好"></a>3.将固件刷好</h2><p><code>前面3个步骤不会的，可以度娘</code></p>
 <h2 id="4-通过SSH登陆路由器"><a href="#4-通过SSH登陆路由器" class="headerlink" title="4.通过SSH登陆路由器"></a>4.通过SSH登陆路由器</h2><p>1.<code>ssh root@192.168.1.1</code></p>
 <p>2.<code>opkg update</code></p>
@@ -477,6 +486,8 @@ iptables -t nat -I http_ua_drop -m mac --mac-source 86:4E:D5:73:F7:60 -j RETURN
 iptables -t nat -I http_ua_drop -m mac --mac-source B6:28:D1:E2:9D:D9 -j RETURN 
 iptables -t nat -A http_ua_drop -p tcp -j REDIRECT --to-port 8118 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="7-同步时间"><a href="#7-同步时间" class="headerlink" title="7.同步时间"></a>7.同步时间</h2><p><img src="https://i.loli.net/2020/11/01/aPuvhVdHBc67nQE.jpg"></p>
+<p>参考来自<a href="https://www.cnblogs.com/cloudbird/archive/2019/02/20/10406936.html" target="_blank" rel="noopener">https://www.cnblogs.com/cloudbird/archive/2019/02/20/10406936.html</a></p>
+<p>s</p>
 
             </div>
             <hr/>
