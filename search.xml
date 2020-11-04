@@ -282,9 +282,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 命令 </tag>
             
         </tags>
       
@@ -309,9 +309,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 命令 </tag>
             
         </tags>
       
@@ -336,9 +336,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> 踩坑记录 </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
@@ -373,8 +373,8 @@
     
     <entry>
       <title>编译原理第二章课后作业</title>
-      <link href="2020/10/13/gen-ju-zheng-gui-shi-gou-zao-bu-que-ding-you-xian-ji-nfa/"/>
-      <url>2020/10/13/gen-ju-zheng-gui-shi-gou-zao-bu-que-ding-you-xian-ji-nfa/</url>
+      <link href="2020/10/13/bian-yi-yuan-li-di-er-zhang-ke-hou-zuo-ye/"/>
+      <url>2020/10/13/bian-yi-yuan-li-di-er-zhang-ke-hou-zuo-ye/</url>
       
         <content type="html"><![CDATA[<h1 id="编译原理第二章课后作业"><a href="#编译原理第二章课后作业" class="headerlink" title="编译原理第二章课后作业"></a>编译原理第二章课后作业</h1><h2 id="习题2-7"><a href="#习题2-7" class="headerlink" title="习题2.7"></a>习题2.7</h2><h3 id="课本教材：编译原理（第二版）陈意云"><a href="#课本教材：编译原理（第二版）陈意云" class="headerlink" title="课本教材：编译原理（第二版）陈意云"></a>课本教材：编译原理（第二版）陈意云</h3><h3 id="算法2-4-从正规式构造NFA"><a href="#算法2-4-从正规式构造NFA" class="headerlink" title="算法2.4 从正规式构造NFA"></a>算法2.4 从正规式构造NFA</h3><h4 id="1-NFA的性质"><a href="#1-NFA的性质" class="headerlink" title="1-NFA的性质"></a>1-NFA的性质</h4><ol><li>只有一个终止状态</li><li>没有边进入开始状态</li><li>没有边离开终止状态</li></ol><p><img src="https://i.loli.net/2020/10/13/GXTQ7F2bHodckCU.png"></p><p><img src="https://i.loli.net/2020/10/13/IecRxOwpEJHhdMP.png"></p><h4 id="2-小总结"><a href="#2-小总结" class="headerlink" title="2-小总结"></a>2-小总结</h4><ol><li>｜状态合并的时候会添加新的开始状态和结束状态</li><li>‘*‘ （星闭包运算）状态合并的时候会添加新的开始状态和结束状态</li><li>连接运算的时候要进行状态合并</li></ol><h4 id="3-习题"><a href="#3-习题" class="headerlink" title="3-习题"></a>3-习题</h4><p><img src="https://i.loli.net/2020/10/13/Ws35zo1Tjyl6APh.png" alt="习题2.7"></p><p><img src="https://i.loli.net/2020/10/13/SwQrVkhe7gUPdc9.png" alt="习题2.7"></p><h4 id="习题答案"><a href="#习题答案" class="headerlink" title="习题答案"></a>习题答案</h4><h4 id="a"><a href="#a" class="headerlink" title="(a)"></a>(a)</h4><p><img src="https://i.loli.net/2020/10/17/SnEfGtZlKbCuqNy.jpg"></p><h4 id="b"><a href="#b" class="headerlink" title="(b)"></a>(b)</h4><p><img src="https://i.loli.net/2020/10/17/lGEQYn8Hs6bkwO2.jpg"></p><h4 id="c"><a href="#c" class="headerlink" title="(c)"></a>(c)</h4><p><img src="https://i.loli.net/2020/10/17/TbuijE3yx94zmNC.jpg"></p><h4 id="d"><a href="#d" class="headerlink" title="(d)"></a>(d)</h4><p><img src="https://i.loli.net/2020/10/17/qB6wacyxR1UskZe.jpg"></p><h2 id="习题2-3"><a href="#习题2-3" class="headerlink" title="习题2.3"></a>习题2.3</h2><p><img src="https://i.loli.net/2020/11/02/MjxleIiHuPza2GA.png" alt="习题2.3"></p><h2 id="习题2-4"><a href="#习题2-4" class="headerlink" title="习题2.4"></a>习题2.4</h2><p><img src="https://i.loli.net/2020/11/02/PoslebBKV2dR6EC.png" alt="习题2.4"></p><h2 id="习题2-12"><a href="#习题2-12" class="headerlink" title="习题2.12"></a>习题2.12</h2><p><img src="https://i.loli.net/2020/11/02/Ngyh3IHLczp1uMf.png" alt="习题2.12"></p><p><img src="https://i.loli.net/2020/11/02/rtSsRF4G8hvYipE.png" alt="习题2.12"></p><h2 id="习题2-13"><a href="#习题2-13" class="headerlink" title="习题2.13"></a>习题2.13</h2><p><img src="https://i.loli.net/2020/11/02/KqMtJ3IZDTYdP95.png" alt="习题2.13"></p><blockquote><p>[]如果答案有误，请联系qq<code>1031364436</code>  电话☎️<code>18720328626</code></p></blockquote><h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
       
