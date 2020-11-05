@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-04
+                    2020-11-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    928
+                    903
                 </div>
                 
 
@@ -480,11 +480,10 @@ iptables -t nat -I PREROUTING -p tcp --dport 80 -j http_ua_drop
 iptables -t nat -A http_ua_drop -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A http_ua_drop -d 127.0.0.0/8 -j RETURN
 iptables -t nat -A http_ua_drop -d 192.168.0.0/16 -j RETURN
-iptables -t nat -I http_ua_drop -m mac --mac-source 00:5B:94:A5:57:7C -j RETURN 
-iptables -t nat -I http_ua_drop -m mac --mac-source D0:C6:37:B9:3B:0B -j RETURN 
-iptables -t nat -I http_ua_drop -m mac --mac-source 86:4E:D5:73:F7:60 -j RETURN 
-iptables -t nat -I http_ua_drop -m mac --mac-source B6:28:D1:E2:9D:D9 -j RETURN 
-iptables -t nat -A http_ua_drop -p tcp -j REDIRECT --to-port 8118 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+iptables -t nat -I http_ua_drop -m mac --mac-source **:**:**:**:**:** -j RETURN 
+iptables -t nat -A http_ua_drop -p tcp -j REDIRECT --to-port 8118 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>iptables -t nat -I http_ua_drop -m mac --mac-source **:**:**:**:**:** -j RETURN </code></p>
+<p>这条规则的意思是让该mac地址设备流量不走代理</p>
 <h2 id="7-同步时间"><a href="#7-同步时间" class="headerlink" title="7.同步时间"></a>7.同步时间</h2><p><img src="https://i.loli.net/2020/11/01/aPuvhVdHBc67nQE.jpg"></p>
 <p>参考来自<a href="https://www.cnblogs.com/cloudbird/archive/2019/02/20/10406936.html" target="_blank" rel="noopener">https://www.cnblogs.com/cloudbird/archive/2019/02/20/10406936.html</a></p>
 
