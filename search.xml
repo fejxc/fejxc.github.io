@@ -133,31 +133,6 @@
     
     
     <entry>
-      <title>VUE使用axios数据请求时报错 TypeError Cannot set property &#39;xxxx&#39; of undefined 的解决办法</title>
-      <link href="2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/"/>
-      <url>2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/</url>
-      
-        <content type="html"><![CDATA[<h1 id="vue中使用bootstrap的两种方法"><a href="#vue中使用bootstrap的两种方法" class="headerlink" title="vue中使用bootstrap的两种方法"></a>vue中使用bootstrap的两种方法</h1><h1 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h1><p>在index.html页面中引入即可</p><h1 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h1><p>npm i bootstrap –save下载以后<br> 在src/main.js中导入即可：<br> <code>import &#39;bootstrap/dist/css/bootstrap.min.css&#39;</code></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Vue </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>openWrt卸载已经安装的ipk安装包教程</title>
       <link href="2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/"/>
       <url>2020/10/28/openwrt-xie-zai-yi-jing-an-zhuang-de-ipk-an-zhuang-bao-jiao-cheng/</url>
@@ -175,6 +150,31 @@
         <tags>
             
             <tag> 路由器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>VUE使用axios数据请求时报错 TypeError Cannot set property &#39;xxxx&#39; of undefined 的解决办法</title>
+      <link href="2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/"/>
+      <url>2020/10/28/vue-zhong-shi-yong-bootstrap-de-liang-chong-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h1 id="vue中使用bootstrap的两种方法"><a href="#vue中使用bootstrap的两种方法" class="headerlink" title="vue中使用bootstrap的两种方法"></a>vue中使用bootstrap的两种方法</h1><h1 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h1><p>在index.html页面中引入即可</p><h1 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h1><p>npm i bootstrap –save下载以后<br> 在src/main.js中导入即可：<br> <code>import &#39;bootstrap/dist/css/bootstrap.min.css&#39;</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
             
         </tags>
       
