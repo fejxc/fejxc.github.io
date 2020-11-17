@@ -380,7 +380,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Shiro-实战教程"><a href="#Shiro-实战教程" class="headerlink" title="Shiro 实战教程"></a>Shiro 实战教程</h1><p>![image-20200520220106539](Shiro 实战教程.assets/image-20200520220106539.png)</p>
+                <h1 id="Shiro-实战教程"><a href="#Shiro-实战教程" class="headerlink" title="Shiro 实战教程"></a>Shiro 实战教程</h1><p>![image-20200520220106539](Shiro 实战教程/image-20200520220106539.png)</p>
 <h2 id="1-权限的管理"><a href="#1-权限的管理" class="headerlink" title="1.权限的管理"></a>1.权限的管理</h2><h3 id="1-1-什么是权限管理"><a href="#1-1-什么是权限管理" class="headerlink" title="1.1 什么是权限管理"></a>1.1 什么是权限管理</h3><p>基本上涉及到用户参与的系统都要进行权限管理，权限管理属于系统安全的范畴，权限管理实现<code>对用户访问系统的控制</code>，按照安全规则或者<a href="http://baike.baidu.com/view/160028.htm" target="_blank" rel="noopener">安全策略</a>控制用户可以访问而且只能访问自己被授权的资源。</p>
 <p>权限管理包括用户<code>身份认证</code>和<code>授权</code>两部分，简称<code>认证授权</code>。对于需要访问控制的资源用户首先经过身份认证，认证通过后用户具有该资源的访问权限方可访问。</p>
 <h3 id="1-2-什么是身份认证"><a href="#1-2-什么是身份认证" class="headerlink" title="1.2 什么是身份认证"></a>1.2 什么是身份认证</h3><p><code>身份认证</code>，就是判断一个用户是否为合法用户的处理过程。最常用的简单身份认证方式是系统通过核对用户输入的用户名和口令，看其是否与系统中存储的该用户的用户名和口令一致，来判断用户身份是否正确。对于采用<a href="http://baike.baidu.com/view/5628.htm" target="_blank" rel="noopener">指纹</a>等系统，则出示指纹；对于硬件Key等刷卡系统，则需要刷卡。</p>
@@ -392,7 +392,7 @@
 </blockquote>
 <p><code>Shiro是apache旗下一个开源框架，它将软件系统的安全认证相关的功能抽取出来，实现用户身份认证，权限授权、加密、会话管理等功能，组成了一个通用的安全认证框架。</code></p>
 <hr>
-<h2 id="3-shiro的核心架构"><a href="#3-shiro的核心架构" class="headerlink" title="3.shiro的核心架构"></a>3.shiro的核心架构</h2><p>![image-20200520220413190](Shiro 实战教程.assets/image-20200520220413190.png)</p>
+<h2 id="3-shiro的核心架构"><a href="#3-shiro的核心架构" class="headerlink" title="3.shiro的核心架构"></a>3.shiro的核心架构</h2><p>![image-20200520220413190](Shiro 实战教程/image-20200520220413190.png)</p>
 <h3 id="3-1-Subject"><a href="#3-1-Subject" class="headerlink" title="3.1 Subject"></a>3.1 Subject</h3><p><code>Subject即主体</code>，外部应用与subject进行交互，subject记录了当前操作用户，将用户的概念理解为当前操作的主体，可能是一个通过浏览器请求的用户，也可能是一个运行的程序。    Subject在shiro中是一个接口，接口中定义了很多认证授相关的方法，外部程序通过subject进行认证授，而subject是通过SecurityManager安全管理器进行认证授权</p>
 <h3 id="3-2-SecurityManager"><a href="#3-2-SecurityManager" class="headerlink" title="3.2 SecurityManager"></a>3.2 SecurityManager</h3><p><code>SecurityManager即安全管理器</code>，对全部的subject进行安全管理，它是shiro的核心，负责对所有的subject进行安全管理。通过SecurityManager可以完成subject的认证、授权等，实质上SecurityManager是通过Authenticator进行认证，通过Authorizer进行授权，通过SessionManager进行会话管理等。</p>
 <p><code>SecurityManager是一个接口，继承了Authenticator, Authorizer, SessionManager这三个接口。</code></p>
@@ -400,12 +400,12 @@
 <h3 id="3-4-Authorizer"><a href="#3-4-Authorizer" class="headerlink" title="3.4 Authorizer"></a>3.4 Authorizer</h3><p><code>Authorizer即授权器</code>，用户通过认证器认证通过，在访问功能时需要通过授权器判断用户是否有此功能的操作权限。</p>
 <h3 id="3-5-Realm"><a href="#3-5-Realm" class="headerlink" title="3.5 Realm"></a>3.5 Realm</h3><p><code>Realm即领域</code>，相当于datasource数据源，securityManager进行安全认证需要通过Realm获取用户权限数据，比如：如果用户身份数据在数据库那么realm就需要从数据库获取用户身份信息。</p>
 <ul>
-<li>​    注意：不要把realm理解成只是从数据源取数据，在realm中还有认证授权校验的相关的代码。</li>
+<li>​ 注意：不要把realm理解成只是从数据源取数据，在realm中还有认证授权校验的相关的代码。</li>
 </ul>
 <h3 id="3-6-SessionManager"><a href="#3-6-SessionManager" class="headerlink" title="3.6 SessionManager"></a>3.6 SessionManager</h3><p><code>sessionManager即会话管理</code>，shiro框架定义了一套会话管理，它不依赖web容器的session，所以shiro可以使用在非web应用上，也可以将分布式应用的会话集中在一点管理，此特性可使它实现单点登录。</p>
 <h3 id="3-7-SessionDAO"><a href="#3-7-SessionDAO" class="headerlink" title="3.7 SessionDAO"></a>3.7 SessionDAO</h3><p><code>SessionDAO即会话dao</code>，是对session会话操作的一套接口，比如要将session存储到数据库，可以通过jdbc将会话存储到数据库。</p>
 <h3 id="3-8-CacheManager"><a href="#3-8-CacheManager" class="headerlink" title="3.8 CacheManager"></a>3.8 CacheManager</h3><p><code>CacheManager即缓存管理</code>，将用户权限数据存储在缓存，这样可以提高性能。</p>
-<h3 id="3-9-Cryptography"><a href="#3-9-Cryptography" class="headerlink" title="3.9 Cryptography"></a>3.9 Cryptography</h3><p>​    <code>Cryptography即密码管理</code>，shiro提供了一套加密/解密的组件，方便开发。比如提供常用的散列、加/解密等功能。</p>
+<h3 id="3-9-Cryptography"><a href="#3-9-Cryptography" class="headerlink" title="3.9 Cryptography"></a>3.9 Cryptography</h3><p>​   <code>Cryptography即密码管理</code>，shiro提供了一套加密/解密的组件，方便开发。比如提供常用的散列、加/解密等功能。</p>
 <hr>
 <h2 id="4-shiro中的认证"><a href="#4-shiro中的认证" class="headerlink" title="4. shiro中的认证"></a>4. shiro中的认证</h2><h3 id="4-1-认证"><a href="#4-1-认证" class="headerlink" title="4.1 认证"></a>4.1 认证</h3><p>身份认证，就是判断一个用户是否为合法用户的处理过程。最常用的简单身份认证方式是系统通过核对用户输入的用户名和口令，看其是否与系统中存储的该用户的用户名和口令一致，来判断用户身份是否正确。</p>
 <h3 id="4-2-shiro中认证的关键对象"><a href="#4-2-shiro中认证的关键对象" class="headerlink" title="4.2 shiro中认证的关键对象"></a>4.2 shiro中认证的关键对象</h3><ul>
@@ -420,7 +420,7 @@
 <li><strong>credential：凭证信息</strong></li>
 </ul>
 <p>是只有主体自己知道的安全信息，如密码、证书等。</p>
-<h3 id="4-3-认证流程"><a href="#4-3-认证流程" class="headerlink" title="4.3 认证流程"></a>4.3 认证流程</h3><p>![image-20200521204452288](Shiro 实战教程.assets/image-20200521204452288.png)</p>
+<h3 id="4-3-认证流程"><a href="#4-3-认证流程" class="headerlink" title="4.3 认证流程"></a>4.3 认证流程</h3><p>![image-20200521204452288](Shiro 实战教程/image-20200521204452288.png)</p>
 <h3 id="4-4-认证的开发"><a href="#4-4-认证的开发" class="headerlink" title="4.4 认证的开发"></a>4.4 认证的开发</h3><h5 id="1-创建项目并引入依赖"><a href="#1-创建项目并引入依赖" class="headerlink" title="1. 创建项目并引入依赖"></a>1. 创建项目并引入依赖</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.shiro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>shiro-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
@@ -429,7 +429,7 @@
 <h5 id="2-引入shiro配置文件并加入如下配置"><a href="#2-引入shiro配置文件并加入如下配置" class="headerlink" title="2. 引入shiro配置文件并加入如下配置"></a>2. 引入shiro配置文件并加入如下配置</h5><pre class="line-numbers language-ini"><code class="language-ini"><span class="token selector">[users]</span>
 <span class="token constant">xiaochen</span><span class="token attr-value"><span class="token punctuation">=</span>123</span>
 <span class="token constant">zhangsan</span><span class="token attr-value"><span class="token punctuation">=</span>456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200521205219719](Shiro 实战教程.assets/image-20200521205219719.png)</p>
+<p>![image-20200521205219719](Shiro 实战教程/image-20200521205219719.png)</p>
 <h5 id="3-开发认证代码"><a href="#3-开发认证代码" class="headerlink" title="3.开发认证代码"></a>3.开发认证代码</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticator</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//创建securityManager</span>
@@ -466,8 +466,8 @@
 </ul>
 <hr>
 <h3 id="4-5-自定义Realm"><a href="#4-5-自定义Realm" class="headerlink" title="4.5 自定义Realm"></a>4.5 自定义Realm</h3><p>上边的程序使用的是Shiro自带的IniRealm，IniRealm从ini配置文件中读取用户的信息，大部分情况下需要从系统的数据库中读取用户信息，所以需要自定义realm。</p>
-<h5 id="1-shiro提供的Realm"><a href="#1-shiro提供的Realm" class="headerlink" title="1.shiro提供的Realm"></a>1.shiro提供的Realm</h5><p>![image-20200521212728541](Shiro 实战教程.assets/image-20200521212728541.png)</p>
-<h5 id="2-根据认证源码认证使用的是SimpleAccountRealm"><a href="#2-根据认证源码认证使用的是SimpleAccountRealm" class="headerlink" title="2.根据认证源码认证使用的是SimpleAccountRealm"></a>2.根据认证源码认证使用的是SimpleAccountRealm</h5><p>![image-20200521213451998](Shiro 实战教程.assets/image-20200521213451998.png)</p>
+<h5 id="1-shiro提供的Realm"><a href="#1-shiro提供的Realm" class="headerlink" title="1.shiro提供的Realm"></a>1.shiro提供的Realm</h5><p>![image-20200521212728541](Shiro 实战教程/image-20200521212728541.png)</p>
+<h5 id="2-根据认证源码认证使用的是SimpleAccountRealm"><a href="#2-根据认证源码认证使用的是SimpleAccountRealm" class="headerlink" title="2.根据认证源码认证使用的是SimpleAccountRealm"></a>2.根据认证源码认证使用的是SimpleAccountRealm</h5><p>![image-20200521213451998](Shiro 实战教程/image-20200521213451998.png)</p>
 <p><code>SimpleAccountRealm的部分源码中有两个方法一个是 认证 一个是 授权</code>,</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleAccountRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//.......省略</span>
@@ -609,7 +609,7 @@
 <p><code>Who，即主体（Subject）</code>，主体需要访问系统中的资源。</p>
 <p><code>What，即资源（Resource)</code>，如系统菜单、页面、按钮、类方法、系统商品信息等。资源包括<code>资源类型</code>和<code>资源实例</code>，比如<code>商品信息为资源类型</code>，类型为t01的商品为<code>资源实例</code>，编号为001的商品信息也属于资源实例。</p>
 <p><code>How，权限/许可（Permission)</code>，规定了主体对资源的操作许可，权限离开资源没有意义，如用户查询权限、用户添加权限、某个类方法的调用权限、编号为001用户的修改权限等，通过权限可知主体对哪些资源都有哪些操作许可。</p>
-<h3 id="5-3-授权流程"><a href="#5-3-授权流程" class="headerlink" title="5.3 授权流程"></a>5.3 授权流程</h3><p>![image-20200521230705964](Shiro 实战教程.assets/image-20200521230705964.png)</p>
+<h3 id="5-3-授权流程"><a href="#5-3-授权流程" class="headerlink" title="5.3 授权流程"></a>5.3 授权流程</h3><p>![image-20200521230705964](Shiro 实战教程/image-20200521230705964.png)</p>
 <h3 id="5-4-授权方式"><a href="#5-4-授权方式" class="headerlink" title="5.4 授权方式"></a>5.4 授权方式</h3><ul>
 <li><p><strong>基于角色的访问控制</strong></p>
 <ul>
@@ -633,7 +633,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="5-5-权限字符串"><a href="#5-5-权限字符串" class="headerlink" title="5.5 权限字符串"></a>5.5 权限字符串</h3><p>​        权限字符串的规则是：<strong>资源标识符：操作：资源实例标识符</strong>，意思是对哪个资源的哪个实例具有什么操作，“:”是资源/操作/实例的分割符，权限字符串也可以使用*通配符。</p>
+<h3 id="5-5-权限字符串"><a href="#5-5-权限字符串" class="headerlink" title="5.5 权限字符串"></a>5.5 权限字符串</h3><p>​       权限字符串的规则是：<strong>资源标识符：操作：资源实例标识符</strong>，意思是对哪个资源的哪个实例具有什么操作，“:”是资源/操作/实例的分割符，权限字符串也可以使用*通配符。</p>
 <p>例子：</p>
 <ul>
 <li>用户创建权限：user:create，或user:create:*</li>
@@ -644,21 +644,21 @@
 <li><p><strong>编程式</strong></p>
 <pre class="line-numbers language-java"><code class="language-java">Subject subject <span class="token operator">=</span> SecurityUtils<span class="token punctuation">.</span><span class="token function">getSubject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span>subject<span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span>“admin”<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//有权限</span>
+  <span class="token comment" spellcheck="true">//有权限</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//无权限</span>
+  <span class="token comment" spellcheck="true">//无权限</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><strong>注解式</strong></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequiresRoles</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//有权限</span>
+  <span class="token comment" spellcheck="true">//有权限</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><strong>标签式</strong></p>
 <pre class="line-numbers language-jsp"><code class="language-jsp">JSP/GSP 标签：在JSP/GSP 页面通过相应的标签完成：
 <shiro:hasRole name="admin">
-    <!— 有权限—>
+  <!— 有权限—>
 </shiro:hasRole>
 注意: Thymeleaf 中使用shiro需要额外集成!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
@@ -737,14 +737,14 @@
 
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="6-整合SpringBoot项目实战"><a href="#6-整合SpringBoot项目实战" class="headerlink" title="6.整合SpringBoot项目实战"></a>6.整合SpringBoot项目实战</h2><h3 id="6-0-整合思路"><a href="#6-0-整合思路" class="headerlink" title="6.0 整合思路"></a>6.0 整合思路</h3><p>![image-20200525185630463](Shiro 实战教程.assets/image-20200525185630463.png)</p>
-<h3 id="6-1-创建springboot项目"><a href="#6-1-创建springboot项目" class="headerlink" title="6.1 创建springboot项目"></a>6.1 创建springboot项目</h3><p>![image-20200523100842032](Shiro 实战教程.assets/image-20200523100842032.png)</p>
+<h2 id="6-整合SpringBoot项目实战"><a href="#6-整合SpringBoot项目实战" class="headerlink" title="6.整合SpringBoot项目实战"></a>6.整合SpringBoot项目实战</h2><h3 id="6-0-整合思路"><a href="#6-0-整合思路" class="headerlink" title="6.0 整合思路"></a>6.0 整合思路</h3><p>![image-20200525185630463](Shiro 实战教程/image-20200525185630463.png)</p>
+<h3 id="6-1-创建springboot项目"><a href="#6-1-创建springboot项目" class="headerlink" title="6.1 创建springboot项目"></a>6.1 创建springboot项目</h3><p>![image-20200523100842032](Shiro 实战教程/image-20200523100842032.png)</p>
 <h3 id="6-2-引入shiro依赖"><a href="#6-2-引入shiro依赖" class="headerlink" title="6.2 引入shiro依赖"></a>6.2 引入shiro依赖</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.shiro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>shiro-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="6-3-配置shiro环境"><a href="#6-3-配置shiro环境" class="headerlink" title="6.3 配置shiro环境"></a>6.3 配置shiro环境</h3><h5 id="0-创建配置类"><a href="#0-创建配置类" class="headerlink" title="0.创建配置类"></a>0.创建配置类</h5><p>![image-20200523101256446](Shiro 实战教程.assets/image-20200523101256446.png)</p>
+<h3 id="6-3-配置shiro环境"><a href="#6-3-配置shiro环境" class="headerlink" title="6.3 配置shiro环境"></a>6.3 配置shiro环境</h3><h5 id="0-创建配置类"><a href="#0-创建配置类" class="headerlink" title="0.创建配置类"></a>0.创建配置类</h5><p>![image-20200523101256446](Shiro 实战教程/image-20200523101256446.png)</p>
 <h5 id="1-配置shiroFilterFactoryBean"><a href="#1-配置shiroFilterFactoryBean" class="headerlink" title="1.配置shiroFilterFactoryBean"></a>1.配置shiroFilterFactoryBean</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> ShiroFilterFactoryBean <span class="token function">getShiroFilterFactoryBean</span><span class="token punctuation">(</span>SecurityManager securityManager<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">//创建shiro的filter</span>
@@ -760,7 +760,7 @@
   defaultWebSecurityManager<span class="token punctuation">.</span><span class="token function">setRealm</span><span class="token punctuation">(</span>realm<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> defaultWebSecurityManager<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="3-创建自定义realm"><a href="#3-创建自定义realm" class="headerlink" title="3.创建自定义realm"></a>3.创建自定义realm</h5><p>![image-20200523101402213](Shiro 实战教程.assets/image-20200523101402213.png)</p>
+<h5 id="3-创建自定义realm"><a href="#3-创建自定义realm" class="headerlink" title="3.创建自定义realm"></a>3.创建自定义realm</h5><p>![image-20200523101402213](Shiro 实战教程/image-20200523101402213.png)</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//处理授权</span>
     <span class="token annotation punctuation">@Override</span>
@@ -770,7 +770,7 @@
         <span class="token comment" spellcheck="true">//处理认证</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken token<span class="token punctuation">)</span> <span class="token keyword">throws</span> 
-                                                                                                                                              AuthenticationException <span class="token punctuation">{</span>
+                                                                                                                                            AuthenticationException <span class="token punctuation">{</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -787,9 +787,9 @@
         <span class="token keyword">return</span> <span class="token string">"index"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200523101733157](Shiro 实战教程.assets/image-20200523101733157.png)</p>
-<p>![image-20200523101857528](Shiro 实战教程.assets/image-20200523101857528.png)</p>
-<h5 id="6-启动springboot应用访问index"><a href="#6-启动springboot应用访问index" class="headerlink" title="6.启动springboot应用访问index"></a>6.启动springboot应用访问index</h5><p>![image-20200523101955121](Shiro 实战教程.assets/image-20200523101955121.png)</p>
+<p>![image-20200523101733157](Shiro 实战教程/image-20200523101733157.png)</p>
+<p>![image-20200523101857528](Shiro 实战教程/image-20200523101857528.png)</p>
+<h5 id="6-启动springboot应用访问index"><a href="#6-启动springboot应用访问index" class="headerlink" title="6.启动springboot应用访问index"></a>6.启动springboot应用访问index</h5><p>![image-20200523101955121](Shiro 实战教程/image-20200523101955121.png)</p>
 <ul>
 <li>注意:<ul>
 <li><strong>默认在配置好shiro环境后默认环境中没有对项目中任何资源进行权限控制,所有现在项目中所有资源都可以通过路径访问</strong></li>
@@ -804,13 +804,13 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"/**"</span><span class="token punctuation">,</span><span class="token string">"authc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//配置认证和授权规则</span>
 shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setFilterChainDefinitionMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200523102303320](Shiro 实战教程.assets/image-20200523102303320.png)</p>
+<p>![image-20200523102303320](Shiro 实战教程/image-20200523102303320.png)</p>
 <ul>
 <li><strong>/**</strong> 代表拦截项目中一切资源  <strong>authc</strong> 代表shiro中的一个filter的别名,详细内容看文档的shirofilter列表</li>
 </ul>
 </li>
 </ul>
-<h5 id="8-重启项目访问查看"><a href="#8-重启项目访问查看" class="headerlink" title="8.重启项目访问查看"></a>8.重启项目访问查看</h5><p>![image-20200523102831750](Shiro 实战教程.assets/image-20200523102831750.png)</p>
+<h5 id="8-重启项目访问查看"><a href="#8-重启项目访问查看" class="headerlink" title="8.重启项目访问查看"></a>8.重启项目访问查看</h5><p>![image-20200523102831750](Shiro 实战教程/image-20200523102831750.png)</p>
 <h3 id="6-4-常见过滤器"><a href="#6-4-常见过滤器" class="headerlink" title="6.4 常见过滤器"></a>6.4 常见过滤器</h3><ul>
 <li>注意: <strong>shiro提供和多个默认的过滤器，我们可以用这些过滤器来配置控制指定url的权限：</strong></li>
 </ul>
@@ -878,7 +878,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 <td>需要已登录或“记住我”的用户才能访问</td>
 </tr>
 </tbody></table>
-<h3 id="6-5-认证实现"><a href="#6-5-认证实现" class="headerlink" title="6.5 认证实现"></a>6.5 认证实现</h3><h5 id="1-在login-jsp中开发认证界面"><a href="#1-在login-jsp中开发认证界面" class="headerlink" title="1. 在login.jsp中开发认证界面"></a>1. 在login.jsp中开发认证界面</h5><p>![image-20200526082345776](Shiro 实战教程.assets/image-20200526082345776.png)</p>
+<h3 id="6-5-认证实现"><a href="#6-5-认证实现" class="headerlink" title="6.5 认证实现"></a>6.5 认证实现</h3><h5 id="1-在login-jsp中开发认证界面"><a href="#1-在login-jsp中开发认证界面" class="headerlink" title="1. 在login.jsp中开发认证界面"></a>1. 在login.jsp中开发认证界面</h5><p>![image-20200526082345776](Shiro 实战教程/image-20200526082345776.png)</p>
 <pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${pageContext.request.contextPath}/user/login<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   用户名:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
   密码  : <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
@@ -923,13 +923,13 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="4-启动项目以realm中定义静态数据进行认证"><a href="#4-启动项目以realm中定义静态数据进行认证" class="headerlink" title="4.启动项目以realm中定义静态数据进行认证"></a>4.启动项目以realm中定义静态数据进行认证</h5><p>![image-20200526082550343](Shiro 实战教程.assets/image-20200526082550343.png)</p>
-<p>![image-20200526082639318](Shiro 实战教程.assets/image-20200526082639318.png)</p>
-<p>![image-20200526082620621](Shiro 实战教程.assets/image-20200526082620621.png)</p>
+<h5 id="4-启动项目以realm中定义静态数据进行认证"><a href="#4-启动项目以realm中定义静态数据进行认证" class="headerlink" title="4.启动项目以realm中定义静态数据进行认证"></a>4.启动项目以realm中定义静态数据进行认证</h5><p>![image-20200526082550343](Shiro 实战教程/image-20200526082550343.png)</p>
+<p>![image-20200526082639318](Shiro 实战教程/image-20200526082639318.png)</p>
+<p>![image-20200526082620621](Shiro 实战教程/image-20200526082620621.png)</p>
 <ul>
 <li><strong>认证功能没有md5和随机盐的认证就实现啦</strong></li>
 </ul>
-<h3 id="6-6-退出认证"><a href="#6-6-退出认证" class="headerlink" title="6.6 退出认证"></a>6.6 退出认证</h3><h5 id="1-开发页面退出连接"><a href="#1-开发页面退出连接" class="headerlink" title="1.开发页面退出连接"></a>1.开发页面退出连接</h5><p>![image-20200526082851800](Shiro 实战教程.assets/image-20200526082851800.png)</p>
+<h3 id="6-6-退出认证"><a href="#6-6-退出认证" class="headerlink" title="6.6 退出认证"></a>6.6 退出认证</h3><h5 id="1-开发页面退出连接"><a href="#1-开发页面退出连接" class="headerlink" title="1.开发页面退出连接"></a>1.开发页面退出连接</h5><p>![image-20200526082851800](Shiro 实战教程/image-20200526082851800.png)</p>
 <h5 id="2-开发controller-1"><a href="#2-开发controller-1" class="headerlink" title="2.开发controller"></a>2.开发controller</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
@@ -944,15 +944,15 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
     <span class="token keyword">return</span> <span class="token string">"redirect:/login.jsp"</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="3-修改退出连接访问退出路径"><a href="#3-修改退出连接访问退出路径" class="headerlink" title="3.修改退出连接访问退出路径"></a>3.修改退出连接访问退出路径</h5><p>![image-20200526083056062](Shiro 实战教程.assets/image-20200526083056062.png)</p>
-<h5 id="4-退出之后访问受限资源立即返回认证界面"><a href="#4-退出之后访问受限资源立即返回认证界面" class="headerlink" title="4.退出之后访问受限资源立即返回认证界面"></a>4.退出之后访问受限资源立即返回认证界面</h5><p>![image-20200526083148253](Shiro 实战教程.assets/image-20200526083148253.png)</p>
+<h5 id="3-修改退出连接访问退出路径"><a href="#3-修改退出连接访问退出路径" class="headerlink" title="3.修改退出连接访问退出路径"></a>3.修改退出连接访问退出路径</h5><p>![image-20200526083056062](Shiro 实战教程/image-20200526083056062.png)</p>
+<h5 id="4-退出之后访问受限资源立即返回认证界面"><a href="#4-退出之后访问受限资源立即返回认证界面" class="headerlink" title="4.退出之后访问受限资源立即返回认证界面"></a>4.退出之后访问受限资源立即返回认证界面</h5><p>![image-20200526083148253](Shiro 实战教程/image-20200526083148253.png)</p>
 <h3 id="6-7-MD5、Salt的认证实现"><a href="#6-7-MD5、Salt的认证实现" class="headerlink" title="6.7 MD5、Salt的认证实现"></a>6.7 MD5、Salt的认证实现</h3><h4 id="1-开发数据库注册"><a href="#1-开发数据库注册" class="headerlink" title="1.开发数据库注册"></a>1.开发数据库注册</h4><h5 id="0-开发注册界面"><a href="#0-开发注册界面" class="headerlink" title="0.开发注册界面"></a>0.开发注册界面</h5><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>用户注册<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${pageContext.request.contextPath}/user/register<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   用户名:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
   密码  : <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>立即注册<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200526200230982](Shiro 实战教程.assets/image-20200526200230982.png)</p>
+<p>![image-20200526200230982](Shiro 实战教程/image-20200526200230982.png)</p>
 <h5 id="1-创建数据表结构"><a href="#1-创建数据表结构" class="headerlink" title="1.创建数据表结构"></a>1.创建数据表结构</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SET</span> NAMES utf8mb4<span class="token punctuation">;</span>
 <span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">-- ----------------------------</span>
@@ -968,7 +968,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 <span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span>
 
 <span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200526200425569](Shiro 实战教程.assets/image-20200526200425569.png)</p>
+<p>![image-20200526200425569](Shiro 实战教程/image-20200526200425569.png)</p>
 <h5 id="2-项目引入依赖"><a href="#2-项目引入依赖" class="headerlink" title="2.项目引入依赖"></a>2.项目引入依赖</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--mybatis相关依赖--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis.spring.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -1007,7 +1007,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 <span class="token attr-name">mybatis.type-aliases-package</span><span class="token punctuation">=</span><span class="token attr-value">com.baizhi.springboot_jsp_shiro.entity</span>
 <span class="token attr-name">mybatis.mapper-locations</span><span class="token punctuation">=</span><span class="token attr-value">classpath:com/baizhi/mapper/*.xml</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200526200558712](Shiro 实战教程.assets/image-20200526200558712.png)</p>
+<p>![image-20200526200558712](Shiro 实战教程/image-20200526200558712.png)</p>
 <h5 id="4-创建entity"><a href="#4-创建entity" class="headerlink" title="4.创建entity"></a>4.创建entity</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
 <span class="token annotation punctuation">@Accessors</span><span class="token punctuation">(</span>chain <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
@@ -1086,7 +1086,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="11-启动项目进行注册"><a href="#11-启动项目进行注册" class="headerlink" title="11.启动项目进行注册"></a>11.启动项目进行注册</h5><p>![image-20200526200946730](Shiro 实战教程.assets/image-20200526200946730.png)</p>
+<h5 id="11-启动项目进行注册"><a href="#11-启动项目进行注册" class="headerlink" title="11.启动项目进行注册"></a>11.启动项目进行注册</h5><p>![image-20200526200946730](Shiro 实战教程/image-20200526200946730.png)</p>
 <hr>
 <h4 id="2-开发数据库认证"><a href="#2-开发数据库认证" class="headerlink" title="2.开发数据库认证"></a>2.开发数据库认证</h4><h5 id="0-开发DAO"><a href="#0-开发DAO" class="headerlink" title="0.开发DAO"></a>0.开发DAO</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Mapper</span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserDAO</span> <span class="token punctuation">{</span>
@@ -1163,7 +1163,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
   customerRealm<span class="token punctuation">.</span><span class="token function">setCredentialsMatcher</span><span class="token punctuation">(</span>credentialsMatcher<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> customerRealm<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200526204958726](Shiro 实战教程.assets/image-20200526204958726.png)</p>
+<p>![image-20200526204958726](Shiro 实战教程/image-20200526204958726.png)</p>
 <h3 id="6-8-授权实现"><a href="#6-8-授权实现" class="headerlink" title="6.8 授权实现"></a>6.8 授权实现</h3><h5 id="0-页面资源授权"><a href="#0-页面资源授权" class="headerlink" title="0.页面资源授权"></a>0.页面资源授权</h5><pre class="line-numbers language-jsp"><code class="language-jsp"><%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <shiro:hasAnyRoles name="user,admin">
@@ -1204,7 +1204,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
   <span class="token comment" spellcheck="true">//....</span>
   <span class="token keyword">return</span> <span class="token string">"redirect:/index.jsp"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200527203343928](Shiro 实战教程.assets/image-20200527203343928.png)</p>
+<p>![image-20200527203343928](Shiro 实战教程/image-20200527203343928.png)</p>
 <h5 id="2-方法调用授权"><a href="#2-方法调用授权" class="headerlink" title="2.方法调用授权"></a>2.方法调用授权</h5><ul>
 <li>@RequiresRoles               用来基于角色进行授权</li>
 <li>@RequiresPermissions    用来基于权限进行授权</li>
@@ -1216,9 +1216,9 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"进入方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token string">"redirect:/index.jsp"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200527203415114](Shiro 实战教程.assets/image-20200527203415114.png)</p>
+<p>![image-20200527203415114](Shiro 实战教程/image-20200527203415114.png)</p>
 <hr>
-<h5 id="3-授权数据持久化"><a href="#3-授权数据持久化" class="headerlink" title="3.授权数据持久化"></a>3.授权数据持久化</h5><p>![image-20200527204839080](Shiro 实战教程.assets/image-20200527204839080.png)</p>
+<h5 id="3-授权数据持久化"><a href="#3-授权数据持久化" class="headerlink" title="3.授权数据持久化"></a>3.授权数据持久化</h5><p>![image-20200527204839080](Shiro 实战教程/image-20200527204839080.png)</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SET</span> NAMES utf8mb4<span class="token punctuation">;</span>
 <span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
@@ -1352,14 +1352,14 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200527213821611](Shiro 实战教程.assets/image-20200527213821611.png)</p>
+<p>![image-20200527213821611](Shiro 实战教程/image-20200527213821611.png)</p>
 <h5 id="9-启动测试"><a href="#9-启动测试" class="headerlink" title="9.启动测试"></a>9.启动测试</h5><hr>
 <h3 id="6-9-使用CacheManager"><a href="#6-9-使用CacheManager" class="headerlink" title="6.9 使用CacheManager"></a>6.9 使用CacheManager</h3><h4 id="1-Cache-作用"><a href="#1-Cache-作用" class="headerlink" title="1.Cache 作用"></a>1.Cache 作用</h4><ul>
 <li>Cache 缓存: <strong>计算机内存中一段数据</strong>  </li>
 <li>作用: <strong>用来减轻DB的访问压力,从而提高系统的查询效率</strong></li>
 <li>流程: </li>
 </ul>
-<p>![image-20200530090656417](Shiro 实战教程.assets/image-20200530090656417.png)</p>
+<p>![image-20200530090656417](Shiro 实战教程/image-20200530090656417.png)</p>
 <h4 id="2-使用shiro中默认EhCache实现缓存"><a href="#2-使用shiro中默认EhCache实现缓存" class="headerlink" title="2.使用shiro中默认EhCache实现缓存"></a>2.使用shiro中默认EhCache实现缓存</h4><h5 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1.引入依赖"></a>1.引入依赖</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--引入shiro和ehcache--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.shiro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -1385,7 +1385,7 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
         customerRealm<span class="token punctuation">.</span><span class="token function">setCacheManager</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">EhCacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> customerRealm<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200529173859939](Shiro 实战教程.assets/image-20200529173859939.png)</p>
+<p>![image-20200529173859939](Shiro 实战教程/image-20200529173859939.png)</p>
 <h5 id="3-启动刷新页面进行测试"><a href="#3-启动刷新页面进行测试" class="headerlink" title="3.启动刷新页面进行测试"></a>3.启动刷新页面进行测试</h5><ul>
 <li>注意:如果控制台没有任何sql展示说明缓存已经开启</li>
 </ul>
@@ -1397,12 +1397,12 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
 <h5 id="2-配置redis连接"><a href="#2-配置redis连接" class="headerlink" title="2.配置redis连接"></a>2.配置redis连接</h5><pre class="line-numbers language-properties"><code class="language-properties"><span class="token attr-name">spring.redis.port</span><span class="token punctuation">=</span><span class="token attr-value">6379</span>
 <span class="token attr-name">spring.redis.host</span><span class="token punctuation">=</span><span class="token attr-value">localhost</span>
 <span class="token attr-name">spring.redis.database</span><span class="token punctuation">=</span><span class="token attr-value">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200530084616799](Shiro 实战教程.assets/image-20200530084616799.png)</p>
+<p>![image-20200530084616799](Shiro 实战教程/image-20200530084616799.png)</p>
 <h5 id="3-启动redis服务"><a href="#3-启动redis服务" class="headerlink" title="3.启动redis服务"></a>3.启动redis服务</h5><pre class="line-numbers language-powershell"><code class="language-powershell">➜  bin <span class="token function">ls</span>
 dump<span class="token punctuation">.</span>rdb        redis<span class="token operator">-</span>check<span class="token operator">-</span>aof redis<span class="token operator">-</span><span class="token function">cli</span>       redis<span class="token operator">-</span>server    redis<span class="token punctuation">.</span>conf
 redis<span class="token operator">-</span>benchmark redis<span class="token operator">-</span>check<span class="token operator">-</span>rdb redis<span class="token operator">-</span>sentinel  redis<span class="token operator">-</span>trib<span class="token punctuation">.</span>rb
 ➜  bin <span class="token punctuation">.</span><span class="token operator">/</span>redis<span class="token operator">-</span>server redis<span class="token punctuation">.</span>conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200530081954871](Shiro 实战教程.assets/image-20200530081954871.png)</p>
+<p>![image-20200530081954871](Shiro 实战教程/image-20200530081954871.png)</p>
 <h5 id="4-开发RedisCacheManager"><a href="#4-开发RedisCacheManager" class="headerlink" title="4.开发RedisCacheManager"></a>4.开发RedisCacheManager</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisCacheManager</span> <span class="token keyword">implements</span> <span class="token class-name">CacheManager</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> Cache<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token function">getCache</span><span class="token punctuation">(</span>String cacheName<span class="token punctuation">)</span> <span class="token keyword">throws</span> CacheException <span class="token punctuation">{</span>
@@ -1480,8 +1480,8 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
         <span class="token keyword">return</span> redisTemplate<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="6-启动项目测试发现报错"><a href="#6-启动项目测试发现报错" class="headerlink" title="6.启动项目测试发现报错"></a>6.启动项目测试发现报错</h5><p>![image-20200530100850618](Shiro 实战教程.assets/image-20200530100850618.png)</p>
-<p>![image-20200530100948598](Shiro 实战教程.assets/image-20200530100948598.png)</p>
+<h5 id="6-启动项目测试发现报错"><a href="#6-启动项目测试发现报错" class="headerlink" title="6.启动项目测试发现报错"></a>6.启动项目测试发现报错</h5><p>![image-20200530100850618](Shiro 实战教程/image-20200530100850618.png)</p>
+<p>![image-20200530100948598](Shiro 实战教程/image-20200530100948598.png)</p>
 <ul>
 <li><p>错误解释: <strong>由于shiro中提供的simpleByteSource实现没有实现序列化,所有在认证时出现错误信息</strong></p>
 </li>
@@ -1510,12 +1510,12 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
   <span class="token punctuation">}</span>
   <span class="token keyword">return</span> null<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200530101301543](Shiro 实战教程.assets/image-20200530101301543.png)</p>
+<p>![image-20200530101301543](Shiro 实战教程/image-20200530101301543.png)</p>
 </li>
 </ul>
 </li>
 </ul>
-<h5 id="7-再次启动测试-发现可以成功放入redis缓存"><a href="#7-再次启动测试-发现可以成功放入redis缓存" class="headerlink" title="7.再次启动测试,发现可以成功放入redis缓存"></a>7.再次启动测试,发现可以成功放入redis缓存</h5><p>![image-20200530101617692](Shiro 实战教程.assets/image-20200530101617692.png)</p>
+<h5 id="7-再次启动测试-发现可以成功放入redis缓存"><a href="#7-再次启动测试-发现可以成功放入redis缓存" class="headerlink" title="7.再次启动测试,发现可以成功放入redis缓存"></a>7.再次启动测试,发现可以成功放入redis缓存</h5><p>![image-20200530101617692](Shiro 实战教程/image-20200530101617692.png)</p>
 <hr>
 <h4 id="4-加入验证码验证"><a href="#4-加入验证码验证" class="headerlink" title="4. 加入验证码验证"></a>4. 加入验证码验证</h4><h5 id="0-开发页面加入验证码"><a href="#0-开发页面加入验证码" class="headerlink" title="0.开发页面加入验证码"></a>0.开发页面加入验证码</h5><ul>
 <li><p>开发控制器</p>
@@ -1532,10 +1532,10 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>放行验证码</p>
-<p>![image-20200530141757606](Shiro 实战教程.assets/image-20200530141757606.png)</p>
+<p>![image-20200530141757606](Shiro 实战教程/image-20200530141757606.png)</p>
 </li>
 <li><p>开发页面</p>
-<p>![image-20200530141828004](Shiro 实战教程.assets/image-20200530141828004.png)</p>
+<p>![image-20200530141828004](Shiro 实战教程/image-20200530141828004.png)</p>
 </li>
 <li><p>修改认证流程</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"login"</span><span class="token punctuation">)</span>
@@ -1743,7 +1743,7 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
 <span class="token keyword">public</span> ShiroDialect <span class="token function">shiroDialect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ShiroDialect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>![image-20200601210335151](Shiro 实战教程.assets/image-20200601210335151.png)</p>
+<p>![image-20200601210335151](Shiro 实战教程/image-20200601210335151.png)</p>
 
             </div>
             <hr/>
