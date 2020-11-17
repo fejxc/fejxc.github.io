@@ -368,8 +368,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="UTF-8">
     <title>index.html</title>
@@ -380,23 +379,23 @@
     <h1>欢迎访问主页</h1>
 
     <!--获取身份信息-->
-    <span shiro:principal=""></span>
+    <span shiro:principal></span>
 
     <!--认证处理-->
-    <span shiro:authenticated="">
+    <span shiro:authenticated>
         认证通过展示内容
     </span>
-    <span shiro:notAuthenticated="">
+    <span shiro:notauthenticated>
         没有认证展示的内容
     </span>
 
     <!--授权角色-->
-    <span shiro:hasRole="admin">
+    <span shiro:hasrole="admin">
         this is admin
     </span>
 
     <!--资源授权-->
-    <span shiro:hasPermission="category:*:01">
+    <span shiro:haspermission="category:*:01">
         具有用户模块权限
     </span>
 
@@ -808,13 +807,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/01/shiro-shi-zhan-jiao-cheng.assets/springboot-thymeleaf-shiro/target/classes/templates/login/">
+                <a href="/2020/06/01/shiro-shi-zhan-jiao-cheng.assets/springboot-thymeleaf-shiro/target/classes/templates/register/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="Shiro 实战教程.assets/springboot_thymeleaf_shiro/target/classes/templates/login">
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="Shiro 实战教程.assets/springboot_thymeleaf_shiro/target/classes/templates/register">
                         
-                        <span class="card-title">Shiro 实战教程.assets/springboot_thymeleaf_shiro/target/classes/templates/login</span>
+                        <span class="card-title">Shiro 实战教程.assets/springboot_thymeleaf_shiro/target/classes/templates/register</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

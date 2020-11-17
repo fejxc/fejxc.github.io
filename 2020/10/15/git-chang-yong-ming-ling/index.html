@@ -750,7 +750,7 @@ $ git commit -m &quot;remove test.txt&quot;
  1 file changed, 1 deletion(-)
  delete mode 100644 test.txt</code></pre>
 <p>现在，文件就从版本库中被删除了。</p>
-<p> 小提示：先手动删除文件，然后使用git rm <file>和git add<file>效果是一样的。</p>
+<p> 小提示：先手动删除文件，然后使用git rm <file>和git add<file>效果是一样的。</file></file></p>
 <p>另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：</p>
 <pre><code>$ git checkout -- test.txt</code></pre>
 <p><code>git checkout</code>其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
