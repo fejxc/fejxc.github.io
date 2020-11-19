@@ -363,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.4k
                 </div>
                 
 
@@ -382,44 +382,44 @@
             <div id="articleContent">
                 <h3 id="三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”-模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。"><a href="#三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”-模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。" class="headerlink" title="三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”    模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。"></a>三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”    模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。</h3><p><strong>要求</strong>：鼠标移到标签时，字体颜色变为红色，新闻内容居中显示。</p>
 <p><img src="/2020/11/19/web-qi-zhong-ce-shi/image-20201119235338266.png" alt="image-20201119235338266"></p>
-<h4 id="vue实现："><a href="#vue实现：" class="headerlink" title="vue实现："></a>vue实现：</h4><pre><code>&lt;template&gt;
-    &lt;div&gt;
-      &lt;el-tag id=&quot;news&quot; style=&quot;margin: 10px;&quot; v-for=&quot;i in datas&quot; @mouseover.native=&quot;showContent(i)&quot;&gt;{{i}}&lt;/el-tag&gt;
-      &lt;div&gt;
-        &lt;el-row style=&quot;margin-left: 120px;margin-top: 40px;&quot;&gt;
+<h4 id="vue实现："><a href="#vue实现：" class="headerlink" title="vue实现："></a>vue实现：</h4><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-tag</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>news<span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">10</span>px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>i in datas<span class="token punctuation">"</span></span> <span class="token attr-name">@mouseover.native</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>showContent(i)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>{{i}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-tag</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-row</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">120</span>px<span class="token punctuation">;</span><span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token number">40</span>px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
           {{name}}
-        &lt;/el-row&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-row</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-&lt;script&gt;
-    export default {
-        name: &quot;test02&quot;,
-        data(){
-            return{
-                datas:[&quot;国际新闻&quot;,&quot;国内新闻&quot;,&quot;江西新闻&quot;,&quot;井冈山大学&quot;],
-                name:&quot;&quot;,
-            }
-        },
-        methods:{
-            showContent(i){
-                console.log(i);
-                this.name=i;
-                var t =document.getElementById(&quot;news&quot;);
-                console.log(t);
-               // t.innerText=i;
-                t.setAttribute(&quot;style&quot;,&quot;margin: 10px; color: #ff4d51&quot;);
-            },
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">"test02"</span><span class="token punctuation">,</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">{</span>
+                datas<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">"国际新闻"</span><span class="token punctuation">,</span><span class="token string">"国内新闻"</span><span class="token punctuation">,</span><span class="token string">"江西新闻"</span><span class="token punctuation">,</span><span class="token string">"井冈山大学"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                name<span class="token punctuation">:</span><span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token function">showContent</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>i<span class="token punctuation">;</span>
+                <span class="token keyword">var</span> t <span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"news"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+               <span class="token comment" spellcheck="true">// t.innerText=i;</span>
+                t<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">"style"</span><span class="token punctuation">,</span><span class="token string">"margin: 10px; color: #ff4d51"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-        }
-    }
-&lt;/script&gt;
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-&lt;style&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
 
-&lt;/style&gt;
-</code></pre>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="html实现："><a href="#html实现：" class="headerlink" title="html实现："></a>html实现：</h4><pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -491,39 +491,39 @@
 <p>（3）鼠标点击“右三角”，广告图会进入下一张，如当前是最后一张，点击时会进入第一张广告图；</p>
 <p>（4）鼠标点击“左三角”，广告图会进入上一张，如当前是第一张，点击时会进入最后一张。</p>
 <p><img src="/2020/11/19/web-qi-zhong-ce-shi/image-20201119235406831.png" alt="image-20201119235406831"></p>
-<h4 id="vue实现：-1"><a href="#vue实现：-1" class="headerlink" title="vue实现："></a>vue实现：</h4><pre><code>&lt;template&gt;
-  &lt;div class=&quot;block&quot;&gt;
-    &lt;span class=&quot;demonstration&quot;&gt;&lt;/span&gt;
-    &lt;el-carousel trigger=&quot;click&quot; height=&quot;720px&quot;&gt;
-      &lt;el-carousel-item v-for=&quot;item in imgs&quot; :key=&quot;item&quot;&gt;
-        &lt;el-image
-          style=&quot;width: 100%; height: 100%&quot;
-          :src=&quot;item&quot;
-          fit=&quot;fit&quot;&gt;&lt;/el-image&gt;
-      &lt;/el-carousel-item&gt;
-    &lt;/el-carousel&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
+<h4 id="vue实现：-1"><a href="#vue实现：-1" class="headerlink" title="vue实现："></a>vue实现：</h4><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>demonstration<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-carousel</span> <span class="token attr-name">trigger</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>click<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>720px<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-carousel-item</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in imgs<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-image</span><span class="token style-attr language-css"><span class="token attr-name">
+          <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100%</span></span><span class="token punctuation">"</span></span>
+          <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span>
+          <span class="token attr-name">fit</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-image</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-carousel-item</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-carousel</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-&lt;script&gt;
-  import homeImg1 from &quot;../assets/banner/banner1.jpg&quot;;
-  import homeImg2 from &quot;../assets/banner/banner2.jpg&quot;;
-  import homeImg3 from &quot;../assets/banner/banner3.jpg&quot;;
-  import homeImg4 from &quot;../assets/banner/banner4.jpg&quot;;
-    export default {
-        name: &quot;test03&quot;,
-        data(){
-            return{
-                imgs:[homeImg1,homeImg2,homeImg3,homeImg4]
-            }
-        }
-    }
-&lt;/script&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+  <span class="token keyword">import</span> homeImg1 <span class="token keyword">from</span> <span class="token string">"../assets/banner/banner1.jpg"</span><span class="token punctuation">;</span>
+  <span class="token keyword">import</span> homeImg2 <span class="token keyword">from</span> <span class="token string">"../assets/banner/banner2.jpg"</span><span class="token punctuation">;</span>
+  <span class="token keyword">import</span> homeImg3 <span class="token keyword">from</span> <span class="token string">"../assets/banner/banner3.jpg"</span><span class="token punctuation">;</span>
+  <span class="token keyword">import</span> homeImg4 <span class="token keyword">from</span> <span class="token string">"../assets/banner/banner4.jpg"</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">"test03"</span><span class="token punctuation">,</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span><span class="token punctuation">{</span>
+                imgs<span class="token punctuation">:</span><span class="token punctuation">[</span>homeImg1<span class="token punctuation">,</span>homeImg2<span class="token punctuation">,</span>homeImg3<span class="token punctuation">,</span>homeImg4<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-&lt;style scoped&gt;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">></span></span><span class="token style language-css">
 
-&lt;/style&gt;
-</code></pre>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="html实现：-1"><a href="#html实现：-1" class="headerlink" title="html实现："></a>html实现：</h4><pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
