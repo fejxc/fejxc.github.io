@@ -363,7 +363,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.5k
                 </div>
                 
 
@@ -382,44 +382,44 @@
             <div id="articleContent">
                 <h3 id="三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”-模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。"><a href="#三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”-模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。" class="headerlink" title="三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”    模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。"></a>三、完成下图“标签切换”。当鼠标移到到“国内新闻”，下面显示内容为“国内新闻”    模块，鼠标依次移动新闻模块，下面显示内容为对应模块内容。</h3><p><strong>要求</strong>：鼠标移到标签时，字体颜色变为红色，新闻内容居中显示。</p>
 <p><img src="/2020/11/19/web-qi-zhong-ce-shi/image-20201119235338266.png" alt="image-20201119235338266"></p>
-<h4 id="vue实现："><a href="#vue实现：" class="headerlink" title="vue实现："></a>vue实现：</h4><pre class="line-numbers language-vue"><code class="language-vue"><template>
-    <div>
-      <el-tag id="news" style="margin: 10px;" v-for="i in datas" @mouseover.native="showContent(i)">{{i}}</el-tag>
-      <div>
-        <el-row style="margin-left: 120px;margin-top: 40px;">
+<h4 id="vue实现："><a href="#vue实现：" class="headerlink" title="vue实现："></a>vue实现：</h4><pre><code>&lt;template&gt;
+    &lt;div&gt;
+      &lt;el-tag id=&quot;news&quot; style=&quot;margin: 10px;&quot; v-for=&quot;i in datas&quot; @mouseover.native=&quot;showContent(i)&quot;&gt;{{i}}&lt;/el-tag&gt;
+      &lt;div&gt;
+        &lt;el-row style=&quot;margin-left: 120px;margin-top: 40px;&quot;&gt;
           {{name}}
-        </el-row>
-      </div>
-    </div>
-</template>
+        &lt;/el-row&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
 
-<script>
+&lt;script&gt;
     export default {
-        name: "test02",
+        name: &quot;test02&quot;,
         data(){
             return{
-                datas:["国际新闻","国内新闻","江西新闻","井冈山大学"],
-                name:"",
+                datas:[&quot;国际新闻&quot;,&quot;国内新闻&quot;,&quot;江西新闻&quot;,&quot;井冈山大学&quot;],
+                name:&quot;&quot;,
             }
         },
         methods:{
             showContent(i){
                 console.log(i);
                 this.name=i;
-                var t =document.getElementById("news");
+                var t =document.getElementById(&quot;news&quot;);
                 console.log(t);
                // t.innerText=i;
-                t.setAttribute("style","margin: 10px; color: #ff4d51");
+                t.setAttribute(&quot;style&quot;,&quot;margin: 10px; color: #ff4d51&quot;);
             },
 
         }
     }
-</script>
+&lt;/script&gt;
 
-<style>
+&lt;style&gt;
 
-</style>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&lt;/style&gt;
+</code></pre>
 <h4 id="html实现："><a href="#html实现：" class="headerlink" title="html实现："></a>html实现：</h4><pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
@@ -491,39 +491,39 @@
 <p>（3）鼠标点击“右三角”，广告图会进入下一张，如当前是最后一张，点击时会进入第一张广告图；</p>
 <p>（4）鼠标点击“左三角”，广告图会进入上一张，如当前是第一张，点击时会进入最后一张。</p>
 <p><img src="/2020/11/19/web-qi-zhong-ce-shi/image-20201119235406831.png" alt="image-20201119235406831"></p>
-<h4 id="vue实现：-1"><a href="#vue实现：-1" class="headerlink" title="vue实现："></a>vue实现：</h4><pre class="line-numbers language-vue"><code class="language-vue"><template>
-  <div class="block">
-    <span class="demonstration"></span>
-    <el-carousel trigger="click" height="720px">
-      <el-carousel-item v-for="item in imgs" :key="item">
-        <el-image
-          style="width: 100%; height: 100%"
-          :src="item"
-          fit="fit"></el-image>
-      </el-carousel-item>
-    </el-carousel>
-  </div>
-</template>
+<h4 id="vue实现：-1"><a href="#vue实现：-1" class="headerlink" title="vue实现："></a>vue实现：</h4><pre><code>&lt;template&gt;
+  &lt;div class=&quot;block&quot;&gt;
+    &lt;span class=&quot;demonstration&quot;&gt;&lt;/span&gt;
+    &lt;el-carousel trigger=&quot;click&quot; height=&quot;720px&quot;&gt;
+      &lt;el-carousel-item v-for=&quot;item in imgs&quot; :key=&quot;item&quot;&gt;
+        &lt;el-image
+          style=&quot;width: 100%; height: 100%&quot;
+          :src=&quot;item&quot;
+          fit=&quot;fit&quot;&gt;&lt;/el-image&gt;
+      &lt;/el-carousel-item&gt;
+    &lt;/el-carousel&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
 
-<script>
-  import homeImg1 from "../assets/banner/banner1.jpg";
-  import homeImg2 from "../assets/banner/banner2.jpg";
-  import homeImg3 from "../assets/banner/banner3.jpg";
-  import homeImg4 from "../assets/banner/banner4.jpg";
+&lt;script&gt;
+  import homeImg1 from &quot;../assets/banner/banner1.jpg&quot;;
+  import homeImg2 from &quot;../assets/banner/banner2.jpg&quot;;
+  import homeImg3 from &quot;../assets/banner/banner3.jpg&quot;;
+  import homeImg4 from &quot;../assets/banner/banner4.jpg&quot;;
     export default {
-        name: "test03",
+        name: &quot;test03&quot;,
         data(){
             return{
                 imgs:[homeImg1,homeImg2,homeImg3,homeImg4]
             }
         }
     }
-</script>
+&lt;/script&gt;
 
-<style scoped>
+&lt;style scoped&gt;
 
-</style>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&lt;/style&gt;
+</code></pre>
 <h4 id="html实现：-1"><a href="#html实现：-1" class="headerlink" title="html实现："></a>html实现：</h4><pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
