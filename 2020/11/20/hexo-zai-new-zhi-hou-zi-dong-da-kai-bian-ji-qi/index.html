@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="idea中git使用ssh的url后push报错, 风儿继续吹">
+    <meta name="keywords" content="hexo在new之后自动打开编辑器, 风儿继续吹">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>idea中git使用ssh的url后push报错 | 风儿继续吹</title>
+    <title>hexo在new之后自动打开编辑器 | 风儿继续吹</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/awesome/css/all.css">
@@ -202,12 +202,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/10/15/ehlvSqwOJo7HMQA.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">idea中git使用ssh的url后push报错</h1>
+                    <h1 class="description center-align post-title">hexo在new之后自动打开编辑器</h1>
                 </div>
             </div>
         </div>
@@ -324,12 +324,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
-                                <span class="chip bg-color">踩坑记录</span>
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">-hexo</span>
                             </a>
                         
                     </div>
@@ -340,8 +336,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Bug/" class="post-category">
-                                Bug
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                教程
                             </a>
                         
                     </div>
@@ -353,21 +349,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-15
+                    2020-11-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-15
+                    2020-11-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    230
+                    139
                 </div>
                 
 
@@ -384,29 +380,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="idea中git使用ssh的url后push报错"><a href="#idea中git使用ssh的url后push报错" class="headerlink" title="idea中git使用ssh的url后push报错"></a>idea中git使用ssh的url后push报错</h2><h3 id="开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128"><a href="#开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128" class="headerlink" title="开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)"></a>开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)</h3><h3 id="1-报错代码"><a href="#1-报错代码" class="headerlink" title="1.报错代码"></a>1.报错代码</h3><pre><code>Please make sure you have the correct access rights
-and the repository exists.
-sunyun@sunyundeMBP ch009-springboot-ems % git remote add origin git@gitee.com:fejxc/spring-boot-page-help.git
-fatal: remote origin already exists.
-sunyun@sunyundeMBP ch009-springboot-ems % git push -u origin master
-git@gitee.com: Permission denied (publickey).
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-sunyun@sunyundeMBP ch009-springboot-ems % git status
-On branch master
-nothing to commit, working tree clean
-</code></pre>
-<h3 id="2-解决办法，在git上或者gitee上添加SSH公钥"><a href="#2-解决办法，在git上或者gitee上添加SSH公钥" class="headerlink" title="2.解决办法，在git上或者gitee上添加SSH公钥"></a>2.解决办法，在git上或者gitee上添加SSH公钥</h3><p>1)输入代码生成ssh公匙</p>
-<p><code> ssh-keygen -t rsa -C &quot;输入你的github或者gitee的用户名&quot;</code></p>
-<p><img src="https://i.loli.net/2020/10/15/lWu4BtRZnCz8eTU.png"></p>
-<p>2)ssh公匙会在你的计算机用户名文件下</p>
-<p><img src="https://i.loli.net/2020/10/15/wkJmXEKMlC7q6zg.png"></p>
-<p>3)用文本编辑打开id_rsa.pub，复制里面的内容</p>
-<p><img src="https://i.loli.net/2020/10/15/uKZ27dsnchQjCpO.png"></p>
-<p>4)在github或者gitee上点自己头像设置，然后找到安全设置里的ssh公匙，添加刚刚生成的肤质的内容</p>
-<p><img src="https://i.loli.net/2020/10/15/gPYHCjoDAcm84tN.png"></p>
+                <h2 id="1-在hexo安装目录新建scripts文件夹"><a href="#1-在hexo安装目录新建scripts文件夹" class="headerlink" title="1.在hexo安装目录新建scripts文件夹"></a>1.在hexo安装目录新建scripts文件夹</h2><p><img src="/2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/image-20201120102230623.png" alt="image-20201120102230623"></p>
+<h2 id="2-在scripts文件下新建openNewFile-js文件"><a href="#2-在scripts文件下新建openNewFile-js文件" class="headerlink" title="2.在scripts文件下新建openNewFile.js文件"></a>2.在scripts文件下新建openNewFile.js文件</h2><p><img src="/2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/image-20201120102337656.png" alt="image-20201120102337656"></p>
+<h2 id="3-在openNewFile-js里添加以下内容："><a href="#3-在openNewFile-js里添加以下内容：" class="headerlink" title="3.在openNewFile.js里添加以下内容："></a>3.在openNewFile.js里添加以下内容：</h2><h3 id="3-1mac用户"><a href="#3-1mac用户" class="headerlink" title="3.1mac用户"></a>3.1mac用户</h3><pre class="line-numbers language-JavaScript"><code class="language-JavaScript">var exec = require('child_process').exec;
+hexo.on('new', function(data){
+    exec('open -a "/Applications/Typora.app" ' + data.path);
+      ///Applications/Typora.app 这是替换成你markdown编辑器软件的安装路径
+});
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2win用户"><a href="#3-2win用户" class="headerlink" title="3.2win用户"></a>3.2win用户</h3><pre class="line-numbers language-JavaScript"><code class="language-JavaScript">var spawn = require('child_process').spawn;
+hexo.on('new', function(data){
+    spawn('D:/Program Files/Typora/bin/Typora.exe ', [data.path]);
+  //D:/Program Files/Typora/bin/Typora.exe 你软件的安装的路径
+})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-保存退出后，测试"><a href="#4-保存退出后，测试" class="headerlink" title="4.保存退出后，测试"></a>4.保存退出后，测试</h2><pre class="line-numbers language-bash"><code class="language-bash">hexo new <span class="token string">"textName"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>应该就会自动打开你的编辑器啦！</p>
 
             </div>
             <hr/>
@@ -422,7 +410,7 @@ nothing to commit, working tree clean
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">孙昀</a>
+                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -432,7 +420,7 @@ nothing to commit, working tree clean
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fejxc.top/2020/10/15/idea-zhong-git-shi-yong-ssh-de-url-hou-push-bao-cuo/">https://fejxc.top/2020/10/15/idea-zhong-git-shi-yong-ssh-de-url-hou-push-bao-cuo/</a>
+                    <a href="https://fejxc.top/2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/">https://fejxc.top/2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -445,7 +433,7 @@ nothing to commit, working tree clean
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">孙昀</a>
+                    <a href="/about" target="_blank">fejxc</a>
                     !
                 </span>
             </div>
@@ -470,12 +458,8 @@ nothing to commit, working tree clean
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
-                                    <span class="chip bg-color">踩坑记录</span>
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">-hexo</span>
                                 </a>
                             
                         </div>
@@ -780,16 +764,18 @@ nothing to commit, working tree clean
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/15/git-chang-yong-ming-ling/">
+                <a href="/2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/10/15/LxCtvP85WgiurkI.png" class="responsive-img" alt="Git常用命令">
                         
-                        <span class="card-title">Git常用命令</span>
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="hexo在new之后自动打开编辑器">
+                        
+                        <span class="card-title">hexo在new之后自动打开编辑器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -799,30 +785,27 @@ nothing to commit, working tree clean
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-category">
-                                    常用命令
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">命令</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">-hexo</span>
                     </a>
                     
                 </div>
@@ -836,12 +819,13 @@ nothing to commit, working tree clean
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/14/springboot-zhong-shi-yong-pagehelp-shi-xian-fen-ye/">
+                <a href="/2020/11/19/web-qi-zhong-ce-shi/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/10/12/MY61VnCHDAOysqI.png" class="responsive-img" alt="SpringBoot中使用pagehelp实现分页">
                         
-                        <span class="card-title">SpringBoot中使用pagehelp实现分页</span>
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="web期中测试">
+                        
+                        <span class="card-title">web期中测试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -852,14 +836,14 @@ nothing to commit, working tree clean
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SpringBoot/" class="post-category">
-                                    SpringBoot
+                            <a href="/categories/web%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    web实验
                                 </a>
                             
                             
@@ -869,8 +853,8 @@ nothing to commit, working tree clean
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/pagerhelp%E5%88%86%E9%A1%B5/">
-                        <span class="chip bg-color">pagerhelp分页</span>
+                    <a href="/tags/web/">
+                        <span class="chip bg-color">web</span>
                     </a>
                     
                 </div>

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>hexo在new之后自动打开编辑器</title>
+      <link href="2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/"/>
+      <url>2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-在hexo安装目录新建scripts文件夹"><a href="#1-在hexo安装目录新建scripts文件夹" class="headerlink" title="1.在hexo安装目录新建scripts文件夹"></a>1.在hexo安装目录新建scripts文件夹</h2><p><img src="/2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/image-20201120102230623.png" alt="image-20201120102230623"></p><h2 id="2-在scripts文件下新建openNewFile-js文件"><a href="#2-在scripts文件下新建openNewFile-js文件" class="headerlink" title="2.在scripts文件下新建openNewFile.js文件"></a>2.在scripts文件下新建openNewFile.js文件</h2><p><img src="/2020/11/20/hexo-zai-new-zhi-hou-zi-dong-da-kai-bian-ji-qi/image-20201120102337656.png" alt="image-20201120102337656"></p><h2 id="3-在openNewFile-js里添加以下内容："><a href="#3-在openNewFile-js里添加以下内容：" class="headerlink" title="3.在openNewFile.js里添加以下内容："></a>3.在openNewFile.js里添加以下内容：</h2><h3 id="3-1mac用户"><a href="#3-1mac用户" class="headerlink" title="3.1mac用户"></a>3.1mac用户</h3><pre class="line-numbers language-JavaScript"><code class="language-JavaScript">var exec = require('child_process').exec;hexo.on('new', function(data){    exec('open -a "/Applications/Typora.app" ' + data.path);      ///Applications/Typora.app 这是替换成你markdown编辑器软件的安装路径});<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="3-2win用户"><a href="#3-2win用户" class="headerlink" title="3.2win用户"></a>3.2win用户</h3><pre class="line-numbers language-JavaScript"><code class="language-JavaScript">var spawn = require('child_process').spawn;hexo.on('new', function(data){    spawn('D:/Program Files/Typora/bin/Typora.exe ', [data.path]);  //D:/Program Files/Typora/bin/Typora.exe 你软件的安装的路径})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="4-保存退出后，测试"><a href="#4-保存退出后，测试" class="headerlink" title="4.保存退出后，测试"></a>4.保存退出后，测试</h2><pre class="line-numbers language-bash"><code class="language-bash">hexo new <span class="token string">"textName"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>应该就会自动打开你的编辑器啦！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>web期中测试</title>
       <link href="2020/11/19/web-qi-zhong-ce-shi/"/>
       <url>2020/11/19/web-qi-zhong-ce-shi/</url>
@@ -461,9 +486,9 @@
       
         <tags>
             
-            <tag> 踩坑记录 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 踩坑记录 </tag>
             
         </tags>
       
