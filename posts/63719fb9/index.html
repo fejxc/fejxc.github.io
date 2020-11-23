@@ -360,14 +360,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-22
+                    2020-11-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    732
+                    926
                 </div>
                 
 
@@ -391,8 +391,8 @@
 <li>后端开发工具 Indea 2019.2</li>
 </ul>
 <h2 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h2><ul>
-<li>图书的的基本增加=删查改</li>
-<li>数据显示分页功能（待实现）</li>
+<li>图书的的基本增删查改</li>
+<li>数据分页显示功能</li>
 <li>角色权限管理（待实现）</li>
 </ul>
 <h2 id="创建vue-cli-一般步骤"><a href="#创建vue-cli-一般步骤" class="headerlink" title="创建vue-cli 一般步骤"></a>创建vue-cli 一般步骤</h2><pre class="line-numbers language-markdown"><code class="language-markdown">//1.初始化项目  xxxx是项目名
@@ -413,7 +413,12 @@ import axios from 'axios'
 Vue.prototype.$http=axios;
 
 //注意 在初始化项目的时候 可以选择默认安装 router 
-import router from './router'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+import router from './router'
+
+//打包前端代码 会生成dict文件
+npm run build
+//将static文件 index.html 复制到springboot后端项目的 rescouces 的static目录下
+//配置文件增加: spring.web.resources.static-locations=classpath:/static/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
 <li><p>当index.vue 通过 $router.push 跳转到 更新表单数据界面  渲染表表数据怎么传递参数</p>
 </li>
@@ -480,14 +485,21 @@ import router from './router'<span aria-hidden="true" class="line-numbers-rows">
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>@RequestBody主要用来接收**前端传递给后端**的**json字符串中的数据的**(请求体中的数据的)；</code></p>
 <p><code>@CrossOrigin  //解决跨域问题</code>   前端8080端口访问后端8989端口</p>
-<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><img src="/posts/63719fb9/image-20201122165154890.png" alt="image-20201122165154890" style="zoom:50%;">
+<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><h4 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h4><p>![image-20201123235211996](vue-cli 一般步骤/image-20201123235211996.png)</p>
+<h4 id="按书名查找"><a href="#按书名查找" class="headerlink" title="按书名查找"></a>按书名查找</h4><p>![image-20201123235346117](vue-cli 一般步骤/image-20201123235346117.png)</p>
+<h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><p>![image-20201123235251417](vue-cli 一般步骤/image-20201123235251417.png)</p>
+<h4 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h4><img src="/posts/63719fb9/image-20201122165345757.png" alt="image-20201122165345757" style="zoom:50%;">
 
-<img src="/posts/63719fb9/image-20201122165210728.png" alt="image-20201122165210728" style="zoom:50%;">
-
-<img src="/posts/63719fb9/image-20201122165345757.png" alt="image-20201122165345757" style="zoom:50%;">
-
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p>![image-20201123235435089](vue-cli 一般步骤/image-20201123235435089.png)</p>
+<p>![image-20201123235450601](vue-cli 一般步骤/image-20201123235450601.png)</p>
 <h2 id="献上源码"><a href="#献上源码" class="headerlink" title="献上源码"></a>献上源码</h2><p><a href="https://github.com/fejxc/springBoot/tree/master/book-management" target="_blank" rel="noopener">后端源码</a></p>
 <p><a href="https://github.com/fejxc/Vue-CLI/tree/master/book-management-eleui" target="_blank" rel="noopener">前端源码</a></p>
+<h2 id="如何启动："><a href="#如何启动：" class="headerlink" title="如何启动："></a>如何启动：</h2><p>1）克隆项目：<code>git clone https://github.com/fejxc/springBoot/tree/master/book-management</code></p>
+<p>2）将book.sql文件导入数据库 文件在项目的resources目录下</p>
+<p>3）启动项目 默认端口是8989 访问 <code>localhost:8989</code></p>
+<blockquote>
+<p>说明：已经将前端代码打包加到后端，直接运行后端项目，即可。</p>
+</blockquote>
 
             </div>
             <hr/>
