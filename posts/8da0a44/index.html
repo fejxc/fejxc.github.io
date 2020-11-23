@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SpringBoot中使用pagehelp实现分页, fejxc的博客">
+    <meta name="keywords" content="编译原理第三章课后作业, fejxc的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SpringBoot中使用pagehelp实现分页 | fejxc的博客</title>
+    <title>编译原理第三章课后作业 | fejxc的博客</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/awesome/css/all.css">
@@ -202,12 +202,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/10/12/MY61VnCHDAOysqI.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SpringBoot中使用pagehelp实现分页</h1>
+                    <h1 class="description center-align post-title">编译原理第三章课后作业</h1>
                 </div>
             </div>
         </div>
@@ -324,8 +324,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/pagerhelp%E5%88%86%E9%A1%B5/">
-                                <span class="chip bg-color">pagerhelp分页</span>
+                            <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                                <span class="chip bg-color">编译原理</span>
                             </a>
                         
                     </div>
@@ -336,8 +336,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/SpringBoot/" class="post-category">
-                                SpringBoot
+                            <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="post-category">
+                                编译原理
                             </a>
                         
                     </div>
@@ -349,21 +349,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-14
+                    2020-11-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-20
+                    2020-11-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    634
+                    150
                 </div>
                 
 
@@ -380,73 +380,15 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="SpringBoot中使用pagehelp实现分页"><a href="#SpringBoot中使用pagehelp实现分页" class="headerlink" title="SpringBoot中使用pagehelp实现分页"></a>SpringBoot中使用pagehelp实现分页</h2><h3 id="1-在pom-xml中添加依赖"><a href="#1-在pom-xml中添加依赖" class="headerlink" title="1.在pom.xml中添加依赖"></a>1.在pom.xml中添加依赖</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
-            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>github<span class="token punctuation">.</span>pagehelper<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>pagehelper<span class="token operator">-</span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
-            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">1.2</span><span class="token punctuation">.</span><span class="token number">10</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="2-在application-properties中添加设置信息"><a href="#2-在application-properties中添加设置信息" class="headerlink" title="2.在application.properties中添加设置信息"></a>2.在application.properties中添加设置信息</h3><pre class="line-numbers language-java"><code class="language-java">#pagehelper
-#配置helperDialect属性来指定分页插件使用哪种数据库
-pagehelper<span class="token punctuation">.</span>helperDialect<span class="token operator">=</span>MySQL
-#分页合理化参数，默认值为<span class="token boolean">false</span>。当该参数设置为 <span class="token boolean">true</span> 时，pageNum<span class="token operator">&lt;=</span><span class="token number">0</span> 时会查询第一页， pageNum<span class="token operator">></span>pages（超过总数时），会查询最后一页。默认<span class="token boolean">false</span> 时，直接根据参数进行查询
-pagehelper<span class="token punctuation">.</span>reasonable<span class="token operator">=</span><span class="token boolean">false</span>
-#支持通过 Mapper 接口参数来传递分页参数，默认值<span class="token boolean">false</span>，分页插件会从查询方法的参数值中，自动根据上面 params 配置的字段中取值，查找到合适的值时就会自动分页
-pagehelper<span class="token punctuation">.</span>supportMethodsArguments<span class="token operator">=</span><span class="token boolean">false</span>
+                <h1 id="编译原理第三章课后作业"><a href="#编译原理第三章课后作业" class="headerlink" title="编译原理第三章课后作业"></a>编译原理第三章课后作业</h1><h2 id="知识点1"><a href="#知识点1" class="headerlink" title="知识点1:"></a>知识点1:</h2><h3 id="掌握求First集合，Follow集合的方法"><a href="#掌握求First集合，Follow集合的方法" class="headerlink" title="掌握求First集合，Follow集合的方法"></a>掌握求First集合，Follow集合的方法</h3><h3 id="求全求稳"><a href="#求全求稳" class="headerlink" title="求全求稳"></a>求全求稳</h3><p><img src="/posts/8da0a44/image-20201123232221756.png" alt="image-20201123232221756"></p>
+<h2 id="课本例题"><a href="#课本例题" class="headerlink" title="课本例题"></a>课本例题</h2><p><img src="/posts/8da0a44/image-20201123232406553.png" alt="image-20201123232406553"></p>
+<h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><h3 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h3><p><img src="/posts/8da0a44/image-20201123232320652.png" alt="image-20201123232320652"></p>
+<h2 id="踩坑："><a href="#踩坑：" class="headerlink" title="踩坑："></a>踩坑：</h2><p>在求follow集合的时候，一定要注意 能推 e 的那条 ，不然follow的第四种情况会用不上<img src="/posts/8da0a44/image-20201123233016333.png" alt="image-20201123233016333" style="zoom:35%;"></p>
+<img src="/posts/8da0a44/image-20201123233058041.png" alt="image-20201123233058041" style="zoom:25%;">
 
-pagehelper<span class="token punctuation">.</span>params<span class="token operator">=</span>count<span class="token operator">=</span>countSql
-#默认值为 <span class="token boolean">false</span>，该参数对使用 RowBounds 作为分页参数时有效。 当该参数设置为 <span class="token boolean">true</span> 时，会将 RowBounds 中的 offset 参数当成 pageNum 使用，可以用页码和页面大小两个参数进行分页
-pagehelper<span class="token punctuation">.</span>offsetAsPageNum<span class="token operator">=</span><span class="token boolean">true</span>
-#默认值为 <span class="token boolean">false</span>，当该参数设置为 <span class="token boolean">true</span> 时，如果 pageSize<span class="token operator">=</span><span class="token number">0</span> 或者 RowBounds<span class="token punctuation">.</span>limit <span class="token operator">=</span> <span class="token number">0</span> 就会查询出全部的结果（相当于没有执行分页查询，但是返回结果仍然是 Page 类型）
-pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token operator">=</span><span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-在controller中编写代码"><a href="#3-在controller中编写代码" class="headerlink" title="3.在controller中编写代码"></a>3.在controller中编写代码</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/findAll"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> String <span class="token function">listCategory</span><span class="token punctuation">(</span>Model m <span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"start"</span><span class="token punctuation">,</span>defaultValue <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">)</span><span class="token keyword">int</span> start<span class="token punctuation">,</span>
-                           <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"size"</span><span class="token punctuation">,</span>defaultValue <span class="token operator">=</span> <span class="token string">"5"</span><span class="token punctuation">)</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
-    PageHelper<span class="token punctuation">.</span><span class="token function">startPage</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    PageInfo pageInfo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PageInfo</span><span class="token punctuation">(</span>empService<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    m<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"pageInfo"</span><span class="token punctuation">,</span> pageInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token string">"ems/emplist"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="4-在前端界面实现"><a href="#4-在前端界面实现" class="headerlink" title="4.在前端界面实现"></a>4.在前端界面实现</h3><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row1<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">th:</span>each</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item:${pageInfo.list}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${item.id}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>id<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${item.name}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${item.salary}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${item.age}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                        <span class="token comment" spellcheck="true">&lt;!--日期格式化--></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${item.bir}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{/emp/delete(id<span class="token punctuation">=</span>${item.id})}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>删除信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token entity" title="&nbsp;">&amp;nbsp;</span>
-                        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{/emp/find(id<span class="token punctuation">=</span>${item.id})}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>修改信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-                    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
-
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
-                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>添加员工<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>location.href<span class="token punctuation">=</span><span class="token punctuation">'</span>/ems/toSave<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">align</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>center<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{findAll?start<span class="token punctuation">=</span>1}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>[首页]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${not pageInfo.isFirstPage}<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{findAll(start<span class="token punctuation">=</span>${pageInfo.pageNum-1})}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>[上页]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>if</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${not pageInfo.isIsLastPage()}<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{findAll(start<span class="token punctuation">=</span>${pageInfo.pageNum+1})}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>[下页]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{findAll(start<span class="token punctuation">=</span>${pageInfo.pages})}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>[末页]<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-                当前页/总页数: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${pageInfo.pageNum}<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{/findAll(start<span class="token punctuation">=</span>${pageInfo.pageNum})}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-                /<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">th:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${pageInfo.pages}<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">th:</span>href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@{/findAll(start<span class="token punctuation">=</span>${pageInfo.pages})}<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="5-实现效果"><a href="#5-实现效果" class="headerlink" title="5.实现效果"></a>5.实现效果</h3><p><img src="https://i.loli.net/2020/10/14/mZzBelca3fVPN5w.png" alt="分页效果"></p>
-
+<p>因为<code>E&#39;--&gt; e</code>  ， 所以 <code>E --&gt; TE&#39;</code> 可以转化为<code>E --&gt; Te</code> ，又因为<code>e</code>是空串  ，又可以转化为<code> E--&gt; T</code></p>
+<p>到这步是不是可以用上第四种情况来求解了！</p>
+<h4 id="作业会继续更新…-解答不一定正确，本人字有点丑…"><a href="#作业会继续更新…-解答不一定正确，本人字有点丑…" class="headerlink" title="作业会继续更新…. 解答不一定正确，本人字有点丑…"></a>作业会继续更新…. 解答不一定正确，本人字有点丑…</h4>
             </div>
             <hr/>
 
@@ -461,7 +403,7 @@ pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">孙昀</a>
+                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -471,7 +413,7 @@ pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fejxc.top/posts/a8652cf4/">https://fejxc.top/posts/a8652cf4/</a>
+                    <a href="https://fejxc.top/posts/8da0a44/">https://fejxc.top/posts/8da0a44/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -484,7 +426,7 @@ pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">孙昀</a>
+                    <a href="/about" target="_blank">fejxc</a>
                     !
                 </span>
             </div>
@@ -509,8 +451,8 @@ pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/pagerhelp%E5%88%86%E9%A1%B5/">
-                                    <span class="chip bg-color">pagerhelp分页</span>
+                                <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                                    <span class="chip bg-color">编译原理</span>
                                 </a>
                             
                         </div>
@@ -815,68 +757,18 @@ pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/posts/bf8c901f/">
-                    <div class="card-image">
-                        
-                        <img src="https://i.loli.net/2020/10/15/ehlvSqwOJo7HMQA.png" class="responsive-img" alt="idea中git使用ssh的url后push报错">
-                        
-                        <span class="card-title">idea中git使用ssh的url后push报错</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Bug/" class="post-category">
-                                    Bug
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
-                        <span class="chip bg-color">踩坑记录</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/posts/a6bf4795/">
+                <a href="/posts/8da0a44/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/11/02/MJnKEoaCSgTNIld.png" class="responsive-img" alt="编译原理第二章课后作业">
                         
-                        <span class="card-title">编译原理第二章课后作业</span>
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="编译原理第三章课后作业">
+                        
+                        <span class="card-title">编译原理第三章课后作业</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -887,7 +779,7 @@ pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-23
                             </span>
                         <span class="publish-author">
                             
@@ -901,15 +793,65 @@ pagehelper<span class="token punctuation">.</span>pageSizeZero<span class="token
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A4%A7%E4%B8%89/">
-                        <span class="chip bg-color">大三</span>
+                    <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">编译原理</span>
                     </a>
                     
-                    <a href="/tags/%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">知识总结</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/7f6131b9/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="vue结合springboot添加分页支持">
+                        
+                        <span class="card-title">vue结合springboot添加分页支持</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Vue/" class="post-category">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>

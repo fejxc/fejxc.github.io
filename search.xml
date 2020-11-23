@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>编译原理第三章课后作业</title>
+      <link href="posts/8da0a44/"/>
+      <url>posts/8da0a44/</url>
+      
+        <content type="html"><![CDATA[<h1 id="编译原理第三章课后作业"><a href="#编译原理第三章课后作业" class="headerlink" title="编译原理第三章课后作业"></a>编译原理第三章课后作业</h1><h2 id="知识点1"><a href="#知识点1" class="headerlink" title="知识点1:"></a>知识点1:</h2><h3 id="掌握求First集合，Follow集合的方法"><a href="#掌握求First集合，Follow集合的方法" class="headerlink" title="掌握求First集合，Follow集合的方法"></a>掌握求First集合，Follow集合的方法</h3><h3 id="求全求稳"><a href="#求全求稳" class="headerlink" title="求全求稳"></a>求全求稳</h3><p><img src="/posts/8da0a44/image-20201123232221756.png" alt="image-20201123232221756"></p><h2 id="课本例题"><a href="#课本例题" class="headerlink" title="课本例题"></a>课本例题</h2><p><img src="/posts/8da0a44/image-20201123232406553.png" alt="image-20201123232406553"></p><h2 id="课后习题"><a href="#课后习题" class="headerlink" title="课后习题"></a>课后习题</h2><h3 id="3-10"><a href="#3-10" class="headerlink" title="3.10"></a>3.10</h3><p><img src="/posts/8da0a44/image-20201123232320652.png" alt="image-20201123232320652"></p><h2 id="踩坑："><a href="#踩坑：" class="headerlink" title="踩坑："></a>踩坑：</h2><p>在求follow集合的时候，一定要注意 能推 e 的那条 ，不然follow的第四种情况会用不上<img src="/posts/8da0a44/image-20201123233016333.png" alt="image-20201123233016333" style="zoom:35%;"></p><img src="/posts/8da0a44/image-20201123233058041.png" alt="image-20201123233058041" style="zoom:25%;"><p>因为<code>E&#39;--&gt; e</code>  ， 所以 <code>E --&gt; TE&#39;</code> 可以转化为<code>E --&gt; Te</code> ，又因为<code>e</code>是空串  ，又可以转化为<code> E--&gt; T</code></p><p>到这步是不是可以用上第四种情况来求解了！</p><h4 id="作业会继续更新…-解答不一定正确，本人字有点丑…"><a href="#作业会继续更新…-解答不一定正确，本人字有点丑…" class="headerlink" title="作业会继续更新…. 解答不一定正确，本人字有点丑…"></a>作业会继续更新…. 解答不一定正确，本人字有点丑…</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 编译原理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue结合springboot添加分页支持</title>
       <link href="posts/7f6131b9/"/>
       <url>posts/7f6131b9/</url>
@@ -312,31 +337,6 @@
     
     
     <entry>
-      <title>openWrt卸载已经安装的ipk安装包教程</title>
-      <link href="posts/6b7e8dff/"/>
-      <url>posts/6b7e8dff/</url>
-      
-        <content type="html"><![CDATA[<h1 id="openWrt卸载已经安装的ipk安装包教程"><a href="#openWrt卸载已经安装的ipk安装包教程" class="headerlink" title="openWrt卸载已经安装的ipk安装包教程"></a>openWrt卸载已经安装的ipk安装包教程</h1><h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p> 系统：OpenWrt 18.06.4</p><p>内核版本：4.14.131</p><h2 id="2-安装ipk"><a href="#2-安装ipk" class="headerlink" title="2.安装ipk"></a>2.安装ipk</h2><p><code>cd /ipk的文件路径</code></p><p><code>opkg install ***.ipk</code></p><h2 id="3-卸载ipk"><a href="#3-卸载ipk" class="headerlink" title="3.卸载ipk"></a>3.卸载ipk</h2><p><code>opkg list_installed</code>  查看已经安装的ipk</p><p><img src="https://i.loli.net/2020/10/28/M36mUtJCkWwxuSc.png"></p><p><code>opkg remove ***.ipk</code></p><p><img src="https://i.loli.net/2020/10/28/ROX9uAfQLcNTVSC.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 路由器 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>VUE使用axios数据请求时报错 TypeError Cannot set property &#39;xxxx&#39; of undefined 的解决办法</title>
       <link href="posts/bc255aa6/"/>
       <url>posts/bc255aa6/</url>
@@ -354,6 +354,31 @@
         <tags>
             
             <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>openWrt卸载已经安装的ipk安装包教程</title>
+      <link href="posts/6b7e8dff/"/>
+      <url>posts/6b7e8dff/</url>
+      
+        <content type="html"><![CDATA[<h1 id="openWrt卸载已经安装的ipk安装包教程"><a href="#openWrt卸载已经安装的ipk安装包教程" class="headerlink" title="openWrt卸载已经安装的ipk安装包教程"></a>openWrt卸载已经安装的ipk安装包教程</h1><h2 id="1-环境"><a href="#1-环境" class="headerlink" title="1.环境"></a>1.环境</h2><p> 系统：OpenWrt 18.06.4</p><p>内核版本：4.14.131</p><h2 id="2-安装ipk"><a href="#2-安装ipk" class="headerlink" title="2.安装ipk"></a>2.安装ipk</h2><p><code>cd /ipk的文件路径</code></p><p><code>opkg install ***.ipk</code></p><h2 id="3-卸载ipk"><a href="#3-卸载ipk" class="headerlink" title="3.卸载ipk"></a>3.卸载ipk</h2><p><code>opkg list_installed</code>  查看已经安装的ipk</p><p><img src="https://i.loli.net/2020/10/28/M36mUtJCkWwxuSc.png"></p><p><code>opkg remove ***.ipk</code></p><p><img src="https://i.loli.net/2020/10/28/ROX9uAfQLcNTVSC.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 路由器 </tag>
             
         </tags>
       
@@ -540,9 +565,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> 踩坑记录 </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
