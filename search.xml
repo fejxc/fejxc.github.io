@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>ip网络实验2</title>
+      <link href="posts/7323b4cb/"/>
+      <url>posts/7323b4cb/</url>
+      
+        <content type="html"><![CDATA[<h1 id="VLAN的配置与应用"><a href="#VLAN的配置与应用" class="headerlink" title="VLAN的配置与应用"></a>VLAN的配置与应用</h1><h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><img src="/posts/7323b4cb/image-20201213233518704.png" alt="image-20201213233518704" style="zoom:50%;"><h3 id="步骤1-搭建实验环境"><a href="#步骤1-搭建实验环境" class="headerlink" title="步骤1:搭建实验环境"></a>步骤1:搭建实验环境</h3><img src="/posts/7323b4cb/image-20201213223123880.png" alt="image-20201213223123880" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213223246835.png" alt="image-20201213223246835" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213223424243.png" alt="image-20201213223424243" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213223540475.png" alt="image-20201213223540475" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213223632292.png" alt="image-20201213223632292" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213223825284.png" alt="image-20201213223825284" style="zoom:50%;"><h3 id="步骤2-配置pc机"><a href="#步骤2-配置pc机" class="headerlink" title="步骤2:配置pc机"></a>步骤2:配置pc机</h3><blockquote><p>实现pc1与pc4在同一个vlan段 vlan100</p><p>pc2与pc3在同一个vlan段 vlan200</p></blockquote><img src="/posts/7323b4cb/image-20201213232842601.png" alt="image-20201213232842601" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213232914736.png" alt="image-20201213232914736" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213224221741.png" alt="image-20201213224221741" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213224259611.png" alt="image-20201213224259611" style="zoom:50%;"><h3 id="步骤3-配置交换机"><a href="#步骤3-配置交换机" class="headerlink" title="步骤3:配置交换机"></a>步骤3:配置交换机</h3><img src="/posts/7323b4cb/image-20201213224811770.png" alt="image-20201213224811770" style="zoom:50%;"><h4 id="配置LSW1"><a href="#配置LSW1" class="headerlink" title="配置LSW1"></a>配置LSW1</h4><p>1.进入配置模式 <code>system-view</code></p><img src="/posts/7323b4cb/image-20201213224530584.png" alt="image-20201213224530584" style="zoom:50%;"><p>2.划分vlan <code>vlan100</code>  <code>vlan200</code></p><img src="/posts/7323b4cb/image-20201213224707463.png" alt="image-20201213224707463" style="zoom:50%;"><p>3.配置端口 0/0/1</p><pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/1    //可以简写 int e0/0/1port link-type accessport default vlan 100dis this //查看当前端口配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><img src="/posts/7323b4cb/image-20201213225726690.png" alt="image-20201213225726690" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213225832494.png" alt="image-20201213225832494" style="zoom:50%;"><p>4.配置端口 0/0/2</p><pre><code>interface Ethernet0/0/2    //可以简写 int e0/0/2port link-type accessport default vlan 20</code></pre><img src="/posts/7323b4cb/image-20201213230028535.png" alt="image-20201213230028535" style="zoom:50%;"><p>5.配置端口 0/0/3</p><pre><code>interface Ethernet0/0/3    //可以简写 int e0/0/1port link-type trunkport trunk allow vlan 100 200dis this</code></pre><img src="/posts/7323b4cb/image-20201213230134776.png" alt="image-20201213230134776" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213230233066.png" alt="image-20201213230233066" style="zoom:50%;"><h4 id="配置LSW2"><a href="#配置LSW2" class="headerlink" title="配置LSW2"></a>配置LSW2</h4><p>1.进入配置模式 <code>system-view</code></p><img src="/posts/7323b4cb/image-20201213225406507.png" alt="image-20201213225406507" style="zoom:50%;"><p>2.划分vlan <code>vlan100</code>  <code>vlan200</code></p><img src="/posts/7323b4cb/image-20201213224707463.png" alt="image-20201213224707463" style="zoom:50%;"><p>3.配置端口 0/0/1</p><pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/1    //可以简写 int e0/0/1port link-type accessport default vlan 200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><img src="/posts/7323b4cb/image-20201213230523379.png" alt="image-20201213230523379" style="zoom:50%;"><p>4.配置端口 0/0/2</p><pre><code>interface Ethernet0/0/2    //可以简写 int e0/0/2port link-type accessport default vlan 100</code></pre><img src="/posts/7323b4cb/image-20201213230713843.png" alt="image-20201213230713843" style="zoom:50%;"><p>5.配置端口 0/0/3</p><pre><code>interface Ethernet0/0/3    //可以简写 int e0/0/1port link-type trunkport trunk allow vlan 100 200</code></pre><img src="/posts/7323b4cb/image-20201213230900610.png" alt="image-20201213230900610" style="zoom:50%;"><h3 id="步骤4-验证结果"><a href="#步骤4-验证结果" class="headerlink" title="步骤4:验证结果"></a>步骤4:验证结果</h3><img src="/posts/7323b4cb/image-20201213233109864.png" alt="image-20201213233109864" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213231141311.png" alt="image-20201213231141311" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213231215799.png" alt="image-20201213231215799" style="zoom:50%;"><img src="/posts/7323b4cb/image-20201213233031705.png" alt="image-20201213233031705" style="zoom:50%;">]]></content>
+      
+      
+      <categories>
+          
+          <category> ip网络实验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>自动机NFA到DFA的转化例题</title>
       <link href="posts/6769be3f/"/>
       <url>posts/6769be3f/</url>
       
-        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2020/12/10/m3htO5KMyBDsQYn.png"></p><p><img src="https://i.loli.net/2020/12/10/KJ8ZhVXvTWagedS.png"></p>]]></content>
+        <content type="html"><![CDATA[<p><img src="/posts/6769be3f/m3htO5KMyBDsQYn.png"></p><p><img src="/posts/6769be3f/KJ8ZhVXvTWagedS.png"></p>]]></content>
       
       
       <categories>
@@ -615,9 +640,9 @@
       
         <tags>
             
-            <tag> 踩坑记录 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 踩坑记录 </tag>
             
         </tags>
       
