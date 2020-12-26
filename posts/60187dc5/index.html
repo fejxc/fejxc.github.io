@@ -1,0 +1,1388 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="第二章-物理层, fejxc的博客">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>第二章-物理层 | fejxc的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">fejxc的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fejxc的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">第二章-物理层</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                <span class="chip bg-color">计算机网络期末复习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-12-26
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    10.8k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>计算机网络复习题第二章（标有课本知识点）</strong></p>
+<h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a><strong>选择题</strong></h2><p>1．常用的传输介质中，带宽最大、传输信号衰减最小、抗干扰能力最强的是（ <strong>B</strong>）。<br> A.同轴电缆<br> B.光纤<br> C.双绞线<br> D.无线电磁波</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>2．在脉冲编码调制中，若规定的量化级是 256，则需要使用（ <strong>D</strong>）位编码。<br> A.5<br> B.6<br> C.7<br> D.8</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.5** <strong>数字传输系统**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．交换机与双绞线进行连接的端口是（ <strong>A</strong>）。<br> A.RJ-45<br> B.RJ-11<br> C.USB<br> D.COM</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>4．同步传输中的同步是指（<strong>B</strong> ）。<br> A.时钟频率同步<br> B.时钟同步<br> C.传输速率同步<br> D.位、字符同步</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：理解</strong></p>
+<p>5．物理层的（ <strong>B</strong>）规定了接口信号的来源、作用以及与其他信号之间的关系。<br> A.机械特性<br> B.功能特性<br> C.电气特性<br> D.规程特性</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.1** <strong>物理层的基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>6．声音属于（ <strong>A</strong>）。<br> A.模拟数据<br> B.数字数据<br> C.模拟信号<br> D.数字信号</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>7．目前网络传输媒体中传输速率最高的是（<strong>C</strong> ）。<br> A.双绞线<br> B.同轴电缆<br> C.光纤<br> D.电话线</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>8．若码元传输速率为 2400 波特，每个码元可取 4 种有效离散值，则相应的数据传输速率为<br> （<strong>D</strong> ）。<br> A.1200b/s<br> B.2400b/s<br> C.3600b/s<br> D.4800b/s</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>9．当物理信道的可用带宽超过单个原始信号所需带宽时，可采用的复用技术是（<strong>A</strong> ）。<br> A.FDM<br> B.TDM<br> C.WDM<br> D.STDM</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复**</strong><br>** <strong>用**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>10.信道容量是带宽与信噪比的函数，以下哪个术语用来描述这种关系？（ <strong>A</strong>）<br> A．香农定理<br> B. 带宽<br> C．奈奎斯特准则<br> D. 傅里叶原理</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>11.在基带传输中采用的编码方式有（<strong>A</strong> ）<br> A．曼彻斯特编码<br> B. 正交幅度相位调制法<br> C．FSK<br> D. 移相键控法</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>12.波特率等于（ <strong>B</strong>）。<br> A．每秒传输的比特<br> B. 每秒钟可能发生的信号变化的次数<br> C．每秒传输的周期<br> D. 每秒传输的字节数</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>13.在通信术语中，计算机和终端统称为（<strong>A</strong> ）<br> A. DTE<br> B. DCE<br> C. DSE<br> D. Client/Server</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>14.在下列传输媒体中，哪一种错误率最低？（ B）<br> A．同轴电缆<br> B. 光缆<br> C. 微波<br> D. 双绞线</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>15.某 Modem 使用坐标图中（1，1），（2，2），（-2，-2）和（-1，-1）表示 4 个数据点，它在<br> 1200 波特的线路上可以达到的数据传输率是（ <strong>B</strong>）<br> A. 1200bps<br> B. 2400bps<br> C. 9600bps<br> D. 19200bps</p>
+<p>知识点：第 2 章 物理层——2.2 数据通信的基础知识——2.2.3 信道的极限容量<br> 难度：中<br> 类型：理解</p>
+<p>16.两个设备之间进行通信必须同步，下列哪种方法可以在没有时钟信号的情况下保持同步？<br> （<strong>B</strong> ）<br> A. 时分多路复用<br> B. 异步数据传输<br> C. 同步数据传输<br> D. 异步传输模式</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>17.T1 系统的速率为多少？（ <strong>A</strong>）<br> A.1.544Mbps<br> B.2.048Mbps<br> C.64Kbps<br> D.155Mbps</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.5** <strong>数字传输系统**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>18．多路复用器的主要功能是（ <strong>C</strong>）<br> A. 执行数/模转换<br> B. 减少主机的通信处理负载<br> C. 结合来自两条或更多条线路的传输<br> D. 执行串行/并行转换</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分**</strong><br>** <strong>复用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>19．下列哪一项最好地描述了基带信号（ B）<br> A. 通过同一通道传输多重信号<br> B. 信号以其原始的状态传输<br> C. 对信道上的频率范围通常要进行划分<br> D. b 和 c</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本**</strong><br>** <strong>概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>20．终端和主计算机属于（B ）<br> A. DCE<br> B. DTE<br> C. 硬件接口<br> D. Modem</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>21.EI 载波把 32 个信道按时分多路方式复用在一条 2.048 Mb/s 的高速信道上，每条话音信道<br> 的数据速率是（ <strong>B</strong>）<br> A. 56Kb/s<br> B. 64Kb/s<br> C. 128Kb/s<br> D. 512Kb/s</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>概述**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分**</strong><br>** <strong>复用**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>22.在同一个信道上的同一时刻，能够进行双向数据传送的通信方式是（ <strong>C</strong>）。<br> A. 单工<br> B.半双工<br> C. 全双工<br> D. 以上都不是</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>23.设数据传输速率为4800bps，采用16相相移键控调制，则调制速率为（ <strong>D</strong> ）baud<br> A. 4800<br> B.3600<br> C. 2400<br> D. 1200</p>
+<p><strong>【知识点】：第**</strong>2**<strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>24.设数据传输速率为 4800bps，采用 16 相相移键控调制，则调制速率为（<strong>D</strong> ）baud<br> A. 4800<br> B.3600<br> C. 2400<br> D. 1200</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>25.光纤上采用的多路复用技术是（ <strong>D</strong>）<br> A. CDM<br> B.TDM<br> C. FDM<br> D. WDM</p>
+<p>【<strong>知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道路复用技术**</strong>——2.4.2** <strong>波分复用**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>26.在同一个信道上的同一时刻，能够进行双向数据传送的通信方式是（ <strong>C</strong>）<br> A. 单工<br> B.半双工<br> C. 全双工<br> D. 以上都不是</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>27.两个设备之间进行通信必须同步，下列方法中可以在没有时钟信号的情况下保持同步的是<br> （<strong>B</strong> ）<br> A. 时分多路复用<br> B.异步数据传输<br> C. 同步数据传输<br> D. 异步传输模式</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>28.OSI 的物理层有四个特性，即：机械特性、电气特性、功能特性、规程特性。请问：在<br> EIA-232-E 标准接口(它是 EIA 制订的著名物理层异步通信接口标准)里，“规定引脚的作用”<br> 属于（<strong>C</strong> ）特性？<br> A. 机械特性<br> B.电气特性<br> C. 功能特性<br> D. 规程特性</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.1** <strong>物理层的基本概念**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>29.设数据传输速率为 4800bps，采用 16 相相移键控调制，则调制速率为（ D）baud<br> A. 4800<br> B.3600<br> C. 2400<br> D. 1200</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>30.EI 载波把 32 个信道按时分多路方式复用在一条 2.048 Mb/s 的高速信道上，每条话音信道<br> 的数据速率是（B ）<br> A. 56Kb/s<br> B. 64Kb/s<br> C. 128Kb/s<br> D. 512Kb/s</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>概述**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分**</strong><br>** <strong>复用**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>31.光纤通信中使用的复用方式是（ <strong>D</strong>）。<br> A. 时分多路<br> B. 空分多路<br> C. 频分多路<br> D. 波分多路</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.2** <strong>波分复用**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>32.在同一个信道上的同一时刻，能够进行双向数据传送的通信方式是（<strong>C</strong> ）<br> A. 单工<br> B.半双工<br> C. 全双工<br> D. 以上都不是</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>33.香农定理从定量的角度描述了“带宽”与“速率”的关系。在香农定理的公式中与信道的<br> 最大传输速率相关的参数主要有信道宽度与（<strong>B</strong> ）。<br> A. 频率特性<br> B. 信噪比<br> C. 相位特性<br> D. 噪声功率</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>34.下列有关光纤的说法中哪些是错误的？（<strong>C</strong> ）<br> A. 多模光纤可传输不同波长不同入射角度的光<br> B. 多模光纤的纤芯较粗<br> C. 采用多模光纤时，信号的最大传输距离比单模光纤长<br> D. 多模光纤的成本比单模光纤低</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>35．如果 Ethernet 交换机有 4 个 100Mbps 全双工端口和 20 个 10Mbps 半双工端口，那么这个<br> 交换机的总带宽最高可以达到（ <strong>B</strong>）。<br> A. 600Mbps<br> B. 1000Mbps<br> C. 1200Mbps<br> D. 1600Mbps</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>36.各种网络在物理层互连时要求（<strong>A</strong> ）<br> （A）数据传输率和链路协议都相同<br> （B）数据传输率相同，链路协议可不同<br> （C）数据传输率可不同，链路协议相同<br> （D）数据传输率和链路协议都可不同</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.——2…****<br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>37.采用全双工通信方式，数据传输的方向性结构为( <strong>A</strong>)<br> （A）可以在两个方向上同时传输<br> （B）只能在一个方向上传输<br> （C）可以在两个方向上传输，但不能同时进行<br> （D）以上均不对</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>38．采用全双工通信方式，数据传输的方向为(<strong>A</strong> )。<br> A．可以在两个方向上同时传输<br> B．只能在一个方向上传输<br> C．可以在两个方向上传输，但不能同时进行<br> D．以上均不对</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本感念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>39．下面接入方式中哪种传输速率最快(<strong>B</strong> )。<br> A．电话拨号<br> B．光纤接入<br> C．ADSL<br> D．光纤同轴混合</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>40.在以下传输介质中，带宽最宽，抗干扰能力最强的是(<strong>D</strong> )。<br> A．双绞线<br> B．无线信道<br> C．同轴电缆<br> D．光纤</p>
+<p><strong>知识点：第二章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>引导型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>41．在物理层接口特性中，用于描述完成每种功能的事件发生顺序的是( <strong>C</strong>)。<br> A．机械特性<br> B．功能特性<br> C．过程特性<br> D．电气特性</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.1** <strong>物理层的基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>42．若下图为 10Base-T 网卡接收到的信号波形，则该网卡收到的比特串是( **C)**。<br> <img src="/posts/60187dc5/clip_image001.png" alt="在这里插入图片描述"><br> A．00110010<br> B．10101101<br> C．00110110<br> D．11000101</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信系统的模型**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>43．将物理信道的总频道带宽分割成若干个子信道，每个子信道传输一路信号，这种复用技术<br> 称为( <strong>C</strong>)。<br> A．时分多路复用<br> B．码分多路复用<br> C．频分多路复用<br> D．波分多路复用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复**</strong><br>** <strong>用</strong> <strong>2.4.2</strong> <strong>波分复用</strong> <strong>2.4.3</strong> <strong>码分复用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>44．若某通信链路的数据传输速率为 2400bit/s，采用 4 相位调制，则该链路的波特率是( <strong>B</strong>)。<br> A．600Baud<br> B．1200 Baud<br> C．4800 Baud<br> D．9600 Baud</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>信道的极限容量**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>45．1000BASE-T标准使用5类非屏蔽双绞线，双绞线长度最长可以达到：（ <strong>C</strong> ）<br> A. 25米<br> B. 50米<br> C. 100米<br> D. 250米</p>
+<p><strong>知识点：第**</strong>2**<strong>章</strong> <strong>物理层**</strong>——2.3**<strong>物理层下面的传输媒体**</strong>——2.3.1**<strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>46．由于码元的传输速率受奈氏准则的制约，所以要提高信息的传输速率，就必须设法使一个码元能携带更多个比特的信息量。因此需要采用多元制的调制方法。当采用16元制时，如果码元的传输速率是2400Baud，则信息的传输速率为（<strong>B</strong> ）。<br> A．38400b/s<br> B．9600b/s<br> C．4800b/s<br> D．2400b/s</p>
+<p><strong>知识点：第**</strong>2**<strong>章</strong> <strong>物理层**</strong>——2.2**<strong>数据通信的基础知识**</strong>——2.2.2** <strong>信道的极限容量**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>47．信道复用技术一般分为频分复用、（<strong>A</strong>）、波分复用、码分复用。<br> A.时分复用<br> B.信道复用<br> C.光分复用<br> D.无线复用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用**</strong><br>** <strong>和统计时分复用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>48.在现在的局域网中，连接 PC 机时使用最多的媒体是（<strong>D</strong>）。<br> A.光纤<br> B.无线<br> C.同轴电缆<br> D.双绞线</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒**</strong><br>** <strong>体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>49．在计算机网络的中继系统中，中继器处于 OSI 参考模型的（ <strong>A</strong>）。<br> A. 物理层<br> B. 数据链路层<br> C. 网络层<br> D. 高层</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.2** <strong>非导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>50．将一条物理信道按时间分成若干时间片轮换地给多个信号使用，每一时间片由复用的一个<br> 信号占用，这样可以在一条物理信道上传输多个数字信号，这种得复用方式是（<strong>B</strong> ）。<br> A. 频分多路复用<br> B. 时分多路复用<br> C. 空分多路复用<br> D. 频分与时分混合多路复用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复用**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>51．10Base-T 网络采用的传输介质是（ <strong>A</strong>）。<br> A. 双绞线<br> B. 同轴电缆<br> C. 光纤<br> D. 微波</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>52．利用模拟通信信道传输数据信号的方法称为（ <strong>B</strong>）。<br> A. 频带传输<br> B. 基带传输<br> C. 异步传输<br> D. 同步传输</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本问题**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>53．基于 ADSL 的接入网由三部分组成：（<strong>D</strong>）、用户线和 ADSL 调制解调器。<br> A. HFC<br> B. ATU<br> C. DMT<br> D. DSLAM</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>概述**</strong>——2.6** <strong>宽带接入技术**</strong>——2.6.1ADSL** <strong>技术**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>54．以下关于传输介质与信号编码关系的描述中，错误的是<strong>D</strong>。<br> A．连接物理层的传输介质可以有不同类型<br> B．通信线路分为两类:点对点通信线路和广播通信线路<br> C．物理层根据所使用传输介质的不同制定相应的物理层协议<br> D．物理层协议规定数据信号的编码方式、信号类型、传输速率与数据链路质量</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>55.以下关于接入技术基本概念的描述中，错误的是<strong>D</strong>。<br> A．接人技术关系到用户能得到的网络服务的类型、服务质量与资费等问题<br> B．接入可以分为家庭接入、校园接入、机关与企业接入<br> C．宽带接入主要有 ADSI 技术、HFC 技术、光纤、无线接入技术<br> D．无线接入主要是靠蓝牙技术</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a><strong>多选题</strong></h2><p>1．按照信号传送的方向与时间的关系，可将数据通信分为（ <strong>ABC</strong>）。<br> A.单工通信<br> B.半双工通信<br> C.全双工通信<br> D.并行通信</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．多路复用技术通常有（ <strong>ABCD</strong>）。<br> A.码分多路复用<br> B.波分多路复用<br> C.频分多路复用<br> D.时分多路复用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．下列属于无线传输介质的有（ <strong>ACDE</strong>）。<br> A.无线电波<br> B．光纤<br> C.微波<br> D.红外线<br> E.激光</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.2** <strong>非导引型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型</strong> <strong>：识记</strong></p>
+<p>4．多路复用技术通常有（ <strong>ABCDE</strong>）。<br> A.码分多路复用<br> B.波分多路复用<br> C.频分多路复用<br> D.时分多路复用<br> E.空分多路复用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>5．数字数据编码为模拟信号的方式有（<strong>ABC</strong> ）。<br> A.调幅<br> B.调频<br> C.调相<br> D.非归零编码<br> E.曼彻斯特编码</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型</strong> <strong>：理解</strong></p>
+<p>6．以下属于宽带接入技术的有（<strong>ABCDE</strong> ）。<br> A.ADSL<br> B.HFC<br> C.光纤接入<br> D.以太网接入<br> E.无线接入</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.6** <strong>宽带接入技术**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>7．下列属于数字信号编码方案的是（<strong>ABE</strong> ）。<br> A.不归零码<br> B.曼彻斯特编码<br> C.循环冗余码<br> D.奇偶校验码<br> E.差分曼彻斯特编码</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a><strong>填空题</strong></h2><p>1．基本的带通调制方法有<strong>调幅</strong>、<strong>调频</strong>和<strong>调相</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易</strong></p>
+<p>2．非对称数字用户线路的英文缩写是<strong>ADLS</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.6** <strong>宽带接入技术**</strong>——2.6.1 ADSL** <strong>技术**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>3．物理层描述的媒体接口特性有：<strong>机械特性</strong>、<strong>电气特性</strong>、<strong>功能特性</strong>和<strong>过程特性</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.1** <strong>物理层的基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>4．波分多路复用技术主要用于<strong>光纤</strong>通信。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.2** <strong>波分复用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>5．有一通频带为 100kHz 的信道，假设每路信号的带宽为 3.3kHz，保护频带为 0.8kHz，若采<br> 用频分多路复用，则最多能传输的路数是<strong>24</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复**</strong><br>** <strong>用**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>6．将发送端的数字信号变换成模拟信号的过程称为<strong>调制</strong>，而将接收端的模拟信号还<br> 原成数字信号的过程称为<strong>解调</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>7．根据信号中参数的取值方式，通常将信号分为<strong>模拟</strong>信号和<strong>数字</strong>信号。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>8．在早期的数字传输系统中，T1 标准的数据传输速率是<strong>1.544Mb/s</strong>，E1 标准的数据传输速<br> 率是<strong>2.048Mb/s</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.5** <strong>数字传输系统**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>9.调制解调器的解调器是将（<strong>模拟</strong>）信号转换成（<strong>数字</strong>）信号</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>10.编码解码器（Codec）的编码器是将（<strong>模拟</strong> ）信号转换成（<strong>数字</strong> ）信号。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>11.ISDN 数字位流管道常用的标准接口包括（<strong>基本速率接口</strong> <strong>BRI</strong> ）和（ <strong>一次群速率接口</strong> <strong>PRI</strong>）。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>12.多路复用技术主要包括（ <strong>频分多路复用</strong>）和（<strong>时分多路复用</strong> ）两种。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分**</strong><br>** <strong>复用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>13．脉码调制的过程包括（ <strong>采样</strong>）、（<strong>量化</strong> ）和（ <strong>编码</strong>）三个阶段。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.5** <strong>数字传输系统**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>14．承载信息的基本信号单位是（ <strong>码元</strong>），它所承载的信息量是由（<strong>码元信号状态个数</strong> ）来决定的。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>15.HFC 网称为（ <strong>光纤同轴混合网</strong>），它是在（<strong>有线电视网</strong> ）基础上发展起来。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.6** <strong>宽带接入技术**</strong>——2.6.2** <strong>光纤同轴混合网（**</strong>HFC** <strong>网）**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>16．调制的基本形式有（ <strong>调幅</strong>）、（<strong>调频</strong> ）和（ <strong>调相</strong>）。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>17．多路复用技术分为（<strong>频分</strong> ）、（<strong>时分</strong> ）和（ <strong>波分</strong>）。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计**</strong><br>** <strong>时分复用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>18．ADSL 中文名称为（<strong>非对称用户数字线</strong>），其特点是上行和下行带宽（ <strong>不相等</strong>）。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.6** <strong>宽带接入技术**</strong>——2.6.1 ADSL** <strong>技术**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>19.双绞线可分为<strong>无屏蔽双绞线</strong>和<strong>屏蔽双绞线</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>20.<strong>不归零制</strong>、<strong>曼彻斯特编码</strong>和<strong>差分曼彻斯特编码</strong>是二进制数据编码技术中的三种主要编码方案。</p>
+<p><strong>【知识点】：第二章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型时**</strong><br>** <strong>分复用**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>21.<strong>时分复用</strong>是所有用户在不同的时间占用同样的频带宽度的复用模式。</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>22.提高通信信道使用效率的复用技术可以分为<strong>波分多路复用</strong>、<strong>频分多路复用</strong>、<strong>时分多路复用</strong>和<strong>码分多路复用</strong>。</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统**</strong><br>** <strong>计时分复用**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>23.在采用电信号表达数据的系统中，数据有<strong>数字数据</strong>和<strong>模拟数据</strong>两种。</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>【难度】：易</strong></p>
+<p>24.<strong>全双工</strong>是在同一个信道上的同一时刻，能够进行双向数据传送的通信方式。</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>—2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>25.常用的信道复用技术有<strong>FDM</strong>、<strong>TDM</strong>、<strong>STDM</strong>、CDM 和<strong>WDM</strong>。</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道路复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时**</strong><br>** <strong>分复用**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>26．在 OSI 的不同层次中，所传输的数据形式是不同的，物理层所传的数据单位是<strong>位</strong>、<br> 数据链路层的数据单位是<strong>帧</strong>、网络层的数据单位是<strong>IP</strong> <strong>数据报**</strong>/<strong>**分组</strong>、运输层传输的数据单位<br> 是<strong>报文</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>27.在采用电信号表达数据的系统中，数据有<strong>数字数据</strong>和<strong>模拟数据</strong>两种。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.1** <strong>数据通信系统的模型**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>28.信道复用技术有<strong>时分多路复用</strong>，<strong>频分多路复用</strong>和波分多路复用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复**</strong><br>** <strong>用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>29.多路复用技术是使多路信号共同使用一条线路进行传输，或者将多路信号组合在一条物理<br> 信道上传输，以充分利用信道的容量。多路复用分为：<strong>频分多路复用</strong>、<strong>波分多路复用</strong>、时<strong>分多路复用</strong>和码分多路复用 。</p>
+<p><strong>知识点</strong> <strong>：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>30.将数字信号调制为模拟信号有三种方式，即<strong>调频</strong>、<strong>调幅</strong>、<strong>调相</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本感念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>31.信道复用技术主要有<strong>频分复用或</strong> <strong>FDM</strong>、<strong>时分复用或</strong> <strong>TDM</strong>、<strong>波分复用或</strong> <strong>WDM</strong>和<strong>码分复用或</strong> <strong>CDMA</strong>四类。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复**</strong><br>** <strong>用</strong> <strong>2.4.2</strong> <strong>波分复用</strong> <strong>2.4.3</strong> <strong>码分复用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>32． <strong>物理地址或硬件地址</strong> 是数据链接层和物理层使用的地址，而 <strong>IP</strong> <strong>地址</strong><br> 是网络层和以上各层使用的地址</p>
+<p><strong>知识点：第二章</strong> <strong>物理层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>33．误码率最低的传输介质是<strong>光纤</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>引导性传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>34．DNS 协议用于完成<strong>域名</strong>与 IP 地址的转换。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>35．最常用的两种多路复用技术为<strong>频分</strong>多路复用和<strong>时分</strong>多路复用，其中，<br> 前者是同一时间同时传送多路信号，而后者是将一条物理信道按时间分成若干个时间片轮流<br> 分配给多个信号使用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复用**</strong><br>** <strong>难度：易</strong></p>
+<p>36．将数字信号调制为模拟信号有三种方式，即调幅、<strong>调频</strong>、<strong>调相</strong>。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a><strong>判断题</strong></h2><p>1．光缆的光纤通常是偶数个，一进一出。（√ ）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．通常情况下，远距离通信使用多模光纤，近距离通信使用单模光纤。（× ）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．模拟信号不可以在无线媒体上传输。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>4．数字通信中，发送端和接收端必须以某种方式保持同步。（ √）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>5．模拟信号不可以在无线媒体上传输。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>6．异步传输是以数据块为单位的数据传输。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>7．双绞线不仅可以传输数字信号，也可以传输模拟信号。（ √）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>8．半双工与全双工都有两个传输信道。（√）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>9.在常用的传输介质中，抗干扰能力最强、安全性最好的一种传输介质是双绞线。（ ×）</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>10.单向通信又称为单工通信，即通信的双方不能同时发送和接收信息。（× ）</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概**</strong><br>** <strong>念**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>11.非对称数字用户线 ADSL 技术最大的好处就是可以利用现有的电话网中的用户线（铜线），<br> 而不需要重新布线。（ √）</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.6** <strong>宽带接入技术**</strong>——2.6.1ADSL** <strong>技术**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>12.频分复用的所有用户是在不同的时间占用同样的频带宽度。（× ）</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分**</strong><br>** <strong>复用**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>13．在半双工通信的网络上，每个设备能够同时发送和接收数据。（× ）</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a><strong>名词解释</strong></h2><p>1.基带信号：来自于信源的信号。</p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.2** <strong>有关信道的几个基本概念**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>2．信道复用:<strong>信道复用技术是指能在同一传输信道中同时传输多路信号的技术。</strong></p>
+<p><strong>【知识点】：第</strong> <strong>2</strong> <strong>章物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分**</strong><br>** <strong>复用**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>3．FDM：频分复用</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.1** <strong>频分复用、时分复用和统计时分复**</strong><br>** <strong>用**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：背诵掌握</strong></p>
+<h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a><strong>简答题</strong></h2><p>1．RJ-45 插头上的网线排序有哪两种方式？这两种方式在应用上有何不同？各应用于什么场<br> 合？</p>
+<p><strong>答案：**</strong><br> *<em>EIA/TIA***</em> <strong>的布线标准中规定</strong> <strong>RJ-45</strong> <strong>插头上的排序方式有两种。**</strong><br>** <strong>第一种是</strong> <strong>T568A</strong> <strong>线序，用于网络设备需要交叉互连的场合。**</strong>“*<strong><em>交叉**<strong>”**</strong>是指网线的一端按****<br> *</em>T568A**</strong> <strong>线序连接，而另一端按</strong> <strong>T568B</strong> <strong>线序连接。交叉用于连接两台同类设备，例如两台计算**</strong><br>** <strong>机、集线器或交换机。**</strong><br>** <strong>第二种是</strong> <strong>T568B</strong> <strong>线序，用于网络设备直通互连的场合。**</strong>“*<strong><em>直通**<strong>”**</strong>是指网线两端都使用** <strong>T568B**</strong><br>** <strong>线序连接。直通用于连接两台不同类设备，例如计算机与交换机、计算机与集线器。**</strong><br> *</em>T568A**</strong> <strong>线序：绿白、绿、橙白、蓝、蓝白、橙、棕白、棕。**</strong><br> *<em>T568B***</em> <strong>线序：橙白、橙、绿白、蓝、蓝白、绿、棕白、棕。</strong></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong>——2.3.1** <strong>导引型传输媒体**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>1．简述物理层的特性。</p>
+<p><strong>物理层主要有四个特性，分别是机械特性、电气特性、功能特性和规程特性。**</strong><br>** <strong>机械特性说明接口所用连接器的形状、尺寸、引脚数目、排列、固定和锁定装置等。**</strong><br>** <strong>电气特性说明在接口电缆的各条线上出现什么样的电压范围。**</strong><br>** <strong>功能特性说明各条线上出现的电平表示何种意义。**</strong><br>** <strong>规程特性说明对于不同功能的各种事件的出现顺序。</strong></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.1** <strong>物理层的概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．TCP 采用了什么样的连接服务？简述建立 TCP 连接的过程。<br> <strong>答案：**</strong><br> *<em>TCP***</em> <strong>是运输层的协议，采用了面向连接的服务。**</strong>TCP** <strong>的连接过程被称为三报文握手。具体**</strong><br>** <strong>过程如下：**</strong><br> *<em>T1***</em> <strong>时刻，发送端向接收端发送建立连接的请求，并将连接请求标志字段</strong> <strong>SYN</strong> <strong>置为</strong> <strong>1**</strong>。*<strong>*<br> *<em>T2*</em></strong> <strong>时刻，接收端收到发送端的请求，向发送端响应，并将连接请求字段</strong> <strong>SYN</strong> <strong>置为</strong> <strong>1**</strong>。*<strong>*<br> *<em>T3*</em></strong> <strong>时刻，发送端收到接收端的响应，再向接收端发送连接确认，通信两端的连接正式建**</strong><br>** <strong>立。</strong></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.1** <strong>物理层的概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．通过 IEEE 802.3 局域网发送 ASCII 码数据“Good morning!”，若封装成一个 MAC 帧，请<br> 问该帧的数据字段有效字节是多少？需要填充多少个字节？</p>
+<p><strong>答案：**</strong><br>** <strong>因为</strong> <strong>MAC</strong> <strong>帧最小帧长是</strong> <strong>64</strong> <strong>字节，**</strong>MAC** <strong>帧头占</strong> <strong>18</strong> <strong>字节，因此数据部分长度不能小于</strong> <strong>46</strong> <strong>字**</strong><br>** <strong>节。如果小于则进行字节填充。本题中，数据帧的数据字段有效字节长度是</strong> <strong>13</strong> <strong>字节（由字符**</strong><br>** <strong>个数决定），故还需要填充</strong> <strong>33</strong> <strong>字节。</strong></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.1** <strong>物理层的概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>4．简述计算机网络的传输媒体有哪些，并简要介绍这些媒体的特点？</p>
+<p><strong>导引型媒体：双绞线、同轴电缆、光缆**</strong><br>** <strong>导引型媒体：无线电波</strong></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.3** <strong>物理层下面的传输媒体**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型</strong> <strong>：识记</strong></p>
+<h2 id="综合应用题"><a href="#综合应用题" class="headerlink" title="综合应用题"></a><strong>综合应用题</strong></h2><p>1．一个信道的带宽是 4kHz，数字信号的电平取值存在 4 种可能，请问理想状态下该信道的<br> 最大数据传输率是多少？若考虑到信道噪声，信噪比为 30dB，则该信道的最大数据传输率是<br> 多少？（注：log 2 1001≈10</p>
+<p>答案：<br> 理想状态下使用奈奎斯特准则求解信道最大数据传输速率<br> <img src="/posts/60187dc5/clip_image002.png" alt="C = 2Hlog 2 N"><br> 将 H = 4kHz，N = 4 代入得 C = 16kbps。<br> 有噪声干扰时使用香农公式求解信道最大数据传输速率<br> <img src="/posts/60187dc5/clip_image003.png" alt="C = Hlog 2 (1+S/N)"><br> 又 10log10(S/N) = 30dB，可求得 S/N = 1000。<br> 将 H = 4kHz，S/N = 1000 代入香农公式得 C = 40kbps。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>2．假设使用 12MHz 的采用频率对信号进行采样，若采用四调相方式，请计算在无噪声信道中<br> 的数据传输速率和所需的信道带宽</p>
+<p><img src="/posts/60187dc5/clip_image004.png" alt="四调相方式意味着一个脉冲携带 log 2 4 个比特信息，数据传输速率为 12log 2 4Mbps，即 24Mbps。"><br> 根据采样定理，采样频率是带宽的 2 倍，故信道带宽是 6MHz。</p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>3.一个用于发送二进制信号的 3kHz 信道，其信躁比为 20dB，可以获得的最大数据率是多少？<br> 答案：<br> <img src="/posts/60187dc5/clip_image005.png" alt="**20dB=10lg100，香农极限=3log2（1+100）=3*6.66=19.98kb/s；奈奎斯特极限=2*3=6kb/s；最大极限为 6kb/s。**"><br> <strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>4.设信号脉冲周期为 0.002 秒，脉冲信号有效值状态个数为 8。如果用 4 进制代码表示上述<br> 信号，一个脉冲信号需要用多少位 4 进制代码表示？用 4 进制代码表示上述信号，其数据传<br> 输率是多少？</p>
+<p><strong>答案：**</strong><br>** <strong>显然，脉冲信号变化的频率为</strong> <strong>1/0.002=500**</strong>，即信号传输率（波特率）为** <strong>500 Baud**</strong>。一个脉****<br>** <strong>冲信号运载的</strong> <strong>4</strong> <strong>进制位数为</strong> <strong>log 4 8</strong> <strong>取整，即</strong> <strong>2</strong> <strong>位。因此，数据传输率为</strong> <strong>2X500=1000</strong> <strong>位**</strong>/<strong>**秒。</strong></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>5．假定 PSTN 的带宽是 3000Hz，典型的信噪比是 20dB，试确定可以取得的理论上最大的信息<br> （数据）速率。</p>
+<p><img src="/posts/60187dc5/clip_image006.png" alt="20dB=10lg(S/N)，S/N=100，最大信息传输率=3000Xlog 2 (1+100)=19936bps"><br> <strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>6．在 50kHz 线路上使用 T1 载波需要多大的信躁比？</p>
+<p><img src="/posts/60187dc5/clip_image007.png" alt=". 因为 T1 信道的最大数据率为 1.544Mbps，根据香农公式 T1 信道最大传输率=50000Xlog 2 (1+S/N)=1544000bps，S/N=230 -1，？dB=10lg(S/N)，信噪比约为 93dB。"></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.2** <strong>数据通信的基础知识**</strong>——2.2.3** <strong>信道的极限容量**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>7．共有 4 个站进行码分多址 CDMA 通信。4 个站的码片序列为：<br> A.（-1 –1 –1 +1 +1 –1 +1 +1） B.（-1 –1 +1 -1 +1 +1 +1 -1）<br> C.（-1 +1 –1 +1 +1 +1 -1 -1） D.（-1 +1 –1 –1 -1 –1 +1 -1）<br> 现收到这样的码片序列：（-1 +1 –3 +1 -1 –3 +1 +1）。问哪个站发送数据了？发送数据的<br> 站发送的 1 还是 0？</p>
+<p><strong>答：**</strong>S·A=<strong><strong>（＋</strong></strong>1*<strong><em>－**<strong>1**</strong>＋**<strong>3**</strong>＋**<strong>1**</strong>－**<strong>1**</strong>＋**<strong>3**</strong>＋**<strong>1**</strong>＋**<strong>1**</strong>）／**<strong>8=1**</strong>，** <strong>A</strong> <strong>发送</strong> <strong>1**</strong><br> *</em>S·B=****</strong>（＋*<strong><em>1**<strong>－**</strong>1**<strong>－**</strong>3**<strong>－**</strong>1**<strong>－**</strong>1**<strong>－**</strong>3**<strong>＋**</strong>1**<strong>－**</strong>1**<strong>）／**</strong>8=<strong><strong>－</strong></strong>1**<strong>，</strong> <strong>B</strong> <strong>发送</strong> <strong>0**</strong><br> *</em>S·C=****</strong>（＋*<strong><em>1**<strong>＋**</strong>1**<strong>＋**</strong>3**<strong>＋**</strong>1**<strong>－**</strong>1**<strong>－**</strong>3**<strong>－**</strong>1**<strong>－**</strong>1**<strong>）／**</strong>8=0**<strong>，</strong> <strong>C</strong> <strong>无发送**</strong><br> *</em>S·D=****</strong>（＋**<strong>1**</strong>＋**<strong>1**</strong>＋**<strong>3**</strong>－**<strong>1**</strong>＋**<strong>1**</strong>＋**<strong>3**</strong>＋**<strong>1**</strong>－**<strong>1**</strong>）／**<strong>8=1**</strong>，** <strong>D</strong> <strong>发送</strong> <strong>1</strong></p>
+<p><strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>8．某个CDMA站接收方收到一条碎片系列：(-1+1-3+1-1-3+1+1)，假设各个站点的码片向量如<br> 下所示。<br> 站点A：(-1-1-1+1+1-1+1+1) 站点B：(-1-1+1-1+1+1+1-1)<br> 站点C：(-1+1-1-1-1-1+1-1) 站点D：(-1+1-1+1+1+1-1-1)<br> 试问：哪些站点发送了数据？分别发送了什么数据？</p>
+<p><strong>站点</strong> <strong>A**</strong>：*<strong><em>(-1+1-3+1-1-3+1+1)**</em></strong>(-1-1-1+1+1-1+1+1)/8=1*<strong>***<br>*</strong> <strong><em>站点</em></strong> <strong><em>B**<strong><strong>：**</strong></strong>(-1+1-3+1-1-3+1+1)**</em></strong>(-1-1+1-1+1+1+1-1)/8=-1*<strong>*<br>** <strong>站点</strong> <strong>C**</strong>：*<strong><em>(-1+1-3+1-1-3+1+1)</em></strong></strong>(-1+1-1-1-1-1+1-1)/8=1*<strong>***<br>*</strong> <strong><em>站点</em></strong> <strong><em>D**<strong><strong>：**</strong></strong>(-1+1-3+1-1-3+1+1)**</em></strong>(-1+1-1+1+1+1-1-1)/8=0****<br>** <strong>由计算结果可知：站点</strong> <strong>A</strong> <strong>和站点</strong> <strong>C</strong> <strong>发送了比特</strong> <strong>1**</strong>，站点** <strong>B</strong> <strong>发送了比特</strong> <strong>0**</strong>，站点** <strong>D</strong> <strong>没有发送**</strong><br>** <strong>数据。**</strong><br>** <strong>知识点：第</strong> <strong>2</strong> <strong>章</strong> <strong>物理层**</strong>——2.4** <strong>信道复用技术**</strong>——2.4.3** <strong>码分复用**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fejxc.top/posts/60187dc5/">https://fejxc.top/posts/60187dc5/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">fejxc</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                    <span class="chip bg-color">计算机网络期末复习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'adPQdwOt9vYN60QrWWTaSwqq-gzGzoHsz',
+        appKey: 'rcy20AUEz7C6DK8rIqf8soKJ',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/a9ef41eb/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="第三章-数据链路层">
+                        
+                        <span class="card-title">第三章-数据链路层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                        <span class="chip bg-color">计算机网络期末复习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/7323b4cb/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="ip网络实验2">
+                        
+                        <span class="card-title">ip网络实验2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ip%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ip网络实验
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="/about" target="_blank">fejxc</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fejxc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1031364436@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1031364436" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1031364436" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://i.loli.net/2020/10/28/JLB1hUAeGV2Qcbj.jpg" class="tooltipped" target="_blank" data-tooltip="添加我的微信fejxc_" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

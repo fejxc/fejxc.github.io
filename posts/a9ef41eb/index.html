@@ -1,0 +1,1438 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="第三章-数据链路层, fejxc的博客">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>第三章-数据链路层 | fejxc的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">fejxc的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fejxc的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/7.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">第三章-数据链路层</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                <span class="chip bg-color">计算机网络期末复习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-12-26
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    14.3k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>计算机网络复习题第三章（标有课本知识点）</strong></p>
+<h2 id="选择题"><a href="#选择题" class="headerlink" title="选择题"></a><strong>选择题</strong></h2><p>1．MAC 地址通常存储在计算机的（<strong>A</strong> ）。<br> A.网卡上<br> B.内存中<br> C.高速缓存中<br> D.硬盘上</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>2．下面关于以太网的描述正确的是（ <strong>A</strong>）。<br> A.数据包以广播方式发送<br> B.所有结点可以同时发送和接收数据<br> C.两个结点相互通信时，其它结点不检测总线上的信号<br> D.网络中有一个控制中心，用于控制所有结点的发送和接收</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．数据链路层传输的 PDU 是（ <strong>C</strong>）。<br> A.比特流<br> B.字节<br> C.数据帧<br> D.分组</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.1** <strong>数据链路和帧**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>4．二层交换机工作在 OSI/RM 的（<strong>B</strong> ）。<br> A.物理层<br> B.数据链路层<br> C.网络层<br> D.应用层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>5．无线局域网中为实现传输媒体共享而采用的协议是（ <strong>A</strong>）。<br> A.CSMA/CA<br> B.FTP<br> C.CSMA/CD<br> D.HTTP</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>6．IEEE 802.3 的物理层协议 10BASE-T 规定从网卡到集线器的最大传输距离为（ <strong>A</strong>）。<br> A.100m<br> B.500m<br> C.200m<br> D.1000m</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.1** <strong>在物理层扩展以太网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>7．以集线器为核心创建的网络，其物理拓扑结构是（ <strong>A</strong>）。<br> A.星型<br> B.总线型<br> C.环型<br> D.网状</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.1** <strong>在物理层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>8．串行通信中，PPP 协议面向的是（ <strong>A</strong>）。<br> A.字符<br> B.比特<br> C.字节<br> D.字</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>9．以太网使用的 MAC 层协议是（<strong>D</strong>）。<br> A.CSMA 协议<br> B.TCP/IP 协议<br> C.X.25 协议<br> D.CSMA/CD 协议</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>10．在 OSI 的七层模型中，集线器工作在（A ）。<br> A.物理层<br> B.数据链路层<br> C.网络层<br> D.传输层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.1** <strong>在物理层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>11．IEEE 802.3 标准规定的以太网的物理地址长度是（ <strong>C</strong>）。<br> A.8bit<br> B.32bit<br> C.48bit<br> D.64bit</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>12．具有检错和纠错功能的编码是（ <strong>C</strong>）。<br> A.奇偶校验码<br> B.循环冗余码<br> C.海明码<br> D.以上都是</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>13．VLAN 在现代组网技术中占有重要地位，同一个 VLAN 中的两台主机（<strong>B</strong> ）。<br> A.必须连接在同一交换机上<br> B.可以跨越多台交换机<br> C.必须连接在同一集线器上<br> D.可以跨越多台路由器</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>14．以太网数据帧最大长度是（<strong>A</strong>）。<br> A.1518B<br> B.1500B<br> C.1024B<br> D.1000B</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>15．媒体接入控制 MAC 是（<strong>D</strong> ）的子层。<br> A.网络层<br> B.运输层<br> C.物理层<br> D.数据链路层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>16．以下使用 CSMA/CD 协议的是（ <strong>C</strong>）。<br> A.令牌环网<br> B.FDDI 网<br> C.以太网<br> D.Novell 网</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>17．计算机在局域网络上使用的硬件地址也称为 MAC 地址，这是因为（ <strong>A</strong>）。<br> A.硬件地址是传输数据时在媒体接入控制层使用的地址<br> B.它是地址，MAC 是物理地址的简称<br> C.它是物理层地址，MAC 是物理层的简称<br> D.它是数据链路层地址，MAC 是数据链路层的简称</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>18．100BASE-T 以太网的物理拓扑结构是（<strong>B</strong> ）。<br> A.总线型<br> B.星型<br> C.环型<br> D.混合型</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.5** <strong>高速以太网**</strong>——3.5.1 100BASE-T** <strong>以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>19．下列 MAC 地址正确的是（<strong>A</strong> ）。<br> A.00-06-5B-4F-45-BA<br> B.192.168.1.55<br> C.65-10-96-58-16<br> D.00-16-5B-4A-34-2H</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>20．STP 的最根本目的是（ <strong>D</strong>）。<br> A.防止广播风暴<br> B.防止信息丢失<br> C.使网桥具备网络层功能<br> D.防止网络中出现信息回路造成网络瘫</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>21．具有 LAN 物理层和 WAN 物理层两部分标准的以太网技术是（ <strong>D</strong>）。<br> A.传统以太网<br> B.百兆以太网<br> C.吉比特以太网<br> D.10 吉比特以太网</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.5** <strong>高速以太网**</strong>——3.5.2** <strong>吉比特以太网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>22．IEEE 802.3 帧格式中的帧开始定界符的比特序列是（ <strong>B</strong>）。<br> A.10101010<br> B.10101011<br> C.11010101<br> D.10101101</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>23．IEEE 802.3 局域网标准中，设置 MAC 子层的主要目的之一是实现（<strong>D</strong> ）。<br> A.差错恢复<br> B.逻辑链路的建立<br> C.流量控制<br> D.帧的寻址与识别</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>24.LAN 交换机是（<strong>D</strong> ）<br> A. 工作在第 1 层的多端口中继器<br> B. 工作在第 2 层的多端口集线器<br> C. 工作在第 3 层的多端口路由器<br> D. 工作在第 2 层的多端口网桥</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>25.IEEE802 规定了 ISO 参考模型的哪一层?（ B ）<br> A. 数据链路层和网络层<br> B. 物理层和数据链路层<br> C. 物理层<br> D. 数据链路层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据**</strong><br>** <strong>链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>26.IEEE802.3 标准在 MAC 子层及物理层采用的媒体接入控制方法是（<strong>A</strong> ）<br> A CSMA/CD<br> B Token Passing<br> C Token Bus<br> D 10BaseT</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>27.在 10BASE-T 以太网上，配置了二台 PC 机，但都不能访问网络，检测后发现两台 PC 机上<br> 的网卡的配置完全相同，其配置如下：<br> MAC：10C8 0500 0000<br> IRQ：5<br> I/O port：300<br> Transceivor：RJ-45<br> 问应该修改任一块网卡的哪项配置？（<strong>A</strong> ）<br> A. MAC<br> B. IRQ<br> C. I/O port<br> D. Transceiver</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>28.要控制网络上的广播风暴，可以采用哪个手段？（<strong>A</strong> ）<br> A. 用路由器将网络分段<br> B. 用网桥将网络分段<br> C. 将网络转接成 10BaseT<br> D. 采用交换机划分网段</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>29.在以太网组网配置中，采用 UTP 以星形结构构成的网络称为（<strong>C</strong> ）<br> A. 10Base2<br> B. 10Base5<br> C. 10BaseT<br> D. 10BaseF</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.3** <strong>使用集线器的**</strong><br>** <strong>星形拓扑**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>30.使用中继器连接 LAN 的电缆段是有限制的，任何两个数据终端设备间允许的传输通路中<br> 可使用的中继器个数最多是（<strong>C</strong> ）<br> A. 1 个<br> B. 3 个<br> C. 4 个<br> D. 5 个</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.1** <strong>在物理层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>31.以下对 PPP 协议的说法中错误的是（<strong>B</strong> ）<br> A. 具有差错控制能力<br> B. 仅支持 IP 协议<br> C. 具有动态分配 IP 地址的支持<br> D. 支持身份验证</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——3.2.1 PPP</strong> <strong>协议的特点**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>32．以 UTP 作为传输媒体，采用物理星形拓扑结构构成的以太网称为（<strong>B</strong> ）<br> A. 10BaseF<br> B. 10BaseT<br> C. 10Base2<br> D. 10Base5</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.3** <strong>使用集线器的**</strong><br>** <strong>星形拓扑**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>33．局域网标准主要定义的是哪层（<strong>D</strong> ）<br> A．物理层<br> B. 数据链路层<br> C. 网络层<br> D. 低两层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据**</strong><br>** <strong>链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>34．在中继器连接的网络中，需要遵守 5-4-3 规则，其含义是（ <strong>D</strong>）<br> A. 用 3 个中继器连接 4 个网段，最多不能超过 5 个网段<br> B. 用 4 个中继器连接最少 3 个网段， 最多连接 5 个网段<br> C. 用 5 个中继器连接 4 个网段，只能有 3 个网段可以连接站点<br> D. 用 4 个中继器连接 5 个网段，只能有 3 个网段可以连接站点</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.1** <strong>在物理层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>35．Windows 环境下网卡遵循的驱动程序标准为（<strong>B</strong> ）<br> A. ODI<br> B. NDIS<br> C. TDI<br> D. WNet</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的**</strong><br> *<em>MAC***</em> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>36.100BASE-TX 使用（ <strong>A</strong>）传输介质。<br> A. 双绞线<br> B. 同轴电缆<br> C. 红外线<br> D. 光纤</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>37.为解决帧同步问题，在 PPP 的帧结构中规定在帧的起始字节为标志字段 F，其形式为<br> （ <strong>C</strong>）。<br> A. 11111110<br> B.11111111<br> C. 01111110<br> D. 01111111</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——3.2.2PPP</strong> <strong>协议的帧格式**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>38.在 IEEE802 系列标准中描述逻辑链路控制 (LLC)子层的功能、特性和协议的是（ <strong>A</strong>）<br> A. IEEE802.2<br> B.IEEE802.3<br> C. IEEE802.4<br> D. IEEE802.5</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2** <strong>局域网的数据**</strong><br>** <strong>链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>39.计算机与外界局域网的通信主要通过通信适配器（或网络适配器），又称为（<strong>A</strong> ）<br> A. 网卡<br> B. 网关<br> C. 网线<br> D. 网络</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道路的数据链路层**</strong>——3.3.1** <strong>局域网的**</strong><br>** <strong>数据链路层**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>40.以下不属于局域网常用拓扑结构的是（<strong>A</strong> ）<br> A.树型<br> B. 星型<br> C. 总线型<br> D. 环型</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数**</strong><br>** <strong>据链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>41.下列最好地描述了循环冗余检验的特征的是（ <strong>B</strong>）<br> A. 逐个的检查每个字符<br> B. 查出 99%以上的差错<br> C.查不出有偶数个位出错的差错<br> D. 不如纵向冗余检查可靠</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本**</strong><br>** <strong>问题**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>42.可能引起广播风暴的网络设备是（ <strong>B</strong>）<br> A. 网关<br> B.网桥<br> C. 路由器<br> D. 以上都不是</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>43.100BASE-TX 使用（ <strong>A</strong>）传输介质。<br> A. 双绞线<br> B. 同轴电缆<br> C. 红外线<br> D. 光纤</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>44.为解决帧同步问题，在 PPP 的帧结构中规定在帧的起始字节为标志字段 F，其形式为<br> （<strong>C</strong> ）。<br> A. 11111110<br> B.11111111<br> C. 01111110<br> D. 01111111</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——3.2.2PPP</strong> <strong>协议的帧格式**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>45.在 IEEE802 系列标准中描述逻辑链路控制 (LLC)子层的功能、特性和协议的是（ <strong>A</strong>）<br> A. IEEE802.2<br> B.IEEE802.3<br> C. IEEE802.4<br> D. IEEE802.5</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2** <strong>局域网的数据**</strong><br>** <strong>链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>46.采用二层以太网交换机扩展局域网，以下错误的是（<strong>B</strong> ）<br> A. 二层以太网交换机的各个端口可以支持不同的速率<br> B.二层以太网交换机的各个端口可以隔离广播帧<br> C. 二层以太网交换机需要对收到的数据帧进行处理，增加了传输时延<br> D. 二层以太网交换机在转发帧时不改变帧的源地址</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>47.局域网互连主要有（<strong>B</strong> ）两种形式。<br> (1)LAN-LAN (2) LAN-WAN (3)WAN-WAN (4)LAN-WAN-LAN<br> A. （1）和（2）<br> B. （1）和（4）<br> C. （2）和（3）<br> D. （3）和（4）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>概述**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>48.以下不属于局域网常用拓扑结构的是（<strong>A</strong> ）<br> A.树型<br> B. 星型<br> C. 总线型<br> D. 环型</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数**</strong><br>** <strong>据链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>49.下列最好地描述了循环冗余检验的特征的是（<strong>B</strong> ）<br> A. 逐个的检查每个字符<br> B. 查出 99%以上的差错<br> C.查不出有偶数个位出错的差错<br> D. 不如纵向冗余检查可靠</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本**</strong><br>** <strong>问题**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>50.计算机与外界局域网的通信主要通过通信适配器（或网络适配器），又称为（ <strong>A</strong>）。<br> A. 网卡<br> B. 网关<br> C. 网线<br> D. 网络</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道路的数据链路层**</strong>——3.3.1** <strong>局域网的**</strong><br>** <strong>数据链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>51.802.3 以太网最大可传送的帧（数据）长度（ <strong>D</strong>）个 8 位组。<br> A. 32<br> B. 64<br> C. 512<br> D. 1500</p>
+<p><strong>【知识点】：第三章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>–3.3.4** <strong>以太网的信道**</strong><br>** <strong>利用率**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>52.MAC 地址一般存放在（<strong>B</strong> ）中。<br> A. PC 的 ROM<br> B.适配器的 ROM<br> C. DNS 服务器<br> D. DHCP 服务器</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据**</strong><br>** <strong>链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>53.下列不属于局域网拓扑结构的是（<strong>C</strong> ）<br> A. 总线形<br> B.星形<br> C. 网状形<br> D. 环形</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.1** <strong>数据链路和**</strong><br>** <strong>帧**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>54.计算机网络拓扑通过网络中结点与通信线路之间的几何关系来表示（ <strong>D</strong>）。<br> A. 网络层次<br> B. 协议关系<br> C. 体系结构<br> D. 网络结构</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.3** <strong>使用集线器的星**</strong><br>** <strong>形拓扑**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>55.误码率描述了数据传输系统正常工作状态下传输的（<strong>C</strong> ）。<br> A. 安全性<br> B. 效率<br> C. 可靠性<br> D. 延迟</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>56.VLAN 在现代组网技术中占有重要地位，在由多个 VLAN 组成的一个局域网中以下哪种说<br> 法是不正确的？（ <strong>B</strong>）<br> A. 当站点从一个 VLAN 转移到另一个 VLAN 是，一般不需要改变物理连接<br> B. VLAN 中的一个站点可以和另一个 VLAN 中的站点直接通信<br> C. 当站点在一个 VLAN 中广播时，其他 VLAN 中的站点不能收到<br> D. VLAN 可以通过 MAC 地址，交换机端口等进行定义</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>57.采用 CSMA/CD 媒体接入控制方法的局域网适用于办公自动化环境。这类局域网在何种网<br> 络通信负荷情况下表现出较好的吞吐率与延迟特性？（<strong>C</strong> ）<br> A. 较高<br> B. 较低<br> C. 中等<br> D. 不限定</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>58.以太网交换机是按照 (<strong>A</strong>) 进行转发的。<br> A. MAC 地址<br> B. IP 地址<br> C. 协议类型<br> D. 端口号</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>59．网卡地址的二进制位有（ <strong>A</strong>）位？<br> A．48<br> B.64<br> C.128<br> D.256</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>网络层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据链路层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>60.MAC 地址通常存储在计算机的（ B）。<br> （A）内存中<br> （B）网卡上<br> （C）硬盘上<br> （D）高速缓冲区中</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>61.网桥工作于（<strong>B</strong> ）<br> （A）物理层<br> （B）数据链路层<br> （C）网络层<br> （D）高层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>概述**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>62.若数据链路的发送窗口尺寸 WT=4，在发送 3 号帧、并接到 2 号帧的确认帧后，发送方还<br> 可连续发送（ <strong>B</strong>）<br> （A）2 帧<br> （B）3 帧<br> （C）4 帧<br> （D）1 帧</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.1** <strong>数据链路层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>63.令牌环网中某个站点能发送帧是因为（<strong>C</strong> ）。<br> A. 最先提出申请<br> B. 优先级最高<br> C. 令牌到达<br> D. 可随机发送</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.5** <strong>高速以太网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>64.局部地区通信网络简称局域网，英文缩写为（ <strong>B</strong>）。<br> A. WAN<br> B. LAN<br> C. SAN<br> D.MAN</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>65.以太网媒体访问控制技术 CSMA/CD 的机制是（A ）。<br> A. 争用带宽<br> B. 预约带宽<br> C. 循环使用带宽<br> D. 按优先级分配带宽</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网</strong></p>
+<p>66．下列有关集线器的说法正确的是(<strong>B</strong> )。<br> A．集线器只能和工作站相连<br> B．利用集线器可将总线型网络转换为星型拓扑<br> C．集线器只对信号起传递作用<br> D．集线器不能实现网段的隔离</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.3** <strong>使用集线器的星**</strong><br>** <strong>型拓扑**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>67．10BASE-T 是指(<strong>C</strong> )。<br> A．粗同轴电缆<br> B．细同轴电缆<br> C．双绞线<br> D．光纤</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.3** <strong>使用集线器的星**</strong><br>** <strong>型拓扑**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>68．以太网媒体访问控制技术 CSMA/CD 的机制是( <strong>A</strong>)。<br> A．争用带宽<br> B．预约带宽<br> C．循环使用带宽<br> D．按优先级分配带宽</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.3** <strong>使用集线器的星**</strong><br>** <strong>型拓扑**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>69．在局域网中，MAC 指的是(<strong>B</strong> )。<br> A．逻辑链路控制子层<br> B．媒体接入控制子层<br> C．物理层<br> D．数据链路层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据链**</strong><br>** <strong>路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>70．下列哪种连接方式采用上、下行不对称的高速数据调制技术( <strong>B</strong>)。<br> A．ISDN<br> B．Cable Modem<br> C．ADSL<br> D．UML</p>
+<p><strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.5** <strong>高速以太网**</strong>–3.5.1 100BASE-T** <strong>以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>71．MAC 地址是一个( )字节的二进制串，以太网 MAC 地址由 IEEE 负责分配。以太网地<br> 址分为两个部分：地址的前( )个字节代表厂商代码，后( <strong>A</strong>)个字节由厂商自行分配。<br> A．6，3，3<br> B．6，4，2<br> C．6，2，4<br> D．5，3，2</p>
+<p><strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>–3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>72．802.3 以太网最大可传送的帧（数据）长度为( <strong>D</strong>)个 8 位组。<br> A．64<br> B．32<br> C．256<br> D．1500</p>
+<p><strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>–3.3.4** <strong>以太网的信道利用**</strong><br>** <strong>率**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>73．当一台主机从一个网络移到另一个网络时，以下说法正确的是( <strong>B</strong>)。<br> A．必须改变它的 IP 地址和 MAC 地址<br> B．必须改变它的 IP 地址，但不需改动 MAC 地址<br> C．必须改变它的 MAC 地址，但不需改动 IP 地址<br> D．MAC 地址、IP 地址都不需改动</p>
+<p><strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>–3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a><strong>多选题</strong></h2><p>1．网络拓扑结构可分为（ <strong>ABCD</strong>）。<br> A.总线型<br> B.星型<br> C.环型<br> D.树型<br> E.关系</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据链**</strong><br>** <strong>路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．以下属于网络连接设备的有（ABCE ）。<br> A.集线器<br> B.中继器<br> C.交换机<br> D.服务器<br> E.路由器</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网；第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由**</strong><br>** <strong>选择协议**</strong>——4.5.5** <strong>路由器的构成**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>3．下面关于以太网的描述错误的是（ <strong>BCD</strong>）。<br> A.数据包以广播方式发送<br> B.所有结点可以同时发送和接收数据<br> C.两个结点相互通信时，其它结点不检测总线上的信号<br> D.网络中有一个控制中心，用于控制所有结点的发送和接收</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>4．以下属于网络连接设备的有（ <strong>ABCE</strong>）。<br> A.集线器<br> B.中继器<br> C.交换机<br> D.服务器<br> E.路由器</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网；第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由**</strong><br>** <strong>选择协议**</strong>——4.5.5** <strong>路由器的构成**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>5．决定局域网特性的主要技术因素有（<strong>ABE</strong> ）。<br> A.网络拓扑<br> B.传输媒体<br> C.数据库软件<br> D.服务器软件<br> E.信道访问协</p>
+<p>知识点：第 3 章 数据链路层——3.3 使用广播信道的数据链路层<br> 难度：中<br> 类型：理解</p>
+<h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a><strong>判断题</strong></h2><p>1．三层 交换机在转发数据时，可以根据数据报的 MAC 地址表进行路由的选择和转发。 （× ）</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．数据链路层使用的信道主要有两种类型，即点对点信道和广播信道。（√ ）</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层；第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>—*<strong>*<br> *<em>—3.3*</em></strong> <strong>使用广播信道的数据链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．三层交换技术在网络模型中的数据链路层实现了分组的高速转发。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>4．由于前向纠错法是自动校正错误，所以大多数网络使用它。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>5．所有以太网交换机端口既支持 10BASE-T 标准，又支持 100BASE-T 标准。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>6．减少传输差错的最根本途径是采用自动校正的前向纠错法。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>7.网桥能够互连两个采用不同数据链路层协议、不同传输介质与不同传输速率的局域网。<br> （√ ）</p>
+<p>【<strong>知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>8.万兆以太网（10 Gbps Ethernet）只工作在全双工方式，因此不存在争用问题，不使用<br> CSMA/CD 协议，这使其传输距离不受冲突检测的限制。（ <strong>√</strong>）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.5** <strong>高速以太网**</strong>——3.5.310** <strong>吉比特以太网（**</strong>10GE**<strong>）和更**</strong><br>** <strong>快的以太网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>9.PPP 协议只支持双工链路。（ ×）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2 PPP** <strong>协议**</strong>——3.2.1 PPP** <strong>协议的特点**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>10.IP地址是数据链路层使用的逻辑地址。（ × ）<br> <strong>【知识点】：第**</strong>3**<strong>章</strong> <strong>数据链路层**</strong>——3.3**<strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的**</strong>MAC**<strong>层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>11.PPP协议只支持全双工链路。（ √ ）</p>
+<p><strong>【知识点】：第**</strong>3**<strong>章</strong> <strong>数据链路层**</strong>——3.2 PPP**<strong>协议**</strong>——3.2.1 PPP**<strong>协议的特点**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>12.用于 LAN 范围的 FDDI 大多采用。（√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2 PPP** <strong>协议**</strong>——3.2.1 PPP** <strong>协议的特点**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>13.硬件地址又称为 MAC 地址，对于局域网上的每一台计算机来说，这个地址都是唯一的。<br> （√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>14.适配器（即网卡）所实现的功能包含了数据链路层和网络层这两个层次的功能。（× ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数**</strong><br>** <strong>据链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>15.适配器（即网卡）所实现的功能包含了数据链路层和网络层这两个层次的功能。（ ×）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数**</strong><br>** <strong>据链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>16.万兆以太网（10 Gbps Ethernet）只工作在全双工方式，因此不存在争用问题，不使用<br> CSMA/CD 协议，这使其传输距离不受冲突检测的限制。（√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.5** <strong>高速以太网**</strong>——3.5.310** <strong>吉比特以太网（**</strong>10GE**<strong>）和**</strong><br>** <strong>更快的以太网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>17.PPP 协议只支持双工链路。（× ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2 PPP** <strong>协议**</strong>——3.2.1 PPP** <strong>协议的特点**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>18.用于 LAN 范围的 FDDI 大多采用。（√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2 PPP** <strong>协议**</strong>——3.2.1 PPP** <strong>协议的特点**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>19.硬件地址又称为 MAC 地址，对于局域网上的每一台计算机来说，这个地址都是唯一的。<br> （√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>20.适配器（即网卡）所实现的功能包含了数据链路层和网络层这两个层次的功能。（× ）</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数**</strong><br>** <strong>据链路层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<h2 id="填空题"><a href="#填空题" class="headerlink" title="填空题"></a><strong>填空题</strong></h2><p>1．常见的局域网拓扑结构有<strong>总线型</strong>、<strong>环型</strong>、<strong>星型树型</strong>和网状。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据链**</strong><br>** <strong>路层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>2．数据链路层中传输的数据块称为<strong>帧</strong>，数据链路层中差错控制的两种基本编码方<br> 法是<strong>检错</strong>码和<strong>纠错</strong>码。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．IEEE 802.3 或 Ethernet 规定数据的传输必须使用<strong>曼彻斯特</strong>编码进行</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据链**</strong><br>** <strong>路层**</strong><br>** <strong>难度：易</strong></p>
+<p>4．数据链路层的基本问题可概括为<strong>封装成帧</strong>、<strong>透明传输</strong>和差错检测。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>5.局域网的数据链路层分成（<strong>逻辑链路控制子层</strong> <strong>LLC</strong>）和（<strong>介质访问控制子层</strong> <strong>MAC</strong>）两个子层。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据**</strong><br>** <strong>链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>6.网桥分成（<strong>透明网桥</strong>）和（<strong>源路由网桥</strong>）等类型。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>7.在局域网标准中，在 MAC 子层及物理层 IEEE802.3 采用（<strong>CSMA/CD</strong> ）协议，IEEE802.5 采<br> 用（<strong>Token Passing</strong> ）协议</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>8．流量控制策略的基本思想是通过（ <strong>接收端</strong>）控制（<strong>发送端</strong> ）来实现的。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问**</strong><br>** <strong>题**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>9．局域网数据链路层分成（<strong>介质访问控制子层</strong> <strong>MAC</strong> ）和（<strong>逻辑链路控制子层</strong> <strong>LLC</strong> ）两个子层</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据**</strong><br>** <strong>链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>10．在局域网标准中，IEEE802.3 采用（ <strong>CSMA/CD</strong>）协议，IEEE802.4 采用（<strong>Token ( Passing) Bus</strong> <strong>令牌传递总线</strong> ）协议，IEEE802.5 采用（<strong>Token Passing(**</strong>或** <strong>Token Ring)**</strong>令牌传递**<strong>/**</strong>或令牌环** ）协议。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>11．在 Internet 网络中，拨号网络或点对点连接数据链路层协议主要有（ <strong>SLIP</strong>）和<br> （ <strong>PPP</strong>）。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——3.2.1 PPP</strong> <strong>协议的特点**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>12．数据链路的管理包括数据链路的（ <strong>建立</strong>）、（<strong>维持</strong> ）和（<strong>释放</strong> ）。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基**</strong><br>** <strong>本问题**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>13．局域网体系结构的低两层功能由（ <strong>网卡和驱动程序</strong>）完成，网络层以上的功能由<br> （<strong>操作系统</strong> ）完成。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的**</strong><br> *<em>MAC***</em> <strong>层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>14．传统网络包括（<strong>以太网</strong> ）、（<strong>令牌环</strong> ）和（<strong>FDDI</strong> ）都属于共享媒体的广播网络。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太**</strong><br>** <strong>网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>15.802.3 以太网最大可传送的帧（数据）长度为<strong>1500</strong>个 8 位组。</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>16.当 PPP 协议在使用异步传输时，采用<strong>字节填充</strong>实现透明传输</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点到点信道的数据链路层**</strong>——3.1.2** <strong>三个基本**</strong><br>** <strong>问题**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>17.在 OSI 参考模型中，网桥实现互联的层次为<strong>数据链路层</strong></p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太**</strong><br>** <strong>网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>18.局域网互连主要有<strong>LAN-LAN</strong>和<strong>LAN-WAN-LAN</strong>两种形式。</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>概述**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>19.网卡地址的二进制位有<strong>48</strong>位</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>20.MAC 地址是一个<strong>6</strong>字节的二进制串，以太网 MAC 地址由 IEEE 负责分配。以太<br> 网地址分为两个部分：地址的前<strong>3</strong>个字节代表厂商代码，后<strong>3</strong>个字节<br> 由厂商自行分配</p>
+<p><strong>【知识点】：第三章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>–3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>21.802.3 以太网最大可传送的帧（数据）长度为<strong>1500</strong>个 8 位组。</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>22.MAC 地址通常存储在计算机的<strong>网卡</strong>上。</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC**</strong><br>** <strong>层**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>23.100BASE-F 中，通常 F 指<strong>光纤</strong>。</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章数据链路层**</strong>——3.5** <strong>高速以太网**</strong>——3.5.1100BASE-T** <strong>以太网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>24.适用于非屏蔽双绞线的以太网卡应提供<strong>RJ-45</strong>标准接口。</p>
+<p>知识点：第 3 章 数据链路层——3.5 高速以太网——3.5.4 使用以太网进行宽带接入<br> 难度：易<br> 类型：识记</p>
+<p>25.<strong>网桥</strong>在数据链路层实现网络互连的主要设备。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点的数据链路层**</strong>——3.1.1** <strong>数据链路和帧**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>26．局域网常用的拓扑结构有<strong>星型</strong>、<strong>总线型</strong>和<strong>环型</strong>三种。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据链**</strong><br>** <strong>路层**</strong><br>** <strong>难度：易</strong></p>
+<p>27．CSMA/CD 协议的要点是<strong>载波监听</strong>、<strong>多路访问</strong>和<strong>冲突检测</strong>。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>28.在 IEEE802 局域网体系结构中，数据链路层被细化成<strong>LLC</strong> <strong>逻辑链路</strong>子层和<strong>MAC</strong> <strong>介质访问控制</strong>子层两层。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>29.IEEE802.3 规定了一个数据帧的长度为<strong>64</strong>字节到<strong>1518</strong>字节之间。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br> *<em>——MAC***</em> <strong>帧的格式**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>30.VLAN（虚拟局域网）是一种将局域网从<strong>逻辑</strong>上划分网段，而不是从<strong>物理</strong>上划<br> 分网段，从而实现虚拟工作组的新兴数据交换技术。</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展以太网**</strong>——3.4.3** <strong>虚拟局域网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>31.以太网采用的协议是<strong>CSMA/CD</strong>。协议的要点是：发送前先监听，边发送边监听，一旦发<br> 现总线上出现了碰撞，就立即停止发送</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSDN/CD** <strong>协议**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>32.IEEE802 委员会把局域网的数据链路层拆成两个子层，即<strong>逻辑链路控制子层或</strong> <strong>LLC</strong>和媒体接入控<strong>制子层或</strong> <strong>MAC</strong>，前者与传输媒体无关</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.1** <strong>局域网的数据链**</strong><br>** <strong>路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>33．有两种基本的差错控制编码，即检错码和纠错码，在计算机网络和数据通信中广泛使<br> 用的一种检错码为<strong>循环冗余检验或</strong> <strong>CRC</strong></p>
+<p><strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：识记</strong></p>
+<p>34．在数据链路层，数据的传送单位是<strong>帧</strong></p>
+<p><strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>35．网桥也称桥接器，它是<strong>数据链路层</strong></p>
+<p><strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a><strong>名词解释</strong></h2><p>1.CSMA/CD<br> <strong>答案：**</strong><br> *<em>CSMA/CD***</em> <strong>意思是载波监听多点接入**</strong>/<strong><strong>碰撞检测，</strong></strong>“*<strong><em>多点接入**<strong>”**</strong>就是说明这是总线型网络，许多****<br>** <strong>计算机以多点接入的方式连接在一根总线上，协议的实质是**</strong>“**<strong>载波监听**</strong>”**<strong>和**</strong>“**<strong>碰撞检测**</strong>”**<strong>。**</strong><br> *</em>“****</strong>载波监听**<strong>”**</strong>就是检测信道，不管在发送前，还是在发送中，每个站都必须不停地检测信道。****<br>** <strong>在发送前检测信道，是为了获得发送权，在发送中检测信道，是为了及时发现有没有其他站**</strong><br>** <strong>的发送和本站发送的碰撞。这就称为碰撞检测。</strong> <strong>“**</strong>碰撞检测**<strong>”**</strong>也就是**<strong>“**</strong>边发送边监听**<strong>”**</strong>，即****<br>** <strong>适配器边发送数据边检测信道上的信号电压的变化情况，以便判断自己在发送数据时其他站**</strong><br>** <strong>是否也在发送数据。。所谓**</strong>“**<strong>碰撞**</strong>”**<strong>就是发生了冲突。因此**</strong>“**<strong>碰撞检测**</strong>”**<strong>也称为**</strong>“**<strong>冲突检测**</strong>”**<strong>。**</strong><br>** <strong>任何一个正在发送数据的站，一旦发现总线上出现了碰撞，其适配器就要立即停止发送，免**</strong><br>** <strong>得继续进行无效的发送，白白浪费网络资源，然后等待一段随机时间后再次发送。</strong></p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>2.异步传输<br> <strong>【答案】：以字节为传输单位、面向字符的传输。**</strong><br>** <strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——3.2.2 PPP</strong> <strong>协议的帧格式**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>3.CRC<br> <strong>【答案】：**</strong>Cyclic Redundancy Check**<strong>，循环冗余检查**</strong><br>** <strong>【知识点】：第</strong> <strong>3</strong> <strong>章数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本**</strong><br>** <strong>问题**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>4.交换机<br> <strong>【答案】：主要工作在</strong> <strong>OSI/RM</strong> <strong>的数据链路层，以帧作为数据转发的基本单位，是一种多**</strong><br>** <strong>接口的透明网桥。**</strong><br>** <strong>【知识点】：第</strong> <strong>3</strong> <strong>章数据链路层**</strong>——3. 4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>5．PPPoE<br> <strong>【答案】：为宽带上网的主机使用的链路层协议。**</strong><br>** <strong>【知识点】：第</strong> <strong>3</strong> <strong>章数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——3.2.1PPP</strong> <strong>协议的特点**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>6.PPP<br> <strong>【答案】：目前使用最广泛的数据链路层的点对点的协议**</strong><br>** <strong>【知识点】：第</strong> <strong>3</strong> <strong>章数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本**</strong><br>** <strong>问题**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>7．MTU<br> <strong>答案：**</strong>MTU**<strong>：最大传送单元**</strong><br>** <strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：背诵掌握</strong></p>
+<h2 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a><strong>简答题</strong></h2><p>1．请介绍交换机 MAC 地址学习的基本过程。</p>
+<p><strong>答案：**</strong><br>** <strong>交换机工作在数据链路层，该层基于</strong> <strong>MAC</strong> <strong>地址转发数据。交换机</strong> <strong>MAC</strong> <strong>地址转发数据依赖**</strong><br> *<em>MAC***</em> <strong>地址表，**</strong>MAC** <strong>地址表的生成即</strong> <strong>MAC</strong> <strong>地址学习的过程。**</strong><br>** <strong>假定以太网交换机有</strong> <strong>4</strong> <strong>个接口，分别连接了主机</strong> <strong>A**</strong>、**<strong>B**</strong>、**<strong>C**</strong>、**<strong>D**</strong>。一开始，交换机中的** <strong>MAC**</strong><br>** <strong>地址表是空的。现在主机</strong> <strong>A</strong> <strong>向主机</strong> <strong>B</strong> <strong>发送数据帧，从接口</strong> <strong>1</strong> <strong>进入交换机。交换机收到数据帧**</strong><br>** <strong>后，先查找地址表，没有查到应从哪个接口转发数据帧。这时，交换机会把数据帧的源</strong> <strong>MAC**</strong><br>** <strong>地址</strong> <strong>A</strong> <strong>和接口</strong> <strong>1</strong> <strong>写入到</strong> <strong>MAC</strong> <strong>地址表中，然后向除接口</strong> <strong>1</strong> <strong>以外的所有接口广播这个数据帧。主**</strong><br>** <strong>机</strong> <strong>C</strong> <strong>和</strong> <strong>D</strong> <strong>收到后会丢弃该帧，因为目的地址不对。主机</strong> <strong>B</strong> <strong>收下该帧，主机</strong> <strong>B</strong> <strong>回复数据帧给</strong> <strong>A**</strong>，****<br>** <strong>交换机将主机</strong> <strong>B</strong> <strong>的</strong> <strong>MAC</strong> <strong>地址和连接的接口</strong> <strong>2</strong> <strong>写入到</strong> <strong>MAC</strong> <strong>地址表。**</strong><br>** <strong>随着数据帧的多次转发，交换机就逐渐建立了比较完整的</strong> <strong>MAC</strong> <strong>地址表。</strong></p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．PPP 协议使用同步传输技术传送比特序列 0110111111111100。请问经过零比特填充后变成<br> 什么样的比特序列？若接收到的 PPP 帧的数据部分是 0001110111110111110110，请问原来的<br> 比特序列是什么？<br> <strong>答案：**</strong><br>** <strong>经零比特填充后所得的比特序列是</strong> <strong>011011111011111000**</strong>。****<br>** <strong>经还原后得到的比特序列是</strong> <strong>00011101111111111110**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——3.2.2 PPP</strong> <strong>协议的帧格式**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>3．试分析用集线器、LAN 交换机和路由器进行网络互连时，在冲突域和广播域上有什么区别？</p>
+<p><strong>答案：**</strong><br>** <strong>集线器：所有站点在一个冲突域和广播域中**</strong><br>** <strong>交换机：每个站点在一个单独的冲突域，但共享一个广播域**</strong><br>** <strong>路由器：每个子网是一个广播域</strong><br> <strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.1** <strong>在物理层扩展以太网、**</strong>3.4.2****<br>** <strong>在数据链路层扩展以太网、**</strong>3.4.3** <strong>虚拟局域网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>4.简述路由器与网桥的区别？</p>
+<p><strong>网桥工作在</strong> <strong>OSI</strong> <strong>参考模型的第</strong> <strong>2</strong> <strong>层，路由器工作在第</strong> <strong>3</strong> <strong>层；路由器的传输性能不如网桥，但**</strong><br>** <strong>适应范围超过网桥；路由器能抑制广播包，但网桥不能；路由器可以拥有不同的子网，而网**</strong><br>** <strong>桥连接的网络具有相同的子网地址；路由器的安装和配置比网桥复杂。</strong></p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>5.简述 CSMA/CD 的工作原理？<br> <strong>【答案】：**</strong><br>** <strong>发送前先监听信道是否空闲，若空闲则立即发送；如果信道忙，则继续监听，一旦空闲就立**</strong><br>** <strong>即发送；在发送过程中，仍需继续监听。若监听到冲突，则立即停止发送数据，然后发送一**</strong><br>** <strong>串干扰信号；发送干扰信号的目的是强化冲突，以便使所有的站点都能检测到发生了冲突。**</strong><br>** <strong>等待一段随机时间（称为退避）以后，再重新尝试。归结为四句话：发前先听，空闲即发送，**</strong><br>** <strong>边发边听，冲突时退避。</strong></p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协**</strong><br>** <strong>议**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>6.在 IEEE802.3 标准以太网中，为什么说如果有碰撞则一定发生在碰撞窗口内，或者说一<br> 个帧如果在碰撞窗口内没发生冲突，则该包就不会再发生碰撞？<br> 答案：<br> <strong>（**</strong>1**<strong>）由于节点要发送数据时，先侦听信道是否有载波，如果有，表示信道忙，则继续侦听，**</strong><br>** <strong>直至检测到空闲为止；</strong> <strong>（**</strong>2** <strong>分）**</strong><br>** <strong>（**</strong>2**<strong>）当一个数据帧从节点</strong> <strong>1</strong> <strong>向最远的节点传输过程中，如果有其他节点也正在发送数据，此**</strong><br>** <strong>时就发生碰撞，碰撞后的信号需要经过碰撞窗口时间后传回节点</strong> <strong>1**</strong>，节点** <strong>1</strong> <strong>就会检测到碰撞，**</strong><br>** <strong>所以说如果有碰撞则一定发生在碰撞窗口内，如果在碰撞窗口内没有发生碰撞，之后如果其**</strong><br>** <strong>他节点再要发送数据，就会侦听到信道忙，而不会发送数据，从不会再发生碰撞。（**</strong>3** <strong>分）</strong></p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>7．简述共享式集线器（HUB）与交换机（SWITCH）的异同点<br> <strong>答案：**</strong><br>** <strong>⑴**</strong>在** <strong>OSI</strong> <strong>参考模型中工作的层次不同：**</strong>HUB** <strong>一般工作在物理层，交换机工作在数据链路**</strong><br>** <strong>层或网络层。**</strong><br>** <strong>⑵**</strong>数据传输方式不同：**<strong>HUB</strong> <strong>的所有设备在同一冲突域和同一广播域，采用的数据传输方**</strong><br>** <strong>式是广播方式，容易产生广播风暴；交换机的数据传输是有目的的，数据在发送方与接收方**</strong><br>** <strong>之间进行点对点的传送，数据传输效率提高，不会出现广播风暴，在安全性方面也不会出现**</strong><br>** <strong>其他节点侦听的现象。**</strong><br>** <strong>⑶**</strong>带宽占用方式不同：**<strong>HUB</strong> <strong>的所有端口共享总带宽，而交换机的每个端口都有自己的带**</strong><br>** <strong>宽。**</strong><br>** <strong>⑷**</strong>传输模式不同：**<strong>HUB</strong> <strong>只能采用半双工方式进行传输，交换机既可采用半双工也可采用**</strong><br>** <strong>全双工。</strong><br> <strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.3** <strong>使用集线器的星**</strong><br>** <strong>型拓扑**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>8．试简述主机 1（IP 地址为 192.168.2.1，MAC 地址为 E1）向主机 2（IP 地址为 192.168.2.2，<br> MAC 地址为 E2）发送数据时 ARP 协议的工作过程（主机 1、主机 2 在同一个子网内）。</p>
+<p><strong>答案：**</strong><br>** <strong>⑴**</strong>当主机** <strong>1</strong> <strong>要向主机</strong> <strong>2</strong> <strong>发送数据时，必须知道主机</strong> <strong>2</strong> <strong>的</strong> <strong>MAC</strong> <strong>地址，为此，先根据主机</strong> <strong>2</strong> <strong>的**</strong><br> *<em>IP***</em> <strong>地址在本机的</strong> <strong>ARP</strong> <strong>缓冲表内查找，如找到</strong> <strong>E2**</strong>，则把** <strong>E2</strong> <strong>填到</strong> <strong>MAC</strong> <strong>帧中，并把数据发送给**</strong><br>** <strong>主机</strong> <strong>2**</strong>；****<br>** <strong>⑵**</strong>如果在本机的** <strong>ARP</strong> <strong>缓冲表内找不到主机</strong> <strong>2</strong> <strong>的</strong> <strong>MAC</strong> <strong>地址，则主机</strong> <strong>1</strong> <strong>产生一个</strong> <strong>ARP</strong> <strong>询问包，**</strong><br>** <strong>其中包含主机</strong> <strong>1</strong> <strong>的</strong> <strong>IP</strong> <strong>地址，**</strong>MAC** <strong>地址</strong> <strong>E1**</strong>，主机** <strong>2</strong> <strong>的</strong> <strong>IP</strong> <strong>地址，并广播到网络上询问有谁知**</strong><br>** <strong>道主机</strong> <strong>2</strong> <strong>的</strong> <strong>MAC</strong> <strong>地址；**</strong><br>** <strong>⑶**</strong>主机** <strong>2</strong> <strong>收到</strong> <strong>ARP</strong> <strong>询问包后，根据询问者的</strong> <strong>IP</strong> <strong>和</strong> <strong>MAC</strong> <strong>地址</strong> <strong>E1</strong> <strong>立即向主机</strong> <strong>1</strong> <strong>回送一个</strong> <strong>ARP**</strong><br>** <strong>响应包，其中包含主机</strong> <strong>1</strong> <strong>的</strong> <strong>IP</strong> <strong>地址，**</strong>MAC** <strong>地址</strong> <strong>E1**</strong>，主机** <strong>2</strong> <strong>的</strong> <strong>IP</strong> <strong>地址和</strong> <strong>MAC</strong> <strong>地址</strong> <strong>E2**</strong>，从****<br>** <strong>而主机</strong> <strong>1</strong> <strong>获得了主机</strong> <strong>2</strong> <strong>的</strong> <strong>MAC</strong> <strong>地址</strong> <strong>E2**</strong>，进而可向主机** <strong>2</strong> <strong>发送数据。**</strong><br>** <strong>知识点：第三章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>–3.3.5** <strong>以太网的</strong> <strong>MAC</strong> <strong>层**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<h2 id="综合题"><a href="#综合题" class="headerlink" title="综合题"></a><strong>综合题</strong></h2><p>1．要发送的数据是 1101011011，已知 CRC 码的生成多项式 <img src="/posts/a9ef41eb/clip_image001.png" alt="在这里插入图片描述">，求校验序列FCS。</p>
+<p><strong>答案：**</strong><br>** <strong>采用</strong> <strong>CRC</strong> <strong>的生成多项式</strong> <strong>G(X) = X**</strong><br> *<em>4 + X +1*****</em>，用二进制表示就是** <strong>G = 10011**</strong>，这是模** <strong>2</strong> <strong>运**</strong><br>** <strong>算中的除数。在发送的数据后面添加</strong> <strong>4</strong> <strong>个</strong> <strong>0**</strong>，得被除数** <strong>11010110110000**</strong><br>** <strong>模</strong> <strong>2</strong> <strong>运算，得余数</strong> <strong>R = 1110**</strong>，这就是校验序列** <strong>FCS</strong> <strong>的值。</strong></p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>2．已知 CRC 码的生成多项式 <img src="/posts/a9ef41eb/clip_image002.png" alt="在这里插入图片描述">，若信息位是 1101110010001，求冗余多项式 R(X)。</p>
+<p><strong>答案：**</strong><br>** <strong>由生成多项式</strong> <strong>G(X) = X6 + X 5 + X +1</strong> <strong>得除数</strong> <strong>P = 1100011**</strong>。*<strong>*<br>** <strong>由于生成多项式最高次方为</strong> <strong>6**</strong>，且信息位是** <strong>1101110010001**</strong>，故被除数是*<strong>*<br> *<em>1101110010001000000*</em></strong></strong>。****<br>** <strong>下面采用模</strong> <strong>2</strong> <strong>运算求解冗余多项式</strong> <strong>R(x)**</strong>。**<br> <img src="/posts/a9ef41eb/clip_image003.png" alt="在这里插入图片描述"></p>
+<p><strong>由于生成多项式最高次方为</strong> <strong>6**</strong>，故冗余位应该为** <strong>6</strong> <strong>位。在上面得到的余数最高位前面补**</strong><br>** <strong>零凑足</strong> <strong>6</strong> <strong>位，得</strong> <strong>R(X) = 010110**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>3．要发送的数据是 101110，已知 CRC 码的生成多项式 <img src="/posts/a9ef41eb/clip_image004.png" alt="G(X) = X3 +1">，求帧校验序列 FCS。</p>
+<p><strong>采用</strong> <strong>CRC</strong> <strong>的生成多项式</strong> <strong>G(X) = X**</strong><br> *<em>3 + 1*****</em>，用二进制表示就是** <strong>G = 1001**</strong>，这是模** <strong>2</strong> <strong>运算中**</strong><br>** <strong>的除数。在拟发送的数据后面添加</strong> <strong>3</strong> <strong>个</strong> <strong>0</strong> <strong>得被除数</strong> <strong>101110000**</strong>。****<br>** <strong>模</strong> <strong>2</strong> <strong>运算得余数</strong> <strong>R = 011**</strong>，这就是校验序列的值**</p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>4.考虑建立一个 CSMA/CD 网，电缆长 1km，不使用中继器，运行速率为 1Gb/s。电缆中的信<br> 号速度是 200000km/s。最小帧长度是多少？<br> <strong>答案：**</strong><br>** <strong>单程传播时间为</strong> <strong>1km/200000km/s=5</strong> <strong>微秒，往返传播时间为</strong> <strong>10</strong> <strong>微秒。为了能够按照</strong> <strong>CSMA/CD**</strong><br>** <strong>工作，最小帧的发送时间不能小于</strong> <strong>10</strong> <strong>微秒。以</strong> <strong>1Gb/s</strong> <strong>速率工作，**</strong>10** <strong>微秒可以发送的比特数**</strong><br>** <strong>等于</strong> <strong>10000</strong> <strong>位。因此最小帧是</strong> <strong>10000</strong> <strong>位或</strong> <strong>1250</strong> <strong>字</strong></p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.3** <strong>使用广播信道的数据链路层**</strong>——3.3.2 CSMA/CD** <strong>协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>5．某公司内部有一个采用 TCP/IP 协议的 100Base-TX 局域网，包括 1 台服务器和 20 台客户<br> 机，通过一台 16 端口的交换机与一台 8 端口的共享集线器级连，同时通过一台路由器连接<br> Internet，服务器上运行 DHCP 服务软件，客户机的 IP 地址由 DHCP 自动分配，请回答下述问<br> 题：</p>
+<p>（1）连接计算机与集线器的单根电缆的最大长度为多少？<br> （2）集线器每个端口的平均带宽是多少？<br> （3）为了控制局域网用户访问 Internet 时只能进行 WWW 浏览，应该在路由器上采取什么措<br> 施？</p>
+<p>6.要发送的数据为 1101011011。采用 CRC 的生成多项式是 P(x)=x4+x+1 。试求应添加在数<br> 据后面的余数。数据在传输过程中最后一个 1 变成了 0，问接收端能否发现？若数据在传输<br> 过程中最后两个 1 都变成了 0，问接收端能否发现？</p>
+<p><strong>【答案】：**</strong><br>** <strong>添加的检验序列为</strong> <strong>1110</strong> <strong>（**</strong>11010110110000** <strong>除以</strong> <strong>10011**</strong>）****<br>** <strong>数据在传输过程中最后一个</strong> <strong>1</strong> <strong>变成了</strong> <strong>0**</strong>，**<strong>11010110101110</strong> <strong>除以</strong> <strong>10011**</strong>，余数为** <strong>011**</strong>，不为** <strong>0**</strong>，****<br>** <strong>接收端可以发现差错。**</strong><br>** <strong>数据在传输过程中最后两个</strong> <strong>1</strong> <strong>都变成了</strong> <strong>0**</strong>，**<strong>11010110001110</strong> <strong>除以</strong> <strong>10011**</strong>，余数为** <strong>101**</strong>，不****<br>** <strong>为</strong> <strong>0**</strong>，接收端可以发现差错。**</p>
+<p><strong>【知识点】：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.1** <strong>数据链路**</strong><br>** <strong>和帧**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：知识运用</strong></p>
+<p>7.设生成多项式为: <img src="/posts/a9ef41eb/clip_image005.png" alt="在这里插入图片描述">，收到的信息码字为 100011，检查和 CRC 为 1001，<br> 请问收到的信息有错吗，为什么？</p>
+<p><img src="/posts/a9ef41eb/clip_image006.png" alt="在这里插入图片描述"><br> <strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.1** <strong>使用点对点信道的数据链路层**</strong>——3.1.2** <strong>三个基本问题**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>8.一个 PPP 帧的数据部分（用十六进制写出）是 7D 5E FE 27 7D 5D 7D 5D 65 7D 5E。试问<br> 真正的数据是什么（用十六进制写出）？</p>
+<p>答案：<strong>7E FE 27 7D 7D 65 7E**</strong>。****<br>** <strong>评分标准：全部正确给</strong> <strong>5</strong> <strong>分，答错给</strong> <strong>0</strong> <strong>分。</strong></p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.2** <strong>点对点协议</strong> <strong>PPP——2</strong> <strong>字节填充**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fejxc.top/posts/a9ef41eb/">https://fejxc.top/posts/a9ef41eb/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">fejxc</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                    <span class="chip bg-color">计算机网络期末复习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'adPQdwOt9vYN60QrWWTaSwqq-gzGzoHsz',
+        appKey: 'rcy20AUEz7C6DK8rIqf8soKJ',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/ef8f80d2/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="第四章-网络层">
+                        
+                        <span class="card-title">第四章-网络层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                        <span class="chip bg-color">计算机网络期末复习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/60187dc5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="第二章-物理层">
+                        
+                        <span class="card-title">第二章-物理层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                        <span class="chip bg-color">计算机网络期末复习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="/about" target="_blank">fejxc</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/fejxc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1031364436@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1031364436" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1031364436" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+
+    <a href="https://i.loli.net/2020/10/28/JLB1hUAeGV2Qcbj.jpg" class="tooltipped" target="_blank" data-tooltip="添加我的微信fejxc_" data-position="top" data-delay="50">
+        <i class="fab fa-weixin"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
