@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ip网络实验5</title>
+      <link href="posts/ed472168/"/>
+      <url>posts/ed472168/</url>
+      
+        <content type="html"><![CDATA[<h1 id="配置rip实现小范围的通信"><a href="#配置rip实现小范围的通信" class="headerlink" title="配置rip实现小范围的通信"></a>配置rip实现小范围的通信</h1><h2 id="实验拓扑图："><a href="#实验拓扑图：" class="headerlink" title="实验拓扑图："></a>实验拓扑图：</h2><img src="/posts/ed472168/image-20201228191304926.png" alt="image-20201228191304926" style="zoom:80%;"><h3 id="pc的配置："><a href="#pc的配置：" class="headerlink" title="pc的配置："></a>pc的配置：</h3><img src="/posts/ed472168/image-20201228191226918.png" alt="image-20201228191226918" style="zoom:80%;"><h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h2><p>实现pc1、pc2、pc3、pc4之间互通信，可以互相ping通。</p><h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class="line-numbers language-bash"><code class="language-bash">1.先配置ip addr2.配置riprip 1version 2<span class="token punctuation">[</span>AR1<span class="token punctuation">]</span>rip 1<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>version 2<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>network 192.168.1.0<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>network 192.168.2.0<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>network 1.0.0.0<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>dis this<span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span><span class="token comment" spellcheck="true">#</span>rip 1 version 2 network 192.168.1.0 network 192.168.2.0 network 1.0.0.0<span class="token comment" spellcheck="true">#</span><span class="token keyword">return</span><span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-BASH"><code class="language-BASH">[V200R003C00]# sysname AR1#interface GigabitEthernet0/0/0 ip address 1.1.1.1 255.255.255.252 #interface GigabitEthernet0/0/1 ip address 192.168.1.1 255.255.255.0 #interface GigabitEthernet0/0/2 ip address 192.168.2.1 255.255.255.0 #interface NULL0#rip 1 version 2 network 192.168.1.0 network 192.168.2.0 network 1.0.0.0#user-interface con 0 authentication-mode passworduser-interface vty 0 4user-interface vty 16 20#wlan ac#return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2;"></a>AR2;</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/0 ip address 1.1.1.2 255.255.255.252 <span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/1 ip address 2.2.2.1 255.255.255.252 <span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/2<span class="token comment" spellcheck="true">#</span>interface NULL0<span class="token comment" spellcheck="true">#</span>rip 1 version 2 network 1.0.0.0 network 2.0.0.0<span class="token comment" spellcheck="true">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="AR3"><a href="#AR3" class="headerlink" title="AR3:"></a>AR3:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/1 ip address 2.2.2.2 255.255.255.252 <span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/2 ip address 3.3.3.1 255.255.255.252 <span class="token comment" spellcheck="true">#</span>interface NULL0<span class="token comment" spellcheck="true">#</span>rip 1 version 2 network 2.0.0.0 network 3.0.0.0<span class="token comment" spellcheck="true">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="AR4；"><a href="#AR4；" class="headerlink" title="AR4；"></a>AR4；</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/0 ip address 172.16.1.1 255.255.255.0 <span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/1 ip address 172.16.2.1 255.255.255.0 <span class="token comment" spellcheck="true">#</span>interface GigabitEthernet0/0/2 ip address 3.3.3.2 255.255.255.252 <span class="token comment" spellcheck="true">#</span>interface NULL0<span class="token comment" spellcheck="true">#</span>rip 1 version 2 network 3.0.0.0 network 172.16.0.0<span class="token comment" spellcheck="true">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="实现效果图："><a href="#实现效果图：" class="headerlink" title="实现效果图："></a>实现效果图：</h2><img src="/posts/ed472168/image-20201228191927168.png" alt="image-20201228191927168" style="zoom:80%;">]]></content>
+      
+      
+      <categories>
+          
+          <category> ip网络实验 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ip网络实验4</title>
       <link href="posts/9a4011fe/"/>
       <url>posts/9a4011fe/</url>
@@ -765,9 +790,9 @@
       
         <tags>
             
-            <tag> 踩坑记录 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 踩坑记录 </tag>
             
         </tags>
       
