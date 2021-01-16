@@ -8,7 +8,7 @@
       <link href="posts/a8e03439/"/>
       <url>posts/a8e03439/</url>
       
-        <content type="html"><![CDATA[<img src="/posts/a8e03439/image-20210116214404161.png" alt="image-20210116214404161" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214436394.png" alt="image-20210116214436394" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214458264.png" alt="image-20210116214458264" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214511526.png" alt="image-20210116214511526" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214525124.png" alt="image-20210116214525124" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214541792.png" alt="image-20210116214541792" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214600524.png" alt="image-20210116214600524" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214618785.png" alt="image-20210116214618785" style="zoom:50%;"><p><img src="/posts/a8e03439/image-20210116214701766.png" alt="image-20210116214701766"></p><img src="/posts/a8e03439/image-20210116214821751.png" alt="image-20210116214821751" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214854031.png" alt="image-20210116214854031" style="zoom:50%;">]]></content>
+        <content type="html"><![CDATA[<h1 id="ip网络构建小总结"><a href="#ip网络构建小总结" class="headerlink" title="ip网络构建小总结"></a>ip网络构建小总结</h1><h2 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h2><img src="/posts/a8e03439/image-20210116214404161.png" alt="image-20210116214404161" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214436394.png" alt="image-20210116214436394" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214458264.png" alt="image-20210116214458264" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214511526.png" alt="image-20210116214511526" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214525124.png" alt="image-20210116214525124" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214541792.png" alt="image-20210116214541792" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214600524.png" alt="image-20210116214600524" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214618785.png" alt="image-20210116214618785" style="zoom:50%;"><p><img src="/posts/a8e03439/image-20210116214701766.png" alt="image-20210116214701766"></p><img src="/posts/a8e03439/image-20210116214821751.png" alt="image-20210116214821751" style="zoom:50%;"><img src="/posts/a8e03439/image-20210116214854031.png" alt="image-20210116214854031" style="zoom:50%;"><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-bash"><code class="language-bash">system-view//进入配置模式dis this //查看当前配置dis ip rounting-table //查看路由表vlan batch 10 20 30 //设置vlanint e0/0/0   int g0/0/0  //进接口port link-type access  //设置端口为accessport default vlan 10port link-type trunk  //设置端口为trunkport trunk allow-pass vlan 10 ip route-static 192.168.100.0 255.255.255.0 1.1.1.1//单臂路由int e0/0/1.100ip add 192.168.100.1 24dotp1 termination vid 100arp broadcast <span class="token function">enable</span>//链路聚合interface Eth-Trunk1 port link-type trunk port trunk allow-pass vlan 100 200 stp instance 0 cost 10interface Ethernet0/0/2 eth-trunk 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -1036,9 +1036,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 命令 </tag>
             
         </tags>
       
@@ -1063,9 +1063,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 命令 </tag>
             
         </tags>
       
