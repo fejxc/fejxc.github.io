@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>client实现免密登陆server</title>
+      <link href="posts/a5451f8b/"/>
+      <url>posts/a5451f8b/</url>
+      
+        <content type="html"><![CDATA[<h1 id="设置服务器免密登录"><a href="#设置服务器免密登录" class="headerlink" title="设置服务器免密登录"></a>设置服务器免密登录</h1><h2 id="1-Client本地生成密钥对"><a href="#1-Client本地生成密钥对" class="headerlink" title="1. Client本地生成密钥对"></a>1. Client本地生成密钥对</h2><pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen -t rsa    <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中"><a href="#2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中" class="headerlink" title="2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中"></a>2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">scp</span> -p ~/.ssh/id_rsa.pub root@106.15.176.236:~/.ssh/<span class="token comment" spellcheck="true">#输入密码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="3-在Server服务器"><a href="#3-在Server服务器" class="headerlink" title="3.在Server服务器"></a>3.在Server服务器</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mv</span> ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="4-小插曲-问题"><a href="#4-小插曲-问题" class="headerlink" title="4.小插曲(问题)"></a>4.小插曲(问题)</h2><img src="/posts/a5451f8b/image-20210308150341291.png" alt="权限问题" style="zoom:50%;"><h2 id="5-成功实现"><a href="#5-成功实现" class="headerlink" title="5.成功实现"></a>5.成功实现</h2><img src="/posts/a5451f8b/image-20210308150440888.png" alt="成功免密登陆" style="zoom:50%;"><pre class="line-numbers language-bash"><code class="language-bash">sunyun@sunyundeMacBook-Pro ~ % <span class="token function">cd</span> /Users/sunyun/.ssh/sunyun@sunyundeMacBook-Pro .ssh % <span class="token function">ls</span>config            id_rsa_gitee        id_rsa_github.pubid_rsa            id_rsa_gitee.pub    known_hostsid_rsa.pub        id_rsa_githubsunyun@sunyundeMacBook-Pro .ssh % <span class="token function">chmod</span> 0600 id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test11111</title>
       <link href="posts/f8822b14/"/>
       <url>posts/f8822b14/</url>
@@ -1075,9 +1088,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 命令 </tag>
             
         </tags>
       
@@ -1102,9 +1115,9 @@
       
         <tags>
             
-            <tag> 命令 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 命令 </tag>
             
         </tags>
       

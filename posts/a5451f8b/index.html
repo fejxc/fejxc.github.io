@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git常用命令清单, fejxc的博客">
+    <meta name="keywords" content="client实现免密登陆server, fejxc的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git常用命令清单 | fejxc的博客</title>
+    <title>client实现免密登陆server | fejxc的博客</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/libs/awesome/css/all.css">
@@ -202,12 +202,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.loli.net/2020/10/15/LxCtvP85WgiurkI.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git常用命令清单</h1>
+                    <h1 class="description center-align post-title">client实现免密登陆server</h1>
                 </div>
             </div>
         </div>
@@ -322,29 +322,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                                <span class="chip bg-color">命令</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-category">
-                                常用命令
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -353,21 +336,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-15
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-20
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    282
+                    111
                 </div>
                 
 
@@ -384,54 +367,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="git常用命令清单"><a href="#git常用命令清单" class="headerlink" title="git常用命令清单"></a>git常用命令清单</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> init
-<span class="token function">git</span> status
-/**
-红色 文件修改 还没添加到版本库
-绿色 文件已经添加到版本库 还没有提交
-*/
-<span class="token function">git</span> config --global user.name <span class="token string">""</span>
-<span class="token function">git</span> config --global user.email <span class="token string">""</span>
-<span class="token function">git</span> add xxx
-<span class="token function">git</span> commit -m <span class="token string">""</span>
+                <h1 id="设置服务器免密登录"><a href="#设置服务器免密登录" class="headerlink" title="设置服务器免密登录"></a>设置服务器免密登录</h1><h2 id="1-Client本地生成密钥对"><a href="#1-Client本地生成密钥对" class="headerlink" title="1. Client本地生成密钥对"></a>1. Client本地生成密钥对</h2><pre class="line-numbers language-bash"><code class="language-bash">ssh-keygen -t rsa    <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中"><a href="#2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中" class="headerlink" title="2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中"></a>2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">scp</span> -p ~/.ssh/id_rsa.pub root@106.15.176.236:~/.ssh/
+<span class="token comment" spellcheck="true">#输入密码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="3-在Server服务器"><a href="#3-在Server服务器" class="headerlink" title="3.在Server服务器"></a>3.在Server服务器</h2><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mv</span> ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="4-小插曲-问题"><a href="#4-小插曲-问题" class="headerlink" title="4.小插曲(问题)"></a>4.小插曲(问题)</h2><img src="/posts/a5451f8b/image-20210308150341291.png" alt="权限问题" style="zoom:50%;">
 
-<span class="token function">git</span> log
-<span class="token function">git</span> log --pretty<span class="token operator">=</span>oneline
-<span class="token function">git</span> reflog //显示所有历史版本记录
+<h2 id="5-成功实现"><a href="#5-成功实现" class="headerlink" title="5.成功实现"></a>5.成功实现</h2><img src="/posts/a5451f8b/image-20210308150440888.png" alt="成功免密登陆" style="zoom:50%;">
 
-<span class="token function">git</span> reset --hard 版本id //回退版本
-
-<span class="token function">git</span> checkout -- 文件 //撤回工作区的修改
-
-<span class="token function">git</span> reset HEAD 文件 //撤回暂存区的修改，要先reset 然后 checkout
-<span class="token function">git</span> checkout --文件
-
-//版本库的删除
-<span class="token function">rm</span> 文件 目录
-<span class="token function">git</span> <span class="token function">rm</span> 文件 目录
-<span class="token function">git</span> commit -m <span class="token string">""</span>
-//取消删除
-<span class="token function">git</span> checkout -- 文件名
-
-//创建分支
-<span class="token function">git</span> checkout -b 分支名
-//切换分支
-<span class="token function">git</span> checkout 分支名
-//合并分支（先切换到主分支）
-<span class="token function">git</span> merge 要合并的分支名
-
-//远程仓库操作
-<span class="token function">git</span> clone url
-<span class="token function">git</span> remote add origin url  //将对本地git添加远程仓库
-<span class="token function">git</span> remote remove origin //删除原有的仓库地址
-<span class="token function">git</span> push -u origin 分支名 //本地分支推送到远程仓库
-<span class="token function">git</span> push -f origin 分支名  //-u更新 -f强制更新
-<span class="token function">git</span> push -d origin 分支名
-<span class="token function">git</span> pull origin 分支名    
-
-ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">sunyun@sunyundeMacBook-Pro ~ % <span class="token function">cd</span> /Users/sunyun/.ssh/
+sunyun@sunyundeMacBook-Pro .ssh % <span class="token function">ls</span>
+config            id_rsa_gitee        id_rsa_github.pub
+id_rsa            id_rsa_gitee.pub    known_hosts
+id_rsa.pub        id_rsa_github
+sunyun@sunyundeMacBook-Pro .ssh % <span class="token function">chmod</span> 0600 id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr/>
@@ -447,7 +396,7 @@ ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">孙昀</a>
+                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -457,7 +406,7 @@ ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fejxc.top/posts/4e9d4f4b/">https://fejxc.top/posts/4e9d4f4b/</a>
+                    <a href="https://fejxc.top/posts/a5451f8b/">https://fejxc.top/posts/a5451f8b/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -470,7 +419,7 @@ ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">孙昀</a>
+                    <a href="/about" target="_blank">fejxc</a>
                     !
                 </span>
             </div>
@@ -494,15 +443,7 @@ ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                                    <span class="chip bg-color">命令</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -805,68 +746,18 @@ ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/posts/3b9361d9/">
-                    <div class="card-image">
-                        
-                        <img src="https://i.loli.net/2020/10/27/a5bUkPOGeS2qjwm.jpg" class="responsive-img" alt="Vue CLI脚手架">
-                        
-                        <span class="card-title">Vue CLI脚手架</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Vue/" class="post-category">
-                                    Vue
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/posts/caff8000/">
+                <a href="/posts/a5451f8b/">
                     <div class="card-image">
                         
-                        <img src="https://i.loli.net/2020/10/15/LxCtvP85WgiurkI.png" class="responsive-img" alt="Git常用命令">
                         
-                        <span class="card-title">Git常用命令</span>
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="client实现免密登陆server">
+                        
+                        <span class="card-title">client实现免密登陆server</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -877,31 +768,53 @@ ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-08
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-category">
-                                    常用命令
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            fejxc
                             
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%91%BD%E4%BB%A4/">
-                        <span class="chip bg-color">命令</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/f8822b14/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/fejxc/fejxc.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="test11111">
+                        
+                        <span class="card-title">test11111</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            fejxc
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
