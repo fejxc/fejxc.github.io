@@ -58,7 +58,7 @@
       <link href="posts/b509aa1e/"/>
       <url>posts/b509aa1e/</url>
       
-        <content type="html"><![CDATA[<h1 id="大数据期末复习"><a href="#大数据期末复习" class="headerlink" title="大数据期末复习"></a>大数据期末复习</h1><h2 id="1-Hadoop"><a href="#1-Hadoop" class="headerlink" title="1.Hadoop"></a>1.Hadoop</h2><img src="/posts/b509aa1e/image-20210625092903596.png" alt="image-20210625092903596" style="zoom:50%;"><img src="/posts/b509aa1e/image-20210625092923392.png" alt="image-20210625092923392" style="zoom:50%;"><h2 id="2-HDFS"><a href="#2-HDFS" class="headerlink" title="2.HDFS"></a>2.HDFS</h2><img src="/posts/b509aa1e/image-20210625092946941.png" alt="image-20210625092946941" style="zoom:50%;"><img src="/posts/b509aa1e/image-20210625093128073.png" alt="image-20210625093128073" style="zoom:50%;">]]></content>
+        <content type="html"><![CDATA[<h1 id="大数据期末复习"><a href="#大数据期末复习" class="headerlink" title="大数据期末复习"></a>大数据期末复习</h1><h2 id="1-Hadoop"><a href="#1-Hadoop" class="headerlink" title="1.Hadoop"></a>1.Hadoop</h2><img src="/posts/b509aa1e/image-20210625092903596.png" alt="image-20210625092903596" style="zoom:50%;"><img src="/posts/b509aa1e/image-20210625092923392.png" alt="image-20210625092923392" style="zoom:50%;"><h2 id="2-HDFS"><a href="#2-HDFS" class="headerlink" title="2.HDFS"></a>2.HDFS</h2><img src="/posts/b509aa1e/image-20210625092946941.png" alt="image-20210625092946941" style="zoom:50%;"><img src="/posts/b509aa1e/image-20210625093128073.png" alt="image-20210625093128073" style="zoom:50%;"><h2 id="3-Spark"><a href="#3-Spark" class="headerlink" title="3.Spark"></a>3.Spark</h2><img src="/posts/b509aa1e/image-20210625175711590.png" alt="image-20210625175711590" style="zoom:50%;"><h2 id="4-一些图"><a href="#4-一些图" class="headerlink" title="4.一些图"></a>4.一些图</h2><img src="/posts/b509aa1e/image-20210625175738601.png" alt="image-20210625175738601" style="zoom:50%;"><img src="/posts/b509aa1e/image-20210625175826717.png" alt="image-20210625175826717" style="zoom:50%;"><img src="/posts/b509aa1e/image-20210625175856387.png" alt="image-20210625175856387" style="zoom:50%;">]]></content>
       
       
       
@@ -1363,9 +1363,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> 踩坑记录 </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
