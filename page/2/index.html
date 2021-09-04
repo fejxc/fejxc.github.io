@@ -428,7 +428,7 @@
                                 sql笔记8月9号表结构
 
 
-123456789101112131415161718insert into `user`(name,age,sex)values('suny',20,1),('hauhua',19,1),('meimei',
+insert into `user`(name,age,sex)values('suny',20,1),('hauhua',19,1),('meimei',33,0);-- 当表中主键存在数据就执行更新操作in
                             
                         </div>
                         <div class="publish-info">
@@ -510,7 +510,7 @@
 
 
 
-sql123select ywh,ygdjzl,djlx,yxtdjlxmc,qdjg,djzmh,dbr,djsj,fj,zxywh,zxsj,zxyy,qszt,qxdm,djjg,bz_qli
+sqlselect ywh,ygdjzl,djlx,yxtdjlxmc,qdjg,djzmh,dbr,djsj,fj,zxywh,zxsj,zxyy,qszt,qxdm,djjg,bz_qlid,b
                             
                         </div>
                         <div class="publish-info">
@@ -592,7 +592,7 @@ sql123select ywh,ygdjzl,djlx,yxtdjlxmc,qdjg,djzmh,dbr,djsj,fj,zxywh,zxsj,zxyy,qs
                             
                                 数据库土地使用权1、表土地使用权TDSYQ表结构
 
-sql1select bsm,zddm,bdcdyh,ywh,qllx,djlx,mjdw,nydmj,gdmj,ldmj,cdmj,qtnydmj,wlydmj,bdcqzh,dbr,q
+sqlselect bsm,zddm,bdcdyh,ywh,qllx,djlx,mjdw,nydmj,gdmj,ldmj,cdmj,qtnydmj,wlydmj,bdcqzh,dbr,qs
                             
                         </div>
                         <div class="publish-info">
@@ -633,7 +633,7 @@ sql1select bsm,zddm,bdcdyh,ywh,qllx,djlx,mjdw,nydmj,gdmj,ldmj,cdmj,qtnydmj,wlydm
 
 
 
-sql语句123select bsm,ywh,qlrlb,qlbm,qlbsm,qlrmc,zjzl,qlrlx,qszt,zsbsm,yxtbm,yxtbsm,qxdm,rev_,gxs
+sql语句select bsm,ywh,qlrlb,qlbm,qlbsm,qlrmc,zjzl,qlrlx,qszt,zsbsm,yxtbm,yxtbsm,qxdm,rev_,gxsj,b
                             
                         </div>
                         <div class="publish-info">
@@ -710,7 +710,7 @@ tls_enable = true
                         <div class="summary block-with-text">
                             
                                 数据推送项目小总结1.多数据源配置1.1核心配置application.yml
-123456789101112131415161718192021222324252627282930313233343536373839gisq:  plat
+gisq:  platform:    auth:      checkToken: false    web:      cross:        enab
                             
                         </div>
                         <div class="publish-info">
@@ -745,11 +745,13 @@ tls_enable = true
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                TX1select t.xzqbm,t.xzqmc,'1' as szshbsm from xzqbm t where t.XZQJB='2' order by t.xzqbm
+                                TXselect t.xzqbm,t.xzqmc,'1' as szshbsm from xzqbm t where t.XZQJB='2' order by t.xzqbm
 
 
 
-1SELECT * FROM t_szsh_code
+SELECT * FROM t_szsh_code
+
+
 
 
                             
@@ -865,7 +867,7 @@ tls_enable = true
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                注解@Scheduled12345678910111213@Component@Service@ConditionalOnExpression("$&#123;gisq.platform.supervise.collection.analy
+                                注解@Scheduled@Component@Service@ConditionalOnExpression("$&#123;gisq.platform.supervise.collection.analysisquartz&#125;==
                             
                         </div>
                         <div class="publish-info">

@@ -574,19 +574,19 @@
 <img src="/posts/7323b4cb/image-20201213224707463.png" alt="image-20201213224707463" style="zoom:50%;">
 
 <p>3.配置端口 0/0/1</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/1    //可以简写 int e0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 100</span><br><span class="line">dis this //查看当前端口配置</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">interface Ethernet0/0/1    //可以简写 int e0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 100</span><br><span class="line">dis this //查看当前端口配置</span><br></pre></td></tr></table></figure>
 
 <img src="/posts/7323b4cb/image-20201213225726690.png" alt="image-20201213225726690" style="zoom:50%;">
 
 <img src="/posts/7323b4cb/image-20201213225832494.png" alt="image-20201213225832494" style="zoom:50%;">
 
 <p>4.配置端口 0/0/2</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/2    //可以简写 int e0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 20</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">interface Ethernet0/0/2    //可以简写 int e0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 20</span><br></pre></td></tr></table></figure>
 
 <img src="/posts/7323b4cb/image-20201213230028535.png" alt="image-20201213230028535" style="zoom:50%;">
 
 <p>5.配置端口 0/0/3</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/3    //可以简写 int e0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow vlan 100 200</span><br><span class="line">dis this</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">interface Ethernet0/0/3    //可以简写 int e0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow vlan 100 200</span><br><span class="line">dis this</span><br></pre></td></tr></table></figure>
 
 <img src="/posts/7323b4cb/image-20201213230134776.png" alt="image-20201213230134776" style="zoom:50%;">
 
@@ -599,19 +599,19 @@
 <img src="/posts/7323b4cb/image-20201213224707463.png" alt="image-20201213224707463" style="zoom:50%;">
 
 <p>3.配置端口 0/0/1</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/1    //可以简写 int e0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 200</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">interface Ethernet0/0/1    //可以简写 int e0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 200</span><br></pre></td></tr></table></figure>
 
 
 
 <img src="/posts/7323b4cb/image-20201213230523379.png" alt="image-20201213230523379" style="zoom:50%;">
 
 <p>4.配置端口 0/0/2</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/2    //可以简写 int e0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 100</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">interface Ethernet0/0/2    //可以简写 int e0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 100</span><br></pre></td></tr></table></figure>
 
 <img src="/posts/7323b4cb/image-20201213230713843.png" alt="image-20201213230713843" style="zoom:50%;">
 
 <p>5.配置端口 0/0/3</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/3    //可以简写 int e0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow vlan 100 200</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">interface Ethernet0/0/3    //可以简写 int e0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow vlan 100 200</span><br></pre></td></tr></table></figure>
 
 <img src="/posts/7323b4cb/image-20201213230900610.png" alt="image-20201213230900610" style="zoom:50%;">
 

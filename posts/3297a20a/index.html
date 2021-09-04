@@ -514,7 +514,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    174
+                    173
                 </div>
                 
 
@@ -539,7 +539,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="github与gitee代码同步push教程"><a href="#github与gitee代码同步push教程" class="headerlink" title="github与gitee代码同步push教程"></a>github与gitee代码同步push教程</h1><h2 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h2><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在gitee在已经有仓库</span><br><span class="line">复制该仓库的 <span class="string">https:</span><span class="comment">//gitee.com/*******.git 的https地址</span></span><br></pre></td></tr></table></figure>
+                <h1 id="github与gitee代码同步push教程"><a href="#github与gitee代码同步push教程" class="headerlink" title="github与gitee代码同步push教程"></a>github与gitee代码同步push教程</h1><h2 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">在gitee在已经有仓库</span><br><span class="line">复制该仓库的 <span class="string">https:</span><span class="comment">//gitee.com/*******.git 的https地址</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="步骤2"><a href="#步骤2" class="headerlink" title="步骤2:"></a>步骤2:</h2><p><img src="https://i.loli.net/2020/10/29/AUy38BqXa6MwRLb.png"></p>
 <p>选择<code>Import repository</code></p>
@@ -550,12 +550,12 @@
 <h2 id="步骤4"><a href="#步骤4" class="headerlink" title="步骤4:"></a>步骤4:</h2><p>1.先将gitee项目的代码克隆到本地电脑</p>
 <p>2.然后修改config文件   文件在 <code>.git/concig</code></p>
 <p>3.修改如下</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = <span class="keyword">true</span></span><br><span class="line">	bare = <span class="keyword">false</span></span><br><span class="line">	logallrefupdates = <span class="keyword">true</span></span><br><span class="line">	ignorecase = <span class="keyword">true</span></span><br><span class="line">	precomposeunicode = <span class="keyword">true</span></span><br><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">	<span class="comment"># github</span></span><br><span class="line">	url = git<span class="variable">@github</span>.<span class="symbol">com:</span>*****.git  <span class="comment">#add code</span></span><br><span class="line">	<span class="comment"># gitee</span></span><br><span class="line">	url = <span class="symbol">https:</span>/<span class="regexp">/gitee.com/</span>*****.git</span><br><span class="line">	fetch = +refs/heads/*<span class="symbol">:refs/remotes/origin/*</span></span><br><span class="line">[branch <span class="string">"master"</span>]  <span class="comment">#add code</span></span><br><span class="line">	remote = origin</span><br><span class="line">	merge = refs/heads/master</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = <span class="keyword">true</span></span><br><span class="line">	bare = <span class="keyword">false</span></span><br><span class="line">	logallrefupdates = <span class="keyword">true</span></span><br><span class="line">	ignorecase = <span class="keyword">true</span></span><br><span class="line">	precomposeunicode = <span class="keyword">true</span></span><br><span class="line">[remote <span class="string">"origin"</span>]</span><br><span class="line">	<span class="comment"># github</span></span><br><span class="line">	url = git<span class="variable">@github</span>.<span class="symbol">com:</span>*****.git  <span class="comment">#add code</span></span><br><span class="line">	<span class="comment"># gitee</span></span><br><span class="line">	url = <span class="symbol">https:</span>/<span class="regexp">/gitee.com/</span>*****.git</span><br><span class="line">	fetch = +refs/heads/*<span class="symbol">:refs/remotes/origin/*</span></span><br><span class="line">[branch <span class="string">"master"</span>]  <span class="comment">#add code</span></span><br><span class="line">	remote = origin</span><br><span class="line">	merge = refs/heads/master</span><br></pre></td></tr></table></figure>
 
 
 
 <h2 id="步骤5"><a href="#步骤5" class="headerlink" title="步骤5:"></a>步骤5:</h2><p>验证代码：</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> .</span><br><span class="line">git commit -m <span class="string">"init"</span></span><br><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">add</span> .</span><br><span class="line">git commit -m <span class="string">"init"</span></span><br><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="成功图示："><a href="#成功图示：" class="headerlink" title="成功图示："></a>成功图示：</h2><p><img src="https://i.loli.net/2020/10/29/ewKI8izumR6JkhV.png"></p>
 
