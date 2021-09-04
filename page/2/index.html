@@ -429,7 +429,10 @@
                                 sql笔记8月9号表结构
 
 
-insert into `user`(name,age,sex)values('suny',20,1),('hauhua',19,1),('meimei',33,0);-- 当表中主键存在数据就执行更新操作in
+insert into `user`(name,age,sex)
+values('suny',20,1),('hauhua',19,1),('meimei',33,0);
+
+-- 当表中主键存在数据就执行更新操
                             
                         </div>
                         <div class="publish-info">
@@ -511,7 +514,8 @@ insert into `user`(name,age,sex)values('suny',20,1),('hauhua',19,1),('meimei',33
 
 
 
-sqlselect ywh,ygdjzl,djlx,yxtdjlxmc,qdjg,djzmh,dbr,djsj,fj,zxywh,zxsj,zxyy,qszt,qxdm,djjg,bz_qlid,b
+sqlselect ywh,ygdjzl,djlx,yxtdjlxmc,qdjg,djzmh,dbr,djsj,fj,
+zxywh,zxsj,zxyy,qszt,qxdm,djjg,bz_qlid,
                             
                         </div>
                         <div class="publish-info">
@@ -711,7 +715,13 @@ tls_enable = true
                         <div class="summary block-with-text">
                             
                                 数据推送项目小总结1.多数据源配置1.1核心配置application.yml
-gisq:  platform:    auth:      checkToken: false    web:      cross:        enab
+gisq:
+  platform:
+    auth:
+      checkToken: false
+    web:
+      cross:
+      
                             
                         </div>
                         <div class="publish-info">
@@ -749,8 +759,8 @@ gisq:  platform:    auth:      checkToken: false    web:      cross:        enab
                                 TXselect t.xzqbm,t.xzqmc,'1' as szshbsm from xzqbm t where t.XZQJB='2' order by t.xzqbm
 
 
-
 SELECT * FROM t_szsh_code
+
 
 
 
@@ -868,7 +878,10 @@ SELECT * FROM t_szsh_code
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                注解@Scheduled@Component@Service@ConditionalOnExpression("$&#123;gisq.platform.supervise.collection.analysisquartz&#125;==
+                                注解@Scheduled@Component
+@Service
+@ConditionalOnExpression("${gisq.platform.supervise.collection.analysisquartz}==true")
+p
                             
                         </div>
                         <div class="publish-info">

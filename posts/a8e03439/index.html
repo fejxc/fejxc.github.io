@@ -515,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    151
+                    159
                 </div>
                 
 
@@ -531,9 +531,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -561,8 +558,34 @@
 
 <img src="/posts/a8e03439/image-20210116214854031.png" alt="image-20210116214854031" style="zoom:50%;">
 
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">system-view//进入配置模式</span><br><span class="line">dis this //查看当前配置</span><br><span class="line">dis ip rounting-table //查看路由表</span><br><span class="line"></span><br><span class="line">vlan batch 10 20 30 //设置vlan</span><br><span class="line">int e0/0/0   int g0/0/0  //进接口</span><br><span class="line"></span><br><span class="line">port link-type access  //设置端口为access</span><br><span class="line">port default vlan 10</span><br><span class="line"></span><br><span class="line">port link-type trunk  //设置端口为trunk</span><br><span class="line">port trunk allow-pass vlan 10 </span><br><span class="line"></span><br><span class="line">ip route-static 192.168.100.0 255.255.255.0 1.1.1.1</span><br><span class="line"></span><br><span class="line">//单臂路由</span><br><span class="line">int e0/0/1.100</span><br><span class="line">ip add 192.168.100.1 24</span><br><span class="line">dotp1 termination vid 100</span><br><span class="line">arp broadcast <span class="built_in">enable</span></span><br><span class="line"></span><br><span class="line">//链路聚合</span><br><span class="line">interface Eth-Trunk1</span><br><span class="line"> port link-type trunk</span><br><span class="line"> port trunk allow-pass vlan 100 200</span><br><span class="line"> stp instance 0 cost 10</span><br><span class="line">interface Ethernet0/0/2</span><br><span class="line"> eth-trunk 1</span><br></pre></td></tr></table></figure>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-bash"><code class="language-bash">system-view//进入配置模式
+dis this //查看当前配置
+dis ip rounting-table //查看路由表
 
+vlan batch 10 20 30 //设置vlan
+int e0/0/0   int g0/0/0  //进接口
+
+port link-type access  //设置端口为access
+port default vlan 10
+
+port link-type trunk  //设置端口为trunk
+port trunk allow-pass vlan 10 
+
+ip route-static 192.168.100.0 255.255.255.0 1.1.1.1
+
+//单臂路由
+int e0/0/1.100
+ip add 192.168.100.1 24
+dotp1 termination vid 100
+arp broadcast <span class="token function">enable</span>
+
+//链路聚合
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+ stp instance 0 cost 10
+interface Ethernet0/0/2
+ eth-trunk 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="填空："><a href="#填空：" class="headerlink" title="填空："></a>填空：</h2><img src="/posts/a8e03439/image-20210117000343217.png" alt="填空" style="zoom:50%;">
 
 <h2 id="简答："><a href="#简答：" class="headerlink" title="简答："></a>简答：</h2><img src="/posts/a8e03439/image-20210117000407024.png" alt="简答" style="zoom:50%;">

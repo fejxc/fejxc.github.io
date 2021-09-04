@@ -519,7 +519,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    259
+                    238
                 </div>
                 
 
@@ -536,9 +536,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -546,19 +543,31 @@
             <div id="articleContent">
                 <h1 id="踩坑记录：pageHelp的pageSize属性不生效解决方案"><a href="#踩坑记录：pageHelp的pageSize属性不生效解决方案" class="headerlink" title="踩坑记录：pageHelp的pageSize属性不生效解决方案"></a>踩坑记录：pageHelp的pageSize属性不生效解决方案</h1><h3 id="开发环境："><a href="#开发环境：" class="headerlink" title="开发环境："></a>开发环境：</h3><p>当前环境说明：<br>开发工具：idea2019.2 Mac 11.0<br>框架：springboot、mybatis<br>功能：采用springboot整合mybatis实现对查询到的数据进行分页显示</p>
 <h3 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h3><p>pagesize属性不生效</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">listCategory</span><span class="params">(Model m , @RequestParam(value = <span class="string">"start"</span>,defaultValue = <span class="string">"0"</span>)</span><span class="keyword">int</span> start,</span></span><br><span class="line"><span class="function">                             @<span class="title">RequestParam</span><span class="params">(value = <span class="string">"size"</span>,defaultValue = <span class="string">"5"</span>)</span><span class="keyword">int</span> size)<span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">      PageHelper.startPage(start,size,<span class="string">"id desc"</span>);</span><br><span class="line">      List&lt;User&gt; cs = userMapper.queryAll();</span><br><span class="line">      PageInfo&lt;User&gt; page = <span class="keyword">new</span> PageInfo&lt;&gt;(cs);</span><br><span class="line">      m.addAttribute(<span class="string">"page"</span>,page);</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"list"</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-java"><code class="language-java">  <span class="token keyword">public</span> String <span class="token function">listCategory</span><span class="token punctuation">(</span>Model m <span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"start"</span><span class="token punctuation">,</span>defaultValue <span class="token operator">=</span> <span class="token string">"0"</span><span class="token punctuation">)</span><span class="token keyword">int</span> start<span class="token punctuation">,</span>
+                               <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"size"</span><span class="token punctuation">,</span>defaultValue <span class="token operator">=</span> <span class="token string">"5"</span><span class="token punctuation">)</span><span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{</span>
+        PageHelper<span class="token punctuation">.</span><span class="token function">startPage</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span>size<span class="token punctuation">,</span><span class="token string">"id desc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>User<span class="token operator">></span> cs <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">queryAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        PageInfo<span class="token operator">&lt;</span>User<span class="token operator">></span> page <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PageInfo</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span>cs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        m<span class="token punctuation">.</span><span class="token function">addAttribute</span><span class="token punctuation">(</span><span class="token string">"page"</span><span class="token punctuation">,</span>page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"list"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>size=5</code> 按效果数据每页会显示5条数据</p>
 <img src="https://i.loli.net/2020/10/12/J6tE3xib45lNpA9.png" alt="分页没有生效" style="zoom: 50%;">
 
 <h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><p>打开pom.xml文件</p>
 <p>修改当前pagehelper的版本</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;5.2.0&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>github<span class="token punctuation">.</span>pagehelper<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>pagehelper<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">5.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>5.2.0</code> 最新版本，分页不生效</p>
 <p>换成<code>4.1.6</code> 即可</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">			&lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">			&lt;version&gt;4.1.6&lt;/version&gt;</span><br><span class="line">		&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-
+<pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>dependency<span class="token operator">></span>
+            <span class="token operator">&lt;</span>groupId<span class="token operator">></span>com<span class="token punctuation">.</span>github<span class="token punctuation">.</span>pagehelper<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>artifactId<span class="token operator">></span>pagehelper<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>
+            <span class="token operator">&lt;</span>version<span class="token operator">></span><span class="token number">4.1</span><span class="token punctuation">.</span><span class="token number">6</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="验证结果："><a href="#验证结果：" class="headerlink" title="验证结果："></a>验证结果：</h3><p><img src="https://i.loli.net/2020/10/12/RuzMyhqnlW9Trbm.png" alt="正确结果"></p>
 <h3 id="小总结："><a href="#小总结：" class="headerlink" title="小总结："></a>小总结：</h3><p>一定要注意依赖的版本之间的对应关系！</p>
 

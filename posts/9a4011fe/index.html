@@ -515,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    451
+                    462
                 </div>
                 
 
@@ -532,9 +532,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -550,21 +547,171 @@
 
 <img src="/posts/9a4011fe/image-20201226231807883.png" alt="image-20201226231807883" style="zoom:33%;">
 
-<h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><h3 id="LSW3"><a href="#LSW3" class="headerlink" title="LSW3"></a>LSW3</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line">sysname Huawei</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">vlan batch 100 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">stp instance 0 root primary</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">cluster <span class="built_in">enable</span></span><br><span class="line">ntdp <span class="built_in">enable</span></span><br><span class="line">ndp <span class="built_in">enable</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">drop illegal-mac alarm</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">diffserv domain default</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">drop-profile default</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">aaa</span><br><span class="line"> authentication-scheme default</span><br><span class="line"> authorization-scheme default</span><br><span class="line"> accounting-scheme default</span><br><span class="line"> domain default</span><br><span class="line"> domain default_admin</span><br><span class="line"> <span class="built_in">local</span>-user admin password simple admin</span><br><span class="line"> <span class="built_in">local</span>-user admin service-type http</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Vlanif1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Vlanif100</span><br><span class="line"> ip address 192.168.0.10 255.255.255.0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Vlanif200</span><br><span class="line"> ip address 172.32.0.10 255.255.255.0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface MEth0/0/1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> port link-type trunk</span><br><span class="line"> port trunk allow-pass vlan 100 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"> port link-type trunk</span><br><span class="line"> port trunk allow-pass vlan 100 200</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><h3 id="LSW3"><a href="#LSW3" class="headerlink" title="LSW3"></a>LSW3</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+sysname Huawei
+<span class="token comment" spellcheck="true">#</span>
+vlan batch 100 200
+<span class="token comment" spellcheck="true">#</span>
+stp instance 0 root primary
+<span class="token comment" spellcheck="true">#</span>
+cluster <span class="token function">enable</span>
+ntdp <span class="token function">enable</span>
+ndp <span class="token function">enable</span>
+<span class="token comment" spellcheck="true">#</span>
+drop illegal-mac alarm
+<span class="token comment" spellcheck="true">#</span>
+diffserv domain default
+<span class="token comment" spellcheck="true">#</span>
+drop-profile default
+<span class="token comment" spellcheck="true">#</span>
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password simple admin
+ local-user admin service-type http
+<span class="token comment" spellcheck="true">#</span>
+interface Vlanif1
+<span class="token comment" spellcheck="true">#</span>
+interface Vlanif100
+ ip address 192.168.0.10 255.255.255.0
+<span class="token comment" spellcheck="true">#</span>
+interface Vlanif200
+ ip address 172.32.0.10 255.255.255.0
+<span class="token comment" spellcheck="true">#</span>
+interface MEth0/0/1
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/2
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+<span class="token comment" spellcheck="true">#</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>stp root primary</code></p>
 <p><code>stp instance xx cost xx</code></p>
-<h3 id="LSW1；"><a href="#LSW1；" class="headerlink" title="LSW1；"></a>LSW1；</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line">sysname Huawei</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">vlan batch 100 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">cluster <span class="built_in">enable</span></span><br><span class="line">ntdp <span class="built_in">enable</span></span><br><span class="line">ndp <span class="built_in">enable</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">drop illegal-mac alarm</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">diffserv domain default</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">drop-profile default</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">aaa</span><br><span class="line"> authentication-scheme default</span><br><span class="line"> authorization-scheme default</span><br><span class="line"> accounting-scheme default</span><br><span class="line"> domain default</span><br><span class="line"> domain default_admin</span><br><span class="line"> <span class="built_in">local</span>-user admin password simple admin</span><br><span class="line"> <span class="built_in">local</span>-user admin service-type http</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Vlanif1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface MEth0/0/1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Eth-Trunk1</span><br><span class="line"> port link-type trunk</span><br><span class="line"> port trunk allow-pass vlan 100 200</span><br><span class="line"> stp instance 0 cost 10</span><br><span class="line"> mode lacp-static</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/1</span><br><span class="line"> port link-type trunk</span><br><span class="line"> port trunk allow-pass vlan 100 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/2</span><br><span class="line"> eth-trunk 1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/3</span><br><span class="line"> port link-type access</span><br><span class="line"> port default vlan 100</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/4</span><br><span class="line"> port link-type access</span><br><span class="line"> port default vlan 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/5</span><br><span class="line"> eth-trunk 1</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="lsw4"><a href="#lsw4" class="headerlink" title="lsw4:"></a>lsw4:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line">sysname Huawei</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">vlan batch 100 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">cluster <span class="built_in">enable</span></span><br><span class="line">ntdp <span class="built_in">enable</span></span><br><span class="line">ndp <span class="built_in">enable</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">drop illegal-mac alarm</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">diffserv domain default</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">drop-profile default</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">aaa</span><br><span class="line"> authentication-scheme default</span><br><span class="line"> authorization-scheme default</span><br><span class="line"> accounting-scheme default</span><br><span class="line"> domain default</span><br><span class="line"> domain default_admin</span><br><span class="line"> <span class="built_in">local</span>-user admin password simple admin</span><br><span class="line"> <span class="built_in">local</span>-user admin service-type http</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Vlanif1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface MEth0/0/1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Eth-Trunk1</span><br><span class="line"> port link-type trunk</span><br><span class="line"> port trunk allow-pass vlan 100 200</span><br><span class="line"> stp instance 0 cost 10</span><br><span class="line"> mode lacp-static</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/1</span><br><span class="line"> port link-type trunk</span><br><span class="line"> port trunk allow-pass vlan 100 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/2</span><br><span class="line"> eth-trunk 1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/3</span><br><span class="line"> port link-type access</span><br><span class="line"> port default vlan 200</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/4</span><br><span class="line"> port link-type access</span><br><span class="line"> port default vlan 100</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface Ethernet0/0/5</span><br><span class="line"> eth-trunk 1</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="LSW1；"><a href="#LSW1；" class="headerlink" title="LSW1；"></a>LSW1；</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+sysname Huawei
+<span class="token comment" spellcheck="true">#</span>
+vlan batch 100 200
+<span class="token comment" spellcheck="true">#</span>
+cluster <span class="token function">enable</span>
+ntdp <span class="token function">enable</span>
+ndp <span class="token function">enable</span>
+<span class="token comment" spellcheck="true">#</span>
+drop illegal-mac alarm
+<span class="token comment" spellcheck="true">#</span>
+diffserv domain default
+<span class="token comment" spellcheck="true">#</span>
+drop-profile default
+<span class="token comment" spellcheck="true">#</span>
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password simple admin
+ local-user admin service-type http
+<span class="token comment" spellcheck="true">#</span>
+interface Vlanif1
+<span class="token comment" spellcheck="true">#</span>
+interface MEth0/0/1
+<span class="token comment" spellcheck="true">#</span>
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+ stp instance 0 cost 10
+ mode lacp-static
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/2
+ eth-trunk 1
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/3
+ port link-type access
+ port default vlan 100
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/4
+ port link-type access
+ port default vlan 200
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/5
+ eth-trunk 1
+<span class="token comment" spellcheck="true">#</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="lsw4"><a href="#lsw4" class="headerlink" title="lsw4:"></a>lsw4:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+sysname Huawei
+<span class="token comment" spellcheck="true">#</span>
+vlan batch 100 200
+<span class="token comment" spellcheck="true">#</span>
+cluster <span class="token function">enable</span>
+ntdp <span class="token function">enable</span>
+ndp <span class="token function">enable</span>
+<span class="token comment" spellcheck="true">#</span>
+drop illegal-mac alarm
+<span class="token comment" spellcheck="true">#</span>
+diffserv domain default
+<span class="token comment" spellcheck="true">#</span>
+drop-profile default
+<span class="token comment" spellcheck="true">#</span>
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password simple admin
+ local-user admin service-type http
+<span class="token comment" spellcheck="true">#</span>
+interface Vlanif1
+<span class="token comment" spellcheck="true">#</span>
+interface MEth0/0/1
+<span class="token comment" spellcheck="true">#</span>
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+ stp instance 0 cost 10
+ mode lacp-static
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/1
+ port link-type trunk
+ port trunk allow-pass vlan 100 200
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/2
+ eth-trunk 1
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/3
+ port link-type access
+ port default vlan 200
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/4
+ port link-type access
+ port default vlan 100
+<span class="token comment" spellcheck="true">#</span>
+interface Ethernet0/0/5
+ eth-trunk 1
+<span class="token comment" spellcheck="true">#</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意：华为S5700系列交换机配置链路聚合LACP报错。</p>
 <p>(解决办法)[<a href="https://blog.51cto.com/7355754/2154322]" target="_blank" rel="noopener">https://blog.51cto.com/7355754/2154322]</a></p>
 <h2 id="实现效果："><a href="#实现效果：" class="headerlink" title="实现效果："></a>实现效果：</h2><img src="/posts/9a4011fe/image-20201226232454477.png" alt="image-20201226232454477" style="zoom:33%;">
 
 <p>部分效果图，其他自行测试</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">LSW3 要配置vlanif</span><br><span class="line">int vlanif 100</span><br><span class="line">ip add x.x.x.x xx</span><br><span class="line"></span><br><span class="line">int Eth-Trunk 1</span><br><span class="line">int ex/x/x</span><br><span class="line">eth-trunk 1</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-markdown"><code class="language-markdown">LSW3 要配置vlanif
+int vlanif 100
+ip add x.x.x.x xx
 
+int Eth-Trunk 1
+int ex/x/x
+eth-trunk 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

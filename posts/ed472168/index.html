@@ -515,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    363
                 </div>
                 
 
@@ -532,9 +532,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -545,16 +542,102 @@
 <h3 id="pc的配置："><a href="#pc的配置：" class="headerlink" title="pc的配置："></a>pc的配置：</h3><img src="/posts/ed472168/image-20201228191226918.png" alt="image-20201228191226918" style="zoom:80%;">
 
 <h2 id="实验目的："><a href="#实验目的：" class="headerlink" title="实验目的："></a>实验目的：</h2><p>实现pc1、pc2、pc3、pc4之间互通信，可以互相ping通。</p>
-<h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">1.先配置ip addr</span><br><span class="line">2.配置rip</span><br><span class="line">rip 1</span><br><span class="line">version 2</span><br><span class="line">[AR1]rip 1</span><br><span class="line">[AR1-rip-1]version 2</span><br><span class="line">[AR1-rip-1]network 192.168.1.0</span><br><span class="line">[AR1-rip-1]network 192.168.2.0</span><br><span class="line">[AR1-rip-1]network 1.0.0.0</span><br><span class="line">[AR1-rip-1]dis this</span><br><span class="line">[V200R003C00]</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">rip 1</span><br><span class="line"> version 2</span><br><span class="line"> network 192.168.1.0</span><br><span class="line"> network 192.168.2.0</span><br><span class="line"> network 1.0.0.0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">return</span></span><br><span class="line">[AR1-rip-1]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[V200R003C00]</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> sysname AR1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/0</span><br><span class="line"> ip address 1.1.1.1 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 192.168.1.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"> ip address 192.168.2.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">rip 1</span><br><span class="line"> version 2</span><br><span class="line"> network 192.168.1.0</span><br><span class="line"> network 192.168.2.0</span><br><span class="line"> network 1.0.0.0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">user-interface con 0</span><br><span class="line"> authentication-mode password</span><br><span class="line">user-interface vty 0 4</span><br><span class="line">user-interface vty 16 20</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">wlan ac</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">return</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2;"></a>AR2;</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/0</span><br><span class="line"> ip address 1.1.1.2 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 2.2.2.1 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">rip 1</span><br><span class="line"> version 2</span><br><span class="line"> network 1.0.0.0</span><br><span class="line"> network 2.0.0.0</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="AR3"><a href="#AR3" class="headerlink" title="AR3:"></a>AR3:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 2.2.2.2 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"> ip address 3.3.3.1 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">rip 1</span><br><span class="line"> version 2</span><br><span class="line"> network 2.0.0.0</span><br><span class="line"> network 3.0.0.0</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="AR4；"><a href="#AR4；" class="headerlink" title="AR4；"></a>AR4；</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/0</span><br><span class="line"> ip address 172.16.1.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 172.16.2.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"> ip address 3.3.3.2 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">rip 1</span><br><span class="line"> version 2</span><br><span class="line"> network 3.0.0.0</span><br><span class="line"> network 172.16.0.0</span><br><span class="line"><span class="comment">#</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class="line-numbers language-bash"><code class="language-bash">1.先配置ip addr
+2.配置rip
+rip 1
+version 2
+<span class="token punctuation">[</span>AR1<span class="token punctuation">]</span>rip 1
+<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>version 2
+<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>network 192.168.1.0
+<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>network 192.168.2.0
+<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>network 1.0.0.0
+<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span>dis this
+<span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#</span>
+rip 1
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+ network 1.0.0.0
+<span class="token comment" spellcheck="true">#</span>
+<span class="token keyword">return</span>
+<span class="token punctuation">[</span>AR1-rip-1<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-BASH"><code class="language-BASH">[V200R003C00]
+#
+ sysname AR1
+#
+interface GigabitEthernet0/0/0
+ ip address 1.1.1.1 255.255.255.252 
+#
+interface GigabitEthernet0/0/1
+ ip address 192.168.1.1 255.255.255.0 
+#
+interface GigabitEthernet0/0/2
+ ip address 192.168.2.1 255.255.255.0 
+#
+interface NULL0
+#
+rip 1
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+ network 1.0.0.0
+#
+user-interface con 0
+ authentication-mode password
+user-interface vty 0 4
+user-interface vty 16 20
+#
+wlan ac
+#
+return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2;"></a>AR2;</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/0
+ ip address 1.1.1.2 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/1
+ ip address 2.2.2.1 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/2
+<span class="token comment" spellcheck="true">#</span>
+interface NULL0
+<span class="token comment" spellcheck="true">#</span>
+rip 1
+ version 2
+ network 1.0.0.0
+ network 2.0.0.0
+<span class="token comment" spellcheck="true">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="AR3"><a href="#AR3" class="headerlink" title="AR3:"></a>AR3:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/1
+ ip address 2.2.2.2 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/2
+ ip address 3.3.3.1 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface NULL0
+<span class="token comment" spellcheck="true">#</span>
+rip 1
+ version 2
+ network 2.0.0.0
+ network 3.0.0.0
+<span class="token comment" spellcheck="true">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="AR4；"><a href="#AR4；" class="headerlink" title="AR4；"></a>AR4；</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/0
+ ip address 172.16.1.1 255.255.255.0 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/1
+ ip address 172.16.2.1 255.255.255.0 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/2
+ ip address 3.3.3.2 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface NULL0
+<span class="token comment" spellcheck="true">#</span>
+rip 1
+ version 2
+ network 3.0.0.0
+ network 172.16.0.0
+<span class="token comment" spellcheck="true">#</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="实现效果图："><a href="#实现效果图：" class="headerlink" title="实现效果图："></a>实现效果图：</h2><img src="/posts/ed472168/image-20201228191927168.png" alt="image-20201228191927168" style="zoom:80%;">
 
 
