@@ -412,19 +412,10 @@
                 
                 
                 
-                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" title="软件工程: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F9EBEA;">软件工程
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/ip%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/" title="ip网络实验: 9">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            style="background-color: #F5EEF8;">ip网络实验
+                            style="background-color: #F9EBEA;">ip网络实验
                         <span class="tag-length">9</span>
                     </span>
                 </a>
@@ -433,7 +424,16 @@
                 <a href="/categories/Vue/" title="Vue: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">Vue
+                            style="background-color: #F5EEF8;">Vue
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" title="软件工程: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D5F5E3;">软件工程
                         <span class="tag-length">4</span>
                     </span>
                 </a>
@@ -457,29 +457,20 @@
                 </a>
                 
                 
-                <a href="/categories/%E6%95%99%E7%A8%8B/" title="教程: 7">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8F9F9;">教程
-                        <span class="tag-length">7</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Shiro/" title="Shiro: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #82E0AA;">Shiro
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Bug/" title="Bug: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">Bug
+                            style="background-color: #F8F9F9;">Bug
                         <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E6%95%99%E7%A8%8B/" title="教程: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">教程
+                        <span class="tag-length">7</span>
                     </span>
                 </a>
                 
@@ -487,8 +478,17 @@
                 <a href="/categories/web%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%8D%E4%B9%A0/" title="web知识点复习: 6">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #A3E4D7;">web知识点复习
+                            style="background-color: #D7BDE2;">web知识点复习
                         <span class="tag-length">6</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Shiro/" title="Shiro: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #A3E4D7;">Shiro
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -664,7 +664,7 @@
 
 2.实验目的：1、实现pc1，pc2，pc3，动态获取ip地址，pc4动态获取ip地址为172.16.2.5
 2、打通pc之间和Server1的互通
-3.实验配置代码：LSW1：123456789101112
+3.实验配置代码：LSW1：&lt;LSW1>dis cu
                             
                         </div>
                         <div class="publish-info">
@@ -716,7 +716,9 @@
 
 2.实验目的：1.在LSW1上设置vlanif子接口
 2.在AR1设置acl，实现pc1不能ping通Server1
-1234567acl 3000rule 5 deny icmp source 192
+acl 3000
+
+rule 5 deny icmp source 192.168.
                             
                         </div>
                         <div class="publish-info">
@@ -767,7 +769,11 @@
 pc的配置：
 
 实验目的：实现pc1、pc2、pc3、pc4之间互通信，可以互相ping通。
-配置：AR1:12345678910111213141516171819201.先配置ip addr2.
+配置：AR1:1.先配置ip addr
+2.配置rip
+rip 1
+version 2
+[AR1]rip
                             
                         </div>
                         <div class="publish-info">

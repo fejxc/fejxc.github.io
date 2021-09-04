@@ -514,14 +514,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    913
+                    202
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    1 分
                 </div>
                 
 
@@ -530,6 +530,9 @@
         </div>
         <hr class="clearfix">
 
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -543,10 +546,67 @@
 <p><strong>3.根据规划，R0、R1属于osps的骨干区域Area 0，R属于Area 100，R3属于Area200，宣告路由器的直接连网段进ospf域</strong></p>
 <p><strong>4.将R2，R3上连接的端口设置为被动接口（passive-interface）防止路由器将ospf报文发送给pc</strong></p>
 <p><strong>5.pc之间可以相互ping通</strong></p>
-<h2 id="配置代码："><a href="#配置代码：" class="headerlink" title="配置代码："></a>配置代码：</h2><h3 id="Router0："><a href="#Router0：" class="headerlink" title="Router0："></a>Router0：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">[V200R003C00]</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> sysname Router0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> snmp-agent <span class="built_in">local</span>-engineid 800007DB03000000000000</span><br><span class="line"> snmp-agent </span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> clock timezone China-Standard-Time minus 08:00:00</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">portal <span class="built_in">local</span>-server load portalpage.zip</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> drop illegal-mac alarm</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> <span class="built_in">set</span> cpu-usage threshold 80 restore 75</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">aaa </span><br><span class="line"> authentication-scheme default</span><br><span class="line"> authorization-scheme default</span><br><span class="line"> accounting-scheme default</span><br><span class="line"> domain default </span><br><span class="line"> domain default_admin </span><br><span class="line"> <span class="built_in">local</span>-user admin password cipher %$%<span class="variable">$K8m</span>.Nt84DZ&#125;e<span class="comment">#&lt;0`8bmE3Uw&#125;%$%$</span></span><br><span class="line"> <span class="built_in">local</span>-user admin service-type http</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">firewall zone Local</span><br><span class="line"> priority 15</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/0</span><br><span class="line"> ip address 2.2.2.1 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 1.1.1.2 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface LoopBack0</span><br><span class="line"> ip address 11.11.11.10 255.255.255.255 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ospf 1 router-id 11.11.11.10 </span><br><span class="line"> area 0.0.0.0 </span><br><span class="line">  network 2.2.2.0 0.0.0.3 </span><br><span class="line"> area 0.0.0.100 </span><br><span class="line">  network 1.1.1.0 0.0.0.3 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">user-interface con 0</span><br><span class="line"> authentication-mode password</span><br><span class="line">user-interface vty 0 4</span><br><span class="line">user-interface vty 16 20</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">wlan ac</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">return</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置代码："><a href="#配置代码：" class="headerlink" title="配置代码："></a>配置代码：</h2><h3 id="Router0："><a href="#Router0：" class="headerlink" title="Router0："></a>Router0：</h3><pre class=" language-BASH"><code class="language-BASH">[V200R003C00]
+#
+ sysname Router0
+#
+ snmp-agent local-engineid 800007DB03000000000000
+ snmp-agent 
+#
+ clock timezone China-Standard-Time minus 08:00:00
+#
+portal local-server load portalpage.zip
+#
+ drop illegal-mac alarm
+#
+ set cpu-usage threshold 80 restore 75
+#
+aaa 
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default 
+ domain default_admin 
+ local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$
+ local-user admin service-type http
+#
+firewall zone Local
+ priority 15
+#
+interface GigabitEthernet0/0/0
+ ip address 2.2.2.1 255.255.255.252 
+#
+interface GigabitEthernet0/0/1
+ ip address 1.1.1.2 255.255.255.252 
+#
+interface GigabitEthernet0/0/2
+#
+interface NULL0
+#
+interface LoopBack0
+ ip address 11.11.11.10 255.255.255.255 
+#
+ospf 1 router-id 11.11.11.10 
+ area 0.0.0.0 
+  network 2.2.2.0 0.0.0.3 
+ area 0.0.0.100 
+  network 1.1.1.0 0.0.0.3 
+#
+user-interface con 0
+ authentication-mode password
+user-interface vty 0 4
+user-interface vty 16 20
+#
+wlan ac
+#
+return
+</code></pre>
+<pre class=" language-BASH"><code class="language-BASH">int lo 0
+area 0
+area 100
+reset ospf process //重启ospf进程
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int lo 0</span><br><span class="line">area 0</span><br><span class="line">area 100</span><br><span class="line">reset ospf process //重启ospf进程</span><br></pre></td></tr></table></figure>
-
+</code></pre>
 <img src="/posts/744e70d2/image-20210101211841809.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212026620.png" alt="bref" style="zoom:50%;">
@@ -555,24 +615,186 @@
 
 <img src="/posts/744e70d2/image-20210101212220355.png" alt="lsdb" style="zoom:50%;">
 
-<h3 id="Router1"><a href="#Router1" class="headerlink" title="Router1:"></a>Router1:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">[V200R003C00]</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> sysname Router1</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> snmp-agent <span class="built_in">local</span>-engineid 800007DB03000000000000</span><br><span class="line"> snmp-agent </span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> clock timezone China-Standard-Time minus 08:00:00</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">portal <span class="built_in">local</span>-server load portalpage.zip</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> drop illegal-mac alarm</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> <span class="built_in">set</span> cpu-usage threshold 80 restore 75</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">aaa </span><br><span class="line"> authentication-scheme default</span><br><span class="line"> authorization-scheme default</span><br><span class="line"> accounting-scheme default</span><br><span class="line"> domain default </span><br><span class="line"> domain default_admin </span><br><span class="line"> <span class="built_in">local</span>-user admin password cipher %$%<span class="variable">$K8m</span>.Nt84DZ&#125;e<span class="comment">#&lt;0`8bmE3Uw&#125;%$%$</span></span><br><span class="line"> <span class="built_in">local</span>-user admin service-type http</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">firewall zone Local</span><br><span class="line"> priority 15</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/0</span><br><span class="line"> ip address 2.2.2.2 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 3.3.3.1 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface LoopBack0</span><br><span class="line"> ip address 11.11.11.11 255.255.255.255 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ospf 1 router-id 11.11.11.11 </span><br><span class="line"> area 0.0.0.0 </span><br><span class="line">  network 2.2.2.0 0.0.0.3 </span><br><span class="line"> area 0.0.0.200 </span><br><span class="line">  network 3.3.3.0 0.0.0.3 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">user-interface con 0</span><br><span class="line"> authentication-mode password</span><br><span class="line">user-interface vty 0 4</span><br><span class="line">user-interface vty 16 20</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">wlan ac</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">return</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="Router1"><a href="#Router1" class="headerlink" title="Router1:"></a>Router1:</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#</span>
+ sysname Router1
+<span class="token comment" spellcheck="true">#</span>
+ snmp-agent local-engineid 800007DB03000000000000
+ snmp-agent 
+<span class="token comment" spellcheck="true">#</span>
+ clock timezone China-Standard-Time minus 08:00:00
+<span class="token comment" spellcheck="true">#</span>
+portal local-server load portalpage.zip
+<span class="token comment" spellcheck="true">#</span>
+ drop illegal-mac alarm
+<span class="token comment" spellcheck="true">#</span>
+ <span class="token keyword">set</span> cpu-usage threshold 80 restore 75
+<span class="token comment" spellcheck="true">#</span>
+aaa 
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default 
+ domain default_admin 
+ local-user admin password cipher %$%<span class="token variable">$K8m</span>.Nt84DZ<span class="token punctuation">}</span>e<span class="token comment" spellcheck="true">#&lt;0`8bmE3Uw}%$%$</span>
+ local-user admin service-type http
+<span class="token comment" spellcheck="true">#</span>
+firewall zone Local
+ priority 15
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/0
+ ip address 2.2.2.2 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/1
+ ip address 3.3.3.1 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/2
+<span class="token comment" spellcheck="true">#</span>
+interface NULL0
+<span class="token comment" spellcheck="true">#</span>
+interface LoopBack0
+ ip address 11.11.11.11 255.255.255.255 
+<span class="token comment" spellcheck="true">#</span>
+ospf 1 router-id 11.11.11.11 
+ area 0.0.0.0 
+  network 2.2.2.0 0.0.0.3 
+ area 0.0.0.200 
+  network 3.3.3.0 0.0.0.3 
+<span class="token comment" spellcheck="true">#</span>
+user-interface con 0
+ authentication-mode password
+user-interface vty 0 4
+user-interface vty 16 20
+<span class="token comment" spellcheck="true">#</span>
+wlan ac
+<span class="token comment" spellcheck="true">#</span>
+<span class="token keyword">return</span></code></pre>
 <img src="/posts/744e70d2/image-20210101212309706.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212400619.png" alt="bref" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212500821.png" alt="router-table" style="zoom:50%;">
 
-<h3 id="Router2："><a href="#Router2：" class="headerlink" title="Router2："></a>Router2：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">[V200R003C00]</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> sysname Router2</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> snmp-agent <span class="built_in">local</span>-engineid 800007DB03000000000000</span><br><span class="line"> snmp-agent </span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> clock timezone China-Standard-Time minus 08:00:00</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">portal <span class="built_in">local</span>-server load portalpage.zip</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> drop illegal-mac alarm</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> <span class="built_in">set</span> cpu-usage threshold 80 restore 75</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">aaa </span><br><span class="line"> authentication-scheme default</span><br><span class="line"> authorization-scheme default</span><br><span class="line"> accounting-scheme default</span><br><span class="line"> domain default </span><br><span class="line"> domain default_admin </span><br><span class="line"> <span class="built_in">local</span>-user admin password cipher %$%<span class="variable">$K8m</span>.Nt84DZ&#125;e<span class="comment">#&lt;0`8bmE3Uw&#125;%$%$</span></span><br><span class="line"> <span class="built_in">local</span>-user admin service-type http</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">firewall zone Local</span><br><span class="line"> priority 15</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/0</span><br><span class="line"> ip address 1.1.1.1 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 192.168.1.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"> ip address 192.168.2.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface LoopBack0</span><br><span class="line"> ip address 11.11.11.12 255.255.255.255 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ospf 1 router-id 11.11.11.12 </span><br><span class="line"> silent-interface GigabitEthernet0/0/1</span><br><span class="line"> silent-interface GigabitEthernet0/0/2</span><br><span class="line"> area 0.0.0.100 </span><br><span class="line">  network 1.1.1.0 0.0.0.3 </span><br><span class="line">  network 192.168.1.0 0.0.0.255 </span><br><span class="line">  network 192.168.2.0 0.0.0.255 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">user-interface con 0</span><br><span class="line"> authentication-mode password</span><br><span class="line">user-interface vty 0 4</span><br><span class="line">user-interface vty 16 20</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">wlan ac</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">return</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="Router2："><a href="#Router2：" class="headerlink" title="Router2："></a>Router2：</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#</span>
+ sysname Router2
+<span class="token comment" spellcheck="true">#</span>
+ snmp-agent local-engineid 800007DB03000000000000
+ snmp-agent 
+<span class="token comment" spellcheck="true">#</span>
+ clock timezone China-Standard-Time minus 08:00:00
+<span class="token comment" spellcheck="true">#</span>
+portal local-server load portalpage.zip
+<span class="token comment" spellcheck="true">#</span>
+ drop illegal-mac alarm
+<span class="token comment" spellcheck="true">#</span>
+ <span class="token keyword">set</span> cpu-usage threshold 80 restore 75
+<span class="token comment" spellcheck="true">#</span>
+aaa 
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default 
+ domain default_admin 
+ local-user admin password cipher %$%<span class="token variable">$K8m</span>.Nt84DZ<span class="token punctuation">}</span>e<span class="token comment" spellcheck="true">#&lt;0`8bmE3Uw}%$%$</span>
+ local-user admin service-type http
+<span class="token comment" spellcheck="true">#</span>
+firewall zone Local
+ priority 15
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/0
+ ip address 1.1.1.1 255.255.255.252 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/1
+ ip address 192.168.1.1 255.255.255.0 
+<span class="token comment" spellcheck="true">#</span>
+interface GigabitEthernet0/0/2
+ ip address 192.168.2.1 255.255.255.0 
+<span class="token comment" spellcheck="true">#</span>
+interface NULL0
+<span class="token comment" spellcheck="true">#</span>
+interface LoopBack0
+ ip address 11.11.11.12 255.255.255.255 
+<span class="token comment" spellcheck="true">#</span>
+ospf 1 router-id 11.11.11.12 
+ silent-interface GigabitEthernet0/0/1
+ silent-interface GigabitEthernet0/0/2
+ area 0.0.0.100 
+  network 1.1.1.0 0.0.0.3 
+  network 192.168.1.0 0.0.0.255 
+  network 192.168.2.0 0.0.0.255 
+<span class="token comment" spellcheck="true">#</span>
+user-interface con 0
+ authentication-mode password
+user-interface vty 0 4
+user-interface vty 16 20
+<span class="token comment" spellcheck="true">#</span>
+wlan ac
+<span class="token comment" spellcheck="true">#</span>
+<span class="token keyword">return</span></code></pre>
 <img src="/posts/744e70d2/image-20210101212618508.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212705921.png" alt="brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212732684.png" alt="router-table" style="zoom:50%;">
 
-<h3 id="router3"><a href="#router3" class="headerlink" title="router3:"></a>router3:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">[V200R003C00]</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> sysname Router3</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> snmp-agent <span class="built_in">local</span>-engineid 800007DB03000000000000</span><br><span class="line"> snmp-agent </span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> clock timezone China-Standard-Time minus 08:00:00</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">portal <span class="built_in">local</span>-server load portalpage.zip</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> drop illegal-mac alarm</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"> <span class="built_in">set</span> cpu-usage threshold 80 restore 75</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">aaa </span><br><span class="line"> authentication-scheme default</span><br><span class="line"> authorization-scheme default</span><br><span class="line"> accounting-scheme default</span><br><span class="line"> domain default </span><br><span class="line"> domain default_admin </span><br><span class="line"> <span class="built_in">local</span>-user admin password cipher %$%<span class="variable">$K8m</span>.Nt84DZ&#125;e<span class="comment">#&lt;0`8bmE3Uw&#125;%$%$</span></span><br><span class="line"> <span class="built_in">local</span>-user admin service-type http</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">firewall zone Local</span><br><span class="line"> priority 15</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/0</span><br><span class="line"> ip address 3.3.3.2 255.255.255.252 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/1</span><br><span class="line"> ip address 172.16.1.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface GigabitEthernet0/0/2</span><br><span class="line"> ip address 172.16.2.1 255.255.255.0 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface NULL0</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">interface LoopBack0</span><br><span class="line"> ip address 11.11.11.13 255.255.255.255 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">ospf 1 router-id 11.11.11.13 </span><br><span class="line"> silent-interface GigabitEthernet0/0/1</span><br><span class="line"> silent-interface GigabitEthernet0/0/2</span><br><span class="line"> area 0.0.0.200 </span><br><span class="line">  network 3.3.3.0 0.0.0.3 </span><br><span class="line">  network 172.16.1.0 0.0.0.255 </span><br><span class="line">  network 172.16.2.0 0.0.0.255 </span><br><span class="line"><span class="comment">#</span></span><br><span class="line">user-interface con 0</span><br><span class="line"> authentication-mode password</span><br><span class="line">user-interface vty 0 4</span><br><span class="line">user-interface vty 16 20</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">wlan ac</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="built_in">return</span></span><br></pre></td></tr></table></figure>
-
+<h3 id="router3"><a href="#router3" class="headerlink" title="router3:"></a>router3:</h3><pre class=" language-BASH"><code class="language-BASH">[V200R003C00]
+#
+ sysname Router3
+#
+ snmp-agent local-engineid 800007DB03000000000000
+ snmp-agent 
+#
+ clock timezone China-Standard-Time minus 08:00:00
+#
+portal local-server load portalpage.zip
+#
+ drop illegal-mac alarm
+#
+ set cpu-usage threshold 80 restore 75
+#
+aaa 
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default 
+ domain default_admin 
+ local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$
+ local-user admin service-type http
+#
+firewall zone Local
+ priority 15
+#
+interface GigabitEthernet0/0/0
+ ip address 3.3.3.2 255.255.255.252 
+#
+interface GigabitEthernet0/0/1
+ ip address 172.16.1.1 255.255.255.0 
+#
+interface GigabitEthernet0/0/2
+ ip address 172.16.2.1 255.255.255.0 
+#
+interface NULL0
+#
+interface LoopBack0
+ ip address 11.11.11.13 255.255.255.255 
+#
+ospf 1 router-id 11.11.11.13 
+ silent-interface GigabitEthernet0/0/1
+ silent-interface GigabitEthernet0/0/2
+ area 0.0.0.200 
+  network 3.3.3.0 0.0.0.3 
+  network 172.16.1.0 0.0.0.255 
+  network 172.16.2.0 0.0.0.255 
+#
+user-interface con 0
+ authentication-mode password
+user-interface vty 0 4
+user-interface vty 16 20
+#
+wlan ac
+#
+return</code></pre>
 <img src="/posts/744e70d2/image-20210101212931868.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101213033630.png" alt="brief" style="zoom:50%;">

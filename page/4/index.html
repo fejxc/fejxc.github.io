@@ -474,7 +474,9 @@
                         <div class="summary block-with-text">
                             
                                 Linux期末复习题型：选择、填空、判断、匹配、改错
-1.代码改错题1.1找出以下代码中的错误，即显示所有以字符a开头的文件的名称，并且我们对这些文件有阅读权限1234567for f in a*do    if test –d $f –a
+1.代码改错题1.1找出以下代码中的错误，即显示所有以字符a开头的文件的名称，并且我们对这些文件有阅读权限for f in a*
+do
+    if test –d $f –a test
                             
                         </div>
                         <div class="publish-info">
@@ -634,9 +636,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                设置服务器免密登录1. Client本地生成密钥对1ssh-keygen -t rsa
-
-2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中12scp -p ~/.ssh/id_rsa.pub
+                                设置服务器免密登录1. Client本地生成密钥对ssh-keygen -t rsa    
+2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中scp -p ~/.ssh/id_rsa.pub
                             
                         </div>
                         <div class="publish-info">
@@ -683,7 +684,10 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                1.安装参考安装：12345678910111213141516171819202122232425使用如下命令安装MySql以及它的相关依赖项.sudo dnf install @mysql安装完成后，启动MySql服务并且让它在Cent
+                                1.安装参考安装：使用如下命令安装MySql以及它的相关依赖项.
+sudo dnf install @mysql
+安装完成后，启动MySql服务并且让它在Centos服务器启动时自动启动,命令如下所示.
+sudo systemctl ena
                             
                         </div>
                         <div class="publish-info">
@@ -751,7 +755,11 @@
 
 
 
-代码：12345678910111213141516171819202122232425262728system-view//进入配置模式dis this //查看当前配置d
+代码：system-view//进入配置模式
+dis this //查看当前配置
+dis ip rounting-table //查看路由表
+
+vlan batch 10 2
                             
                         </div>
                         <div class="publish-info">
@@ -800,7 +808,8 @@
                             
                                 web期末复习-编程题篇1.html-表格
 
-代码：1234567891011121314&lt;!-- #d7d7d7 灰色#ffffff 白色 --&gt;&lt;table width="300px"  cellspacing="1"
+代码：&lt;!-- #d7d7d7 灰色#ffffff 白色 -->
+&lt;table width="300px"  cellspacing="1" cellpadding="0" bgco
                             
                         </div>
                         <div class="publish-info">
@@ -847,7 +856,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                jQuery编程复习代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758
+                                jQuery编程复习代码：&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Jquery&lt;/tit
                             
                         </div>
                         <div class="publish-info">
@@ -997,7 +1010,7 @@
 
 2.实验目的：1、实现pc1，pc2，pc3，动态获取ip地址，pc4动态获取ip地址为172.16.2.5
 2、打通pc之间和Server1的互通
-3.实验配置代码：LSW1：123456789101112
+3.实验配置代码：LSW1：&lt;LSW1>dis cu
                             
                         </div>
                         <div class="publish-info">

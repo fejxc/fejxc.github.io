@@ -518,7 +518,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    224
+                    230
                 </div>
                 
 
@@ -535,13 +535,28 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="idea中git使用ssh的url后push报错"><a href="#idea中git使用ssh的url后push报错" class="headerlink" title="idea中git使用ssh的url后push报错"></a>idea中git使用ssh的url后push报错</h2><h3 id="开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128"><a href="#开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128" class="headerlink" title="开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)"></a>开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)</h3><h3 id="1-报错代码"><a href="#1-报错代码" class="headerlink" title="1.报错代码"></a>1.报错代码</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Please <span class="keyword">make</span> sure you have the correct access rights</span><br><span class="line"><span class="built_in">and</span> the repository <span class="built_in">exists</span>.</span><br><span class="line">sunyun@sunyundeMBP ch009-springboot-ems % git remote <span class="built_in">add</span> origin git@gitee.<span class="keyword">com</span>:fejxc/spring-boot-page-<span class="keyword">help</span>.git</span><br><span class="line">fata<span class="variable">l:</span> remote origin already <span class="built_in">exists</span>.</span><br><span class="line">sunyun@sunyundeMBP ch009-springboot-ems % git push -<span class="keyword">u</span> origin master</span><br><span class="line">git@gitee.<span class="keyword">com</span>: Permission denied (publickey).</span><br><span class="line">fata<span class="variable">l:</span> Could not <span class="keyword">read</span> from remote repository.</span><br><span class="line"></span><br><span class="line">Please <span class="keyword">make</span> sure you have the correct access rights</span><br><span class="line"><span class="built_in">and</span> the repository <span class="built_in">exists</span>.</span><br><span class="line">sunyun@sunyundeMBP ch009-springboot-ems % git status</span><br><span class="line">On branch master</span><br><span class="line">nothing <span class="keyword">to</span> commit, working tree clean</span><br></pre></td></tr></table></figure>
+                <h2 id="idea中git使用ssh的url后push报错"><a href="#idea中git使用ssh的url后push报错" class="headerlink" title="idea中git使用ssh的url后push报错"></a>idea中git使用ssh的url后push报错</h2><h3 id="开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128"><a href="#开发环境：Mac11-0、idea2019-2、-git-2-24-3-Apple-Git-128" class="headerlink" title="开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)"></a>开发环境：Mac11.0、idea2019.2、 git 2.24.3 (Apple Git-128)</h3><h3 id="1-报错代码"><a href="#1-报错代码" class="headerlink" title="1.报错代码"></a>1.报错代码</h3><pre><code>Please make sure you have the correct access rights
+and the repository exists.
+sunyun@sunyundeMBP ch009-springboot-ems % git remote add origin git@gitee.com:fejxc/spring-boot-page-help.git
+fatal: remote origin already exists.
+sunyun@sunyundeMBP ch009-springboot-ems % git push -u origin master
+git@gitee.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
 
+Please make sure you have the correct access rights
+and the repository exists.
+sunyun@sunyundeMBP ch009-springboot-ems % git status
+On branch master
+nothing to commit, working tree clean
+</code></pre>
 <h3 id="2-解决办法，在git上或者gitee上添加SSH公钥"><a href="#2-解决办法，在git上或者gitee上添加SSH公钥" class="headerlink" title="2.解决办法，在git上或者gitee上添加SSH公钥"></a>2.解决办法，在git上或者gitee上添加SSH公钥</h3><p>1)输入代码生成ssh公匙</p>
 <p><code> ssh-keygen -t rsa -C &quot;输入你的github或者gitee的用户名&quot;</code></p>
 <p><img src="https://i.loli.net/2020/10/15/lWu4BtRZnCz8eTU.png"></p>

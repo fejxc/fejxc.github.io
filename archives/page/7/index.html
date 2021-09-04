@@ -588,7 +588,9 @@
                             <div class="summary block-with-text">
                                 
                                     Linux期末复习题型：选择、填空、判断、匹配、改错
-1.代码改错题1.1找出以下代码中的错误，即显示所有以字符a开头的文件的名称，并且我们对这些文件有阅读权限1234567for f in a*do    if test –d $f –a
+1.代码改错题1.1找出以下代码中的错误，即显示所有以字符a开头的文件的名称，并且我们对这些文件有阅读权限for f in a*
+do
+    if test –d $f –a test
                                 
                             </div>
                             <div class="publish-info">
@@ -782,9 +784,8 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    设置服务器免密登录1. Client本地生成密钥对1ssh-keygen -t rsa
-
-2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中12scp -p ~/.ssh/id_rsa.pub
+                                    设置服务器免密登录1. Client本地生成密钥对ssh-keygen -t rsa    
+2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中scp -p ~/.ssh/id_rsa.pub
                                 
                             </div>
                             <div class="publish-info">
@@ -848,7 +849,10 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    1.安装参考安装：12345678910111213141516171819202122232425使用如下命令安装MySql以及它的相关依赖项.sudo dnf install @mysql安装完成后，启动MySql服务并且让它在Cent
+                                    1.安装参考安装：使用如下命令安装MySql以及它的相关依赖项.
+sudo dnf install @mysql
+安装完成后，启动MySql服务并且让它在Centos服务器启动时自动启动,命令如下所示.
+sudo systemctl ena
                                 
                             </div>
                             <div class="publish-info">

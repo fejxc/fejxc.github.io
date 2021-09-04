@@ -583,7 +583,13 @@ tls_enable = true
                             <div class="summary block-with-text">
                                 
                                     数据推送项目小总结1.多数据源配置1.1核心配置application.yml
-123456789101112131415161718192021222324252627282930313233343536373839gisq:  plat
+gisq:
+  platform:
+    auth:
+      checkToken: false
+    web:
+      cross:
+      
                                 
                             </div>
                             <div class="publish-info">
@@ -632,11 +638,13 @@ tls_enable = true
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    TX1select t.xzqbm,t.xzqmc,'1' as szshbsm from xzqbm t where t.XZQJB='2' order by t.xzqbm
+                                    TXselect t.xzqbm,t.xzqmc,'1' as szshbsm from xzqbm t where t.XZQJB='2' order by t.xzqbm
+
+
+SELECT * FROM t_szsh_code
 
 
 
-1SELECT * FROM t_szsh_code
 
 
                                 
@@ -794,7 +802,10 @@ tls_enable = true
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    注解@Scheduled12345678910111213@Component@Service@ConditionalOnExpression("$&#123;gisq.platform.supervise.collection.analy
+                                    注解@Scheduled@Component
+@Service
+@ConditionalOnExpression("${gisq.platform.supervise.collection.analysisquartz}==true")
+p
                                 
                             </div>
                             <div class="publish-info">

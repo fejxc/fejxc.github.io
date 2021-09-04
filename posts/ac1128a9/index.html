@@ -518,6 +518,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -525,14 +528,12 @@
             <div id="articleContent">
                 <h1 id="数据库土地使用权"><a href="#数据库土地使用权" class="headerlink" title="数据库土地使用权"></a>数据库土地使用权</h1><h2 id="1、表土地使用权TDSYQ"><a href="#1、表土地使用权TDSYQ" class="headerlink" title="1、表土地使用权TDSYQ"></a>1、表土地使用权TDSYQ</h2><h3 id="表结构"><a href="#表结构" class="headerlink" title="表结构"></a>表结构</h3><img src="/posts/ac1128a9/image-20210804083908844.png" alt="image-20210804083908844" style="zoom:80%;">
 
-<h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,zddm,bdcdyh,ywh,qllx,djlx,mjdw,nydmj,gdmj,ldmj,cdmj,qtnydmj,wlydmj,bdcqzh,dbr,qszt,dybsm <span class="keyword">from</span> tdsyq <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">50</span>;</span><br></pre></td></tr></table></figure>
-
+<h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> bsm<span class="token punctuation">,</span>zddm<span class="token punctuation">,</span>bdcdyh<span class="token punctuation">,</span>ywh<span class="token punctuation">,</span>qllx<span class="token punctuation">,</span>djlx<span class="token punctuation">,</span>mjdw<span class="token punctuation">,</span>nydmj<span class="token punctuation">,</span>gdmj<span class="token punctuation">,</span>ldmj<span class="token punctuation">,</span>cdmj<span class="token punctuation">,</span>qtnydmj<span class="token punctuation">,</span>wlydmj<span class="token punctuation">,</span>bdcqzh<span class="token punctuation">,</span>dbr<span class="token punctuation">,</span>qszt<span class="token punctuation">,</span>dybsm <span class="token keyword">from</span> tdsyq <span class="token keyword">where</span> rownum<span class="token operator">&lt;</span><span class="token number">50</span><span class="token punctuation">;</span></code></pre>
 <h3 id="查询结果"><a href="#查询结果" class="headerlink" title="查询结果"></a>查询结果</h3><img src="/posts/ac1128a9/image-20210804084906785.png" alt="image-20210804084906785" style="zoom:99%;">
 
 <h2 id="2、表土地使用权-单元关系TDSYQ-DYGX"><a href="#2、表土地使用权-单元关系TDSYQ-DYGX" class="headerlink" title="2、表土地使用权-单元关系TDSYQ_DYGX"></a>2、表土地使用权-单元关系TDSYQ_DYGX</h2><h3 id="表结构-1"><a href="#表结构-1" class="headerlink" title="表结构"></a>表结构</h3><img src="/posts/ac1128a9/image-20210804085403076.png" alt="image-20210804085403076" style="zoom:80%;">
 
-<h3 id="sql-1"><a href="#sql-1" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> tdsyq_dygx <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">50</span>;</span><br></pre></td></tr></table></figure>
-
+<h3 id="sql-1"><a href="#sql-1" class="headerlink" title="sql"></a>sql</h3><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> tdsyq_dygx <span class="token keyword">where</span> rownum<span class="token operator">&lt;</span><span class="token number">50</span><span class="token punctuation">;</span></code></pre>
 <h3 id="查询结果-1"><a href="#查询结果-1" class="headerlink" title="查询结果"></a>查询结果</h3><img src="/posts/ac1128a9/image-20210804085442397.png" alt="image-20210804085442397" style="zoom:99%;">
 
 <h2 id="3、表土地使用权-变化关系TDSYQ-BHGX"><a href="#3、表土地使用权-变化关系TDSYQ-BHGX" class="headerlink" title="3、表土地使用权-变化关系TDSYQ_BHGX"></a>3、表土地使用权-变化关系TDSYQ_BHGX</h2><h3 id="表结构-2"><a href="#表结构-2" class="headerlink" title="表结构"></a>表结构</h3><img src="/posts/ac1128a9/image-20210804085613668.png" alt="image-20210804085613668" style="zoom:80%;">
