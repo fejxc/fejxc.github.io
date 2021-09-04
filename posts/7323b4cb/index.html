@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -515,7 +514,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    278
+                    264
                 </div>
                 
 
@@ -531,9 +530,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -575,25 +571,20 @@
 <img src="/posts/7323b4cb/image-20201213224707463.png" alt="image-20201213224707463" style="zoom:50%;">
 
 <p>3.配置端口 0/0/1</p>
-<pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/1    //可以简写 int e0/0/1
-port link-type access
-port default vlan 100
-dis this //查看当前端口配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/1    //可以简写 int e0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 100</span><br><span class="line">dis this //查看当前端口配置</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/7323b4cb/image-20201213225726690.png" alt="image-20201213225726690" style="zoom:50%;">
 
 <img src="/posts/7323b4cb/image-20201213225832494.png" alt="image-20201213225832494" style="zoom:50%;">
 
 <p>4.配置端口 0/0/2</p>
-<pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/2    //可以简写 int e0/0/2
-port link-type access
-port default vlan 20<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/2    //可以简写 int e0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 20</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/7323b4cb/image-20201213230028535.png" alt="image-20201213230028535" style="zoom:50%;">
 
 <p>5.配置端口 0/0/3</p>
-<pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/3    //可以简写 int e0/0/1
-port link-type trunk
-port trunk allow vlan 100 200
-dis this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/3    //可以简写 int e0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow vlan 100 200</span><br><span class="line">dis this</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/7323b4cb/image-20201213230134776.png" alt="image-20201213230134776" style="zoom:50%;">
 
 <img src="/posts/7323b4cb/image-20201213230233066.png" alt="image-20201213230233066" style="zoom:50%;">
@@ -605,21 +596,20 @@ dis this<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <img src="/posts/7323b4cb/image-20201213224707463.png" alt="image-20201213224707463" style="zoom:50%;">
 
 <p>3.配置端口 0/0/1</p>
-<pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/1    //可以简写 int e0/0/1
-port link-type access
-port default vlan 200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/1    //可以简写 int e0/0/1</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 200</span><br></pre></td></tr></table></figure>
+
+
+
 <img src="/posts/7323b4cb/image-20201213230523379.png" alt="image-20201213230523379" style="zoom:50%;">
 
 <p>4.配置端口 0/0/2</p>
-<pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/2    //可以简写 int e0/0/2
-port link-type access
-port default vlan 100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/2    //可以简写 int e0/0/2</span><br><span class="line">port link-type access</span><br><span class="line">port default vlan 100</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/7323b4cb/image-20201213230713843.png" alt="image-20201213230713843" style="zoom:50%;">
 
 <p>5.配置端口 0/0/3</p>
-<pre class="line-numbers language-markdown"><code class="language-markdown">interface Ethernet0/0/3    //可以简写 int e0/0/1
-port link-type trunk
-port trunk allow vlan 100 200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">interface Ethernet0/0/3    //可以简写 int e0/0/1</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow vlan 100 200</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/7323b4cb/image-20201213230900610.png" alt="image-20201213230900610" style="zoom:50%;">
 
 <h3 id="步骤4-验证结果"><a href="#步骤4-验证结果" class="headerlink" title="步骤4:验证结果"></a>步骤4:验证结果</h3><img src="/posts/7323b4cb/image-20201213233109864.png" alt="image-20201213233109864" style="zoom:50%;">

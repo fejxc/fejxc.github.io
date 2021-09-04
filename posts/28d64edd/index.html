@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -515,7 +514,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    139
+                    143
                 </div>
                 
 
@@ -532,9 +531,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -542,18 +538,12 @@
             <div id="articleContent">
                 <h2 id="1-在hexo安装目录新建scripts文件夹"><a href="#1-在hexo安装目录新建scripts文件夹" class="headerlink" title="1.在hexo安装目录新建scripts文件夹"></a>1.在hexo安装目录新建scripts文件夹</h2><p><img src="/posts/28d64edd/image-20201120102230623.png" alt="image-20201120102230623"></p>
 <h2 id="2-在scripts文件下新建openNewFile-js文件"><a href="#2-在scripts文件下新建openNewFile-js文件" class="headerlink" title="2.在scripts文件下新建openNewFile.js文件"></a>2.在scripts文件下新建openNewFile.js文件</h2><p><img src="/posts/28d64edd/image-20201120102337656.png" alt="image-20201120102337656"></p>
-<h2 id="3-在openNewFile-js里添加以下内容："><a href="#3-在openNewFile-js里添加以下内容：" class="headerlink" title="3.在openNewFile.js里添加以下内容："></a>3.在openNewFile.js里添加以下内容：</h2><h3 id="3-1mac用户"><a href="#3-1mac用户" class="headerlink" title="3.1mac用户"></a>3.1mac用户</h3><pre class="line-numbers language-JavaScript"><code class="language-JavaScript">var exec = require('child_process').exec;
-hexo.on('new', function(data){
-    exec('open -a "/Applications/Typora.app" ' + data.path);
-      ///Applications/Typora.app 这是替换成你markdown编辑器软件的安装路径
-});
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-2win用户"><a href="#3-2win用户" class="headerlink" title="3.2win用户"></a>3.2win用户</h3><pre class="line-numbers language-JavaScript"><code class="language-JavaScript">var spawn = require('child_process').spawn;
-hexo.on('new', function(data){
-    spawn('D:/Program Files/Typora/bin/Typora.exe ', [data.path]);
-  //D:/Program Files/Typora/bin/Typora.exe 你软件的安装的路径
-})<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="4-保存退出后，测试"><a href="#4-保存退出后，测试" class="headerlink" title="4.保存退出后，测试"></a>4.保存退出后，测试</h2><pre class="line-numbers language-bash"><code class="language-bash">hexo new <span class="token string">"textName"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="3-在openNewFile-js里添加以下内容："><a href="#3-在openNewFile-js里添加以下内容：" class="headerlink" title="3.在openNewFile.js里添加以下内容："></a>3.在openNewFile.js里添加以下内容：</h2><h3 id="3-1mac用户"><a href="#3-1mac用户" class="headerlink" title="3.1mac用户"></a>3.1mac用户</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;</span><br><span class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    exec(<span class="string">'open -a "/Applications/Typora.app" '</span> + data.path);</span><br><span class="line">  	<span class="comment">///Applications/Typora.app 这是替换成你markdown编辑器软件的安装路径</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2win用户"><a href="#3-2win用户" class="headerlink" title="3.2win用户"></a>3.2win用户</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).spawn;</span><br><span class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    spawn(<span class="string">'D:/Program Files/Typora/bin/Typora.exe '</span>, [data.path]);</span><br><span class="line">  <span class="comment">//D:/Program Files/Typora/bin/Typora.exe 你软件的安装的路径</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-保存退出后，测试"><a href="#4-保存退出后，测试" class="headerlink" title="4.保存退出后，测试"></a>4.保存退出后，测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"textName"</span></span><br></pre></td></tr></table></figure>
+
 <p>应该就会自动打开你的编辑器啦！</p>
 
                 

@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -502,7 +501,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    79
+                    77
                 </div>
                 
 
@@ -519,28 +518,25 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="TX"><a href="#TX" class="headerlink" title="TX"></a>TX</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> t<span class="token punctuation">.</span>xzqbm<span class="token punctuation">,</span>t<span class="token punctuation">.</span>xzqmc<span class="token punctuation">,</span><span class="token string">'1'</span> <span class="token keyword">as</span> szshbsm <span class="token keyword">from</span> xzqbm t <span class="token keyword">where</span> t<span class="token punctuation">.</span>XZQJB<span class="token operator">=</span><span class="token string">'2'</span> <span class="token keyword">order</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>xzqbm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="TX"><a href="#TX" class="headerlink" title="TX"></a>TX</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> t.xzqbm,t.xzqmc,<span class="string">'1'</span> <span class="keyword">as</span> szshbsm <span class="keyword">from</span> xzqbm t <span class="keyword">where</span> t.XZQJB=<span class="string">'2'</span> <span class="keyword">order</span> <span class="keyword">by</span> t.xzqbm</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/b5385ca/image-20210716133056299.png" alt="image-20210716133056299" style="zoom:80%;">
 
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_szsh_code<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> t_szsh_code</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/b5385ca/image-20210716133246165.png" alt="image-20210716133246165" style="zoom:150%;">
 
 
 
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> t<span class="token punctuation">.</span>xzqbm<span class="token punctuation">,</span>t<span class="token punctuation">.</span>xzqmc<span class="token punctuation">,</span><span class="token string">'1'</span> <span class="token keyword">as</span> szshbsm <span class="token keyword">from</span> xzqbm t <span class="token keyword">where</span> t<span class="token punctuation">.</span>XZQJB<span class="token operator">=</span><span class="token string">'2'</span> <span class="token keyword">order</span> <span class="token keyword">by</span> t<span class="token punctuation">.</span>xzqbm
-<span class="token keyword">left</span> <span class="token keyword">join</span>  t_szsh_code  ts <span class="token keyword">on</span> tx<span class="token punctuation">.</span>szshbsm<span class="token operator">=</span>ts<span class="token punctuation">.</span>bsm <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="TT"><a href="#TT" class="headerlink" title="TT"></a>TT</h2><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> substring<span class="token punctuation">(</span>xzqbm<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span> <span class="token keyword">as</span> service_area_code<span class="token punctuation">,</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> service_num
-<span class="token keyword">FROM</span> t_cert_log 
-<span class="token keyword">where</span>  code<span class="token operator">=</span><span class="token number">0</span>  <span class="token operator">and</span> SUBSTRING<span class="token punctuation">(</span>GXSJ<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token string">'2020-12-01'</span> 
-<span class="token keyword">GROUP</span> <span class="token keyword">BY</span> substring<span class="token punctuation">(</span>xzqbm<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> t.xzqbm,t.xzqmc,<span class="string">'1'</span> <span class="keyword">as</span> szshbsm <span class="keyword">from</span> xzqbm t <span class="keyword">where</span> t.XZQJB=<span class="string">'2'</span> <span class="keyword">order</span> <span class="keyword">by</span> t.xzqbm</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span>  t_szsh_code  ts <span class="keyword">on</span> tx.szshbsm=ts.bsm</span><br></pre></td></tr></table></figure>
+
+<h2 id="TT"><a href="#TT" class="headerlink" title="TT"></a>TT</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">substring</span>(xzqbm,<span class="number">1</span>,<span class="number">4</span>) <span class="keyword">as</span> service_area_code,<span class="keyword">count</span>(*) <span class="keyword">as</span> service_num</span><br><span class="line"><span class="keyword">FROM</span> t_cert_log </span><br><span class="line"><span class="keyword">where</span>  code=<span class="number">0</span>  <span class="keyword">and</span> <span class="keyword">SUBSTRING</span>(GXSJ,<span class="number">1</span>,<span class="number">10</span>)=<span class="string">'2020-12-01'</span> </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">substring</span>(xzqbm,<span class="number">1</span>,<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/b5385ca/image-20210716134423896.png" alt="image-20210716134423896" style="zoom:150%;">
 
 

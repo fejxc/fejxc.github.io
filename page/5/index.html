@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -432,9 +431,7 @@
 
 2.实验目的：1.在LSW1上设置vlanif子接口
 2.在AR1设置acl，实现pc1不能ping通Server1
-acl 3000
-
-rule 5 deny icmp source 192.168.
+1234567acl 3000rule 5 deny icmp source 192
                             
                         </div>
                         <div class="publish-info">
@@ -489,7 +486,7 @@ rule 5 deny icmp source 192.168.
 字数要求200字以上300字以下
 
 
-典型的编译器可以划分成七个主要的逻辑阶段，分别是词法分析器、语法分析器、
+12345678典型的编译器可以划分成七个主要的逻辑阶段，分别是词法分析
                             
                         </div>
                         <div class="publish-info">
@@ -535,7 +532,7 @@ rule 5 deny icmp source 192.168.
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                期末课后作业作业一1、移动电商的种类中，表商家跟商家进行交易的商业模式的是B2B；2、HTML标签中有些是有专业属性，有些是公有属性，常见的公有属性的有:表格&lt;tr>&lt;/tr>  &lt;td>&lt;/td>的专业属性  co
+                                期末课后作业作业一1、移动电商的种类中，表商家跟商家进行交易的商业模式的是B2B；2、HTML标签中有些是有专业属性，有些是公有属性，常见的公有属性的有:123表格&lt;tr&gt;&lt;/tr&gt;  &lt;td&gt;&lt;/
                             
                         </div>
                         <div class="publish-info">
@@ -638,11 +635,7 @@ rule 5 deny icmp source 192.168.
 pc的配置：
 
 实验目的：实现pc1、pc2、pc3、pc4之间互通信，可以互相ping通。
-配置：AR1:1.先配置ip addr
-2.配置rip
-rip 1
-version 2
-[AR1]rip
+配置：AR1:12345678910111213141516171819201.先配置ip addr2.
                             
                         </div>
                         <div class="publish-info">
@@ -699,15 +692,7 @@ version 2
 
 
 
-配置：LSW3#
-sysname Huawei
-#
-vlan batch 100 200
-#
-stp instance 0 root primary
-#
-cluster enable
-ntdp e
+配置：LSW31234567891011121314151617181920212223242526272829303132333435363738394041424344#sysname Hua
                             
                         </div>
                         <div class="publish-info">
@@ -765,13 +750,7 @@ ntdp e
 
 
 实验目的实现pc1、pc2、pc3之间互相ping通对方
-实验代码参考LSW1：#
-sysname Huawei
-#
-vlan batch 100 200
-#
-cluster enable
-n
+实验代码参考LSW1：12345678910111213141516171819202122232425262728293031323
                             
                         </div>
                         <div class="publish-info">
