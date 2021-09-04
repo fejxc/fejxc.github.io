@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -540,7 +539,7 @@
                 <h1 id="NAT地址转换"><a href="#NAT地址转换" class="headerlink" title="NAT地址转换"></a>NAT地址转换</h1><h2 id="1-实验拓扑图："><a href="#1-实验拓扑图：" class="headerlink" title="1.实验拓扑图："></a>1.实验拓扑图：</h2><img src="/posts/e4f16d43/image-20210103203545478.png" alt="实验拓扑图" style="zoom:80%;">
 
 <h2 id="2-实验目的："><a href="#2-实验目的：" class="headerlink" title="2.实验目的："></a>2.实验目的：</h2><p><strong>pc1，pc2，pc3，都是私网地址，LSW1不设置静态路由的前提下，通过AR1设置nat地址转换，将pc1-pc3的ip地址转换成功公网地址，实现pc1-pc3与pc6之间的通信，可以互通。</strong></p>
-<h2 id="3-实验配置代码"><a href="#3-实验配置代码" class="headerlink" title="3.实验配置代码;"></a>3.实验配置代码;</h2><h3 id="LSW1"><a href="#LSW1" class="headerlink" title="LSW1:"></a>LSW1:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>LSW1<span class="token punctuation">]</span>dis cur
+<h2 id="3-实验配置代码"><a href="#3-实验配置代码" class="headerlink" title="3.实验配置代码;"></a>3.实验配置代码;</h2><h3 id="LSW1"><a href="#LSW1" class="headerlink" title="LSW1:"></a>LSW1:</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>LSW1<span class="token punctuation">]</span>dis cur
 <span class="token comment" spellcheck="true">#</span>
 sysname LSW1
 <span class="token comment" spellcheck="true">#</span>
@@ -632,8 +631,8 @@ user-interface vty 0 4
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
 
-<span class="token punctuation">[</span>LSW1<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>AR1<span class="token punctuation">]</span>dis cur
+<span class="token punctuation">[</span>LSW1<span class="token punctuation">]</span></code></pre>
+<h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>AR1<span class="token punctuation">]</span>dis cur
 <span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname AR1
@@ -705,8 +704,8 @@ user-interface vty 16 20
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
-<span class="token punctuation">[</span>AR1<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2:"></a>AR2:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>AR2<span class="token punctuation">]</span>dis cur
+<span class="token punctuation">[</span>AR1<span class="token punctuation">]</span></code></pre>
+<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2:"></a>AR2:</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>AR2<span class="token punctuation">]</span>dis cur
 <span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname AR2
@@ -756,7 +755,7 @@ user-interface vty 16 20
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
-<span class="token punctuation">[</span>AR2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">[</span>AR2<span class="token punctuation">]</span></code></pre>
 <h2 id="4-注意："><a href="#4-注意：" class="headerlink" title="4.注意："></a>4.注意：</h2><p><strong>1.<code>interface GigabitEthernet0/0/0 interface GigabitEthernet0/0/0.100  arp broadcast enable</code> arp broadcast不要忘记设置了，不然pc1-3是不能ping通pc6</strong></p>
 <p><strong>2.<code>dis nat session all</code> 查看na地址转化表，需要在pc机挂长ping 带上参数（-t），才会有</strong></p>
 <h2 id="5-实验效果："><a href="#5-实验效果：" class="headerlink" title="5.实验效果："></a>5.实验效果：</h2><img src="/posts/e4f16d43/image-20210103204625349.png" alt="image-20210103204625349" style="zoom:80%;">

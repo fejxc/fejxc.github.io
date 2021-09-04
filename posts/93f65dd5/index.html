@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -541,7 +540,7 @@
 
 <h2 id="2-实验目的："><a href="#2-实验目的：" class="headerlink" title="2.实验目的："></a>2.实验目的：</h2><p><strong>1、实现pc1，pc2，pc3，动态获取ip地址，pc4动态获取ip地址为172.16.2.5</strong></p>
 <p><strong>2、打通pc之间和Server1的互通</strong></p>
-<h2 id="3-实验配置代码："><a href="#3-实验配置代码：" class="headerlink" title="3.实验配置代码："></a>3.实验配置代码：</h2><h3 id="LSW1："><a href="#LSW1：" class="headerlink" title="LSW1："></a>LSW1：</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>LSW1<span class="token operator">></span>dis cur
+<h2 id="3-实验配置代码："><a href="#3-实验配置代码：" class="headerlink" title="3.实验配置代码："></a>3.实验配置代码：</h2><h3 id="LSW1："><a href="#LSW1：" class="headerlink" title="LSW1："></a>LSW1：</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>LSW1<span class="token operator">></span>dis cur
 <span class="token comment" spellcheck="true">#</span>
 sysname LSW1
 <span class="token comment" spellcheck="true">#</span>
@@ -656,8 +655,8 @@ ip route-static 0.0.0.0 0.0.0.0 1.1.1.2
 user-interface con 0
 user-interface vty 0 4
 <span class="token comment" spellcheck="true">#</span>
-<span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>AR1<span class="token operator">></span>dis cur
+<span class="token keyword">return</span></code></pre>
+<h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>AR1<span class="token operator">></span>dis cur
 <span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname AR1
@@ -712,8 +711,8 @@ user-interface vty 16 20
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
-<span class="token operator">&lt;</span>AR1<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2:"></a>AR2:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>AR2<span class="token operator">></span>dis cur
+<span class="token operator">&lt;</span>AR1<span class="token operator">></span></code></pre>
+<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2:"></a>AR2:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>AR2<span class="token operator">></span>dis cur
 <span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname AR2
@@ -773,7 +772,7 @@ user-interface vty 16 20
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
-<span class="token operator">&lt;</span>AR2<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span>AR2<span class="token operator">></span></code></pre>
 <h2 id="4-问题总结"><a href="#4-问题总结" class="headerlink" title="4.问题总结;"></a>4.问题总结;</h2><p>配置的过程中pc2不能获取到ip地址和网关信息，因为g0/0/3的口没有开（up）</p>
 <p>可以通过<code>dis ip int brief</code> 查看接口状态：</p>
 <img src="/posts/93f65dd5/image-20210102192851516.png" alt style="zoom:50%;">

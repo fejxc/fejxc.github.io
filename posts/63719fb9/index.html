@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -552,7 +551,7 @@
 <li>数据分页显示功能</li>
 <li>角色权限管理（待实现）</li>
 </ul>
-<h2 id="创建vue-cli-一般步骤"><a href="#创建vue-cli-一般步骤" class="headerlink" title="创建vue-cli 一般步骤"></a>创建vue-cli 一般步骤</h2><pre class="line-numbers language-markdown"><code class="language-markdown">//1.初始化项目  xxxx是项目名
+<h2 id="创建vue-cli-一般步骤"><a href="#创建vue-cli-一般步骤" class="headerlink" title="创建vue-cli 一般步骤"></a>创建vue-cli 一般步骤</h2><pre class=" language-markdown"><code class="language-markdown">//1.初始化项目  xxxx是项目名
 vue init webpack xxxx
 
 //2.安装element-ui
@@ -575,7 +574,7 @@ import router from './router'
 //打包前端代码 会生成dict文件
 npm run build
 //将static文件 index.html 复制到springboot后端项目的 rescouces 的static目录下
-//配置文件增加: spring.web.resources.static-locations=classpath:/static/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+//配置文件增加: spring.web.resources.static-locations=classpath:/static/</code></pre>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
 <li><p>当index.vue 通过 $router.push 跳转到 更新表单数据界面  渲染表表数据怎么传递参数</p>
 </li>
@@ -602,14 +601,14 @@ npm run build
 <p>使用这种方式，参数不会拼接在路由后面，地址栏上看不到参数</p>
 <p>由于动态路由也是传递params的，所以在 this.$router.push() 方法中 path不能和params一起使用，否则params将无效。需要用name来指定页面。</p>
 <p>及通过路由配置的name属性访问</p>
-<h3 id="router-push-后页面表单的数据渲染"><a href="#router-push-后页面表单的数据渲染" class="headerlink" title="router.push 后页面表单的数据渲染"></a>router.push 后页面表单的数据渲染</h3><pre class="line-numbers language-html"><code class="language-html"> created() {
+<h3 id="router-push-后页面表单的数据渲染"><a href="#router-push-后页面表单的数据渲染" class="headerlink" title="router.push 后页面表单的数据渲染"></a>router.push 后页面表单的数据渲染</h3><pre class=" language-html"><code class="language-html"> created() {
             //渲染数据
             this.updateForm.id=this.$route.params.id;
             this.updateForm.name=this.$route.params.name;
             this.updateForm.author=this.$route.params.author;
             console.log(this.$route.params.id);
-        }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+        }</code></pre>
+<h3 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
 <span class="token annotation punctuation">@RestController</span>
 <span class="token annotation punctuation">@CrossOrigin</span>  <span class="token comment" spellcheck="true">//解决跨域问题</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"book"</span><span class="token punctuation">)</span>
@@ -639,7 +638,7 @@ npm run build
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> Book book<span class="token punctuation">)</span><span class="token punctuation">{</span>
         service<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>book<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</code></pre>
 <p><code>@RequestBody主要用来接收**前端传递给后端**的**json字符串中的数据的**(请求体中的数据的)；</code></p>
 <p><code>@CrossOrigin  //解决跨域问题</code>   前端8080端口访问后端8989端口</p>
 <h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><h4 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h4><img src="/posts/63719fb9/image-20201124101626853.png" alt="image-20201123235211996" style="zoom:50%;">

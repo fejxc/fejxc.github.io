@@ -29,8 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 
@@ -524,7 +523,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="mac按照RabbitMQ"><a href="#mac按照RabbitMQ" class="headerlink" title="mac按照RabbitMQ"></a>mac按照RabbitMQ</h1><h2 id="1-通过brew命令安装"><a href="#1-通过brew命令安装" class="headerlink" title="1.通过brew命令安装"></a>1.通过brew命令安装</h2><pre class="line-numbers language-shell"><code class="language-shell">brew update
+                <h1 id="mac按照RabbitMQ"><a href="#mac按照RabbitMQ" class="headerlink" title="mac按照RabbitMQ"></a>mac按照RabbitMQ</h1><h2 id="1-通过brew命令安装"><a href="#1-通过brew命令安装" class="headerlink" title="1.通过brew命令安装"></a>1.通过brew命令安装</h2><pre class=" language-shell"><code class="language-shell">brew update
 //Already up-to-date.
 brew install rabbitmq
 ==> Checking for dependents of upgraded formulae...
@@ -536,13 +535,13 @@ Management Plugin enabled by default at http://localhost:15672
 To start rabbitmq:
   brew services start rabbitmq
 Or, if you don't want/need a background service you can just run:
-  /usr/local/opt/rabbitmq/sbin/rabbitmq-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h2><pre class="line-numbers language-shell"><code class="language-shell">vim ~/.bash_profile
+  /usr/local/opt/rabbitmq/sbin/rabbitmq-server</code></pre>
+<h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2.配置环境变量"></a>2.配置环境变量</h2><pre class=" language-shell"><code class="language-shell">vim ~/.bash_profile
 #RabbitMQ
 export PATH=$PATH:/usr/local/sbin
-source ~/.bash_profile<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-启动和关闭"><a href="#3-启动和关闭" class="headerlink" title="3.启动和关闭"></a>3.启动和关闭</h2><pre class="line-numbers language-shell"><code class="language-shell">rabbitmqctl stop 关闭
-rabbitmq-server 启动<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+source ~/.bash_profile</code></pre>
+<h2 id="3-启动和关闭"><a href="#3-启动和关闭" class="headerlink" title="3.启动和关闭"></a>3.启动和关闭</h2><pre class=" language-shell"><code class="language-shell">rabbitmqctl stop 关闭
+rabbitmq-server 启动</code></pre>
 <h2 id="4-web管理界面"><a href="#4-web管理界面" class="headerlink" title="4.web管理界面"></a>4.web管理界面</h2><p><a href="http://localhost:15672/" target="_blank" rel="noopener">http://localhost:15672</a></p>
 <p>guest</p>
 <p>guest</p>
