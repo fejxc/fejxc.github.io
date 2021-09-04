@@ -515,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    179
+                    204
                 </div>
                 
 
@@ -532,16 +532,13 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="github与gitee代码同步push教程"><a href="#github与gitee代码同步push教程" class="headerlink" title="github与gitee代码同步push教程"></a>github与gitee代码同步push教程</h1><h2 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h2><pre><code>在gitee在已经有仓库
-复制该仓库的 https://gitee.com/*******.git 的https地址</code></pre>
+                <h1 id="github与gitee代码同步push教程"><a href="#github与gitee代码同步push教程" class="headerlink" title="github与gitee代码同步push教程"></a>github与gitee代码同步push教程</h1><h2 id="步骤1："><a href="#步骤1：" class="headerlink" title="步骤1："></a>步骤1：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在gitee在已经有仓库</span><br><span class="line">复制该仓库的 https:&#x2F;&#x2F;gitee.com&#x2F;*******.git 的https地址</span><br></pre></td></tr></table></figure>
+
 <h2 id="步骤2"><a href="#步骤2" class="headerlink" title="步骤2:"></a>步骤2:</h2><p><img src="https://i.loli.net/2020/10/29/AUy38BqXa6MwRLb.png"></p>
 <p>选择<code>Import repository</code></p>
 <h2 id="步骤3"><a href="#步骤3" class="headerlink" title="步骤3:"></a>步骤3:</h2><p><img src="https://i.loli.net/2020/10/29/GXzfPomnd5WZ4bK.png"></p>
@@ -551,27 +548,13 @@
 <h2 id="步骤4"><a href="#步骤4" class="headerlink" title="步骤4:"></a>步骤4:</h2><p>1.先将gitee项目的代码克隆到本地电脑</p>
 <p>2.然后修改config文件   文件在 <code>.git/concig</code></p>
 <p>3.修改如下</p>
-<pre><code>[core]
-    repositoryformatversion = 0
-    filemode = true
-    bare = false
-    logallrefupdates = true
-    ignorecase = true
-    precomposeunicode = true
-[remote &quot;origin&quot;]
-    # github
-    url = git@github.com:*****.git  #add code
-    # gitee
-    url = https://gitee.com/*****.git
-    fetch = +refs/heads/*:refs/remotes/origin/*
-[branch &quot;master&quot;]  #add code
-    remote = origin
-    merge = refs/heads/master
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion &#x3D; 0</span><br><span class="line">	filemode &#x3D; true</span><br><span class="line">	bare &#x3D; false</span><br><span class="line">	logallrefupdates &#x3D; true</span><br><span class="line">	ignorecase &#x3D; true</span><br><span class="line">	precomposeunicode &#x3D; true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	# github</span><br><span class="line">	url &#x3D; git@github.com:*****.git  #add code</span><br><span class="line">	# gitee</span><br><span class="line">	url &#x3D; https:&#x2F;&#x2F;gitee.com&#x2F;*****.git</span><br><span class="line">	fetch &#x3D; +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;origin&#x2F;*</span><br><span class="line">[branch &quot;master&quot;]  #add code</span><br><span class="line">	remote &#x3D; origin</span><br><span class="line">	merge &#x3D; refs&#x2F;heads&#x2F;master</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="步骤5"><a href="#步骤5" class="headerlink" title="步骤5:"></a>步骤5:</h2><p>验证代码：</p>
-<pre><code>git add .
-git commit -m &quot;init&quot;
-git push</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;init&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
 <h2 id="成功图示："><a href="#成功图示：" class="headerlink" title="成功图示："></a>成功图示：</h2><p><img src="https://i.loli.net/2020/10/29/ewKI8izumR6JkhV.png"></p>
 
                 

@@ -519,7 +519,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    871
+                    880
                 </div>
                 
 
@@ -535,9 +535,6 @@
         </div>
         <hr class="clearfix">
 
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
         
 
         
@@ -555,30 +552,8 @@
 <li>数据分页显示功能</li>
 <li>角色权限管理（待实现）</li>
 </ul>
-<h2 id="创建vue-cli-一般步骤"><a href="#创建vue-cli-一般步骤" class="headerlink" title="创建vue-cli 一般步骤"></a>创建vue-cli 一般步骤</h2><pre class="line-numbers language-markdown"><code class="language-markdown">//1.初始化项目  xxxx是项目名
-vue init webpack xxxx
+<h2 id="创建vue-cli-一般步骤"><a href="#创建vue-cli-一般步骤" class="headerlink" title="创建vue-cli 一般步骤"></a>创建vue-cli 一般步骤</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//1.初始化项目  xxxx是项目名</span><br><span class="line">vue init webpack xxxx</span><br><span class="line"></span><br><span class="line">//2.安装element-ui</span><br><span class="line">npm i element-ui -S  </span><br><span class="line"></span><br><span class="line">//3.安装axios</span><br><span class="line">npm install axios</span><br><span class="line"></span><br><span class="line">//4.在main.js中添加代码</span><br><span class="line">import ElementUI from 'element-ui';</span><br><span class="line">import 'element-ui/lib/theme-chalk/index.css';</span><br><span class="line">Vue.use(ElementUI);</span><br><span class="line"></span><br><span class="line">import axios from 'axios'</span><br><span class="line">Vue.prototype.$http=axios;</span><br><span class="line"></span><br><span class="line">//注意 在初始化项目的时候 可以选择默认安装 router </span><br><span class="line">import router from './router'</span><br><span class="line"></span><br><span class="line">//打包前端代码 会生成dict文件</span><br><span class="line">npm run build</span><br><span class="line">//将static文件 index.html 复制到springboot后端项目的 rescouces 的static目录下</span><br><span class="line">//配置文件增加: spring.web.resources.static-locations=classpath:/static/</span><br></pre></td></tr></table></figure>
 
-//2.安装element-ui
-npm i element-ui -S  
-
-//3.安装axios
-npm install axios
-
-//4.在main.js中添加代码
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
-
-import axios from 'axios'
-Vue.prototype.$http=axios;
-
-//注意 在初始化项目的时候 可以选择默认安装 router 
-import router from './router'
-
-//打包前端代码 会生成dict文件
-npm run build
-//将static文件 index.html 复制到springboot后端项目的 rescouces 的static目录下
-//配置文件增加: spring.web.resources.static-locations=classpath:/static/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
 <li><p>当index.vue 通过 $router.push 跳转到 更新表单数据界面  渲染表表数据怎么传递参数</p>
 </li>
@@ -605,44 +580,10 @@ npm run build
 <p>使用这种方式，参数不会拼接在路由后面，地址栏上看不到参数</p>
 <p>由于动态路由也是传递params的，所以在 this.$router.push() 方法中 path不能和params一起使用，否则params将无效。需要用name来指定页面。</p>
 <p>及通过路由配置的name属性访问</p>
-<h3 id="router-push-后页面表单的数据渲染"><a href="#router-push-后页面表单的数据渲染" class="headerlink" title="router.push 后页面表单的数据渲染"></a>router.push 后页面表单的数据渲染</h3><pre class="line-numbers language-html"><code class="language-html"> created() {
-            //渲染数据
-            this.updateForm.id=this.$route.params.id;
-            this.updateForm.name=this.$route.params.name;
-            this.updateForm.author=this.$route.params.author;
-            console.log(this.$route.params.id);
-        }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
-<span class="token annotation punctuation">@RestController</span>
-<span class="token annotation punctuation">@CrossOrigin</span>  <span class="token comment" spellcheck="true">//解决跨域问题</span>
-<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"book"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BookController</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Autowired</span>
-    <span class="token keyword">private</span> BookService service<span class="token punctuation">;</span>
+<h3 id="router-push-后页面表单的数据渲染"><a href="#router-push-后页面表单的数据渲染" class="headerlink" title="router.push 后页面表单的数据渲染"></a>router.push 后页面表单的数据渲染</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">created() &#123;</span><br><span class="line">           //渲染数据</span><br><span class="line">           this.updateForm.id=this.$route.params.id;</span><br><span class="line">           this.updateForm.name=this.$route.params.name;</span><br><span class="line">           this.updateForm.author=this.$route.params.author;</span><br><span class="line">           console.log(this.$route.params.id);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
 
-    <span class="token comment" spellcheck="true">//添加图书   @RequestBody 主要用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的)；</span>
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"add"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> Book book<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        service<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>book<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<h3 id="解决跨域问题"><a href="#解决跨域问题" class="headerlink" title="解决跨域问题"></a>解决跨域问题</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@CrossOrigin</span>  <span class="comment">//解决跨域问题</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"book"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> BookService service;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加图书   @RequestBody 主要用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的)；</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"add"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">(@RequestBody Book book)</span></span>&#123;</span><br><span class="line">        service.add(book);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查询所有</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"findAll"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Book&gt; <span class="title">findAll</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> service.findAll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//根据id进行删除</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"delete"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String id)</span></span>&#123;</span><br><span class="line">        service.delete(id);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//修改图书</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"update"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(@RequestBody Book book)</span></span>&#123;</span><br><span class="line">        service.update(book);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-    <span class="token comment" spellcheck="true">//查询所有</span>
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"findAll"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Book<span class="token operator">></span> <span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">return</span> service<span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//根据id进行删除</span>
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"delete"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">delete</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        service<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment" spellcheck="true">//修改图书</span>
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"update"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> Book book<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        service<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>book<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>@RequestBody主要用来接收**前端传递给后端**的**json字符串中的数据的**(请求体中的数据的)；</code></p>
 <p><code>@CrossOrigin  //解决跨域问题</code>   前端8080端口访问后端8989端口</p>
 <h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><h4 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h4><img src="/posts/63719fb9/image-20201124101626853.png" alt="image-20201123235211996" style="zoom:50%;">

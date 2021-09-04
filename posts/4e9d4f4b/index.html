@@ -519,7 +519,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    282
+                    274
                 </div>
                 
 
@@ -536,62 +536,13 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="git常用命令清单"><a href="#git常用命令清单" class="headerlink" title="git常用命令清单"></a>git常用命令清单</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">git</span> init
-<span class="token function">git</span> status
-/**
-红色 文件修改 还没添加到版本库
-绿色 文件已经添加到版本库 还没有提交
-*/
-<span class="token function">git</span> config --global user.name <span class="token string">""</span>
-<span class="token function">git</span> config --global user.email <span class="token string">""</span>
-<span class="token function">git</span> add xxx
-<span class="token function">git</span> commit -m <span class="token string">""</span>
+                <h3 id="git常用命令清单"><a href="#git常用命令清单" class="headerlink" title="git常用命令清单"></a>git常用命令清单</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git status</span><br><span class="line">/**</span><br><span class="line">红色 文件修改 还没添加到版本库</span><br><span class="line">绿色 文件已经添加到版本库 还没有提交</span><br><span class="line">*/</span><br><span class="line">git config --global user.name <span class="string">""</span></span><br><span class="line">git config --global user.email <span class="string">""</span></span><br><span class="line">git add xxx</span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line">git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">git reflog //显示所有历史版本记录</span><br><span class="line"></span><br><span class="line">git reset --hard 版本id //回退版本</span><br><span class="line"></span><br><span class="line">git checkout -- 文件 //撤回工作区的修改</span><br><span class="line"></span><br><span class="line">git reset HEAD 文件 //撤回暂存区的修改，要先reset 然后 checkout</span><br><span class="line">git checkout --文件</span><br><span class="line"></span><br><span class="line">//版本库的删除</span><br><span class="line">rm 文件 目录</span><br><span class="line">git rm 文件 目录</span><br><span class="line">git commit -m <span class="string">""</span></span><br><span class="line">//取消删除</span><br><span class="line">git checkout -- 文件名</span><br><span class="line"></span><br><span class="line">//创建分支</span><br><span class="line">git checkout -b 分支名</span><br><span class="line">//切换分支</span><br><span class="line">git checkout 分支名</span><br><span class="line">//合并分支（先切换到主分支）</span><br><span class="line">git merge 要合并的分支名</span><br><span class="line"></span><br><span class="line">//远程仓库操作</span><br><span class="line">git <span class="built_in">clone</span> url</span><br><span class="line">git remote add origin url  //将对本地git添加远程仓库</span><br><span class="line">git remote remove origin //删除原有的仓库地址</span><br><span class="line">git push -u origin 分支名 //本地分支推送到远程仓库</span><br><span class="line">git push -f origin 分支名  //-u更新 -f强制更新</span><br><span class="line">git push -d origin 分支名</span><br><span class="line">git pull origin 分支名    </span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"gitee/github用户名"</span></span><br></pre></td></tr></table></figure>
 
-<span class="token function">git</span> log
-<span class="token function">git</span> log --pretty<span class="token operator">=</span>oneline
-<span class="token function">git</span> reflog //显示所有历史版本记录
-
-<span class="token function">git</span> reset --hard 版本id //回退版本
-
-<span class="token function">git</span> checkout -- 文件 //撤回工作区的修改
-
-<span class="token function">git</span> reset HEAD 文件 //撤回暂存区的修改，要先reset 然后 checkout
-<span class="token function">git</span> checkout --文件
-
-//版本库的删除
-<span class="token function">rm</span> 文件 目录
-<span class="token function">git</span> <span class="token function">rm</span> 文件 目录
-<span class="token function">git</span> commit -m <span class="token string">""</span>
-//取消删除
-<span class="token function">git</span> checkout -- 文件名
-
-//创建分支
-<span class="token function">git</span> checkout -b 分支名
-//切换分支
-<span class="token function">git</span> checkout 分支名
-//合并分支（先切换到主分支）
-<span class="token function">git</span> merge 要合并的分支名
-
-//远程仓库操作
-<span class="token function">git</span> clone url
-<span class="token function">git</span> remote add origin url  //将对本地git添加远程仓库
-<span class="token function">git</span> remote remove origin //删除原有的仓库地址
-<span class="token function">git</span> push -u origin 分支名 //本地分支推送到远程仓库
-<span class="token function">git</span> push -f origin 分支名  //-u更新 -f强制更新
-<span class="token function">git</span> push -d origin 分支名
-<span class="token function">git</span> pull origin 分支名    
-
-ssh-keygen -t rsa -C <span class="token string">"gitee/github用户名"</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

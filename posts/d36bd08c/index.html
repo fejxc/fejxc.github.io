@@ -502,7 +502,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    96
+                    93
                 </div>
                 
 
@@ -519,9 +519,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -530,24 +527,8 @@
                 <h1 id="sql笔记"><a href="#sql笔记" class="headerlink" title="sql笔记"></a>sql笔记</h1><h2 id="8月9号"><a href="#8月9号" class="headerlink" title="8月9号"></a>8月9号</h2><p>表结构</p>
 <img src="/posts/d36bd08c/image-20210810084309972.png" alt="image-20210810084309972" style="zoom:80%;">
 
-<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>sex<span class="token punctuation">)</span>
-<span class="token keyword">values</span><span class="token punctuation">(</span><span class="token string">'suny'</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'hauhua'</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'meimei'</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="string">`user`</span>(<span class="keyword">name</span>,age,sex)</span><br><span class="line"><span class="keyword">values</span>(<span class="string">'suny'</span>,<span class="number">20</span>,<span class="number">1</span>),(<span class="string">'hauhua'</span>,<span class="number">19</span>,<span class="number">1</span>),(<span class="string">'meimei'</span>,<span class="number">33</span>,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 当表中主键存在数据就执行更新操作</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="string">`user`</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,age,sex)</span><br><span class="line"><span class="keyword">values</span>(<span class="number">1</span>,<span class="string">'suny'</span>,<span class="number">22</span>,<span class="number">1</span>),(<span class="number">2</span>,<span class="string">'huahua2'</span>,<span class="number">20</span>,<span class="number">0</span>)</span><br><span class="line"><span class="keyword">on</span> <span class="keyword">duplicate</span> <span class="keyword">key</span> <span class="keyword">UPDATE</span></span><br><span class="line"><span class="keyword">name</span>=<span class="keyword">values</span>(<span class="keyword">name</span>),</span><br><span class="line">age=<span class="keyword">values</span>(age),</span><br><span class="line">sex=<span class="keyword">values</span>(sex);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- case when else语句</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span>,age,</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">when</span> sex=<span class="number">1</span> <span class="keyword">then</span> <span class="string">'男'</span></span><br><span class="line"><span class="keyword">when</span> sex=<span class="number">0</span> <span class="keyword">then</span> <span class="string">'女'</span></span><br><span class="line"><span class="keyword">else</span> <span class="string">'未知'</span></span><br><span class="line"><span class="keyword">end</span> sex</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
 
-<span class="token comment" spellcheck="true">-- 当表中主键存在数据就执行更新操作</span>
-<span class="token keyword">insert</span> <span class="token keyword">into</span> <span class="token punctuation">`</span><span class="token keyword">user</span><span class="token punctuation">`</span><span class="token punctuation">(</span>id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>sex<span class="token punctuation">)</span>
-<span class="token keyword">values</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'suny'</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">'huahua2'</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
-<span class="token keyword">on</span> <span class="token keyword">duplicate key</span> <span class="token keyword">UPDATE</span>
-name<span class="token operator">=</span><span class="token keyword">values</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">,</span>
-age<span class="token operator">=</span><span class="token keyword">values</span><span class="token punctuation">(</span>age<span class="token punctuation">)</span><span class="token punctuation">,</span>
-sex<span class="token operator">=</span><span class="token keyword">values</span><span class="token punctuation">(</span>sex<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">-- case when else语句</span>
-<span class="token keyword">select</span> id<span class="token punctuation">,</span>name<span class="token punctuation">,</span>age<span class="token punctuation">,</span>
-<span class="token keyword">case</span> <span class="token keyword">when</span> sex<span class="token operator">=</span><span class="token number">1</span> <span class="token keyword">then</span> <span class="token string">'男'</span>
-<span class="token keyword">when</span> sex<span class="token operator">=</span><span class="token number">0</span> <span class="token keyword">then</span> <span class="token string">'女'</span>
-<span class="token keyword">else</span> <span class="token string">'未知'</span>
-<span class="token keyword">end</span> sex
-<span class="token keyword">from</span> <span class="token keyword">user</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

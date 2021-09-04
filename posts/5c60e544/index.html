@@ -515,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    504
+                    502
                 </div>
                 
 
@@ -532,49 +532,20 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-安装参考"><a href="#1-安装参考" class="headerlink" title="1.安装参考"></a>1.安装参考</h1><h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><pre class="line-numbers language-bash"><code class="language-bash">使用如下命令安装MySql以及它的相关依赖项.
-<span class="token function">sudo</span> dnf <span class="token function">install</span> @mysql
-安装完成后，启动MySql服务并且让它在Centos服务器启动时自动启动,命令如下所示.
-<span class="token function">sudo</span> systemctl <span class="token function">enable</span> --now mysqld
-使用如下命令检测MySql是否在运行.结果如下所示.
-<span class="token function">sudo</span> systemctl status mysqld
-● mysqld.service - MySQL 8.0 database server
-   Active: active <span class="token punctuation">(</span>running<span class="token punctuation">)</span> since Wed 2020-11-11 09:41:34 CST<span class="token punctuation">;</span> 3 weeks 5 days ago
-使用如下命令进入
-<span class="token function">sudo</span> mysql_secure_installation
-会有如下顺序直接,按照如下顺序执行.
-选择密码验证策略等级， 我这里选择0 （low），回车
-输入新密码两次
-确认是否继续使用提供的密码？输入y ，回车
-移除匿名用户？ 输入y ，回车
-不允许root远程登陆？ 我这里需要远程登陆，所以输入n ，回车
-移除test数据库？ 输入y ，回车
-重新载入权限表？ 输入y ，回车
+                <h1 id="1-安装参考"><a href="#1-安装参考" class="headerlink" title="1.安装参考"></a>1.安装参考</h1><h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">使用如下命令安装MySql以及它的相关依赖项.</span><br><span class="line">sudo dnf install @mysql</span><br><span class="line">安装完成后，启动MySql服务并且让它在Centos服务器启动时自动启动,命令如下所示.</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> --now mysqld</span><br><span class="line">使用如下命令检测MySql是否在运行.结果如下所示.</span><br><span class="line">sudo systemctl status mysqld</span><br><span class="line">● mysqld.service - MySQL 8.0 database server</span><br><span class="line">   Active: active (running) since Wed 2020-11-11 09:41:34 CST; 3 weeks 5 days ago</span><br><span class="line">使用如下命令进入</span><br><span class="line">sudo mysql_secure_installation</span><br><span class="line">会有如下顺序直接,按照如下顺序执行.</span><br><span class="line">选择密码验证策略等级， 我这里选择0 （low），回车</span><br><span class="line">输入新密码两次</span><br><span class="line">确认是否继续使用提供的密码？输入y ，回车</span><br><span class="line">移除匿名用户？ 输入y ，回车</span><br><span class="line">不允许root远程登陆？ 我这里需要远程登陆，所以输入n ，回车</span><br><span class="line">移除<span class="built_in">test</span>数据库？ 输入y ，回车</span><br><span class="line">重新载入权限表？ 输入y ，回车</span><br><span class="line"></span><br><span class="line">在当前终端使用如下命令登陆MySql.</span><br><span class="line">mysql -uroot -p &lt;上面步骤中设置的密码&gt;</span><br><span class="line">登陆使用如下mysql命令,设置root用户的 host 为任意IP.</span><br><span class="line">use mysql;</span><br><span class="line">update user <span class="built_in">set</span> host=<span class="string">'%'</span> <span class="built_in">where</span> user=<span class="string">'root'</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
 
-在当前终端使用如下命令登陆MySql.
-mysql -uroot -p <span class="token operator">&lt;</span>上面步骤中设置的密码<span class="token operator">></span>
-登陆使用如下mysql命令,设置root用户的 host 为任意IP.
-use mysql<span class="token punctuation">;</span>
-update user <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> where user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
-flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 <p><a href="https://www.jianshu.com/p/1e55d8018eab" target="_blank" rel="noopener">参考链接</a></p>
-<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@sunyun share<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># sudo firewalld-cmd  --zone=public --add-port=3306/tcp  --permanent</span>
-sudo: firewalld-cmd: <span class="token function">command</span> not found
-<span class="token punctuation">[</span>root@sunyun share<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># firewall-cmd --list-ports</span>
-FirewallD is not running<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><pre class="line-numbers language-bash"><code class="language-bash">通过systemctl start firewalld开启防火墙，没有任何提示即开启成功。
-再次通过systemctl status firewalld查看firewalld状态，显示running即已开启了。
-如果要关闭防火墙设置，可能通过systemctl stop firewalld这条指令来关闭该功能。
-再次执行执行firewall-cmd --permanent --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span>3306/tcp，提示success，表示设置成功，这样就可以继续后面的设置了。
-<span class="token function">sudo</span> firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@sunyun share]<span class="comment"># sudo firewalld-cmd  --zone=public --add-port=3306/tcp  --permanent</span></span><br><span class="line">sudo: firewalld-cmd: <span class="built_in">command</span> not found</span><br><span class="line">[root@sunyun share]<span class="comment"># firewall-cmd --list-ports</span></span><br><span class="line">FirewallD is not running</span><br></pre></td></tr></table></figure>
+
+<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">通过systemctl start firewalld开启防火墙，没有任何提示即开启成功。</span><br><span class="line">再次通过systemctl status firewalld查看firewalld状态，显示running即已开启了。</span><br><span class="line">如果要关闭防火墙设置，可能通过systemctl stop firewalld这条指令来关闭该功能。</span><br><span class="line">再次执行执行firewall-cmd --permanent --zone=public --add-port=3306/tcp，提示success，表示设置成功，这样就可以继续后面的设置了。</span><br><span class="line">sudo firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
 <img src="/posts/5c60e544/image-20210219193307960.png" alt="开启3306端口" style="zoom:50%;">
 
 <h4 id="你会发现还是连接不上，会报错"><a href="#你会发现还是连接不上，会报错" class="headerlink" title="你会发现还是连接不上，会报错"></a>你会发现还是连接不上，会报错</h4><p><code>2003 - Can&#39;t connect to MySQL server on &#39;47.115.*.*&#39; (60 &quot;Operation time</code></p>
