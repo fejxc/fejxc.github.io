@@ -495,7 +495,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-27
+                    2021-07-28
                 </div>
                 
 
@@ -509,7 +509,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    13 分
                 </div>
                 
 
@@ -862,7 +862,10 @@ Date yesterday <span class="token operator">=</span> c<span class="token punctua
     <span class="token operator">&lt;</span><span class="token operator">/</span>foreach<span class="token operator">></span><span class="token punctuation">,</span>#<span class="token punctuation">{</span>serviceTime<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">'0'</span><span class="token punctuation">,</span><span class="token string">'0'</span><span class="token punctuation">,</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">)</span>
   <span class="token operator">&lt;</span><span class="token operator">/</span>insert<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="4-4-resultType与parameterType属性的区别"><a href="#4-4-resultType与parameterType属性的区别" class="headerlink" title="4.4 resultType与parameterType属性的区别"></a>4.4 resultType与parameterType属性的区别</h4><h2 id="5-定时任务调度"><a href="#5-定时任务调度" class="headerlink" title="5.定时任务调度"></a>5.定时任务调度</h2><h3 id="5-1在定时调度的service层使用-Autowired对应的Impl取值为null"><a href="#5-1在定时调度的service层使用-Autowired对应的Impl取值为null" class="headerlink" title="5.1在定时调度的service层使用@Autowired对应的Impl取值为null"></a>5.1在定时调度的service层使用@Autowired对应的Impl取值为null</h3><p><strong>处理</strong></p>
+<h4 id="4-4-resultType与parameterType属性的区别"><a href="#4-4-resultType与parameterType属性的区别" class="headerlink" title="4.4 resultType与parameterType属性的区别"></a>4.4 resultType与parameterType属性的区别</h4><h3 id="4-5-selectkey标签的作用"><a href="#4-5-selectkey标签的作用" class="headerlink" title="4.5 selectkey标签的作用"></a>4.5 selectkey标签的作用</h3><pre class="line-numbers language-java"><code class="language-java"><span class="token operator">&lt;</span>selectKey keyProperty<span class="token operator">=</span><span class="token string">"bsmMain"</span> order<span class="token operator">=</span><span class="token string">"AFTER"</span> resultType<span class="token operator">=</span><span class="token string">"java.lang.Long"</span><span class="token operator">></span>
+      SELECT <span class="token function">LAST_INSERT_ID</span><span class="token punctuation">(</span><span class="token punctuation">)</span> as bsmMain
+<span class="token operator">&lt;</span><span class="token operator">/</span>selectKey<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-定时任务调度"><a href="#5-定时任务调度" class="headerlink" title="5.定时任务调度"></a>5.定时任务调度</h2><h3 id="5-1在定时调度的service层使用-Autowired对应的Impl取值为null"><a href="#5-1在定时调度的service层使用-Autowired对应的Impl取值为null" class="headerlink" title="5.1在定时调度的service层使用@Autowired对应的Impl取值为null"></a>5.1在定时调度的service层使用@Autowired对应的Impl取值为null</h3><p><strong>处理</strong></p>
 <p>使用private 申明 其他Service层的service，然后创建带参数的构造方法</p>
 <p>用this.XXXService.XX来调用接口方法</p>
 <p>⚠️因为平时在调用service层时都是在controller中，有配置扫描注入，spring会根据配置自动注入所依赖的服务层。</p>
