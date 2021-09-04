@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -547,14 +548,14 @@
 <p>字数要求<code>200</code>字以上<code>300</code>字以下</p>
 <img src="/posts/b53a8168/image-20210115211257504.png" alt="image-20210115211257504" style="zoom:50%;">
 
-<pre class=" language-markdown"><code class="language-markdown">典型的编译器可以划分成七个主要的逻辑阶段，分别是词法分析器、语法分析器、语义分析器、中间代码生成器、独立于机器的代码优化器、代码生成器、依赖于机器的代码优化器。各阶段的主要功能：
+<pre class="line-numbers language-markdown"><code class="language-markdown">典型的编译器可以划分成七个主要的逻辑阶段，分别是词法分析器、语法分析器、语义分析器、中间代码生成器、独立于机器的代码优化器、代码生成器、依赖于机器的代码优化器。各阶段的主要功能：
 （1）词法分析器：词法分析阅读构成源程序的字符流，按编程语言的词法规则把它们组成词法记号流。
 （2）语法分析器：按编程语言的语法规则检查词法分析输出的记号流是否符合这些规则，并依据这些规则所体现出的该语言的各种语言构造的层次性，用各记号的第一元建成一种树形的中间表示，这个中间表示用抽象语法的方式描绘了该记号流的语法情况。
 （3）语义分析器：使用语法树和符号表中的信息，依据语言定义来检查源程序的语义一致性，以保证程序各部分能有意义地结合在一起。它还收集类型信息，把它们保存在符号表或语法树中。
 （4）中间代码生成器:为源程序产生更低级的显示中间表示，可以认为这种中间表示是一种抽象机的程序。
 （5）独立于机器的代码优化器：试图改进中间代码，以便产生较好的目标代码。通常，较好是指执行较快，但也可能是其他目标，如目标代码较短或目标代码执行时能耗较低。
 （6）代码生成器：取源程序的一种中间表示作为输入并把它映射到一种目标语言。如果目标语言是机器代码，则需要为源程序所用的变量选择寄存器或内存单元，然后把中间指令序列翻译为完成同样任务的机器指令序列。
-（7）依赖于机器的代码优化器：试图改进目标机器代码，以便产生较好的目标机器代码。</code></pre>
+（7）依赖于机器的代码优化器：试图改进目标机器代码，以便产生较好的目标机器代码。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="1、大题-DFA"><a href="#1、大题-DFA" class="headerlink" title="1、大题 DFA"></a>1、大题 DFA</h3><p>正规式—NFA—-DFA</p>
 <p>核心 ：子集构造法</p>
 <img src="/posts/b53a8168/image-20201230212247331.png" alt="NFA-DFA（带e边）" style="zoom:50%;">

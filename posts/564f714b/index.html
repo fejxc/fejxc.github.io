@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -549,7 +550,7 @@
 <p><strong>2、不允许内网服务器Server2主动访问外网，但是允许被外网访问。</strong></p>
 <p><strong>3、汇聚层交换机SW3、SW4作为部门1、部门2、IDC的网关所在，实现网关冗余备份，同时为提高网络带宽，增强网络稳定性，在SW3与SW4之间通过两条千兆线路互联，实现链路聚合功能。</strong></p>
 <p><strong>4、通过园区网网关AR1为部门2中的用户提供DHCP服务，使该部门的用户PC可以通过DHCP自动获取地址。（DHCP地址池：172.16.20.100/24–172.16.20.253，网关：172.16.20.254，DNS（主）：202.101.224.68，DNS（备）：202.101.224.69）。</strong></p>
-<h2 id="4-步骤："><a href="#4-步骤：" class="headerlink" title="4.步骤："></a>4.步骤：</h2><pre class=" language-bash"><code class="language-bash">1、根据数据规划第一条，配置所有终端（PC1、PC2<span class="token punctuation">[</span>设置成DHCP<span class="token punctuation">]</span>、Server1、Server2）IP地址、子网掩码、默认网关。
+<h2 id="4-步骤："><a href="#4-步骤：" class="headerlink" title="4.步骤："></a>4.步骤：</h2><pre class="line-numbers language-bash"><code class="language-bash">1、根据数据规划第一条，配置所有终端（PC1、PC2<span class="token punctuation">[</span>设置成DHCP<span class="token punctuation">]</span>、Server1、Server2）IP地址、子网掩码、默认网关。
 
 2、根据数据规划第二条，配置所有接入层交换机（SW5、SW6、SW7）的vlan及端口。
 配置示例：
@@ -777,8 +778,8 @@ dhcp relay server-ip 172.16.14.1
 quit
 
 （完结）
-</code></pre>
-<h2 id="5-设备配置"><a href="#5-设备配置" class="headerlink" title="5.设备配置:"></a>5.设备配置:</h2><h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class=" language-bash"><code class="language-bash">AR1<span class="token operator">></span>dis cur
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-设备配置"><a href="#5-设备配置" class="headerlink" title="5.设备配置:"></a>5.设备配置:</h2><h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class="line-numbers language-bash"><code class="language-bash">AR1<span class="token operator">></span>dis cur
 <span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname AR1
@@ -868,8 +869,8 @@ user-interface vty 16 20
 <span class="token comment" spellcheck="true">#</span>
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
-<span class="token keyword">return</span></code></pre>
-<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2:"></a>AR2:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>AR2<span class="token operator">></span>dis cur
+<span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="AR2"><a href="#AR2" class="headerlink" title="AR2:"></a>AR2:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>AR2<span class="token operator">></span>dis cur
 <span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname AR2
@@ -965,8 +966,8 @@ user-interface vty 16 20
 <span class="token comment" spellcheck="true">#</span>
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
-<span class="token keyword">return</span></code></pre>
-<h3 id="SW3"><a href="#SW3" class="headerlink" title="SW3:"></a>SW3:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW3<span class="token operator">></span>dis cur
+<span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="SW3"><a href="#SW3" class="headerlink" title="SW3:"></a>SW3:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW3<span class="token operator">></span>dis cur
 <span class="token comment" spellcheck="true">#</span>
 sysname SW3
 <span class="token comment" spellcheck="true">#</span>
@@ -1104,8 +1105,8 @@ user-interface vty 0 4
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
 
-<span class="token operator">&lt;</span>SW3<span class="token operator">></span></code></pre>
-<h3 id="SW4"><a href="#SW4" class="headerlink" title="SW4:"></a>SW4:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW4<span class="token operator">></span>dis cur
+<span class="token operator">&lt;</span>SW3<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="SW4"><a href="#SW4" class="headerlink" title="SW4:"></a>SW4:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW4<span class="token operator">></span>dis cur
 <span class="token comment" spellcheck="true">#</span>
 sysname SW4
 <span class="token comment" spellcheck="true">#</span>
@@ -1245,8 +1246,8 @@ user-interface vty 0 4
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
 
-<span class="token operator">&lt;</span>SW4<span class="token operator">></span></code></pre>
-<h3 id="SW5"><a href="#SW5" class="headerlink" title="SW5:"></a>SW5:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW5<span class="token operator">></span>dis cur
+<span class="token operator">&lt;</span>SW4<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="SW5"><a href="#SW5" class="headerlink" title="SW5:"></a>SW5:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW5<span class="token operator">></span>dis cur
 <span class="token comment" spellcheck="true">#</span>
 sysname SW5
 <span class="token comment" spellcheck="true">#</span>
@@ -1338,8 +1339,8 @@ interface NULL0
 user-interface con 0
 user-interface vty 0 4
 <span class="token comment" spellcheck="true">#</span>
-<span class="token keyword">return</span></code></pre>
-<h3 id="SW6"><a href="#SW6" class="headerlink" title="SW6:"></a>SW6:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW6<span class="token operator">></span>dis cur
+<span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="SW6"><a href="#SW6" class="headerlink" title="SW6:"></a>SW6:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW6<span class="token operator">></span>dis cur
 <span class="token comment" spellcheck="true">#</span>
 sysname SW6
 <span class="token comment" spellcheck="true">#</span>
@@ -1433,8 +1434,8 @@ user-interface vty 0 4
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
 
-<span class="token operator">&lt;</span>SW6<span class="token operator">></span></code></pre>
-<h3 id="SW7"><a href="#SW7" class="headerlink" title="SW7:"></a>SW7:</h3><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW7<span class="token operator">></span>dis cur
+<span class="token operator">&lt;</span>SW6<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="SW7"><a href="#SW7" class="headerlink" title="SW7:"></a>SW7:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>SW7<span class="token operator">></span>dis cur
 <span class="token comment" spellcheck="true">#</span>
 sysname SW7
 <span class="token comment" spellcheck="true">#</span>
@@ -1526,7 +1527,7 @@ user-interface vty 0 4
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
 
-<span class="token operator">&lt;</span>SW7<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span>SW7<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-实现效果："><a href="#6-实现效果：" class="headerlink" title="6.实现效果："></a>6.实现效果：</h2><img src="/posts/564f714b/image-20210105183308901.png" alt="PC2(DHCP)" style="zoom:80%;">
 
 
@@ -1570,16 +1571,16 @@ user-interface vty 0 4
 
 
 <h3 id="小知识点："><a href="#小知识点：" class="headerlink" title="小知识点："></a>小知识点：</h3><p><strong>1.浮动路由默认是优先级是60，越小越优先，如果是第二条路由优先级是比默认的要大，一般配置60以上</strong></p>
-<pre class=" language-BASH"><code class="language-BASH">[R1]ip route-static 192.168.10.0 255.255.255.0 11.0.0.2  #默认是60
+<pre class="line-numbers language-BASH"><code class="language-BASH">[R1]ip route-static 192.168.10.0 255.255.255.0 11.0.0.2  #默认是60
 [R1]ip route-static 192.168.10.0 255.255.255.0 12.0.0.2 preference 70  # 上面的路宕了该条路由信息会自动写进路由表，路就会飘到12.0.0.2接口上
 [R1]ip route-static 192.168.20.0 255.255.255.0 12.0.0.2
-[R1]ip route-static 192.168.20.0 255.255.255.0 11.0.0.2 preference 70</code></pre>
+[R1]ip route-static 192.168.20.0 255.255.255.0 11.0.0.2 preference 70<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
 <li><strong>ARRP 优先级范围1-254 数值越大越优先，所以主ARRP优先级配置比备路由ARRP优先级数值大</strong></li>
 <li><code>[sw1-Vlanif20]dhcp relay server-ip 192.168.100.1 Error: Please configure dhcp select relay first. [sw1-Vlanif20]dhcp select relay Error: Please enable DHCP in the global view first. [sw1-Vlanif20]q [sw1]dhcp enable  在交换机全局下开启dhcp，后面就能正常配置了。但dhcp服务器配置在路由器上了，并且在路由器上开启过dhcp enable了，这里交换机为什么还要在次开启呢 ？ [sw1-Vlanif20]dhcp select relay 这里就正常了 [sw1-Vlanif20]dhcp relay server-ip 192.168.100.1</code></li>
 </ol>
 <h3 id="将vlanif10的流量走SW4："><a href="#将vlanif10的流量走SW4：" class="headerlink" title="将vlanif10的流量走SW4："></a>将vlanif10的流量走SW4：</h3><p>设置SW3的vlanif10的 arrp优先级小于SW4的vlanif10的 arrp优先值（默认是100）</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW3-Vlanif10<span class="token punctuation">]</span>dis this
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW3-Vlanif10<span class="token punctuation">]</span>dis this
 <span class="token comment" spellcheck="true">#</span>
 interface Vlanif10
  ip address 172.16.10.3 255.255.255.0
@@ -1596,8 +1597,8 @@ VRID  State        Interface                Type     Virtual IP
 1     Master       Vlanif20                 Normal   172.16.20.254  
 1     Master       Vlanif30                 Normal   172.16.30.254  
 ----------------------------------------------------------------
-Total:3     Master:2     Backup:1     Non-active:0   </code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW4-Vlanif10<span class="token punctuation">]</span>dis this
+Total:3     Master:2     Backup:1     Non-active:0   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW4-Vlanif10<span class="token punctuation">]</span>dis this
 <span class="token comment" spellcheck="true">#</span>
 interface Vlanif10
  ip address 172.16.10.4 255.255.255.0
@@ -1614,8 +1615,8 @@ VRID  State        Interface                Type     Virtual IP
 1     Backup       Vlanif20                 Normal   172.16.20.254  
 1     Backup       Vlanif30                 Normal   172.16.30.254  
 ----------------------------------------------------------------
-Total:3     Master:1     Backup:2     Non-active:0     </code></pre>
-<h3 id="将vlanif30的流量走SW4："><a href="#将vlanif30的流量走SW4：" class="headerlink" title="将vlanif30的流量走SW4："></a>将vlanif30的流量走SW4：</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW3-Vlanif30<span class="token punctuation">]</span>vrrp vrid 1 priority 80
+Total:3     Master:1     Backup:2     Non-active:0     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="将vlanif30的流量走SW4："><a href="#将vlanif30的流量走SW4：" class="headerlink" title="将vlanif30的流量走SW4："></a>将vlanif30的流量走SW4：</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW3-Vlanif30<span class="token punctuation">]</span>vrrp vrid 1 priority 80
 <span class="token punctuation">[</span>SW3-Vlanif30<span class="token punctuation">]</span>
 <span class="token punctuation">[</span>SW3-Vlanif30<span class="token punctuation">]</span>dis this
 <span class="token comment" spellcheck="true">#</span>
@@ -1634,8 +1635,8 @@ VRID  State        Interface                Type     Virtual IP
 1     Backup       Vlanif30                 Normal   172.16.30.254  
 ----------------------------------------------------------------
 Total:3     Master:1     Backup:2     Non-active:0     
-<span class="token punctuation">[</span>SW3-Vlanif30<span class="token punctuation">]</span></code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW4-Vlanif10<span class="token punctuation">]</span>int vlanif 30
+<span class="token punctuation">[</span>SW3-Vlanif30<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>SW4-Vlanif10<span class="token punctuation">]</span>int vlanif 30
 <span class="token punctuation">[</span>SW4-Vlanif30<span class="token punctuation">]</span>dis this
 <span class="token comment" spellcheck="true">#</span>
 interface Vlanif30
@@ -1652,7 +1653,7 @@ VRID  State        Interface                Type     Virtual IP
 1     Master       Vlanif30                 Normal   172.16.30.254  
 ----------------------------------------------------------------
 Total:3     Master:2     Backup:1     Non-active:0     
-<span class="token punctuation">[</span>SW4-Vlanif30<span class="token punctuation">]</span></code></pre>
+<span class="token punctuation">[</span>SW4-Vlanif30<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -546,7 +547,7 @@
 <p><strong>3.根据规划，R0、R1属于osps的骨干区域Area 0，R属于Area 100，R3属于Area200，宣告路由器的直接连网段进ospf域</strong></p>
 <p><strong>4.将R2，R3上连接的端口设置为被动接口（passive-interface）防止路由器将ospf报文发送给pc</strong></p>
 <p><strong>5.pc之间可以相互ping通</strong></p>
-<h2 id="配置代码："><a href="#配置代码：" class="headerlink" title="配置代码："></a>配置代码：</h2><h3 id="Router0："><a href="#Router0：" class="headerlink" title="Router0："></a>Router0：</h3><pre class=" language-BASH"><code class="language-BASH">[V200R003C00]
+<h2 id="配置代码："><a href="#配置代码：" class="headerlink" title="配置代码："></a>配置代码：</h2><h3 id="Router0："><a href="#Router0：" class="headerlink" title="Router0："></a>Router0：</h3><pre class="line-numbers language-BASH"><code class="language-BASH">[V200R003C00]
 #
  sysname Router0
 #
@@ -600,13 +601,13 @@ user-interface vty 16 20
 wlan ac
 #
 return
-</code></pre>
-<pre class=" language-BASH"><code class="language-BASH">int lo 0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-BASH"><code class="language-BASH">int lo 0
 area 0
 area 100
 reset ospf process //重启ospf进程
 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="/posts/744e70d2/image-20210101211841809.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212026620.png" alt="bref" style="zoom:50%;">
@@ -615,7 +616,7 @@ reset ospf process //重启ospf进程
 
 <img src="/posts/744e70d2/image-20210101212220355.png" alt="lsdb" style="zoom:50%;">
 
-<h3 id="Router1"><a href="#Router1" class="headerlink" title="Router1:"></a>Router1:</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
+<h3 id="Router1"><a href="#Router1" class="headerlink" title="Router1:"></a>Router1:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname Router1
 <span class="token comment" spellcheck="true">#</span>
@@ -668,14 +669,14 @@ user-interface vty 16 20
 <span class="token comment" spellcheck="true">#</span>
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
-<span class="token keyword">return</span></code></pre>
+<span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="/posts/744e70d2/image-20210101212309706.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212400619.png" alt="bref" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212500821.png" alt="router-table" style="zoom:50%;">
 
-<h3 id="Router2："><a href="#Router2：" class="headerlink" title="Router2："></a>Router2：</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
+<h3 id="Router2："><a href="#Router2：" class="headerlink" title="Router2："></a>Router2：</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  sysname Router2
 <span class="token comment" spellcheck="true">#</span>
@@ -731,14 +732,14 @@ user-interface vty 16 20
 <span class="token comment" spellcheck="true">#</span>
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
-<span class="token keyword">return</span></code></pre>
+<span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="/posts/744e70d2/image-20210101212618508.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212705921.png" alt="brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101212732684.png" alt="router-table" style="zoom:50%;">
 
-<h3 id="router3"><a href="#router3" class="headerlink" title="router3:"></a>router3:</h3><pre class=" language-BASH"><code class="language-BASH">[V200R003C00]
+<h3 id="router3"><a href="#router3" class="headerlink" title="router3:"></a>router3:</h3><pre class="line-numbers language-BASH"><code class="language-BASH">[V200R003C00]
 #
  sysname Router3
 #
@@ -794,7 +795,7 @@ user-interface vty 16 20
 #
 wlan ac
 #
-return</code></pre>
+return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="/posts/744e70d2/image-20210101212931868.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101213033630.png" alt="brief" style="zoom:50%;">

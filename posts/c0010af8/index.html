@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -580,16 +581,16 @@
 </ul>
 <p>是只有主体自己知道的安全信息，如密码、证书等。</p>
 <h3 id="4-3-认证流程"><a href="#4-3-认证流程" class="headerlink" title="4.3 认证流程"></a>4.3 认证流程</h3><p><img src="/posts/c0010af8/image-20200521204452288.png" alt="image-20200521204452288"></p>
-<h3 id="4-4-认证的开发"><a href="#4-4-认证的开发" class="headerlink" title="4.4 认证的开发"></a>4.4 认证的开发</h3><h5 id="1-创建项目并引入依赖"><a href="#1-创建项目并引入依赖" class="headerlink" title="1. 创建项目并引入依赖"></a>1. 创建项目并引入依赖</h5><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+<h3 id="4-4-认证的开发"><a href="#4-4-认证的开发" class="headerlink" title="4.4 认证的开发"></a>4.4 认证的开发</h3><h5 id="1-创建项目并引入依赖"><a href="#1-创建项目并引入依赖" class="headerlink" title="1. 创建项目并引入依赖"></a>1. 创建项目并引入依赖</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.shiro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>shiro-core<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="2-引入shiro配置文件并加入如下配置"><a href="#2-引入shiro配置文件并加入如下配置" class="headerlink" title="2. 引入shiro配置文件并加入如下配置"></a>2. 引入shiro配置文件并加入如下配置</h5><pre class=" language-ini"><code class="language-ini"><span class="token selector">[users]</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-引入shiro配置文件并加入如下配置"><a href="#2-引入shiro配置文件并加入如下配置" class="headerlink" title="2. 引入shiro配置文件并加入如下配置"></a>2. 引入shiro配置文件并加入如下配置</h5><pre class="line-numbers language-ini"><code class="language-ini"><span class="token selector">[users]</span>
 <span class="token constant">xiaochen</span><span class="token attr-value"><span class="token punctuation">=</span>123</span>
-<span class="token constant">zhangsan</span><span class="token attr-value"><span class="token punctuation">=</span>456</span></code></pre>
+<span class="token constant">zhangsan</span><span class="token attr-value"><span class="token punctuation">=</span>456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200521205219719.png" alt="image-20200521205219719"></p>
-<h5 id="3-开发认证代码"><a href="#3-开发认证代码" class="headerlink" title="3.开发认证代码"></a>3.开发认证代码</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticator</span> <span class="token punctuation">{</span>
+<h5 id="3-开发认证代码"><a href="#3-开发认证代码" class="headerlink" title="3.开发认证代码"></a>3.开发认证代码</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticator</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//创建securityManager</span>
         DefaultSecurityManager defaultSecurityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -612,7 +613,7 @@
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>DisabledAccountException（帐号被禁用）</p>
 </li>
@@ -628,7 +629,7 @@
 <h5 id="1-shiro提供的Realm"><a href="#1-shiro提供的Realm" class="headerlink" title="1.shiro提供的Realm"></a>1.shiro提供的Realm</h5><p><img src="/posts/c0010af8/image-20200521212728541.png" alt="image-20200521212728541"></p>
 <h5 id="2-根据认证源码认证使用的是SimpleAccountRealm"><a href="#2-根据认证源码认证使用的是SimpleAccountRealm" class="headerlink" title="2.根据认证源码认证使用的是SimpleAccountRealm"></a>2.根据认证源码认证使用的是SimpleAccountRealm</h5><p><img src="/posts/c0010af8/image-20200521213451998.png" alt="image-20200521213451998"></p>
 <p><code>SimpleAccountRealm的部分源码中有两个方法一个是 认证 一个是 授权</code>,</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleAccountRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleAccountRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//.......省略</span>
     <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken token<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token punctuation">{</span>
         UsernamePasswordToken upToken <span class="token operator">=</span> <span class="token punctuation">(</span>UsernamePasswordToken<span class="token punctuation">)</span> token<span class="token punctuation">;</span>
@@ -658,8 +659,8 @@
             USERS_LOCK<span class="token punctuation">.</span><span class="token function">readLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="3-自定义realm"><a href="#3-自定义realm" class="headerlink" title="3.自定义realm"></a>3.自定义realm</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-自定义realm"><a href="#3-自定义realm" class="headerlink" title="3.自定义realm"></a>3.自定义realm</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 自定义realm
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
@@ -678,8 +679,8 @@
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="4-使用自定义Realm认证"><a href="#4-使用自定义Realm认证" class="headerlink" title="4.使用自定义Realm认证"></a>4.使用自定义Realm认证</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticatorCusttomerRealm</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="4-使用自定义Realm认证"><a href="#4-使用自定义Realm认证" class="headerlink" title="4.使用自定义Realm认证"></a>4.使用自定义Realm认证</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticatorCusttomerRealm</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//创建securityManager</span>
         DefaultSecurityManager defaultSecurityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -704,11 +705,11 @@
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-6-使用MD5和Salt"><a href="#4-6-使用MD5和Salt" class="headerlink" title="4.6 使用MD5和Salt"></a>4.6 使用MD5和Salt</h3><blockquote>
 <p>实际应用是将盐和散列后的值存在数据库中，自动realm从数据库取出盐和加密后的值由shiro完成密码校验。</p>
 </blockquote>
-<h5 id="1-自定义md5-salt的realm"><a href="#1-自定义md5-salt的realm" class="headerlink" title="1.自定义md5+salt的realm"></a>1.自定义md5+salt的realm</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+<h5 id="1-自定义md5-salt的realm"><a href="#1-自定义md5-salt的realm" class="headerlink" title="1.自定义md5+salt的realm"></a>1.自定义md5+salt的realm</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
  * 自定义md5+salt realm
  */</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
@@ -729,8 +730,8 @@
                                                 ByteSource<span class="token punctuation">.</span>Util<span class="token punctuation">.</span><span class="token function">bytes</span><span class="token punctuation">(</span>salt<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
-<h5 id="2-使用md5-salt-认证"><a href="#2-使用md5-salt-认证" class="headerlink" title="2.使用md5 + salt 认证"></a>2.使用md5 + salt 认证</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticatorCusttomerRealm</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-使用md5-salt-认证"><a href="#2-使用md5-salt-认证" class="headerlink" title="2.使用md5 + salt 认证"></a>2.使用md5 + salt 认证</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticatorCusttomerRealm</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//创建securityManager</span>
         DefaultSecurityManager defaultSecurityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -761,7 +762,7 @@
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 <h2 id="5-shiro中的授权"><a href="#5-shiro中的授权" class="headerlink" title="5. shiro中的授权"></a>5. shiro中的授权</h2><h3 id="5-1-授权"><a href="#5-1-授权" class="headerlink" title="5.1 授权"></a>5.1 授权</h3><p>授权，即访问控制，控制谁能访问哪些资源。主体进行身份认证后需要分配权限方可访问系统的资源，对于某些资源没有权限是无法访问的。</p>
 <h3 id="5-2-关键对象"><a href="#5-2-关键对象" class="headerlink" title="5.2 关键对象"></a>5.2 关键对象</h3><p><strong>授权可简单理解为who对what(which)进行How操作：</strong></p>
@@ -773,21 +774,21 @@
 <li><p><strong>基于角色的访问控制</strong></p>
 <ul>
 <li><p>RBAC基于角色的访问控制（Role-Based Access Control）是以角色为中心进行访问控制</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>subject<span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>subject<span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
    <span class="token comment" spellcheck="true">//操作什么资源</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
 <li><p><strong>基于资源的访问控制</strong></p>
 <ul>
 <li><p>RBAC基于资源的访问控制（Resource-Based Access Control）是以资源为中心进行访问控制</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>subject<span class="token punctuation">.</span><span class="token function">isPermission</span><span class="token punctuation">(</span><span class="token string">"user:update:01"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//资源实例</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>subject<span class="token punctuation">.</span><span class="token function">isPermission</span><span class="token punctuation">(</span><span class="token string">"user:update:01"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//资源实例</span>
   <span class="token comment" spellcheck="true">//对01用户进行修改</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span>subject<span class="token punctuation">.</span><span class="token function">isPermission</span><span class="token punctuation">(</span><span class="token string">"user:update:*"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//资源类型</span>
   <span class="token comment" spellcheck="true">//对01用户进行修改</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 </li>
@@ -801,29 +802,29 @@
 </ul>
 <h3 id="5-6-shiro中授权编程实现方式"><a href="#5-6-shiro中授权编程实现方式" class="headerlink" title="5.6 shiro中授权编程实现方式"></a>5.6 shiro中授权编程实现方式</h3><ul>
 <li><p><strong>编程式</strong></p>
-<pre class=" language-java"><code class="language-java">Subject subject <span class="token operator">=</span> SecurityUtils<span class="token punctuation">.</span><span class="token function">getSubject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-java"><code class="language-java">Subject subject <span class="token operator">=</span> SecurityUtils<span class="token punctuation">.</span><span class="token function">getSubject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span><span class="token punctuation">(</span>subject<span class="token punctuation">.</span><span class="token function">hasRole</span><span class="token punctuation">(</span>“admin”<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">//有权限</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">//无权限</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><strong>注解式</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequiresRoles</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequiresRoles</span><span class="token punctuation">(</span><span class="token string">"admin"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">//有权限</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p><strong>标签式</strong></p>
-<pre class=" language-jsp"><code class="language-jsp">JSP/GSP 标签：在JSP/GSP 页面通过相应的标签完成：
+<pre class="line-numbers language-jsp"><code class="language-jsp">JSP/GSP 标签：在JSP/GSP 页面通过相应的标签完成：
 <shiro:hasRole name="admin">
   <!— 有权限—>
 </shiro:hasRole>
-注意: Thymeleaf 中使用shiro需要额外集成!</code></pre>
+注意: Thymeleaf 中使用shiro需要额外集成!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li></li>
 </ul>
-<h3 id="5-7-开发授权"><a href="#5-7-开发授权" class="headerlink" title="5.7 开发授权"></a>5.7 开发授权</h3><h5 id="1-realm的实现"><a href="#1-realm的实现" class="headerlink" title="1.realm的实现"></a>1.realm的实现</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
+<h3 id="5-7-开发授权"><a href="#5-7-开发授权" class="headerlink" title="5.7 开发授权"></a>5.7 开发授权</h3><h5 id="1-realm的实现"><a href="#1-realm的实现" class="headerlink" title="1.realm的实现"></a>1.realm的实现</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//认证方法</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principals<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -854,8 +855,8 @@
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-<span class="token punctuation">}</span></code></pre>
-<h5 id="2-授权"><a href="#2-授权" class="headerlink" title="2.授权"></a>2.授权</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticatorCusttomerRealm</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-授权"><a href="#2-授权" class="headerlink" title="2.授权"></a>2.授权</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestAuthenticatorCusttomerRealm</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//创建securityManager</span>
         DefaultSecurityManager defaultSecurityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -895,16 +896,16 @@
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-整合SpringBoot项目实战"><a href="#6-整合SpringBoot项目实战" class="headerlink" title="6.整合SpringBoot项目实战"></a>6.整合SpringBoot项目实战</h2><h3 id="6-0-整合思路"><a href="#6-0-整合思路" class="headerlink" title="6.0 整合思路"></a>6.0 整合思路</h3><p><img src="/posts/c0010af8/image-20200525185630463.png" alt="image-20200525185630463"></p>
 <h3 id="6-1-创建springboot项目"><a href="#6-1-创建springboot项目" class="headerlink" title="6.1 创建springboot项目"></a>6.1 创建springboot项目</h3><p><img src="/posts/c0010af8/image-20200523100842032.png" alt="image-20200523100842032"></p>
-<h3 id="6-2-引入shiro依赖"><a href="#6-2-引入shiro依赖" class="headerlink" title="6.2 引入shiro依赖"></a>6.2 引入shiro依赖</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+<h3 id="6-2-引入shiro依赖"><a href="#6-2-引入shiro依赖" class="headerlink" title="6.2 引入shiro依赖"></a>6.2 引入shiro依赖</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.shiro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>shiro-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="6-3-配置shiro环境"><a href="#6-3-配置shiro环境" class="headerlink" title="6.3 配置shiro环境"></a>6.3 配置shiro环境</h3><h5 id="0-创建配置类"><a href="#0-创建配置类" class="headerlink" title="0.创建配置类"></a>0.创建配置类</h5><p><img src="/posts/c0010af8/image-20200523101256446.png" alt="image-20200523101256446"></p>
-<h5 id="1-配置shiroFilterFactoryBean"><a href="#1-配置shiroFilterFactoryBean" class="headerlink" title="1.配置shiroFilterFactoryBean"></a>1.配置shiroFilterFactoryBean</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
+<h5 id="1-配置shiroFilterFactoryBean"><a href="#1-配置shiroFilterFactoryBean" class="headerlink" title="1.配置shiroFilterFactoryBean"></a>1.配置shiroFilterFactoryBean</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> ShiroFilterFactoryBean <span class="token function">getShiroFilterFactoryBean</span><span class="token punctuation">(</span>SecurityManager securityManager<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">//创建shiro的filter</span>
   ShiroFilterFactoryBean shiroFilterFactoryBean <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ShiroFilterFactoryBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -912,15 +913,15 @@
   shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setSecurityManager</span><span class="token punctuation">(</span>securityManager<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">return</span> shiroFilterFactoryBean<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="2-配置WebSecurityManager"><a href="#2-配置WebSecurityManager" class="headerlink" title="2.配置WebSecurityManager"></a>2.配置WebSecurityManager</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-配置WebSecurityManager"><a href="#2-配置WebSecurityManager" class="headerlink" title="2.配置WebSecurityManager"></a>2.配置WebSecurityManager</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> DefaultWebSecurityManager <span class="token function">getSecurityManager</span><span class="token punctuation">(</span>Realm realm<span class="token punctuation">)</span><span class="token punctuation">{</span>
   DefaultWebSecurityManager defaultWebSecurityManager <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultWebSecurityManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   defaultWebSecurityManager<span class="token punctuation">.</span><span class="token function">setRealm</span><span class="token punctuation">(</span>realm<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> defaultWebSecurityManager<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="3-创建自定义realm"><a href="#3-创建自定义realm" class="headerlink" title="3.创建自定义realm"></a>3.创建自定义realm</h5><p><img src="/posts/c0010af8/image-20200523101402213.png" alt="image-20200523101402213"></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//处理授权</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principals<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -932,20 +933,20 @@
                                                                                                                                             AuthenticationException <span class="token punctuation">{</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="4-配置自定义realm"><a href="#4-配置自定义realm" class="headerlink" title="4.配置自定义realm"></a>4.配置自定义realm</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//创建自定义realm</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="4-配置自定义realm"><a href="#4-配置自定义realm" class="headerlink" title="4.配置自定义realm"></a>4.配置自定义realm</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//创建自定义realm</span>
 <span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> Realm <span class="token function">getRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CustomerRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="5-编写控制器跳转至index-html"><a href="#5-编写控制器跳转至index-html" class="headerlink" title="5.编写控制器跳转至index.html"></a>5.编写控制器跳转至index.html</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-编写控制器跳转至index-html"><a href="#5-编写控制器跳转至index-html" class="headerlink" title="5.编写控制器跳转至index.html"></a>5.编写控制器跳转至index.html</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">IndexController</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"index"</span><span class="token punctuation">)</span>
     <span class="token keyword">public</span> String <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"跳转至主页"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token string">"index"</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200523101733157.png" alt="image-20200523101733157"></p>
 <p><img src="/posts/c0010af8/image-20200523101857528.png" alt="image-20200523101857528"></p>
 <h5 id="6-启动springboot应用访问index"><a href="#6-启动springboot应用访问index" class="headerlink" title="6.启动springboot应用访问index"></a>6.启动springboot应用访问index</h5><p><img src="/posts/c0010af8/image-20200523101955121.png" alt="image-20200523101955121"></p>
@@ -957,12 +958,12 @@
 </ul>
 <h5 id="7-加入权限控制"><a href="#7-加入权限控制" class="headerlink" title="7.加入权限控制"></a>7.加入权限控制</h5><ul>
 <li><p>修改ShiroFilterFactoryBean配置</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//注入安全管理器</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//注入安全管理器</span>
 shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setSecurityManager</span><span class="token punctuation">(</span>securityManager<span class="token punctuation">)</span><span class="token punctuation">;</span>
 Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> map <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"/**"</span><span class="token punctuation">,</span><span class="token string">"authc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//配置认证和授权规则</span>
-shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setFilterChainDefinitionMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token function">setFilterChainDefinitionMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200523102303320.png" alt="image-20200523102303320"></p>
 <ul>
 <li><strong>/**</strong> 代表拦截项目中一切资源  <strong>authc</strong> 代表shiro中的一个filter的别名,详细内容看文档的shirofilter列表</li>
@@ -1038,12 +1039,12 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 </tr>
 </tbody></table>
 <h3 id="6-5-认证实现"><a href="#6-5-认证实现" class="headerlink" title="6.5 认证实现"></a>6.5 认证实现</h3><h5 id="1-在login-jsp中开发认证界面"><a href="#1-在login-jsp中开发认证界面" class="headerlink" title="1. 在login.jsp中开发认证界面"></a>1. 在login.jsp中开发认证界面</h5><p><img src="/posts/c0010af8/image-20200526082345776.png" alt="image-20200526082345776"></p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${pageContext.request.contextPath}/user/login<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${pageContext.request.contextPath}/user/login<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   用户名:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
   密码  : <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>登录<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="2-开发controller"><a href="#2-开发controller" class="headerlink" title="2. 开发controller"></a>2. 开发controller</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-开发controller"><a href="#2-开发controller" class="headerlink" title="2. 开发controller"></a>2. 开发controller</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">/**
@@ -1068,11 +1069,11 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token string">"redirect:/login.jsp"</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><strong>在认证过程中使用subject.login进行认证</strong></li>
 </ul>
-<h5 id="3-开发realm中返回静态数据-未连接数据库"><a href="#3-开发realm中返回静态数据-未连接数据库" class="headerlink" title="3.开发realm中返回静态数据(未连接数据库)"></a>3.开发realm中返回静态数据(未连接数据库)</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<h5 id="3-开发realm中返回静态数据-未连接数据库"><a href="#3-开发realm中返回静态数据-未连接数据库" class="headerlink" title="3.开发realm中返回静态数据(未连接数据库)"></a>3.开发realm中返回静态数据(未连接数据库)</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken token<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=========================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         String principal <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> token<span class="token punctuation">.</span><span class="token function">getPrincipal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1081,7 +1082,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="4-启动项目以realm中定义静态数据进行认证"><a href="#4-启动项目以realm中定义静态数据进行认证" class="headerlink" title="4.启动项目以realm中定义静态数据进行认证"></a>4.启动项目以realm中定义静态数据进行认证</h5><p><img src="/posts/c0010af8/image-20200526082550343.png" alt="image-20200526082550343"></p>
 <p><img src="/posts/c0010af8/image-20200526082639318.png" alt="image-20200526082639318"></p>
 <p><img src="/posts/c0010af8/image-20200526082620621.png" alt="image-20200526082620621"></p>
@@ -1089,7 +1090,7 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 <li><strong>认证功能没有md5和随机盐的认证就实现啦</strong></li>
 </ul>
 <h3 id="6-6-退出认证"><a href="#6-6-退出认证" class="headerlink" title="6.6 退出认证"></a>6.6 退出认证</h3><h5 id="1-开发页面退出连接"><a href="#1-开发页面退出连接" class="headerlink" title="1.开发页面退出连接"></a>1.开发页面退出连接</h5><p><img src="/posts/c0010af8/image-20200526082851800.png" alt="image-20200526082851800"></p>
-<h5 id="2-开发controller-1"><a href="#2-开发controller-1" class="headerlink" title="2.开发controller"></a>2.开发controller</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<h5 id="2-开发controller-1"><a href="#2-开发controller-1" class="headerlink" title="2.开发controller"></a>2.开发controller</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">/**
@@ -1102,17 +1103,17 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
     subject<span class="token punctuation">.</span><span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//退出用户</span>
     <span class="token keyword">return</span> <span class="token string">"redirect:/login.jsp"</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="3-修改退出连接访问退出路径"><a href="#3-修改退出连接访问退出路径" class="headerlink" title="3.修改退出连接访问退出路径"></a>3.修改退出连接访问退出路径</h5><p><img src="/posts/c0010af8/image-20200526083056062.png" alt="image-20200526083056062"></p>
 <h5 id="4-退出之后访问受限资源立即返回认证界面"><a href="#4-退出之后访问受限资源立即返回认证界面" class="headerlink" title="4.退出之后访问受限资源立即返回认证界面"></a>4.退出之后访问受限资源立即返回认证界面</h5><p><img src="/posts/c0010af8/image-20200526083148253.png" alt="image-20200526083148253"></p>
-<h3 id="6-7-MD5、Salt的认证实现"><a href="#6-7-MD5、Salt的认证实现" class="headerlink" title="6.7 MD5、Salt的认证实现"></a>6.7 MD5、Salt的认证实现</h3><h4 id="1-开发数据库注册"><a href="#1-开发数据库注册" class="headerlink" title="1.开发数据库注册"></a>1.开发数据库注册</h4><h5 id="0-开发注册界面"><a href="#0-开发注册界面" class="headerlink" title="0.开发注册界面"></a>0.开发注册界面</h5><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>用户注册<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+<h3 id="6-7-MD5、Salt的认证实现"><a href="#6-7-MD5、Salt的认证实现" class="headerlink" title="6.7 MD5、Salt的认证实现"></a>6.7 MD5、Salt的认证实现</h3><h4 id="1-开发数据库注册"><a href="#1-开发数据库注册" class="headerlink" title="1.开发数据库注册"></a>1.开发数据库注册</h4><h5 id="0-开发注册界面"><a href="#0-开发注册界面" class="headerlink" title="0.开发注册界面"></a>0.开发注册界面</h5><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>用户注册<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>${pageContext.request.contextPath}/user/register<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   用户名:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
   密码  : <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>password<span class="token punctuation">"</span></span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>立即注册<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200526200230982.png" alt="image-20200526200230982"></p>
-<h5 id="1-创建数据表结构"><a href="#1-创建数据表结构" class="headerlink" title="1.创建数据表结构"></a>1.创建数据表结构</h5><pre class=" language-sql"><code class="language-sql"><span class="token keyword">SET</span> NAMES utf8mb4<span class="token punctuation">;</span>
+<h5 id="1-创建数据表结构"><a href="#1-创建数据表结构" class="headerlink" title="1.创建数据表结构"></a>1.创建数据表结构</h5><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SET</span> NAMES utf8mb4<span class="token punctuation">;</span>
 <span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">-- ----------------------------</span>
 <span class="token comment" spellcheck="true">-- Table structure for t_user</span>
@@ -1126,9 +1127,9 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
   <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span><span class="token punctuation">`</span>id<span class="token punctuation">`</span><span class="token punctuation">)</span>
 <span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token operator">=</span><span class="token number">2</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span>
 
-<span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span></code></pre>
+<span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200526200425569.png" alt="image-20200526200425569"></p>
-<h5 id="2-项目引入依赖"><a href="#2-项目引入依赖" class="headerlink" title="2.项目引入依赖"></a>2.项目引入依赖</h5><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--mybatis相关依赖--></span>
+<h5 id="2-项目引入依赖"><a href="#2-项目引入依赖" class="headerlink" title="2.项目引入依赖"></a>2.项目引入依赖</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--mybatis相关依赖--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.mybatis.spring.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis-spring-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
@@ -1148,8 +1149,8 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>druid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.1.19<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="3-配置application-properties配置文件"><a href="#3-配置application-properties配置文件" class="headerlink" title="3.配置application.properties配置文件"></a>3.配置application.properties配置文件</h5><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">server.port</span><span class="token punctuation">=</span><span class="token attr-value">8888</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-配置application-properties配置文件"><a href="#3-配置application-properties配置文件" class="headerlink" title="3.配置application.properties配置文件"></a>3.配置application.properties配置文件</h5><pre class="line-numbers language-properties"><code class="language-properties"><span class="token attr-name">server.port</span><span class="token punctuation">=</span><span class="token attr-value">8888</span>
 <span class="token attr-name">server.servlet.context-path</span><span class="token punctuation">=</span><span class="token attr-value">/shiro</span>
 <span class="token attr-name">spring.application.name</span><span class="token punctuation">=</span><span class="token attr-value">shiro</span>
 
@@ -1165,9 +1166,9 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 
 <span class="token attr-name">mybatis.type-aliases-package</span><span class="token punctuation">=</span><span class="token attr-value">com.baizhi.springboot_jsp_shiro.entity</span>
 <span class="token attr-name">mybatis.mapper-locations</span><span class="token punctuation">=</span><span class="token attr-value">classpath:com/baizhi/mapper/*.xml</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200526200558712.png" alt="image-20200526200558712"></p>
-<h5 id="4-创建entity"><a href="#4-创建entity" class="headerlink" title="4.创建entity"></a>4.创建entity</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<h5 id="4-创建entity"><a href="#4-创建entity" class="headerlink" title="4.创建entity"></a>4.创建entity</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
 <span class="token annotation punctuation">@Accessors</span><span class="token punctuation">(</span>chain <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
 <span class="token annotation punctuation">@AllArgsConstructor</span>
 <span class="token annotation punctuation">@NoArgsConstructor</span>
@@ -1176,19 +1177,19 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
     <span class="token keyword">private</span> String username<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String password<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String salt<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="5-创建DAO接口"><a href="#5-创建DAO接口" class="headerlink" title="5.创建DAO接口"></a>5.创建DAO接口</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Mapper</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-创建DAO接口"><a href="#5-创建DAO接口" class="headerlink" title="5.创建DAO接口"></a>5.创建DAO接口</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Mapper</span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserDAO</span> <span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="6-开发mapper配置文件"><a href="#6-开发mapper配置文件" class="headerlink" title="6.开发mapper配置文件"></a>6.开发mapper配置文件</h5><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>save<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span> <span class="token attr-name">useGeneratedKeys</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">keyProperty</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="6-开发mapper配置文件"><a href="#6-开发mapper配置文件" class="headerlink" title="6.开发mapper配置文件"></a>6.开发mapper配置文件</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>insert</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>save<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span> <span class="token attr-name">useGeneratedKeys</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">keyProperty</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   insert into t_user values(#{id},#{username},#{password},#{salt})
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="7-开发service接口"><a href="#7-开发service接口" class="headerlink" title="7.开发service接口"></a>7.开发service接口</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>insert</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="7-开发service接口"><a href="#7-开发service接口" class="headerlink" title="7.开发service接口"></a>7.开发service接口</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//注册用户方法</span>
     <span class="token keyword">void</span> <span class="token function">register</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="8-创建salt工具类"><a href="#8-创建salt工具类" class="headerlink" title="8.创建salt工具类"></a>8.创建salt工具类</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SaltUtils</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="8-创建salt工具类"><a href="#8-创建salt工具类" class="headerlink" title="8.创建salt工具类"></a>8.创建salt工具类</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SaltUtils</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/**
      * 生成salt的静态方法
      * @param n
@@ -1203,8 +1204,8 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> sb<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="9-开发service实现类"><a href="#9-开发service实现类" class="headerlink" title="9.开发service实现类"></a>9.开发service实现类</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="9-开发service实现类"><a href="#9-开发service实现类" class="headerlink" title="9.开发service实现类"></a>9.开发service实现类</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
 <span class="token annotation punctuation">@Transactional</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
 
@@ -1223,8 +1224,8 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
         user<span class="token punctuation">.</span><span class="token function">setPassword</span><span class="token punctuation">(</span>md5Hash<span class="token punctuation">.</span><span class="token function">toHex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         userDAO<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="10-开发Controller"><a href="#10-开发Controller" class="headerlink" title="10.开发Controller"></a>10.开发Controller</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="10-开发Controller"><a href="#10-开发Controller" class="headerlink" title="10.开发Controller"></a>10.开发Controller</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Controller</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"user"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token punctuation">{</span>
 
@@ -1244,27 +1245,27 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
             <span class="token keyword">return</span> <span class="token string">"redirect:/register.jsp"</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="11-启动项目进行注册"><a href="#11-启动项目进行注册" class="headerlink" title="11.启动项目进行注册"></a>11.启动项目进行注册</h5><p><img src="/posts/c0010af8/image-20200526200946730.png" alt="image-20200526200946730"></p>
 <hr>
-<h4 id="2-开发数据库认证"><a href="#2-开发数据库认证" class="headerlink" title="2.开发数据库认证"></a>2.开发数据库认证</h4><h5 id="0-开发DAO"><a href="#0-开发DAO" class="headerlink" title="0.开发DAO"></a>0.开发DAO</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Mapper</span>
+<h4 id="2-开发数据库认证"><a href="#2-开发数据库认证" class="headerlink" title="2.开发数据库认证"></a>2.开发数据库认证</h4><h5 id="0-开发DAO"><a href="#0-开发DAO" class="headerlink" title="0.开发DAO"></a>0.开发DAO</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Mapper</span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserDAO</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">void</span> <span class="token function">save</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token comment" spellcheck="true">//根据身份信息认证的方法</span>
     User <span class="token function">findByUserName</span><span class="token punctuation">(</span>String username<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="1-开发mapper配置文件"><a href="#1-开发mapper配置文件" class="headerlink" title="1.开发mapper配置文件"></a>1.开发mapper配置文件</h5><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findByUserName<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>String<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1-开发mapper配置文件"><a href="#1-开发mapper配置文件" class="headerlink" title="1.开发mapper配置文件"></a>1.开发mapper配置文件</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findByUserName<span class="token punctuation">"</span></span> <span class="token attr-name">parameterType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>String<span class="token punctuation">"</span></span> <span class="token attr-name">resultType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   select id,username,password,salt from t_user
   where username = #{username}
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="2-开发Service接口"><a href="#2-开发Service接口" class="headerlink" title="2.开发Service接口"></a>2.开发Service接口</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-开发Service接口"><a href="#2-开发Service接口" class="headerlink" title="2.开发Service接口"></a>2.开发Service接口</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//注册用户方法</span>
     <span class="token keyword">void</span> <span class="token function">register</span><span class="token punctuation">(</span>User user<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">//根据用户名查询业务的方法</span>
     User <span class="token function">findByUserName</span><span class="token punctuation">(</span>String username<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="3-开发Service实现类"><a href="#3-开发Service实现类" class="headerlink" title="3.开发Service实现类"></a>3.开发Service实现类</h5><pre class=" language-java"><code class="language-java">
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="3-开发Service实现类"><a href="#3-开发Service实现类" class="headerlink" title="3.开发Service实现类"></a>3.开发Service实现类</h5><pre class="line-numbers language-java"><code class="language-java">
 <span class="token annotation punctuation">@Service</span><span class="token punctuation">(</span><span class="token string">"userService"</span><span class="token punctuation">)</span>
 <span class="token annotation punctuation">@Transactional</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserServiceImpl</span> <span class="token keyword">implements</span> <span class="token class-name">UserService</span> <span class="token punctuation">{</span>
@@ -1274,8 +1275,8 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
     <span class="token keyword">public</span> User <span class="token function">findByUserName</span><span class="token punctuation">(</span>String username<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> userDAO<span class="token punctuation">.</span><span class="token function">findByUserName</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="4-开发在工厂中获取bean对象的工具类"><a href="#4-开发在工厂中获取bean对象的工具类" class="headerlink" title="4.开发在工厂中获取bean对象的工具类"></a>4.开发在工厂中获取bean对象的工具类</h5><pre class=" language-java"><code class="language-java">
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="4-开发在工厂中获取bean对象的工具类"><a href="#4-开发在工厂中获取bean对象的工具类" class="headerlink" title="4.开发在工厂中获取bean对象的工具类"></a>4.开发在工厂中获取bean对象的工具类</h5><pre class="line-numbers language-java"><code class="language-java">
 <span class="token annotation punctuation">@Component</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ApplicationContextUtils</span> <span class="token keyword">implements</span> <span class="token class-name">ApplicationContextAware</span> <span class="token punctuation">{</span>
 
@@ -1291,8 +1292,8 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
     <span class="token keyword">public</span> <span class="token keyword">static</span> Object <span class="token function">getBean</span><span class="token punctuation">(</span>String beanName<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> context<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span>beanName<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="5-修改自定义realm"><a href="#5-修改自定义realm" class="headerlink" title="5.修改自定义realm"></a>5.修改自定义realm</h5><pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Override</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-修改自定义realm"><a href="#5-修改自定义realm" class="headerlink" title="5.修改自定义realm"></a>5.修改自定义realm</h5><pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken token<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=========================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1309,8 +1310,8 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
                                                ByteSource<span class="token punctuation">.</span>Util<span class="token punctuation">.</span><span class="token function">bytes</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getSalt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
-<h5 id="6-修改ShiroConfig中realm使用凭证匹配器以及hash散列"><a href="#6-修改ShiroConfig中realm使用凭证匹配器以及hash散列" class="headerlink" title="6.修改ShiroConfig中realm使用凭证匹配器以及hash散列"></a>6.修改ShiroConfig中realm使用凭证匹配器以及hash散列</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="6-修改ShiroConfig中realm使用凭证匹配器以及hash散列"><a href="#6-修改ShiroConfig中realm使用凭证匹配器以及hash散列" class="headerlink" title="6.修改ShiroConfig中realm使用凭证匹配器以及hash散列"></a>6.修改ShiroConfig中realm使用凭证匹配器以及hash散列</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
 <span class="token keyword">public</span> Realm <span class="token function">getRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   CustomerRealm customerRealm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CustomerRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">//设置hashed凭证匹配器</span>
@@ -1321,9 +1322,9 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
   credentialsMatcher<span class="token punctuation">.</span><span class="token function">setHashIterations</span><span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   customerRealm<span class="token punctuation">.</span><span class="token function">setCredentialsMatcher</span><span class="token punctuation">(</span>credentialsMatcher<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> customerRealm<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200526204958726.png" alt="image-20200526204958726"></p>
-<h3 id="6-8-授权实现"><a href="#6-8-授权实现" class="headerlink" title="6.8 授权实现"></a>6.8 授权实现</h3><h5 id="0-页面资源授权"><a href="#0-页面资源授权" class="headerlink" title="0.页面资源授权"></a>0.页面资源授权</h5><pre class=" language-jsp"><code class="language-jsp"><%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<h3 id="6-8-授权实现"><a href="#6-8-授权实现" class="headerlink" title="6.8 授权实现"></a>6.8 授权实现</h3><h5 id="0-页面资源授权"><a href="#0-页面资源授权" class="headerlink" title="0.页面资源授权"></a>0.页面资源授权</h5><pre class="line-numbers language-jsp"><code class="language-jsp"><%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <shiro:hasAnyRoles name="user,admin">
         <li><a href="">用户管理</a>
@@ -1347,8 +1348,8 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
             <li><a href="">商品管理</a></li>
             <li><a href="">订单管理</a></li>
             <li><a href="">物流管理</a></li>
-        </shiro:hasRole></code></pre>
-<h5 id="1-代码方式授权"><a href="#1-代码方式授权" class="headerlink" title="1.代码方式授权"></a>1.代码方式授权</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"save"</span><span class="token punctuation">)</span>
+        </shiro:hasRole><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="1-代码方式授权"><a href="#1-代码方式授权" class="headerlink" title="1.代码方式授权"></a>1.代码方式授权</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"save"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> String <span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"进入方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">//获取主体对象</span>
@@ -1362,23 +1363,23 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
   <span class="token comment" spellcheck="true">//基于权限字符串</span>
   <span class="token comment" spellcheck="true">//....</span>
   <span class="token keyword">return</span> <span class="token string">"redirect:/index.jsp"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200527203343928.png" alt="image-20200527203343928"></p>
 <h5 id="2-方法调用授权"><a href="#2-方法调用授权" class="headerlink" title="2.方法调用授权"></a>2.方法调用授权</h5><ul>
 <li>@RequiresRoles               用来基于角色进行授权</li>
 <li>@RequiresPermissions    用来基于权限进行授权</li>
 </ul>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequiresRoles</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"user"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//用来判断角色  同时具有 admin user</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequiresRoles</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">"admin"</span><span class="token punctuation">,</span><span class="token string">"user"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//用来判断角色  同时具有 admin user</span>
 <span class="token annotation punctuation">@RequiresPermissions</span><span class="token punctuation">(</span><span class="token string">"user:update:01"</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//用来判断权限字符串</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"save"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> String <span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"进入方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">return</span> <span class="token string">"redirect:/index.jsp"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200527203415114.png" alt="image-20200527203415114"></p>
 <hr>
 <h5 id="3-授权数据持久化"><a href="#3-授权数据持久化" class="headerlink" title="3.授权数据持久化"></a>3.授权数据持久化</h5><p><img src="/posts/c0010af8/image-20200527204839080.png" alt="image-20200527204839080"></p>
-<pre class=" language-sql"><code class="language-sql"><span class="token keyword">SET</span> NAMES utf8mb4<span class="token punctuation">;</span>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SET</span> NAMES utf8mb4<span class="token punctuation">;</span>
 <span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">-- ----------------------------</span>
@@ -1437,13 +1438,13 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 <span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">InnoDB</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span>
 
 <span class="token keyword">SET</span> FOREIGN_KEY_CHECKS <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
-<h5 id="4-创建dao方法"><a href="#4-创建dao方法" class="headerlink" title="4.创建dao方法"></a>4.创建dao方法</h5><pre class=" language-java"><code class="language-java"> <span class="token comment" spellcheck="true">//根据用户名查询所有角色</span>
+<h5 id="4-创建dao方法"><a href="#4-创建dao方法" class="headerlink" title="4.创建dao方法"></a>4.创建dao方法</h5><pre class="line-numbers language-java"><code class="language-java"> <span class="token comment" spellcheck="true">//根据用户名查询所有角色</span>
 User <span class="token function">findRolesByUserName</span><span class="token punctuation">(</span>String username<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//根据角色id查询权限集合</span>
-List<span class="token operator">&lt;</span>Perms<span class="token operator">></span> <span class="token function">findPermsByRoleId</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="5-mapper实现"><a href="#5-mapper实现" class="headerlink" title="5.mapper实现"></a>5.mapper实现</h5><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userMap<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+List<span class="token operator">&lt;</span>Perms<span class="token operator">></span> <span class="token function">findPermsByRoleId</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-mapper实现"><a href="#5-mapper实现" class="headerlink" title="5.mapper实现"></a>5.mapper实现</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resultMap</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>userMap<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>User<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uid<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>result</span> <span class="token attr-name">column</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span> <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>username<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
   <span class="token comment" spellcheck="true">&lt;!--角色信息--></span>
@@ -1470,12 +1471,12 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
   ON r.id=rp.roleid
   LEFT JOIN t_perms p ON rp.permsid=p.id
   WHERE r.id=#{id}
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="6-Service接口"><a href="#6-Service接口" class="headerlink" title="6.Service接口"></a>6.Service接口</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//根据用户名查询所有角色</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="6-Service接口"><a href="#6-Service接口" class="headerlink" title="6.Service接口"></a>6.Service接口</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//根据用户名查询所有角色</span>
 User <span class="token function">findRolesByUserName</span><span class="token punctuation">(</span>String username<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//根据角色id查询权限集合</span>
-List<span class="token operator">&lt;</span>Perms<span class="token operator">></span> <span class="token function">findPermsByRoleId</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h5 id="7-Service实现"><a href="#7-Service实现" class="headerlink" title="7.Service实现"></a>7.Service实现</h5><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+List<span class="token operator">&lt;</span>Perms<span class="token operator">></span> <span class="token function">findPermsByRoleId</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="7-Service实现"><a href="#7-Service实现" class="headerlink" title="7.Service实现"></a>7.Service实现</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
 <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Perms<span class="token operator">></span> <span class="token function">findPermsByRoleId</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> userDAO<span class="token punctuation">.</span><span class="token function">findPermsByRoleId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -1483,8 +1484,8 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
 <span class="token annotation punctuation">@Override</span>
 <span class="token keyword">public</span> User <span class="token function">findRolesByUserName</span><span class="token punctuation">(</span>String username<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> userDAO<span class="token punctuation">.</span><span class="token function">findRolesByUserName</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="8-修改自定义realm"><a href="#8-修改自定义realm" class="headerlink" title="8.修改自定义realm"></a>8.修改自定义realm</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="8-修改自定义realm"><a href="#8-修改自定义realm" class="headerlink" title="8.修改自定义realm"></a>8.修改自定义realm</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerRealm</span> <span class="token keyword">extends</span> <span class="token class-name">AuthorizingRealm</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">protected</span> AuthorizationInfo <span class="token function">doGetAuthorizationInfo</span><span class="token punctuation">(</span>PrincipalCollection principals<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//获取身份信息</span>
@@ -1510,7 +1511,7 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> null<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200527213821611.png" alt="image-20200527213821611"></p>
 <h5 id="9-启动测试"><a href="#9-启动测试" class="headerlink" title="9.启动测试"></a>9.启动测试</h5><hr>
 <h3 id="6-9-使用CacheManager"><a href="#6-9-使用CacheManager" class="headerlink" title="6.9 使用CacheManager"></a>6.9 使用CacheManager</h3><h4 id="1-Cache-作用"><a href="#1-Cache-作用" class="headerlink" title="1.Cache 作用"></a>1.Cache 作用</h4><ul>
@@ -1519,13 +1520,13 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
 <li>流程: </li>
 </ul>
 <p><img src="/posts/c0010af8/image-20200530090656417.png" alt="image-20200530090656417"></p>
-<h4 id="2-使用shiro中默认EhCache实现缓存"><a href="#2-使用shiro中默认EhCache实现缓存" class="headerlink" title="2.使用shiro中默认EhCache实现缓存"></a>2.使用shiro中默认EhCache实现缓存</h4><h5 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1.引入依赖"></a>1.引入依赖</h5><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--引入shiro和ehcache--></span>
+<h4 id="2-使用shiro中默认EhCache实现缓存"><a href="#2-使用shiro中默认EhCache实现缓存" class="headerlink" title="2.使用shiro中默认EhCache实现缓存"></a>2.使用shiro中默认EhCache实现缓存</h4><h5 id="1-引入依赖"><a href="#1-引入依赖" class="headerlink" title="1.引入依赖"></a>1.引入依赖</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--引入shiro和ehcache--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.apache.shiro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>shiro-ehcache<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>1.5.3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="2-开启缓存"><a href="#2-开启缓存" class="headerlink" title="2.开启缓存"></a>2.开启缓存</h5><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//3.创建自定义realm</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-开启缓存"><a href="#2-开启缓存" class="headerlink" title="2.开启缓存"></a>2.开启缓存</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//3.创建自定义realm</span>
     <span class="token annotation punctuation">@Bean</span>
     <span class="token keyword">public</span> Realm <span class="token function">getRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         CustomerRealm customerRealm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CustomerRealm</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1543,33 +1544,33 @@ List<span class="token operator">&lt;</span>Perms<span class="token operator">><
         customerRealm<span class="token punctuation">.</span><span class="token function">setAuthorizationCachingEnabled</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         customerRealm<span class="token punctuation">.</span><span class="token function">setCacheManager</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">EhCacheManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> customerRealm<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200529173859939.png" alt="image-20200529173859939"></p>
 <h5 id="3-启动刷新页面进行测试"><a href="#3-启动刷新页面进行测试" class="headerlink" title="3.启动刷新页面进行测试"></a>3.启动刷新页面进行测试</h5><ul>
 <li>注意:如果控制台没有任何sql展示说明缓存已经开启</li>
 </ul>
-<h4 id="3-shiro中使用Redis作为缓存实现"><a href="#3-shiro中使用Redis作为缓存实现" class="headerlink" title="3.shiro中使用Redis作为缓存实现"></a>3.shiro中使用Redis作为缓存实现</h4><h5 id="1-引入redis依赖"><a href="#1-引入redis依赖" class="headerlink" title="1.引入redis依赖"></a>1.引入redis依赖</h5><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--redis整合springboot--></span>
+<h4 id="3-shiro中使用Redis作为缓存实现"><a href="#3-shiro中使用Redis作为缓存实现" class="headerlink" title="3.shiro中使用Redis作为缓存实现"></a>3.shiro中使用Redis作为缓存实现</h4><h5 id="1-引入redis依赖"><a href="#1-引入redis依赖" class="headerlink" title="1.引入redis依赖"></a>1.引入redis依赖</h5><pre class="line-numbers language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--redis整合springboot--></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
-<h5 id="2-配置redis连接"><a href="#2-配置redis连接" class="headerlink" title="2.配置redis连接"></a>2.配置redis连接</h5><pre class=" language-properties"><code class="language-properties"><span class="token attr-name">spring.redis.port</span><span class="token punctuation">=</span><span class="token attr-value">6379</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-配置redis连接"><a href="#2-配置redis连接" class="headerlink" title="2.配置redis连接"></a>2.配置redis连接</h5><pre class="line-numbers language-properties"><code class="language-properties"><span class="token attr-name">spring.redis.port</span><span class="token punctuation">=</span><span class="token attr-value">6379</span>
 <span class="token attr-name">spring.redis.host</span><span class="token punctuation">=</span><span class="token attr-value">localhost</span>
-<span class="token attr-name">spring.redis.database</span><span class="token punctuation">=</span><span class="token attr-value">0</span></code></pre>
+<span class="token attr-name">spring.redis.database</span><span class="token punctuation">=</span><span class="token attr-value">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200530084616799.png" alt="image-20200530084616799"></p>
-<h5 id="3-启动redis服务"><a href="#3-启动redis服务" class="headerlink" title="3.启动redis服务"></a>3.启动redis服务</h5><pre class=" language-powershell"><code class="language-powershell">➜  bin <span class="token function">ls</span>
+<h5 id="3-启动redis服务"><a href="#3-启动redis服务" class="headerlink" title="3.启动redis服务"></a>3.启动redis服务</h5><pre class="line-numbers language-powershell"><code class="language-powershell">➜  bin <span class="token function">ls</span>
 dump<span class="token punctuation">.</span>rdb        redis<span class="token operator">-</span>check<span class="token operator">-</span>aof redis<span class="token operator">-</span><span class="token function">cli</span>       redis<span class="token operator">-</span>server    redis<span class="token punctuation">.</span>conf
 redis<span class="token operator">-</span>benchmark redis<span class="token operator">-</span>check<span class="token operator">-</span>rdb redis<span class="token operator">-</span>sentinel  redis<span class="token operator">-</span>trib<span class="token punctuation">.</span>rb
-➜  bin <span class="token punctuation">.</span><span class="token operator">/</span>redis<span class="token operator">-</span>server redis<span class="token punctuation">.</span>conf</code></pre>
+➜  bin <span class="token punctuation">.</span><span class="token operator">/</span>redis<span class="token operator">-</span>server redis<span class="token punctuation">.</span>conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200530081954871.png" alt="image-20200530081954871"></p>
-<h5 id="4-开发RedisCacheManager"><a href="#4-开发RedisCacheManager" class="headerlink" title="4.开发RedisCacheManager"></a>4.开发RedisCacheManager</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisCacheManager</span> <span class="token keyword">implements</span> <span class="token class-name">CacheManager</span> <span class="token punctuation">{</span>
+<h5 id="4-开发RedisCacheManager"><a href="#4-开发RedisCacheManager" class="headerlink" title="4.开发RedisCacheManager"></a>4.开发RedisCacheManager</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisCacheManager</span> <span class="token keyword">implements</span> <span class="token class-name">CacheManager</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> Cache<span class="token operator">&lt;</span>K<span class="token punctuation">,</span> V<span class="token operator">></span> <span class="token function">getCache</span><span class="token punctuation">(</span>String cacheName<span class="token punctuation">)</span> <span class="token keyword">throws</span> CacheException <span class="token punctuation">{</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"缓存名称: "</span><span class="token operator">+</span>cacheName<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RedisCache</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span><span class="token punctuation">(</span>cacheName<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h5 id="5-开RedisCache实现"><a href="#5-开RedisCache实现" class="headerlink" title="5.开RedisCache实现"></a>5.开RedisCache实现</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisCache</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">Cache</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="5-开RedisCache实现"><a href="#5-开RedisCache实现" class="headerlink" title="5.开RedisCache实现"></a>5.开RedisCache实现</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisCache</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token keyword">implements</span> <span class="token class-name">Cache</span><span class="token operator">&lt;</span>K<span class="token punctuation">,</span>V<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> String cacheName<span class="token punctuation">;</span>
 
@@ -1638,7 +1639,7 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
         redisTemplate<span class="token punctuation">.</span><span class="token function">setHashKeySerializer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">StringRedisSerializer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> redisTemplate<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="6-启动项目测试发现报错"><a href="#6-启动项目测试发现报错" class="headerlink" title="6.启动项目测试发现报错"></a>6.启动项目测试发现报错</h5><p><img src="/posts/c0010af8/image-20200530100850618.png" alt="image-20200530100850618"></p>
 <p><img src="/posts/c0010af8/image-20200530100948598.png" alt="image-20200530100948598"></p>
 <ul>
@@ -1647,15 +1648,15 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
 <li><p>解决方案: <strong>需要自动salt实现序列化</strong></p>
 <ul>
 <li><p>自定义salt实现序列化</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自定义salt实现  实现序列化接口</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自定义salt实现  实现序列化接口</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyByteSource</span> <span class="token keyword">extends</span> <span class="token class-name">SimpleByteSource</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token function">MyByteSource</span><span class="token punctuation">(</span>String string<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>在realm中使用自定义salt</p>
-<pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Override</span>
+<pre class="line-numbers language-java"><code class="language-java"> <span class="token annotation punctuation">@Override</span>
 <span class="token keyword">protected</span> AuthenticationInfo <span class="token function">doGetAuthenticationInfo</span><span class="token punctuation">(</span>AuthenticationToken token<span class="token punctuation">)</span> <span class="token keyword">throws</span> AuthenticationException <span class="token punctuation">{</span>
   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=========================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">//根据身份信息</span>
@@ -1668,7 +1669,7 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
                                       <span class="token keyword">new</span> <span class="token class-name">MyByteSource</span><span class="token punctuation">(</span>user<span class="token punctuation">.</span><span class="token function">getSalt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
   <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200530101301543.png" alt="image-20200530101301543"></p>
 </li>
 </ul>
@@ -1678,7 +1679,7 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
 <hr>
 <h4 id="4-加入验证码验证"><a href="#4-加入验证码验证" class="headerlink" title="4. 加入验证码验证"></a>4. 加入验证码验证</h4><h5 id="0-开发页面加入验证码"><a href="#0-开发页面加入验证码" class="headerlink" title="0.开发页面加入验证码"></a>0.开发页面加入验证码</h5><ul>
 <li><p>开发控制器</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"getImage"</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"getImage"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">getImage</span><span class="token punctuation">(</span>HttpSession session<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">//生成验证码</span>
   String code <span class="token operator">=</span> VerifyCodeUtils<span class="token punctuation">.</span><span class="token function">generateVerifyCode</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1688,7 +1689,7 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
   ServletOutputStream os <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   response<span class="token punctuation">.</span><span class="token function">setContentType</span><span class="token punctuation">(</span><span class="token string">"image/png"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   VerifyCodeUtils<span class="token punctuation">.</span><span class="token function">outputImage</span><span class="token punctuation">(</span><span class="token number">220</span><span class="token punctuation">,</span><span class="token number">60</span><span class="token punctuation">,</span>os<span class="token punctuation">,</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>放行验证码</p>
 <p><img src="/posts/c0010af8/image-20200530141757606.png" alt="image-20200530141757606"></p>
@@ -1697,7 +1698,7 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
 <p><img src="/posts/c0010af8/image-20200530141828004.png" alt="image-20200530141828004"></p>
 </li>
 <li><p>修改认证流程</p>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"login"</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"login"</span><span class="token punctuation">)</span>
     <span class="token keyword">public</span> String <span class="token function">login</span><span class="token punctuation">(</span>String username<span class="token punctuation">,</span> String password<span class="token punctuation">,</span>String code<span class="token punctuation">,</span>HttpSession session<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">//比较验证码</span>
         String codes <span class="token operator">=</span> <span class="token punctuation">(</span>String<span class="token punctuation">)</span> session<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">"code"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1721,10 +1722,10 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
             System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span><span class="token function">getMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span> <span class="token string">"redirect:/login.jsp"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>修改salt不能序列化的问题</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自定义salt实现  实现序列化接口</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自定义salt实现  实现序列化接口</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyByteSource</span> <span class="token keyword">implements</span> <span class="token class-name">ByteSource</span><span class="token punctuation">,</span>Serializable <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span>  <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes<span class="token punctuation">;</span>
@@ -1819,22 +1820,22 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
             <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">toBytes</span><span class="token punctuation">(</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
 </li>
 </ul>
-<h2 id="7-Shiro整合springboot之thymeleaf权限控制"><a href="#7-Shiro整合springboot之thymeleaf权限控制" class="headerlink" title="7.Shiro整合springboot之thymeleaf权限控制"></a>7.Shiro整合springboot之thymeleaf权限控制</h2><h3 id="1-引入扩展依赖"><a href="#1-引入扩展依赖" class="headerlink" title="1.引入扩展依赖"></a>1.引入扩展依赖</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+<h2 id="7-Shiro整合springboot之thymeleaf权限控制"><a href="#7-Shiro整合springboot之thymeleaf权限控制" class="headerlink" title="7.Shiro整合springboot之thymeleaf权限控制"></a>7.Shiro整合springboot之thymeleaf权限控制</h2><h3 id="1-引入扩展依赖"><a href="#1-引入扩展依赖" class="headerlink" title="1.引入扩展依赖"></a>1.引入扩展依赖</h3><pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.github.theborakompanioni<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>thymeleaf-extras-shiro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-页面中引入命名空间"><a href="#2-页面中引入命名空间" class="headerlink" title="2.页面中引入命名空间"></a>2.页面中引入命名空间</h3><ul>
 <li>xmlns:shiro=”<a href="http://www.pollix.at/thymeleaf/shiro&quot;" target="_blank" rel="noopener">http://www.pollix.at/thymeleaf/shiro&quot;</a></li>
 </ul>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>th</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.thymeleaf.org<span class="token punctuation">"</span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.w3.org/1999/xhtml<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>th</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.thymeleaf.org<span class="token punctuation">"</span></span>
       <span class="token attr-name"><span class="token namespace">xmlns:</span>shiro</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.pollix.at/thymeleaf/shiro<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-......</code></pre>
-<h3 id="3-常见权限控制标签使用"><a href="#3-常见权限控制标签使用" class="headerlink" title="3.常见权限控制标签使用"></a>3.常见权限控制标签使用</h3><pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 验证当前用户是否为“访客”，即未认证（包含未记住）的用户。 --></span>
+......<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-常见权限控制标签使用"><a href="#3-常见权限控制标签使用" class="headerlink" title="3.常见权限控制标签使用"></a>3.常见权限控制标签使用</h3><pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 验证当前用户是否为“访客”，即未认证（包含未记住）的用户。 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name"><span class="token namespace">shiro:</span>guest</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Please <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>login.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>login<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 
 
@@ -1894,14 +1895,14 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
     You can see or delete users.
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name"><span class="token namespace">shiro:</span>hasPermission</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pp<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>createUser.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Create a new User<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-加入shiro的方言配置"><a href="#4-加入shiro的方言配置" class="headerlink" title="4.加入shiro的方言配置"></a>4.加入shiro的方言配置</h3><ul>
 <li>页面标签不起作用一定要记住加入方言处理</li>
 </ul>
-<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"shiroDialect"</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"shiroDialect"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> ShiroDialect <span class="token function">shiroDialect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ShiroDialect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="/posts/c0010af8/image-20200601210335151.png" alt="image-20200601210335151"></p>
 
                 

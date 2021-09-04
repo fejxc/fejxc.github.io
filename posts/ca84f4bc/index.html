@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -543,7 +544,7 @@
 <p>实验目的：实现轮播图效果</p>
 </blockquote>
 <h2 id="1-实现代码："><a href="#1-实现代码：" class="headerlink" title="1.实现代码："></a>1.实现代码：</h2><p>html部分：</p>
-<pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--    轮播图效果--></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!--    轮播图效果--></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>categoryAndBanner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>category<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
@@ -567,9 +568,9 @@
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token comment" spellcheck="true">&lt;!--    轮播图end--></span></code></pre>
+<span class="token comment" spellcheck="true">&lt;!--    轮播图end--></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>css部分：</p>
-<pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*轮播图*/</span>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*轮播图*/</span>
 <span class="token selector"><span class="token class">.categoryAndBanner</span></span><span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
     <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
@@ -642,9 +643,9 @@
 <span class="token comment" spellcheck="true">/*鼠标悬停在小圆点上，li上有class 为 on 的属性 背景为红色*/</span>
 <span class="token selector"><span class="token class">.banner</span> <span class="token class">.slider-nav</span> li<span class="token class">.on</span></span><span class="token punctuation">{</span>
     <span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#FF0000</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>js部分:</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/*轮播图*/</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/*轮播图*/</span>
 <span class="token punctuation">.</span>categoryAndBanner<span class="token punctuation">{</span>
     position<span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
     width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
@@ -717,7 +718,7 @@
 <span class="token comment" spellcheck="true">/*鼠标悬停在小圆点上，li上有class 为 on 的属性 背景为红色*/</span>
 <span class="token punctuation">.</span>banner <span class="token punctuation">.</span>slider<span class="token operator">-</span>nav li<span class="token punctuation">.</span>on<span class="token punctuation">{</span>
     background<span class="token punctuation">:</span> #FF0000<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-实现效果："><a href="#2-实现效果：" class="headerlink" title="2.实现效果："></a>2.实现效果：</h2><p>![](<a href="https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic" target="_blank" rel="noopener">https://gitee.com/fejxc/upic-file/raw/master/Users/sunyun/blog_pic</a> /YvcD0O.png)</p>
 <h2 id="3-完整代码"><a href="#3-完整代码" class="headerlink" title="3.完整代码"></a>3.完整代码</h2><p><a href="https://github.com/fejxc/javaWeb-ICT" target="_blank" rel="noopener">github</a></p>
 <p><a href="https://gitee.com/fejxc/java-web-class" target="_blank" rel="noopener">gitee</a></p>

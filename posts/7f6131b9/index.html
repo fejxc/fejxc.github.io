@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -543,7 +544,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="vue结合springboot添加分页支持"><a href="#vue结合springboot添加分页支持" class="headerlink" title="vue结合springboot添加分页支持"></a>vue结合springboot添加分页支持</h1><h2 id="前端代码"><a href="#前端代码" class="headerlink" title="前端代码"></a>前端代码</h2><h3 id="分页组件"><a href="#分页组件" class="headerlink" title="分页组件"></a>分页组件</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-pagination</span>
+                <h1 id="vue结合springboot添加分页支持"><a href="#vue结合springboot添加分页支持" class="headerlink" title="vue结合springboot添加分页支持"></a>vue结合springboot添加分页支持</h1><h2 id="前端代码"><a href="#前端代码" class="headerlink" title="前端代码"></a>前端代码</h2><h3 id="分页组件"><a href="#分页组件" class="headerlink" title="分页组件"></a>分页组件</h3><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-pagination</span>
   <span class="token attr-name">@current-change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findPage<span class="token punctuation">"</span></span>
   <span class="token attr-name">@size-change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>findSize<span class="token punctuation">"</span></span>
   <span class="token attr-name">small</span>
@@ -556,8 +557,8 @@
   <span class="token attr-name">:current-page</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pageNow<span class="token punctuation">"</span></span>
   <span class="token attr-name">:page-sizes</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>[2,4,6,8,10]<span class="token punctuation">"</span></span>
   <span class="token attr-name">:total</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>totals<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-pagination</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="js代码"><a href="#js代码" class="headerlink" title="js代码"></a>js代码</h3><pre class=" language-javascript"><code class="language-javascript">        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-pagination</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="js代码"><a href="#js代码" class="headerlink" title="js代码"></a>js代码</h3><pre class="line-numbers language-javascript"><code class="language-javascript">        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span> <span class="token punctuation">{</span>
                 tableData<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                 search<span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
@@ -589,13 +590,13 @@
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
            <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span></code></pre>
-<h2 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h2><h3 id="dao层"><a href="#dao层" class="headerlink" title="dao层"></a>dao层</h3><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//分页查询</span>
+        <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h2><h3 id="dao层"><a href="#dao层" class="headerlink" title="dao层"></a>dao层</h3><pre class="line-numbers language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//分页查询</span>
      List<span class="token operator">&lt;</span>Book<span class="token operator">></span> <span class="token function">findByPage</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"start"</span><span class="token punctuation">)</span>Integer start<span class="token punctuation">,</span> <span class="token annotation punctuation">@Param</span><span class="token punctuation">(</span><span class="token string">"rows"</span><span class="token punctuation">)</span>Integer rows<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
      <span class="token comment" spellcheck="true">//查询总条数</span>
-     Long <span class="token function">findTotals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="mapper文件"><a href="#mapper文件" class="headerlink" title="mapper文件"></a>mapper文件</h3><pre class=" language-java"><code class="language-java">    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>    分页查询<span class="token operator">--</span><span class="token operator">></span>
+     Long <span class="token function">findTotals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="mapper文件"><a href="#mapper文件" class="headerlink" title="mapper文件"></a>mapper文件</h3><pre class="line-numbers language-java"><code class="language-java">    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>    分页查询<span class="token operator">--</span><span class="token operator">></span>
      <span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"findByPage"</span> resultType<span class="token operator">=</span><span class="token string">"Book"</span><span class="token operator">></span>
           select <span class="token operator">*</span> from book limit #<span class="token punctuation">{</span>start<span class="token punctuation">}</span><span class="token punctuation">,</span>#<span class="token punctuation">{</span>rows<span class="token punctuation">}</span>
      <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span>
@@ -603,12 +604,12 @@
      <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>    查询总条数<span class="token operator">--</span><span class="token operator">></span>
      <span class="token operator">&lt;</span>select id<span class="token operator">=</span><span class="token string">"findTotals"</span> resultType<span class="token operator">=</span><span class="token string">"Long"</span><span class="token operator">></span>
          select <span class="token function">count</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> from book
-     <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code></pre>
-<h3 id="service层"><a href="#service层" class="headerlink" title="service层"></a>service层</h3><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//分页查询</span>
+     <span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="service层"><a href="#service层" class="headerlink" title="service层"></a>service层</h3><pre class="line-numbers language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//分页查询</span>
      List<span class="token operator">&lt;</span>Book<span class="token operator">></span> <span class="token function">findByPage</span><span class="token punctuation">(</span>Integer pageNow<span class="token punctuation">,</span> Integer rows<span class="token punctuation">)</span><span class="token punctuation">;</span>
      <span class="token comment" spellcheck="true">//查询总条数</span>
-     Long <span class="token function">findTotals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="serviceImpl层"><a href="#serviceImpl层" class="headerlink" title="serviceImpl层"></a>serviceImpl层</h3><pre class=" language-java"><code class="language-java">    <span class="token annotation punctuation">@Override</span>
+     Long <span class="token function">findTotals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="serviceImpl层"><a href="#serviceImpl层" class="headerlink" title="serviceImpl层"></a>serviceImpl层</h3><pre class="line-numbers language-java"><code class="language-java">    <span class="token annotation punctuation">@Override</span>
      <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Book<span class="token operator">></span> <span class="token function">findByPage</span><span class="token punctuation">(</span>Integer pageNow<span class="token punctuation">,</span> Integer rows<span class="token punctuation">)</span> <span class="token punctuation">{</span>
          <span class="token keyword">int</span> start <span class="token operator">=</span> <span class="token punctuation">(</span>pageNow<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>rows<span class="token punctuation">;</span>
          <span class="token keyword">return</span> bookDAO<span class="token punctuation">.</span><span class="token function">findByPage</span><span class="token punctuation">(</span>start<span class="token punctuation">,</span>rows<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -617,8 +618,8 @@
      <span class="token annotation punctuation">@Override</span>
      <span class="token keyword">public</span> Long <span class="token function">findTotals</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
          <span class="token keyword">return</span> bookDAO<span class="token punctuation">.</span><span class="token function">findTotals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span></code></pre>
-<h3 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h3><pre class=" language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//分页查询</span>
+     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="controller层"><a href="#controller层" class="headerlink" title="controller层"></a>controller层</h3><pre class="line-numbers language-java"><code class="language-java">    <span class="token comment" spellcheck="true">//分页查询</span>
      <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"findByPage"</span><span class="token punctuation">)</span>
      <span class="token keyword">public</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> <span class="token function">findByPage</span><span class="token punctuation">(</span>Integer pageNow<span class="token punctuation">,</span> Integer pageSize<span class="token punctuation">)</span><span class="token punctuation">{</span>
          Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> results <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -629,14 +630,14 @@
          results<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"books"</span><span class="token punctuation">,</span>books<span class="token punctuation">)</span><span class="token punctuation">;</span>
          results<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"totals"</span><span class="token punctuation">,</span>totals<span class="token punctuation">)</span><span class="token punctuation">;</span>
          <span class="token keyword">return</span> results<span class="token punctuation">;</span>
-     <span class="token punctuation">}</span></code></pre>
+     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>每次只需要把实体类 <code>Book</code> 换成 新的实体类  </p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//后端controller层方法</span>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">//后端controller层方法</span>
 results<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"books"</span><span class="token punctuation">,</span>books<span class="token punctuation">)</span><span class="token punctuation">;</span>
 results<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"totals"</span><span class="token punctuation">,</span>totals<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//前端代码 findAll 方法</span>
 <span class="token keyword">this</span><span class="token punctuation">.</span>tableData<span class="token operator">=</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>books<span class="token punctuation">;</span>
-<span class="token keyword">this</span><span class="token punctuation">.</span>totals<span class="token operator">=</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>totals<span class="token punctuation">;</span></code></pre>
+<span class="token keyword">this</span><span class="token punctuation">.</span>totals<span class="token operator">=</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>totals<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>⚠️ <code>books</code> <code>totals </code> 要对应正确一致</p>
 
                 

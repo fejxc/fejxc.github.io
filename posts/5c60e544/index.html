@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -539,7 +540,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="1-安装参考"><a href="#1-安装参考" class="headerlink" title="1.安装参考"></a>1.安装参考</h1><h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><pre class=" language-bash"><code class="language-bash">使用如下命令安装MySql以及它的相关依赖项.
+                <h1 id="1-安装参考"><a href="#1-安装参考" class="headerlink" title="1.安装参考"></a>1.安装参考</h1><h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><pre class="line-numbers language-bash"><code class="language-bash">使用如下命令安装MySql以及它的相关依赖项.
 <span class="token function">sudo</span> dnf <span class="token function">install</span> @mysql
 安装完成后，启动MySql服务并且让它在Centos服务器启动时自动启动,命令如下所示.
 <span class="token function">sudo</span> systemctl <span class="token function">enable</span> --now mysqld
@@ -563,17 +564,17 @@ mysql -uroot -p <span class="token operator">&lt;</span>上面步骤中设置的
 登陆使用如下mysql命令,设置root用户的 host 为任意IP.
 use mysql<span class="token punctuation">;</span>
 update user <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> where user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
-flush privileges<span class="token punctuation">;</span></code></pre>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><a href="https://www.jianshu.com/p/1e55d8018eab" target="_blank" rel="noopener">参考链接</a></p>
-<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@sunyun share<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># sudo firewalld-cmd  --zone=public --add-port=3306/tcp  --permanent</span>
+<h4 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@sunyun share<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># sudo firewalld-cmd  --zone=public --add-port=3306/tcp  --permanent</span>
 sudo: firewalld-cmd: <span class="token function">command</span> not found
 <span class="token punctuation">[</span>root@sunyun share<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># firewall-cmd --list-ports</span>
-FirewallD is not running</code></pre>
-<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><pre class=" language-bash"><code class="language-bash">通过systemctl start firewalld开启防火墙，没有任何提示即开启成功。
+FirewallD is not running<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><pre class="line-numbers language-bash"><code class="language-bash">通过systemctl start firewalld开启防火墙，没有任何提示即开启成功。
 再次通过systemctl status firewalld查看firewalld状态，显示running即已开启了。
 如果要关闭防火墙设置，可能通过systemctl stop firewalld这条指令来关闭该功能。
 再次执行执行firewall-cmd --permanent --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span>3306/tcp，提示success，表示设置成功，这样就可以继续后面的设置了。
-<span class="token function">sudo</span> firewall-cmd --reload</code></pre>
+<span class="token function">sudo</span> firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="/posts/5c60e544/image-20210219193307960.png" alt="开启3306端口" style="zoom:50%;">
 
 <h4 id="你会发现还是连接不上，会报错"><a href="#你会发现还是连接不上，会报错" class="headerlink" title="你会发现还是连接不上，会报错"></a>你会发现还是连接不上，会报错</h4><p><code>2003 - Can&#39;t connect to MySQL server on &#39;47.115.*.*&#39; (60 &quot;Operation time</code></p>

@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -549,7 +550,7 @@
 
 <img src="/posts/9a4011fe/image-20201226231807883.png" alt="image-20201226231807883" style="zoom:33%;">
 
-<h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><h3 id="LSW3"><a href="#LSW3" class="headerlink" title="LSW3"></a>LSW3</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+<h2 id="配置："><a href="#配置：" class="headerlink" title="配置："></a>配置：</h2><h3 id="LSW3"><a href="#LSW3" class="headerlink" title="LSW3"></a>LSW3</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
 sysname Huawei
 <span class="token comment" spellcheck="true">#</span>
 vlan batch 100 200
@@ -593,10 +594,10 @@ interface GigabitEthernet0/0/2
  port link-type trunk
  port trunk allow-pass vlan 100 200
 <span class="token comment" spellcheck="true">#</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>stp root primary</code></p>
 <p><code>stp instance xx cost xx</code></p>
-<h3 id="LSW1；"><a href="#LSW1；" class="headerlink" title="LSW1；"></a>LSW1；</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+<h3 id="LSW1；"><a href="#LSW1；" class="headerlink" title="LSW1；"></a>LSW1；</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
 sysname Huawei
 <span class="token comment" spellcheck="true">#</span>
 vlan batch 100 200
@@ -648,8 +649,8 @@ interface Ethernet0/0/4
 interface Ethernet0/0/5
  eth-trunk 1
 <span class="token comment" spellcheck="true">#</span>
-</code></pre>
-<h3 id="lsw4"><a href="#lsw4" class="headerlink" title="lsw4:"></a>lsw4:</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="lsw4"><a href="#lsw4" class="headerlink" title="lsw4:"></a>lsw4:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
 sysname Huawei
 <span class="token comment" spellcheck="true">#</span>
 vlan batch 100 200
@@ -701,19 +702,19 @@ interface Ethernet0/0/4
 interface Ethernet0/0/5
  eth-trunk 1
 <span class="token comment" spellcheck="true">#</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意：华为S5700系列交换机配置链路聚合LACP报错。</p>
 <p>(解决办法)[<a href="https://blog.51cto.com/7355754/2154322]" target="_blank" rel="noopener">https://blog.51cto.com/7355754/2154322]</a></p>
 <h2 id="实现效果："><a href="#实现效果：" class="headerlink" title="实现效果："></a>实现效果：</h2><img src="/posts/9a4011fe/image-20201226232454477.png" alt="image-20201226232454477" style="zoom:33%;">
 
 <p>部分效果图，其他自行测试</p>
-<pre class=" language-markdown"><code class="language-markdown">LSW3 要配置vlanif
+<pre class="line-numbers language-markdown"><code class="language-markdown">LSW3 要配置vlanif
 int vlanif 100
 ip add x.x.x.x xx
 
 int Eth-Trunk 1
 int ex/x/x
-eth-trunk 1</code></pre>
+eth-trunk 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

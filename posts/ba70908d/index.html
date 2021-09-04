@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -530,16 +531,16 @@
 <ul>
 <li>大数据<br>date: 2021-5-20 09:51:03</li>
 </ul>
-<h2 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h2><pre class=" language-java"><code class="language-java">py4j<span class="token punctuation">.</span>protocol<span class="token punctuation">.</span>Py4JJavaError<span class="token operator">:</span> An error occurred <span class="token keyword">while</span> calling o20<span class="token punctuation">.</span>partitions<span class="token punctuation">.</span>
-<span class="token operator">:</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token operator">:</span> Incomplete HDFS URI<span class="token punctuation">,</span> no host<span class="token operator">:</span> hdfs<span class="token operator">:</span><span class="token operator">/</span>ml<span class="token operator">-</span>100k<span class="token operator">/</span>u<span class="token punctuation">.</span>data</code></pre>
+<h2 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h2><pre class="line-numbers language-java"><code class="language-java">py4j<span class="token punctuation">.</span>protocol<span class="token punctuation">.</span>Py4JJavaError<span class="token operator">:</span> An error occurred <span class="token keyword">while</span> calling o20<span class="token punctuation">.</span>partitions<span class="token punctuation">.</span>
+<span class="token operator">:</span> java<span class="token punctuation">.</span>io<span class="token punctuation">.</span>IOException<span class="token operator">:</span> Incomplete HDFS URI<span class="token punctuation">,</span> no host<span class="token operator">:</span> hdfs<span class="token operator">:</span><span class="token operator">/</span>ml<span class="token operator">-</span>100k<span class="token operator">/</span>u<span class="token punctuation">.</span>data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="解决1"><a href="#解决1" class="headerlink" title="解决1:"></a>解决1:</h2><img src="/posts/ba70908d/image-20210520094145616.png" alt="namenode" style="zoom:50%;">
 
-<pre class=" language-python"><code class="language-python">lines <span class="token operator">=</span> sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"hdfs://localhost:8020/user/sunyun/ml-100k/u.data"</span><span class="token punctuation">)</span></code></pre>
+<pre class="line-numbers language-python"><code class="language-python">lines <span class="token operator">=</span> sc<span class="token punctuation">.</span>textFile<span class="token punctuation">(</span><span class="token string">"hdfs://localhost:8020/user/sunyun/ml-100k/u.data"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="问题2"><a href="#问题2" class="headerlink" title="问题2:"></a>问题2:</h2><p>spark环境配置中的python版本与我手动升级后的python不一致</p>
 <h2 id="解决2"><a href="#解决2" class="headerlink" title="解决2:"></a>解决2:</h2><p>修改<code>/usr/local/Cellar/apache-spark/3.0.1/libexec/bin/load-spark-env.sh</code>文件</p>
 <img src="/posts/ba70908d/image-20210520094708219.png" alt="image-20210520094708219" style="zoom:50%;">
 
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${SPARK_HOME}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${SPARK_HOME}</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
   <span class="token function">source</span> <span class="token string">"$(dirname "</span><span class="token variable">$0</span><span class="token string">")"</span>/find-spark-home
 <span class="token keyword">fi</span>
 
@@ -558,14 +559,14 @@ SPARK_ENV_SH<span class="token operator">=</span><span class="token string">"spa
     <span class="token keyword">.</span> <span class="token variable">${SPARK_ENV_SH}</span>
     <span class="token keyword">set</span> +a
   <span class="token keyword">fi</span>
-<span class="token keyword">fi</span></code></pre>
+<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>指定pyhton3版本<code>  export PYSPARK_PYTHON=/usr/bin/python3</code></p>
 <p>参考来自<a href="https://blog.csdn.net/weixin_43114954/article/details/113094958" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43114954/article/details/113094958</a></p>
 <h2 id="问题3"><a href="#问题3" class="headerlink" title="问题3:"></a>问题3:</h2><p>UnicodeDecodeError: ‘utf-8’ codec can’t decode byte 0xe9 in position 2892: invalid continuation byte</p>
-<h2 id="解决3"><a href="#解决3" class="headerlink" title="解决3:"></a>解决3:</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> codecs
-f1<span class="token operator">=</span>codecs<span class="token punctuation">.</span>open<span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span></code></pre>
+<h2 id="解决3"><a href="#解决3" class="headerlink" title="解决3:"></a>解决3:</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> codecs
+f1<span class="token operator">=</span>codecs<span class="token punctuation">.</span>open<span class="token punctuation">(</span><span class="token string">"fileName"</span><span class="token punctuation">,</span><span class="token string">'r'</span><span class="token punctuation">,</span>encoding <span class="token operator">=</span> <span class="token string">"ISO-8859-1"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>参考来自<a href="https://blog.csdn.net/ningzhimeng/article/details/78488822" target="_blank" rel="noopener">https://blog.csdn.net/ningzhimeng/article/details/78488822</a></p>
-<h2 id="python源码："><a href="#python源码：" class="headerlink" title="python源码："></a>python源码：</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> pyspark <span class="token keyword">import</span> SparkConf<span class="token punctuation">,</span> SparkContext
+<h2 id="python源码："><a href="#python源码：" class="headerlink" title="python源码："></a>python源码：</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> pyspark <span class="token keyword">import</span> SparkConf<span class="token punctuation">,</span> SparkContext
 <span class="token keyword">import</span> codecs
 <span class="token keyword">def</span> <span class="token function">loadMovieNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     movieNames <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
@@ -600,8 +601,8 @@ f1<span class="token operator">=</span>codecs<span class="token punctuation">.</
 
     <span class="token keyword">for</span> result <span class="token keyword">in</span> results<span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>movieNames<span class="token punctuation">[</span>result<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> result<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-</code></pre>
-<h2 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h2><pre class=" language-bash"><code class="language-bash">sunyun@MACBOOKPRO-5566 Downloads % spark-submit RatedMovieSpark.py
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h2><pre class="line-numbers language-bash"><code class="language-bash">sunyun@MACBOOKPRO-5566 Downloads % spark-submit RatedMovieSpark.py
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform <span class="token punctuation">(</span>file:/usr/local/Cellar/apache-spark/3.0.1/libexec/jars/spark-unsafe_2.12-3.0.1.jar<span class="token punctuation">)</span> to constructor java.nio.DirectByteBuffer<span class="token punctuation">(</span>long,int<span class="token punctuation">)</span>
 WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
@@ -810,8 +811,8 @@ T-Men <span class="token punctuation">(</span>1947<span class="token punctuation
 21/05/20 09:54:26 INFO ShutdownHookManager: Shutdown hook called
 21/05/20 09:54:26 INFO ShutdownHookManager: Deleting directory /private/var/folders/4k/dwx5pnzx3k596x3ct39tqskw0000gn/T/spark-5643016b-451c-4892-86f7-74cf9335c16b
 21/05/20 09:54:26 INFO ShutdownHookManager: Deleting directory /private/var/folders/4k/dwx5pnzx3k596x3ct39tqskw0000gn/T/spark-0d672059-499e-4f43-a211-87c1f8fa1b31/pyspark-cf615851-efaf-4bca-8a08-81c7ba12108c
-21/05/20 09:54:26 INFO ShutdownHookManager: Deleting directory /private/var/folders/4k/dwx5pnzx3k596x3ct39tqskw0000gn/T/spark-0d672059-499e-4f43-a211-87c1f8fa1b31</code></pre>
-<pre class=" language-json"><code class="language-json">有效信息
+21/05/20 09:54:26 INFO ShutdownHookManager: Deleting directory /private/var/folders/4k/dwx5pnzx3k596x3ct39tqskw0000gn/T/spark-0d672059-499e-4f43-a211-87c1f8fa1b31<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-json"><code class="language-json">有效信息
 Amityville<span class="token operator">:</span> Dollhouse (<span class="token number">1996</span><span class="token punctuation">)</span> <span class="token number">1.0</span>
 Somebody to Love (<span class="token number">1994</span><span class="token punctuation">)</span> <span class="token number">1.0</span>
 Every Other Weekend (<span class="token number">1990</span><span class="token punctuation">)</span> <span class="token number">1.0</span>
@@ -821,7 +822,7 @@ Bird of Prey (<span class="token number">1996</span><span class="token punctuati
 Power <span class="token number">98</span> (<span class="token number">1995</span><span class="token punctuation">)</span> <span class="token number">1.0</span>
 Beyond Bedlam (<span class="token number">1993</span><span class="token punctuation">)</span> <span class="token number">1.0</span>
 Falling in Love Again (<span class="token number">1980</span><span class="token punctuation">)</span> <span class="token number">1.0</span>
-T-Men (<span class="token number">1947</span><span class="token punctuation">)</span> <span class="token number">1.0</span></code></pre>
+T-Men (<span class="token number">1947</span><span class="token punctuation">)</span> <span class="token number">1.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

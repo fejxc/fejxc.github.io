@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -562,7 +563,7 @@
 <h2 id="5-在路由器里添加自动认证脚本"><a href="#5-在路由器里添加自动认证脚本" class="headerlink" title="5.在路由器里添加自动认证脚本"></a>5.在路由器里添加自动认证脚本</h2><p>1.<code>cd /etc</code></p>
 <p>2.<code>vim web.sh</code>    不会vim操作的，该步骤可以通过WinSCP软件代替实现 </p>
 <p>内容：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
 
 studentid<span class="token operator">=</span><span class="token string">''</span> <span class="token comment" spellcheck="true"># 用户名</span>
 password<span class="token operator">=</span><span class="token string">''</span>      <span class="token comment" spellcheck="true"># 密码</span>
@@ -615,19 +616,19 @@ function checkstatus() {
 <span class="token keyword">while</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
     oneloop
 <span class="token keyword">done</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>3.<code> chmod 777 web.sh</code>    修改文件权限 这里我直接给了最高</p>
 <p>4.<code>cd /etc</code></p>
 <p>5.<code>vim rc.local</code>  设置配置路由器启动后，自动执行自己添加的脚本</p>
 <p>增加代码</p>
-<pre class=" language-bash"><code class="language-bash">/etc/web.sh <span class="token operator">></span>dev/null 2<span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
-<span class="token keyword">exit</span> 0</code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">/etc/web.sh <span class="token operator">></span>dev/null 2<span class="token operator">&amp;</span>1 <span class="token operator">&amp;</span>
+<span class="token keyword">exit</span> 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="5-配置Privoxy"><a href="#5-配置Privoxy" class="headerlink" title="5.配置Privoxy"></a>5.配置Privoxy</h2><p><img src="https://i.loli.net/2020/11/01/HGXAbyCjIaL98Od.jpg"></p>
 <p><img src="https://i.loli.net/2020/11/01/ThWBtALZxCgSJQK.jpg"></p>
 <p><img src="https://i.loli.net/2020/11/01/cWzRK1QosuIfMd9.jpg"></p>
 <p>打开<code>http://config.privoxy.org/edit-actions-list?f=0</code></p>
 <p>在Action 那一列中，hide-user-agent 改选为 Enable（绿色） </p>
-<h2 id="6-配置防火墙规则"><a href="#6-配置防火墙规则" class="headerlink" title="6.配置防火墙规则"></a>6.配置防火墙规则</h2><pre class=" language-bash"><code class="language-bash">iptables -t nat -N ntp_force_local
+<h2 id="6-配置防火墙规则"><a href="#6-配置防火墙规则" class="headerlink" title="6.配置防火墙规则"></a>6.配置防火墙规则</h2><pre class="line-numbers language-bash"><code class="language-bash">iptables -t nat -N ntp_force_local
 iptables -t nat -I PREROUTING -p udp --dport 123 -j ntp_force_local
 iptables -t nat -A ntp_force_local -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A ntp_force_local -d 127.0.0.0/8 -j RETURN
@@ -640,7 +641,7 @@ iptables -t nat -A http_ua_drop -d 0.0.0.0/8 -j RETURN
 iptables -t nat -A http_ua_drop -d 127.0.0.0/8 -j RETURN
 iptables -t nat -A http_ua_drop -d 192.168.0.0/16 -j RETURN
 iptables -t nat -I http_ua_drop -m mac --mac-source **:**:**:**:**:** -j RETURN 
-iptables -t nat -A http_ua_drop -p tcp -j REDIRECT --to-port 8118 </code></pre>
+iptables -t nat -A http_ua_drop -p tcp -j REDIRECT --to-port 8118 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>iptables -t nat -I http_ua_drop -m mac --mac-source **:**:**:**:**:** -j RETURN </code></p>
 <p>这条规则的意思是让该mac地址设备流量不走代理</p>
 <h2 id="7-同步时间"><a href="#7-同步时间" class="headerlink" title="7.同步时间"></a>7.同步时间</h2><p><img src="https://i.loli.net/2020/11/01/aPuvhVdHBc67nQE.jpg"></p>
