@@ -502,14 +502,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    420
+                    653
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -530,7 +530,7 @@
 
 <img src="/posts/613a2d30/image-20210803131815628.png" alt="image-20210803131815628" style="zoom:80%;">
 
-<h3 id="sql语句"><a href="#sql语句" class="headerlink" title="sql语句"></a>sql语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,ywh,qlrlb,qlbm,qlbsm,qlrmc,zjzl,qlrlx,qszt,zsbsm,yxtbm,yxtbsm,qxdm,rev_,gxsj,bz_right_id </span><br><span class="line"><span class="keyword">from</span> qlr </span><br><span class="line"><span class="keyword">where</span>  <span class="keyword">rownum</span>&lt;<span class="number">101</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql语句"><a href="#sql语句" class="headerlink" title="sql语句"></a>sql语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qlrlb,qlbm,qlbsm,qlrmc,zjzl,qlrlx,qszt,zsbsm,yxtbm,yxtbsm,qxdm,rev_,gxsj,bz_right_id <br><span class="hljs-keyword">from</span> qlr <br><span class="hljs-keyword">where</span>  <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qlrlb,qlbm,qlbsm,qlrmc,zjzl,qlrlx,qszt,zsbsm,yxtbm,yxtbsm,qxdm,rev_,gxsj,bz_right_id <br><span class="hljs-keyword">from</span> qlr <br><span class="hljs-keyword">where</span>  <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">101</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询结果"><a href="#案例查询结果" class="headerlink" title="案例查询结果"></a>案例查询结果</h3><img src="/posts/613a2d30/image-20210803132328827.png" alt="image-20210803132328827" style="zoom:99%;">
 
@@ -538,7 +538,7 @@
 
 <img src="/posts/613a2d30/image-20210803132846924.png" alt="image-20210803132846924" style="zoom:80%;">
 
-<h3 id="sql语句-1"><a href="#sql语句-1" class="headerlink" title="sql语句"></a>sql语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,ywh,qllx,djlx,bdcqzh,djsj,fj,qszt,yxtbm,yxtbsm,qxdm,rev_,djjg,gxsj,bz_syqzid,bz_ywslid <span class="keyword">from</span> fdcq <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">101</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql语句-1"><a href="#sql语句-1" class="headerlink" title="sql语句"></a>sql语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qllx,djlx,bdcqzh,djsj,fj,qszt,yxtbm,yxtbsm,qxdm,rev_,djjg,gxsj,bz_syqzid,bz_ywslid <span class="hljs-keyword">from</span> fdcq <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qllx,djlx,bdcqzh,djsj,fj,qszt,yxtbm,yxtbsm,qxdm,rev_,djjg,gxsj,bz_syqzid,bz_ywslid <span class="hljs-keyword">from</span> fdcq <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">101</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询结果-1"><a href="#案例查询结果-1" class="headerlink" title="案例查询结果"></a>案例查询结果</h3><img src="/posts/613a2d30/image-20210803133231404.png" alt="image-20210803133231404" style="zoom:99%;">
 
@@ -550,7 +550,7 @@
 
 <img src="/posts/613a2d30/image-20210803133846062.png" alt="image-20210803133846062" style="zoom:80%;">
 
-<h3 id="sql语句-2"><a href="#sql语句-2" class="headerlink" title="sql语句"></a>sql语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,ywh,qlbm,qlbsm,shlx,qllx,bdclx,qlxz,qszt,yxtbm,qxdm,rev_,gxsj,yxtbsm <span class="keyword">from</span> sh <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql语句-2"><a href="#sql语句-2" class="headerlink" title="sql语句"></a>sql语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qlbm,qlbsm,shlx,qllx,bdclx,qlxz,qszt,yxtbm,qxdm,rev_,gxsj,yxtbsm <span class="hljs-keyword">from</span> sh <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qlbm,qlbsm,shlx,qllx,bdclx,qlxz,qszt,yxtbm,qxdm,rev_,gxsj,yxtbsm <span class="hljs-keyword">from</span> sh <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询结果-2"><a href="#案例查询结果-2" class="headerlink" title="案例查询结果"></a>案例查询结果</h3><img src="/posts/613a2d30/image-20210803134340183.png" alt="image-20210803134340183" style="zoom:99%;">
 
@@ -560,7 +560,7 @@
 
 <img src="/posts/613a2d30/image-20210803134809034.png" alt="image-20210803134809034" style="zoom:80%;">
 
-<h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,ywh,qlbsm,qlbm,bdcqzh,qlr,zl,qllx,qlxz,qlxz1,yt,yt1,mj,mj1,syqx,fzdq,fznf,fzbm,fzxh,qxdm,yxtbsm,yxtbm,rev_,qszt,zslx,gxsj <span class="keyword">from</span> djfz_cqzs <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qlbsm,qlbm,bdcqzh,qlr,zl,qllx,qlxz,qlxz1,yt,yt1,mj,mj1,syqx,fzdq,fznf,fzbm,fzxh,qxdm,yxtbsm,yxtbm,rev_,qszt,zslx,gxsj <span class="hljs-keyword">from</span> djfz_cqzs <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,qlbsm,qlbm,bdcqzh,qlr,zl,qllx,qlxz,qlxz1,yt,yt1,mj,mj1,syqx,fzdq,fznf,fzbm,fzxh,qxdm,yxtbsm,yxtbm,rev_,qszt,zslx,gxsj <span class="hljs-keyword">from</span> djfz_cqzs <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询结果-3"><a href="#案例查询结果-3" class="headerlink" title="案例查询结果"></a>案例查询结果</h3><img src="/posts/613a2d30/image-20210803135242910.png" alt="image-20210803135242910" style="zoom:99%;">
 
@@ -568,7 +568,7 @@
 
 <h2 id="5、表房地产权-单元关系FDCQ-DYGX"><a href="#5、表房地产权-单元关系FDCQ-DYGX" class="headerlink" title="5、表房地产权-单元关系FDCQ_DYGX"></a>5、表房地产权-单元关系FDCQ_DYGX</h2><h3 id="表结构-3"><a href="#表结构-3" class="headerlink" title="表结构"></a>表结构</h3><img src="/posts/613a2d30/image-20210803135609482.png" alt="image-20210803135609482" style="zoom:80%;">
 
-<h3 id="sql-1"><a href="#sql-1" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> fdcq_dygx <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql-1"><a href="#sql-1" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> fdcq_dygx <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> fdcq_dygx <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询结果-4"><a href="#案例查询结果-4" class="headerlink" title="案例查询结果"></a>案例查询结果</h3><img src="/posts/613a2d30/image-20210803135721995.png" alt="image-20210803135721995" style="zoom:99%;">
 
@@ -580,13 +580,13 @@
 
 <img src="/posts/613a2d30/image-20210803140103193.png" alt="image-20210803140103193" style="zoom:80%;">
 
-<h3 id="sql-2"><a href="#sql-2" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,zrzbsm,fwbm,hh,ycjzmj,fwxz,yxtfwxzmc,fwlb,yxtbm,yxtbsm,dcbsm,qxdm,rev_,fflb,gxsj,bz_fwcode,bz_fwid,qszt,bz_zid,sfjsmj,bbh <span class="keyword">from</span> h <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql-2"><a href="#sql-2" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,zrzbsm,fwbm,hh,ycjzmj,fwxz,yxtfwxzmc,fwlb,yxtbm,yxtbsm,dcbsm,qxdm,rev_,fflb,gxsj,bz_fwcode,bz_fwid,qszt,bz_zid,sfjsmj,bbh <span class="hljs-keyword">from</span> h <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,zrzbsm,fwbm,hh,ycjzmj,fwxz,yxtfwxzmc,fwlb,yxtbm,yxtbsm,dcbsm,qxdm,rev_,fflb,gxsj,bz_fwcode,bz_fwid,qszt,bz_zid,sfjsmj,bbh <span class="hljs-keyword">from</span> h <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询结果-5"><a href="#案例查询结果-5" class="headerlink" title="案例查询结果"></a>案例查询结果</h3><img src="/posts/613a2d30/image-20210803140445951.png" alt="image-20210803140445951" style="zoom:99%;">
 
 <h2 id="7-表层C"><a href="#7-表层C" class="headerlink" title="7.表层C"></a>7.表层C</h2><h3 id="表结构-5"><a href="#表结构-5" class="headerlink" title="表结构"></a>表结构</h3><img src="/posts/613a2d30/image-20210803140711053.png" alt="image-20210803140711053" style="zoom:80%;">
 
-<h3 id="sql-3"><a href="#sql-3" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,zrzbsm,ch,zrzh,sjc,yxtbm,yxtbsm,qxdm,rev_,gxsj <span class="keyword">from</span> c <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql-3"><a href="#sql-3" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,zrzbsm,ch,zrzh,sjc,yxtbm,yxtbsm,qxdm,rev_,gxsj <span class="hljs-keyword">from</span> c <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,zrzbsm,ch,zrzh,sjc,yxtbm,yxtbsm,qxdm,rev_,gxsj <span class="hljs-keyword">from</span> c <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询结果-6"><a href="#案例查询结果-6" class="headerlink" title="案例查询结果"></a>案例查询结果</h3><img src="/posts/613a2d30/image-20210803140904569.png" alt="image-20210803140904569" style="zoom:80%;">
 
@@ -594,7 +594,7 @@
 
 <img src="/posts/613a2d30/image-20210803141217409.png" alt="image-20210803141217409" style="zoom:80%;">
 
-<h3 id="sql-4"><a href="#sql-4" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,zrzh,ycjzmj,scjzmj,zcs,dscs,dxcs,fwjg,zts,bz,xqmc,zl,tfh,qh,yxtbm,yxtbsm,dcbsm,qxdm,rev_,zddm,zdshiyqbsm,gxsj,bz_fcfhtid,bz_zrzcode,BZ_LPMID,bz_qszt <span class="keyword">from</span> zrz <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql-4"><a href="#sql-4" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,zrzh,ycjzmj,scjzmj,zcs,dscs,dxcs,fwjg,zts,bz,xqmc,zl,tfh,qh,yxtbm,yxtbsm,dcbsm,qxdm,rev_,zddm,zdshiyqbsm,gxsj,bz_fcfhtid,bz_zrzcode,BZ_LPMID,bz_qszt <span class="hljs-keyword">from</span> zrz <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,zrzh,ycjzmj,scjzmj,zcs,dscs,dxcs,fwjg,zts,bz,xqmc,zl,tfh,qh,yxtbm,yxtbsm,dcbsm,qxdm,rev_,zddm,zdshiyqbsm,gxsj,bz_fcfhtid,bz_zrzcode,BZ_LPMID,bz_qszt <span class="hljs-keyword">from</span> zrz <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="查询案例"><a href="#查询案例" class="headerlink" title="查询案例"></a>查询案例</h3><img src="/posts/613a2d30/image-20210803141748180.png" alt="image-20210803141748180" style="zoom:99%;">
 
@@ -602,13 +602,13 @@
 
 <h2 id="9、表逻辑幢LJZ"><a href="#9、表逻辑幢LJZ" class="headerlink" title="9、表逻辑幢LJZ"></a>9、表逻辑幢LJZ</h2><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><img src="/posts/613a2d30/image-20210803142012049.png" alt="image-20210803142012049" style="zoom:80%;">
 
-<h3 id="sql-5"><a href="#sql-5" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="sql-5"><a href="#sql-5" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><code class="language-hljs sql"><br><br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询"><a href="#案例查询" class="headerlink" title="案例查询"></a>案例查询</h3><h2 id="10、申请人"><a href="#10、申请人" class="headerlink" title="10、申请人"></a>10、申请人</h2><h3 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a>结构</h3><img src="/posts/613a2d30/image-20210803142423641.png" alt="image-20210803142423641" style="zoom:80%;">
 
 <img src="/posts/613a2d30/image-20210803142437602.png" alt="image-20210803142437602" style="zoom:80%;">
 
-<h3 id="sql-6"><a href="#sql-6" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,ywh,sqrlb,sqrlx,sqrmc,sqrzjzl,sqrzjh,sqrtxdz,sqryddh,sqrfrmc,qxdm,rev_,gxsj <span class="keyword">from</span> sqr <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql-6"><a href="#sql-6" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,sqrlb,sqrlx,sqrmc,sqrzjzl,sqrzjh,sqrtxdz,sqryddh,sqrfrmc,qxdm,rev_,gxsj <span class="hljs-keyword">from</span> sqr <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,sqrlb,sqrlx,sqrmc,sqrzjzl,sqrzjh,sqrtxdz,sqryddh,sqrfrmc,qxdm,rev_,gxsj <span class="hljs-keyword">from</span> sqr <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="查询案例-1"><a href="#查询案例-1" class="headerlink" title="查询案例"></a>查询案例</h3><img src="/posts/613a2d30/image-20210803142732661.png" alt="image-20210803142732661" style="zoom:99%;">
 
@@ -620,7 +620,7 @@
 
 <img src="/posts/613a2d30/image-20210803143518729.png" alt="image-20210803143518729" style="zoom:80%;">
 
-<h3 id="sql-7"><a href="#sql-7" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> bsm,ywh,djdl,djxl,sqzsbs,sqfbcz,zl,bz,bdclx,ybdcqzh,sqly,sfgg,blts,czrmc,lzrmc,lzrzjzl,lzrzjh,lzrlxdh,slr,slsj,slyj,adyfbfz,rev_,zllb,sfsm,gxsj,sfjnqs,blss,ssxzq,ggslh,dysj <span class="keyword">from</span> slsq <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;<span class="number">100</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="sql-7"><a href="#sql-7" class="headerlink" title="sql"></a>sql</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,djdl,djxl,sqzsbs,sqfbcz,zl,bz,bdclx,ybdcqzh,sqly,sfgg,blts,czrmc,lzrmc,lzrzjzl,lzrzjh,lzrlxdh,slr,slsj,slyj,adyfbfz,rev_,zllb,sfsm,gxsj,sfjnqs,blss,ssxzq,ggslh,dysj <span class="hljs-keyword">from</span> slsq <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number"><code class="language-hljs sql"><span class="hljs-keyword">select</span> bsm,ywh,djdl,djxl,sqzsbs,sqfbcz,zl,bz,bdclx,ybdcqzh,sqly,sfgg,blts,czrmc,lzrmc,lzrzjzl,lzrzjh,lzrlxdh,slr,slsj,slyj,adyfbfz,rev_,zllb,sfsm,gxsj,sfjnqs,blss,ssxzq,ggslh,dysj <span class="hljs-keyword">from</span> slsq <span class="hljs-keyword">where</span> <span class="hljs-keyword">rownum</span>&lt;<span class="hljs-number">100</span>;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
 
 <h3 id="案例查询-1"><a href="#案例查询-1" class="headerlink" title="案例查询"></a>案例查询</h3><img src="/posts/613a2d30/image-20210803143632959.png" alt="image-20210803143632959" style="zoom:80%;">
 
