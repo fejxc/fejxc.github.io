@@ -515,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    129
+                    111
                 </div>
                 
 
@@ -537,17 +537,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="设置服务器免密登录"><a href="#设置服务器免密登录" class="headerlink" title="设置服务器免密登录"></a>设置服务器免密登录</h1><h2 id="1-Client本地生成密钥对"><a href="#1-Client本地生成密钥对" class="headerlink" title="1. Client本地生成密钥对"></a>1. Client本地生成密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs bash"><code class="language-hljs bash">ssh-keygen -t rsa<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+                <h1 id="设置服务器免密登录"><a href="#设置服务器免密登录" class="headerlink" title="设置服务器免密登录"></a>设置服务器免密登录</h1><h2 id="1-Client本地生成密钥对"><a href="#1-Client本地生成密钥对" class="headerlink" title="1. Client本地生成密钥对"></a>1. Client本地生成密钥对</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中"><a href="#2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中" class="headerlink" title="2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中"></a>2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs bash">scp -p ~/.ssh/id_rsa.pub root@服务器ip或者域名:~/.ssh/<br><span class="hljs-comment"><code class="language-hljs bash">scp -p ~/.ssh/id_rsa.pub root@服务器ip或者域名:~/.ssh/<br><span class="hljs-comment">#输入密码</span><br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+<h2 id="2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中"><a href="#2-将Client服务器的公钥证书id-rsa-pub复制到Server服务器的-ssh子目录中" class="headerlink" title="2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中"></a>2. 将Client服务器的公钥证书id_rsa.pub复制到Server服务器的.ssh子目录中</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -p ~/.ssh/id_rsa.pub root@服务器ip或者域名:~/.ssh/</span><br><span class="line"><span class="comment">#输入密码</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="3-在Server服务器"><a href="#3-在Server服务器" class="headerlink" title="3.在Server服务器"></a>3.在Server服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs bash"><code class="language-hljs bash">mv ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+<h2 id="3-在Server服务器"><a href="#3-在Server服务器" class="headerlink" title="3.在Server服务器"></a>3.在Server服务器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 
 <h2 id="4-小插曲-问题"><a href="#4-小插曲-问题" class="headerlink" title="4.小插曲(问题)"></a>4.小插曲(问题)</h2><img src="/posts/a5451f8b/image-20210308150341291.png" alt="权限问题" style="zoom:50%;">
 
 <h2 id="5-成功实现"><a href="#5-成功实现" class="headerlink" title="5.成功实现"></a>5.成功实现</h2><img src="/posts/a5451f8b/image-20210308150440888.png" alt="成功免密登陆" style="zoom:50%;">
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs bash">sunyun@sunyundeMacBook-Pro ~ % <span class="hljs-built_in"><code class="language-hljs bash">sunyun@sunyundeMacBook-Pro ~ % <span class="hljs-built_in">cd</span> /Users/sunyun/.ssh/<br>sunyun@sunyundeMacBook-Pro .ssh % ls<br>config			id_rsa_gitee		id_rsa_github.pub<br>id_rsa			id_rsa_gitee.pub	known_hosts<br>id_rsa.pub		id_rsa_github<br>sunyun@sunyundeMacBook-Pro .ssh % chmod 0600 id_rsa<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sunyun@sunyundeMacBook-Pro ~ % <span class="built_in">cd</span> /Users/sunyun/.ssh/</span><br><span class="line">sunyun@sunyundeMacBook-Pro .ssh % ls</span><br><span class="line">config			id_rsa_gitee		id_rsa_github.pub</span><br><span class="line">id_rsa			id_rsa_gitee.pub	known_hosts</span><br><span class="line">id_rsa.pub		id_rsa_github</span><br><span class="line">sunyun@sunyundeMacBook-Pro .ssh % chmod 0600 id_rsa</span><br></pre></td></tr></table></figure>
 
 
                 
