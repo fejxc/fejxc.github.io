@@ -1,0 +1,1509 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="云安全期末复习, fejxc的博客">
+    <meta name="description" content="云安全期末复习题型分布：填空（20分左右）
+选择（40分，2分一个）
+判断题
+简答题（2个）
+大题（DES算法一个）
+简答题（2个）1.VPC和安全组（功能？概念？）概念：VPC(Virtual Private Cloud)专用网络是基于阿">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>云安全期末复习 | fejxc的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">fejxc的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>其他</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="http://47.115.152.102:8081/home.html" target="_blank" rel="noopener">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>私人网盘</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>图书</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>照片</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fejxc的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			其他
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="http://47.115.152.102:8081/home.html " target="_blank" rel="noopener" style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>私人网盘</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>电影</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>图书</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>照片</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">云安全期末复习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-06-27
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-06-27
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    696
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    2 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="云安全期末复习"><a href="#云安全期末复习" class="headerlink" title="云安全期末复习"></a>云安全期末复习</h1><h2 id="题型分布："><a href="#题型分布：" class="headerlink" title="题型分布："></a>题型分布：</h2><p>填空（20分左右）</p>
+<p>选择（40分，2分一个）</p>
+<p>判断题</p>
+<p>简答题（2个）</p>
+<p>大题（DES算法一个）</p>
+<h2 id="简答题（2个）"><a href="#简答题（2个）" class="headerlink" title="简答题（2个）"></a>简答题（2个）</h2><h3 id="1-VPC和安全组（功能？概念？）"><a href="#1-VPC和安全组（功能？概念？）" class="headerlink" title="1.VPC和安全组（功能？概念？）"></a>1.VPC和安全组（功能？概念？）</h3><h4 id="概念："><a href="#概念：" class="headerlink" title="概念："></a>概念：</h4><p>VPC(Virtual Private Cloud)专用网络是基于阿里云构建的一个隔离的网络环境，专有网络之 </p>
+<p>间逻辑上彻底隔离。用户可以在自己创建的专有网络内创建和管理云资源，例如ECS、SLB和 </p>
+<p>RDS等。专有网络VPC是地域性服务，它不可以跨地域，但地域内可用区之间是可见的。 </p>
+<h4 id="VPC主要提供了两个能力："><a href="#VPC主要提供了两个能力：" class="headerlink" title="VPC主要提供了两个能力："></a>VPC主要提供了两个能力：</h4><p>用户可以自定义网络拓扑，包括选择自有IP地址范围、划分网段、配置路由表和网关等； </p>
+<p>通过专线或VPN与原有数据中心连接，云上和云下的资源使用同一个网络地址规划，实现应 </p>
+<p>用的平滑迁移上云。 </p>
+<img src="/posts/b3ab0d9f/image-20210627180333685.png" alt="image-20210627180333685" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627180351324.png" alt="image-20210627180351324" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627180412417.png" alt="image-20210627180412417" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627180427125.png" alt="image-20210627180427125" style="zoom:50%;">
+
+<h3 id="2-公钥的工作原理，密码体制（加密认证混合模型）"><a href="#2-公钥的工作原理，密码体制（加密认证混合模型）" class="headerlink" title="2.公钥的工作原理，密码体制（加密认证混合模型）"></a>2.公钥的工作原理，密码体制（加密认证混合模型）</h3><img src="/posts/b3ab0d9f/image-20210627180859278.png" alt="image-20210627180859278" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627180907087.png" alt="image-20210627180907087" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627180914622.png" alt="image-20210627180914622" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627180927846.png" alt="image-20210627180927846" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181029636.png" alt="image-20210627181029636" style="zoom:50%;">
+
+<h2 id="大题（1个）"><a href="#大题（1个）" class="headerlink" title="大题（1个）"></a>大题（1个）</h2><h3 id="1-DES算法综合（知道初始置换是怎么对应的）"><a href="#1-DES算法综合（知道初始置换是怎么对应的）" class="headerlink" title="1.DES算法综合（知道初始置换是怎么对应的）"></a>1.DES算法综合（知道初始置换是怎么对应的）</h3><h4 id="考点：给一个表，计算L0，R0，S盒，循环左移"><a href="#考点：给一个表，计算L0，R0，S盒，循环左移" class="headerlink" title="考点：给一个表，计算L0，R0，S盒，循环左移"></a>考点：给一个表，计算L0，R0，S盒，循环左移</h4><h4 id="初始置换："><a href="#初始置换：" class="headerlink" title="初始置换："></a>初始置换：</h4><h5 id="将原来的64位二进制重新排序，Eg：输入的第58位换到第1位"><a href="#将原来的64位二进制重新排序，Eg：输入的第58位换到第1位" class="headerlink" title="将原来的64位二进制重新排序，Eg：输入的第58位换到第1位"></a>将原来的64位二进制重新排序，Eg：输入的第58位换到第1位</h5><h4 id="扩展置换-："><a href="#扩展置换-：" class="headerlink" title="扩展置换 ："></a>扩展置换 ：</h4><h5 id="32位-gt-48位，（每4位变6位）"><a href="#32位-gt-48位，（每4位变6位）" class="headerlink" title="32位-&gt;48位，（每4位变6位）"></a>32位-&gt;48位，（每4位变6位）</h5><h5 id="旧组的第一位复制到前一个新组的最后一位"><a href="#旧组的第一位复制到前一个新组的最后一位" class="headerlink" title="旧组的第一位复制到前一个新组的最后一位"></a>旧组的第一位复制到前一个新组的最后一位</h5><h5 id="旧组最后一位复制到下一个新组第一位"><a href="#旧组最后一位复制到下一个新组第一位" class="headerlink" title="旧组最后一位复制到下一个新组第一位"></a>旧组最后一位复制到下一个新组第一位</h5><h5 id="最后复制每组中间的4个元素到新组中"><a href="#最后复制每组中间的4个元素到新组中" class="headerlink" title="最后复制每组中间的4个元素到新组中"></a>最后复制每组中间的4个元素到新组中</h5><h4 id="S盒压缩处理："><a href="#S盒压缩处理：" class="headerlink" title="S盒压缩处理："></a>S盒压缩处理：</h4><h5 id="48位-gt-32位"><a href="#48位-gt-32位" class="headerlink" title="48位-&gt;32位"></a>48位-&gt;32位</h5><h5 id="48位分成8组，每组6位"><a href="#48位分成8组，每组6位" class="headerlink" title="48位分成8组，每组6位"></a>48位分成8组，每组6位</h5><h5 id="每6位的首位和末尾组成二进制数字-gt-十进制：就是行数"><a href="#每6位的首位和末尾组成二进制数字-gt-十进制：就是行数" class="headerlink" title="每6位的首位和末尾组成二进制数字-&gt;十进制：就是行数"></a>每6位的首位和末尾组成二进制数字-&gt;十进制：就是行数</h5><h5 id="每6位的中间4位组成二进制数字-gt-十进制：就是列数"><a href="#每6位的中间4位组成二进制数字-gt-十进制：就是列数" class="headerlink" title="每6位的中间4位组成二进制数字-&gt;十进制：就是列数"></a>每6位的中间4位组成二进制数字-&gt;十进制：就是列数</h5><img src="/posts/b3ab0d9f/image-20210627181322374.png" alt="image-20210627181322374" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181331989.png" alt="image-20210627181331989" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181338296.png" alt="image-20210627181338296" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181344540.png" alt="image-20210627181344540" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181350580.png" alt="image-20210627181350580" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181357629.png" alt="image-20210627181357629" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181404836.png" alt="image-20210627181404836" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181412269.png" alt="image-20210627181412269" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181425453.png" alt="image-20210627181425453" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181432599.png" alt="image-20210627181432599" style="zoom:50%;">
+
+<h2 id="考点总结"><a href="#考点总结" class="headerlink" title="考点总结"></a>考点总结</h2><h3 id="1-VPC的组成"><a href="#1-VPC的组成" class="headerlink" title="1.VPC的组成"></a>1.VPC的组成</h3><p>每个VPC都由一个路由器、至少一个私网网段和至少一个交换机组成。 </p>
+<p>（要先建交换机，然后添加组件）</p>
+<h3 id="2-负债均衡的概念、工作原理（1～2个选择题）"><a href="#2-负债均衡的概念、工作原理（1～2个选择题）" class="headerlink" title="2.负债均衡的概念、工作原理（1～2个选择题）"></a>2.负债均衡的概念、工作原理（1～2个选择题）</h3><h4 id="考点：几种转发方式？3种"><a href="#考点：几种转发方式？3种" class="headerlink" title="考点：几种转发方式？3种"></a>考点：几种转发方式？3种</h4><h4 id="概念：-1"><a href="#概念：-1" class="headerlink" title="概念："></a>概念：<img src="/posts/b3ab0d9f/image-20210627181717776.png" alt="image-20210627181717776" style="zoom:33%;"></h4><h4 id="工作原理："><a href="#工作原理：" class="headerlink" title="工作原理："></a>工作原理：</h4><img src="/posts/b3ab0d9f/image-20210627181743555.png" alt="image-20210627181743555" style="zoom:33%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181805029.png" alt="image-20210627181805029" style="zoom:33%;">
+
+<h3 id="3-OSI的7层模型（主要设备协议对应哪一层？）"><a href="#3-OSI的7层模型（主要设备协议对应哪一层？）" class="headerlink" title="3.OSI的7层模型（主要设备协议对应哪一层？）"></a>3.OSI的7层模型（主要设备协议对应哪一层？）</h3><img src="/posts/b3ab0d9f/image-20210627181937377.png" alt="image-20210627181937377" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627181951459.png" alt="image-20210627181951459" style="zoom:50%;">
+
+<h3 id="4-特殊的IP地址"><a href="#4-特殊的IP地址" class="headerlink" title="4.特殊的IP地址"></a>4.特殊的IP地址</h3><img src="/posts/b3ab0d9f/image-20210627182008400.png" alt="image-20210627182008400" style="zoom:50%;">
+
+<h3 id="5-密码体制（5部分）"><a href="#5-密码体制（5部分）" class="headerlink" title="5.密码体制（5部分）"></a>5.密码体制（5部分）</h3><img src="/posts/b3ab0d9f/image-20210627182052642.png" alt="image-20210627182052642" style="zoom:33%;">
+
+<h3 id="6-古典密码（2种怎么算的？仿射密码？）"><a href="#6-古典密码（2种怎么算的？仿射密码？）" class="headerlink" title="6.古典密码（2种怎么算的？仿射密码？）"></a>6.古典密码（2种怎么算的？仿射密码？）</h3><img src="/posts/b3ab0d9f/image-20210627182157625.png" alt="image-20210627182157625" style="zoom:33%;">
+
+<img src="/posts/b3ab0d9f/image-20210627182216917.png" alt="image-20210627182216917" style="zoom:33%;">
+
+<img src="/posts/b3ab0d9f/image-20210627182225613.png" alt="image-20210627182225613" style="zoom:30%;">
+
+<h3 id="7-DES算法（很多选择题）"><a href="#7-DES算法（很多选择题）" class="headerlink" title="7.DES算法（很多选择题）"></a>7.DES算法（很多选择题）</h3><p>S盒代换怎么算的？</p>
+<p>怎么进行初始置换？</p>
+<h3 id="8-ADE算法（选择题）"><a href="#8-ADE算法（选择题）" class="headerlink" title="8.ADE算法（选择题）"></a>8.ADE算法（选择题）</h3><h4 id="考点：AES算法的流程"><a href="#考点：AES算法的流程" class="headerlink" title="考点：AES算法的流程"></a>考点：AES算法的流程</h4><img src="/posts/b3ab0d9f/image-20210627182511338.png" alt="image-20210627182511338" style="zoom:50%;">
+
+<h3 id="9-什么是弱密钥，半弱密钥？"><a href="#9-什么是弱密钥，半弱密钥？" class="headerlink" title="9.什么是弱密钥，半弱密钥？"></a>9.什么是弱密钥，半弱密钥？</h3><img src="/posts/b3ab0d9f/image-20210627182740316.png" alt="image-20210627182740316" style="zoom:50%;">
+
+<h3 id="10-AES，DES的S盒比较"><a href="#10-AES，DES的S盒比较" class="headerlink" title="10.AES，DES的S盒比较"></a>10.AES，DES的S盒比较</h3><img src="/posts/b3ab0d9f/image-20210627182900128.png" alt="image-20210627182900128" style="zoom:50%;">
+
+<h3 id="11-SM4密码算法（稍微看看）"><a href="#11-SM4密码算法（稍微看看）" class="headerlink" title="11.SM4密码算法（稍微看看）"></a>11.SM4密码算法（稍微看看）</h3><img src="/posts/b3ab0d9f/image-20210627183041612.png" alt="image-20210627183041612" style="zoom:50%;">
+
+<h3 id="12-数字信封解决什么问题？"><a href="#12-数字信封解决什么问题？" class="headerlink" title="12.数字信封解决什么问题？"></a>12.数字信封解决什么问题？</h3><h3 id="13-分组密码的工作模式（哪几种）"><a href="#13-分组密码的工作模式（哪几种）" class="headerlink" title="13.分组密码的工作模式（哪几种）"></a>13.分组密码的工作模式（哪几种）</h3><img src="/posts/b3ab0d9f/image-20210627183707597.png" alt="image-20210627183707597" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627183716055.png" alt="image-20210627183716055" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627183745216.png" alt="image-20210627183745216" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627183755386.png" alt="image-20210627183755386" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627183807367.png" alt="image-20210627183807367" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627183827824.png" alt="image-20210627183827824" style="zoom:50%;">
+
+<h3 id="14-RC4"><a href="#14-RC4" class="headerlink" title="14.RC4"></a>14.RC4</h3><img src="/posts/b3ab0d9f/image-20210627183947646.png" alt="image-20210627183947646" style="zoom:50%;">
+
+<h3 id="15-HASH函数"><a href="#15-HASH函数" class="headerlink" title="15.HASH函数"></a>15.HASH函数</h3><img src="/posts/b3ab0d9f/image-20210627184018241.png" alt="image-20210627184018241" style="zoom:50%;">
+
+<h3 id="16-SHA压缩处理"><a href="#16-SHA压缩处理" class="headerlink" title="16.SHA压缩处理"></a>16.SHA压缩处理</h3><img src="/posts/b3ab0d9f/image-20210627184134885.png" alt="image-20210627184134885" style="zoom:50%;">
+
+<img src="/posts/b3ab0d9f/image-20210627184142918.png" alt="image-20210627184142918" style="zoom:40%;">
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fejxc.top/posts/b3ab0d9f/">https://fejxc.top/posts/b3ab0d9f/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">fejxc</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'adPQdwOt9vYN60QrWWTaSwqq-gzGzoHsz',
+        appKey: 'rcy20AUEz7C6DK8rIqf8soKJ',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/b4905090/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="MAC安装ORACLE数据库">
+                        
+                        <span class="card-title">MAC安装ORACLE数据库</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            fejxc
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/f29bfee8/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="软件工程期中练习">
+                        
+                        <span class="card-title">软件工程期中练习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="post-category">
+                                    软件工程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
+                        <span class="chip bg-color">软件工程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="46653054"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <a href="/about" target="_blank">fejxc</a>
+            <br>
+            
+            
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/fejxc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1031364436@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1031364436" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1031364436" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
