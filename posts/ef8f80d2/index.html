@@ -1,0 +1,1804 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="第四章-网络层, fejxc的博客">
+    <meta name="description" content="计算机网络复习题第四章（标有课本知识点）选择题
+1．如果子网掩码是 255.255.255.224，那么主机 218.22.50.40 所在的驻留子网是（ C）。 A.218.22.50.0 B.218.22.50.224 C.218.22">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>第四章-网络层 | fejxc的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">fejxc的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>其他</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="http://47.115.152.102:8081/home.html" target="_blank" rel="noopener">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>私人网盘</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>电影</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>图书</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>照片</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">fejxc的博客</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			其他
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="http://47.115.152.102:8081/home.html " target="_blank" rel="noopener" style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>私人网盘</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>电影</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>图书</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>照片</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">第四章-网络层</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                <span class="chip bg-color">计算机网络期末复习</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-12-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-12-30
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    18.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    74 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="计算机网络复习题第四章（标有课本知识点）"><a href="#计算机网络复习题第四章（标有课本知识点）" class="headerlink" title="计算机网络复习题第四章（标有课本知识点）"></a>计算机网络复习题第四章（标有课本知识点）</h1><p><strong>选择题</strong></p>
+<p>1．如果子网掩码是 255.255.255.224，那么主机 218.22.50.40 所在的驻留子网是（ C）。<br> A.218.22.50.0<br> B.218.22.50.224<br> C.218.22.50.32<br> D.218.22.50.40</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．某公司申请到一个 C 类网络，出于地理位置上的考虑，必须切割成 5 个子网，那么子网掩<br> 码可以设置为（<strong>D</strong> ）。<br> A.255.255.0.0<br> B.255.255.255.0<br> C.255.255.255.192<br> D.255.255.255.224</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．转发数据包时，网络层所使用的主要信息依据是（<strong>A</strong> ）。<br> A.IP 路由表<br> B.MAC 地址表<br> C.ARP 缓存<br> D.端口列表</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>4．下面四个选项中，合法的 Internet 主机 IP 地址是（<strong>C</strong> ）。<br> A.228.132.809.33<br> B.201.32.17.255<br> C.211.202.59.13<br> D.0.58.173.2</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>5．如果子网掩码是 255.255.192.0，那么下面主机（<strong>B</strong> ）必须通过路由器或三层交换<br> 机才能与主机 129.23.144.16 通信。<br> A.129.23.191.21<br> B.129.23.127.222<br> C.129.23.130.33<br> D.129.23.148.127</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.2** <strong>使用子网时分组的转发**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>6．下列（<strong>C</strong> ）的情况下需要启动 ARP 请求。<br> A.主机需要接收信息，但 ARP 表中没有源 IP 地址与 MAC 地址的映射关系<br> B.主机需要接收信息，但 ARP 表中只具有源 IP 地址与 MAC 地址的映射关系<br> C.主机需要发送信息，但 ARP 表中没有目的 IP 地址与 MAC 地址的映射关系<br> D.主机需要发送信息，但 ARP 表中只具有目的 IP 地址与 MAC 地址的映射关系</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>7．关于 OSPF 和 RIP，下列说法正确的是（ <strong>D</strong>）。<br> A.OSPF 和 RIP 都是静态路由<br> B.OSPF 属于距离向量型路由协议，RIP 属于链路状态型路由协议<br> C.OSPF 适合在小型的、动态的互联网上使用，而 RIP 适合在大型的、动态的互联网上使<br> 用<br> D.OSPF 适合在大型的、动态的互联网上使用，而 RIP 适合在小型的、动态的互联网上使<br> 用</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>8．IGP 的作用范围是（<strong>D</strong> ）。<br> A.主机<br> B.子网<br> C.区域<br> D.自治系统</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.1** <strong>有关路由选择协议的几个**</strong><br>** <strong>基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>9．对 IP 数据报分片的重组通常发生在（<strong>B</strong> ）上。<br> A.源主机<br> B.目的主机<br> C.IP 数据报经过的路由器<br> D.目的主机或路由器</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>10．如果主机地址部分的前 10 位用于子网，那么 184.231.138.239 的子网掩码是（ <strong>D</strong>）。<br> A.255.255.192.0<br> B.255.255.224.0<br> C.255.255.255.224<br> D.255.255.255.192</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：理解</strong></p>
+<p>11．如果子网掩码是 255.255.255.224，那么主机 218.22.50.140 所在的驻留子网是（ <strong>C</strong>）。<br> A.218.22.50.224<br> B.218.22.50.140<br> C.218.22.50.128<br> D.218.22.50.32</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>12．IP 地址块 192.168.33.125/28 的子网掩码可写为（<strong>C</strong> ）。<br> A.255.255.255.192<br> B.255.255.255.224<br> C.255.255.255.240<br> D.255.255.255.248</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.3** <strong>无分类编址</strong> <strong>CIDR**</strong>（构造超****<br>** <strong>网）**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>13．在 RIP 协议中，最佳路径的衡量标准是（<strong>D</strong> ）。<br> A.时延<br> B.可靠性<br> C.带宽<br> D.路由跳数</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>14．IP 地址 192.168.1.255 代表（ <strong>B</strong>）。<br> A.一个 C 类网络<br> B.一个 C 类网络中的广播<br> C.一个 C 类网络中的主机<br> D.以上都不是</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>15．可以检测网络的连通状况的命令是（<strong>D</strong> ）。<br> A.ipconfig<br> B.tracert<br> C.nslookup<br> D.ping</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.2 ICMP</strong> <strong>的应用举例**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>16．如果子网掩码是 255.255.255.128，那么下面主机（<strong>B</strong> ）必须通过路由器或三层交<br> 换机才能与主机 192.168.114.16 通信。<br> A.192.168.114.21<br> B.192.168.114.135<br> C.192.168.114.33<br> D.192.168.114.127</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.2** <strong>使用子网时分组的转发**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>17．CIDR 技术的作用是（<strong>A</strong> ）。<br> A.把小的网络汇聚成大的超网<br> B.多个主机共享同一个网络地址<br> C.把大的网络划分成小的子网<br> D.将本地 IP 地址转换成全球 IP 地址</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.3** <strong>无分类编址</strong> <strong>CIDR**</strong>（构造超****<br>** <strong>网）**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>18．IPv6 地址的长度是（ <strong>D</strong>）比特。<br> A.16<br> B.32<br> C.64<br> D.128</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6——4.6.2 IPv6** <strong>的地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>19．下列对 IPv6 地址 FF60:0:0:0601:BC:0:0:05D7 的简化表示中，错误的是（ <strong>B</strong>）。<br> A.FF60::601:BC:0:0:05D7<br> B.FF60::601:BC::05D7<br> C.FF60:0:0:601:BC::05D7<br> D.FF60:0:0:0601:BC::05D7</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6——4.6.2 IPv6** <strong>的地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>20．第一次对路由器进行配置，应该通过（<strong>D</strong> ）配置。<br> A.Web 浏览器<br> B.远程拨号<br> C.Telnet 方式<br> D.console 端口</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.5** <strong>路由器的构成**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>21．如果子网掩码是 255.255.0.0，那么下列地址为子网 112.11.0.0 内的广播地址的是<br> （ <strong>B</strong>）。<br> A.112.11.0.0<br> B.112.11.255.255<br> C.112.255.255.255<br> D.112.1.1.1</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>22．IP 地址 192.168.1.0 代表（<strong>A</strong> ）。<br> A.一个 C 类网络号<br> B.一个 C 类网络中的广播<br> C.一个 C 类网络中的主机<br> D.以上都不是</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>23．提供网络层的协议转换，并在不同网络之间存储和转发分组的网间连接器是（<strong>C</strong> ）。<br> A.转发器<br> B.网桥<br> C.路由器<br> D.网关</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.5** <strong>路由器的构成**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>24．下面的四个选项中，合法的 Internet 主机 IP 地址是（ <strong>C</strong>）。<br> A.208.132.309.33<br> B.192.168.17.55<br> C.211.202.59.103<br> D.101.58.173.2.13</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址；第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>—<br> —4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.1</strong> <strong>虚拟专用网</strong> <strong>VPN<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>25．如果主机地址部分的前 10 位用于表示子网，那么 184.231.138.239 的网络地址是<br> （ <strong>C</strong>）。<br> A.184.231.138.0<br> B.184.231.138.10<br> C.184.231.138.192<br> D.184.231.138.255</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.3** <strong>无分类编址</strong> <strong>CIDR**</strong>（构造超****<br>** <strong>网）**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>26．下列说法错误的是（<strong>A</strong> ）。<br> A.通常情况下，高速缓存中的 ARP 是由人工建立的<br> B.通常情况下，高速缓存中的 ARP 是由主机自动建立的<br> C.通常情况下，高速缓存中的 ARP 表是动态的<br> D.通常情况下，高速缓存中的 ARP 表保存了主机 IP 地址与物理地址的映射关系</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>27．EGP 在（ <strong>C</strong>）之间传播路由。<br> A.区域<br> B.局域网<br> C.自治系统<br> D.自然子网范围</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.1** <strong>有关路由选择协议的几个**</strong><br>** <strong>基本概念**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>28．下面的四个选项中，可用于局域网的 IP 地址是（ <strong>A</strong>）。<br> A.192.168.1.101<br> B.201.32.17.11<br> C.111.222.101.13<br> D.108.253.179.1</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.1</strong> <strong>网络地址转**</strong><br>** <strong>换</strong> <strong>NAT<br>** <strong>难度：易</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>29．下面的 IPv6 地址，不符合书写规范是（ <strong>D</strong>）。<br> A．1236:0:0:CD30::<br> B．6F05::B3<br> C．::128.129.2.1<br> D．FE80::12::A2</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6——4.6.2 IPv6** <strong>的地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>30．（ <strong>B</strong>）向端系统提供虚电路和数据报两种网络服务。<br> A．广域网<br> B．通信子网<br> C．资源子网<br> D.局域网</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.1** <strong>网络层提供的两种服务**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>31．在 TCP/IP 协议体系的网际层，将 IP 地址映射到相应物理地址的协议是（ <strong>C</strong>）。<br> A.RARP<br> B.ICMP<br> C.ARP<br> D.IGMP</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>32．以下关于子网掩码的说法，正确的是（ <strong>A</strong>）。<br> A.利用子网掩码可以判断两台主机是否在同一个子网<br> B.子网掩码代表 Internet 上每台主机的唯一编码<br> C.子网掩码用于设定网络管理员的密码<br> D.子网掩码的引入主要是为了方便记忆</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：理解</strong></p>
+<p>33．通常分配给小型网络使用的 IP 地址是（ <strong>C</strong>）地址。<br> A.A 类<br> B.B 类<br> C.C 类<br> D.D 类</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>34．路由器最主要的功能是（ <strong>B</strong>）。<br> A.集中线路<br> B.选择数据分组传输的最佳路径<br> C.连接互联网<br> D.将信号还原为原来的速率再发送出去</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.5** <strong>路由器的构成**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>35．利用（ <strong>A</strong>）可以判断两台主机是否处于同一子网。<br> A.子网掩码<br> B.子网号<br> C.IP 地址<br> D.域名</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>36．将网络互相连接起来要使用一些中间设备，在网络层以上使用的中间设备是（ <strong>D</strong>）。<br> A.中继器<br> B.网桥<br> C.路由器<br> D.网关</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.1</strong> <strong>虚拟互连网络**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>37．IP 服务的主要特点是（ <strong>A</strong>）。<br> A.不可靠，无连接和尽最大努力投递<br> B.可靠，面向连接和尽最大努力投递<br> C.不可靠，面向连接和全双工<br> D.可靠，无连接和全双工</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.1</strong> <strong>虚拟互联网络**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>38．某路由器收到了一个 IP 数据报，在对其首部进行校验后发现该数据报存在错误，路由器<br> 最有可能采取的动作是（ <strong>C</strong>）。<br> A.纠正该 IP 数据报的错误<br> B.将该 IP 数据报返给源主机<br> C.丢弃该 IP 数据报<br> D.通知目的主机数据报出错</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>39．如果子网掩码是 255.255.255.224，那么主机 192.168.23.122 所在的驻留子网是（<strong>D</strong> ）。<br> A.192.168.0.0<br> B.192.168.23.32<br> C.192.168.0.96<br> D.192.168.23.96</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>40．ARP 的功能是（ <strong>D</strong>）。<br> A.验证数据帧的接收<br> B.获得主机的 IP 地址，然后将 IP 地址映射到一个注册的域名上<br> C.测量在单个发送过程中丢失的数据包数<br> D.获得主机的 MAC 地址，然后将 MAC 地址映射到主机的 IP 地址上</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>41．三层交换机在转发数据时，可以根据数据包的（<strong>B</strong> ）进行路由的选择和转发。<br> A.源 IP 地址<br> B.目的 IP 地址<br> C.源 MAC 地址<br> D.目的 MAC 地址</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>42．在路由表中 0.0.0.0 代表（<strong>C</strong> ）。<br> A.静态路由<br> B.动态路由<br> C.默认路由<br> D.RIP 路由</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>43．当（ <strong>B</strong>）时，需要使用 NAPT。<br> A.缺乏全局 IP 地址<br> B.没有专门申请的全局 IP 地址，只有一个连接 ISP 的全局 IP 地址<br> C.内部网要求上网的主机数很多<br> D.提高内网的安全性</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.2</strong> <strong>网络地址转**</strong><br>** <strong>换</strong> <strong>NAT<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>44．Internet 中，IP 数据报从源结点到目的结点，可能需要经过多个网络和路由器。在整个<br> 传输过程中，IP 数据报报头中的（ <strong>A</strong>）。<br> A.源地址和目的地址都不会发生变化<br> B.源地址有可能发生变化，而目的地址不会发生变化<br> C.源地址不会发生变化，而目的地址有可能发生变化<br> D.源地址和目的地址都有可能发生变化</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>45．IP 协议的核心问题是（ <strong>B</strong>）。<br> A.传输<br> B.寻径<br> C.封装<br> D.选择</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>46．输入 ping 命令后可以接收到（<strong>A</strong> ）信息。<br> A.ICMP 数据包的大小和数量、超时时间、成功率、往返时间<br> B.SNMP 数据包的大小和数量、超时时间、成功率、往返时间<br> C.ICMP 数据包的大小和数量、MAC 地址、成功率、往返时间<br> D.SNMP 数据包的大小和数量、超时时间、TCP 状态、往返时间</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.2 ICMP</strong> <strong>的应用举例**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>47．有一种互连设备工作于网络层，它既可以用于相同（或相似）网络间的互连，也可以用于<br> 异构网络间的互连，这种设备是（<strong>C</strong> ）。<br> A.集线器<br> B.交换机<br> C.路由器<br> D.网关</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.5** <strong>路由器的构成**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>48．在转发数据包时，网络层所使用的主要信息依据是（ <strong>A</strong>）。<br> A.IP 路由表<br> B.RP 响应<br> C.桥接表<br> D.名字服务器的数据</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>49．配置 OSPF 路由，必须具有的网络区域是（<strong>A</strong> ）。<br> A.Area0<br> B.Area1<br> C.Area2<br> D.Area3</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>50．下列用于查看路由表的命令是（<strong>A</strong> ）。<br> A.show ip route<br> B.show ip protocols<br> C.debug ip rip<br> D.clear ip route</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>51．以下关于 NAT 技术产生的目的描述准确的是（<strong>B</strong> ）。<br> A.为了增加网络的可利用率而开发<br> B.为了缓解 IP 地址空间枯竭的速度<br> C.IPV4 向 IPV6 过渡时期的手段<br> D.为了隐藏局域网内部服务器的真实 IP 地址</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.2</strong> <strong>网络地址转**</strong><br>** <strong>换</strong> <strong>NAT<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>52．若两台主机位于同一子网中，则这两台主机的 IP 地址分别与它们的子网掩码进行逻辑与<br> 运算，结果一定（<strong>C</strong> ）。<br> A.为全 0<br> B.为全 1<br> C.相同<br> D.不同</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>53．IP 协议向运输层提供的是（ <strong>A</strong>）。<br> A.无连接的不可靠的服务<br> B.面向连接的不可靠的服务<br> C.无连接的可靠的服务<br> D.面向连接的可靠的服务</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.1</strong> <strong>虚拟互联网络**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>54．虚拟专用网 VPN 采用的类似点对点通信的安全技术是（<strong>C</strong> ）。<br> A.加密技术<br> B.身份认证技术<br> C.隧道技术<br> D.密钥管理技术</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.1</strong> <strong>虚拟专用网**</strong><br> VPN<br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>55.子网上有一台工作站不能连接同一子网的 Server，而其他机器都能连接该 Server，用网<br> 络监视器发现这台 Windows 工作站在每次连接 Server 时，它广播 ARP 找默认网关（Default<br> Gateway）。其原因是（<strong>B</strong> ）<br> A．默认网关地址不正确<br> B. 子网掩码不正确<br> C．有多个 IP 地址<br> D. 没有 DNS</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>56.在以下 Internet 路由选择协议中，属于外部网关协议的是（ <strong>D</strong>）<br> A. RIP<br> B. HELLO<br> C. OSPF<br> D. BGP</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.4** <strong>外部网关协议</strong> <strong>BGP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>57.Internet 与 X.25 网络之间的互连设备是（ <strong>D</strong>）<br> A. 中继器<br> B. 网桥<br> C. 路由器<br> D. 网关</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.1</strong> <strong>虚拟互连网络**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>58.RIP 协议和 OSPF 协议分别使用哪个协议进行传输？（<strong>A</strong> ）<br> A. UDP 和 IP<br> B. TCP 和 UDP<br> C. TCP 和 IP<br> D. 都使用 IP</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** **第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议</strong> <strong>OSPF</strong><br> <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>59 在 TCP/IP 网络中，每台主机都应该配置（ <strong>B</strong>）<br> A. IP 地址和默认网关<br> B. IP 地址和子网掩码<br> C. 只配置 IP 地址即可<br> D. 都必须配置 IP 地址、子网掩码和默认网关</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>60．以下哪些协议属于内部网关协议？（ <strong>C</strong>）<br> A. EGP<br> B. BGP<br> C. RIP、OSPF<br> D. BGP4</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.1** <strong>有关路由选择协议的几**</strong><br>** <strong>个基本概念**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>61．RIP 协议采用（ <strong>A</strong>）协议广播距离向量？<br> A. UDP<br> B. IP<br> C. TCP<br> D. ICMP</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>62．某 IP 地址 169.1.9.10 属于（ <strong>B</strong>）类地址<br> A. A 类地址<br> B. B 类地址<br> C. C 类地址<br> D. D 类地址</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>63．固定式路由选择算法属于（<strong>B</strong> ）<br> A. 自适应路由选择算法<br> B. 非自适应路由选择算法<br> C. 分布式路由选择算法<br> D. 集中式路由选择算法</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议**</strong><br> OSPF<br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>64．网关是运行在 ISO 参考模型哪一层的互连中继设备？（<strong>C</strong> ）<br> A. 网络层<br> B. 低三层<br> C. 高层<br> D. 数据链路层</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.1</strong> <strong>虚拟互连网络**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>65．ping 命令的功能借助（ <strong>B</strong>）协议来实现？<br> A. IP<br> B. ICMP<br> C. TCP<br> D. UDP</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.2 ICMP</strong> <strong>的应用举例**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>66.ARP 协议的作用是（ <strong>D</strong>）。<br> A. 将端口号映射到 IP 地址<br> B. 连接 IP 层和 TCP 层<br> C. 广播 IP 地址<br> D. 将 IP 地址映射到第二层地址</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网路层**</strong>——4.2** <strong>网际协议**</strong>——4.2.4** <strong>地址解析协议</strong> <strong>ARP<br>** <strong>【难度】：易</strong></strong><br>** <strong>【类型】：识记</strong></p>
+<p>67.如果用户网络需要划分成5个子网，每个子网最多20台主机，则适用的子网掩码是（<strong>B</strong> ）<br> A. 255.255.255.192<br> B. 255.255.255.224<br> C.255.255.255.240<br> D. 255.255.255.248</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>概述**</strong>——4.3** <strong>划分子网和构造子网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>68.ARP 请求是采用（ <strong>C</strong>）方式发送的。<br> A.单播<br> B.组播<br> C. 广播<br> D. 点播</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>【难度】：易</strong></strong><br>** <strong>【类型】：识记</strong></p>
+<p>69.ARP 的协议数据单元封装在（ <strong>B</strong>）中传送。<br> A. IP 分组<br> B.以太帧<br> C. TCP 段<br> D. UDP 报文</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>【难度】：中</strong></strong><br>** <strong>【类型】：理解</strong></p>
+<p>70.某主机的IP地址是193.100.77.55，掩码为255.255.252.0，若该主机向其所在的网络发送广播分组，则目的地址可能是（ <strong>D</strong> ）<br> A. 193.100.76.0<br> B.193.100.76.255<br> C. 193.100.77.255<br> D. 193.100.79.255</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.3**<strong>划分子网和构造超网**</strong>——4.3.3** <strong>无分类编址**</strong>CIDR**<strong>（构造超网）**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>71.TCP/IP协议中负责将IP地址转换为物理地址的协议是（ <strong>C</strong> ）。<br> A. ICMP<br> B. IP<br> C. ARP<br> D. TCP</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.2**<strong>网际协议**</strong>IP——4.2.4**<strong>地址解析协议**</strong>ARP<br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>72.某公司申请到一个C类网络，由于有地理位置上的考虑必须切割成5个子网，请问子网掩码要设为（ <strong>A</strong> ）。<br> A. 255.255.255.224<br> B. 255.255.255.240<br> C. 255.255.255.192<br> D. 255.255.255.254</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.3**<strong>划分子网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>73.ICMP协议的功能包括（ <strong>B</strong> ）<br> A. 传递路由信息<br> B. 报告通信故障<br> C.分配网络地址<br> D. 管理用户连接</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.4**<strong>网际控制报文协议**</strong>ICMP<br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>74.如果子网173.6.32.0/20被划分为子网173.6.32.0/26则下列结论中正确的是（ <strong>D</strong> ）<br> A. 被划分为62个子网<br> B.每个子网有64个主机<br> C. 被划分为32个子网<br> D. 每个子网有62个主机</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.3**<strong>划分子网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>75.访问因特网的每台主机都需要分配IP地址（假定采用缺省子网掩码），IP地址（ <strong>C</strong>）分配给主机是正确的。<br> A. 192.46.10.0<br> B.212.6.256.2<br> C. 110.47.10.0<br> D. 127.10.10.17</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.2**<strong>网络协议**</strong>IP——4.2.2** <strong>分类的**</strong>IP**<strong>地址**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>76.若IP数据报在传送过程中，TTL字段等于零，则路由器会发出（ <strong>A</strong> ）<br> A. 超时<br> B.路由重定向<br> C. 目标不可达<br> D. 源站抑制</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.2**<strong>网际协议**</strong>IP——4.2.5 IP**<strong>数据报的格式**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>77.IPv6地址分为3种类型，它们是（ <strong>B</strong> ）<br> A. A类地址、B类地址、C类地址<br> B.单播地址、组播地址、任意播地址<br> C. 单播地址、组播地址、广播地址<br> D. 公共地址、站点地址、接口地址</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.6IPv6<br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>78.作为ICMP的一个重要应用，分组网间探测ping使用了回送请求和（ <strong>A</strong> ）报文<br> A. 回送回答<br> B.时间戳请求<br> C. 时间戳回答<br> D. 差错报告</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议**</strong>ICMP——4.4.1 ICMP**<strong>报文的种类**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>79.作为 ICMP 的一个重要应用，分组网间探测 ping 使用了回送请求和（<strong>A</strong> ）报文<br> A. 回送回答<br> B.时间戳请求<br> C. 时间戳回答<br> D. 差错报告</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.1 ICMP</strong> <strong>报文的种类**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>80.对 IP 数据报分片的重组通常发生在（<strong>C</strong> ）上。<br> A. 源主机<br> B. IP 数据报经过的路由器<br> C. 目的主机<br> D. 目的主机或路由器</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议**</strong>——4.2.6 IP** <strong>层转发分组的流程**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>81.如果子网 173.6.32.0/20 被划分为子网 173.6.32.0/26 则下列结论中正确的是（ <strong>D</strong>）<br> A. 被划分为 62 个子网<br> B.每个子网有 64 个主机<br> C. 被划分为 32 个子网<br> D. 每个子网有 62 个主机</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>82.IP 多播需要使用（ <strong>C</strong>）协议和多播路由选择协议。<br> A. ICMP<br> B.RIP<br> C. IGMP<br> D. OSPF<br> .<br> <strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.7 IP** <strong>多播**</strong>——4.7.3** <strong>网际组管理协议（**</strong>IGMP**<strong>）和多播路由**</strong><br>** <strong>选择协议**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>83.某个 IP 地址的子网掩码为 255.255.255.192，该掩码又可以写为（<strong>C</strong> ）<br> A. /24<br> B. /25<br> C. /26<br> D. /28<br> .<br> <strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>84.下列关于 IP 地址的说法中错误的是（ <strong>C</strong>）<br> A．一个 IP 地址只能标识网络中的唯一的一台计算机<br> B．IP 地址一般用点分十进制表示<br> C．地址 205.106.286.36 是一个非法的 IP 地址<br> D．同一个网络中不能有两台计算机的 IP 地址相同</p>
+<p><strong>【知识点】：第四章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP<br>** <strong>【难度】：中</strong></strong><br>** <strong>【类型】：理解</strong></p>
+<p>85.设有两个子网 192.168.133.0/24 和 192.168.130.0/24，如果进行路由聚合，得到的网络<br> 地址是（ <strong>B</strong>）<br> A. 192.168.128.0/22<br> B. 192.168.128.0/21<br> C. 192.168.130.0/22<br> D. 192.168.132.0/20</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网路层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>86.有一个用来测试二个主机之间的连通性的命令是（ <strong>B</strong>）。<br> A.routing<br> B. ping<br> C. ARP<br> D. RARP</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.2 ICMP</strong> <strong>的应用举例**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>87.常用的 IP 地址有 A、B、C 三类，128.11.3.31 是一个（ <strong>B</strong>）类 IP 地址。<br> A. A 类<br> B. B 类<br> C. C 类<br> D. D 类</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网络协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>88.题 2 中的 IP 地址，若采用默认子网掩码，其网络标识（netid）为（<strong>C</strong> ）。<br> A. 128.11.3.31<br> B. 128<br> C. 128.11<br> D. 128.11.3</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网络协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>89.访问因特网的每台主机都需要分配 IP 地址（假定采用缺省子网掩码），IP 地址（<strong>C</strong> ）<br> 分配给主机是正确的。<br> A. 192.46.10.0<br> B.212.6.256.2<br> C. 110.47.10.0<br> D. 127.10.10.17</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网络协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>90.若 IP 数据报在传送过程中，TTL 字段等于零，则路由器会发出（ <strong>A</strong>）<br> A. 超时<br> B.路由重定向<br> C. 目标不可达<br> D. 源站抑制</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>91.某主机的 IP 地址是 193.100.77.55，掩码为 255.255.252.0，若该主机向其所在的网络发送<br> 广播分组，则目的地址可能是（<strong>D</strong> ）<br> A. 193.100.76.0<br> B.193.100.76.255<br> C. 193.100.77.255<br> D. 193.100.79.255</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.3** <strong>无分类编址</strong> <strong>CIDR**</strong>（构造****<br>** <strong>超网）**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>92.如果用户网络需要划分成5个子网，每个子网最多20台主机，则适用的子网掩码是（<strong>B</strong> ）<br> A. 255.255.255.192<br> B. 255.255.255.224<br> C.255.255.255.240<br> D. 255.255.255.248</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>概述**</strong>——4.3** <strong>划分子网和构造子网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>93.若 IP 数据报在传送过程中，TTL 字段等于零，则路由器会发出（ <strong>A</strong>）<br> A. 超时<br> B.路由重定向<br> C. 目标不可达<br> D. 源站抑制</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>94.ARP 的协议数据单元封装在（<strong>B</strong> ）中传送。<br> A. IP 分组<br> B.以太帧<br> C. TCP 段<br> D. UDP 报文</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>【难度】：中</strong></strong><br>** <strong>【类型】：理解</strong></p>
+<p>95.作为 ICMP 的一个重要应用，分组网间探测 ping 使用了回送请求和（ <strong>A</strong>）报文<br> A. 回送回答<br> B.时间戳请求<br> C. 时间戳回答<br> D. 差错报告</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.1 ICMP</strong> <strong>报文的种类**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>96.IP 地址 128.11.3.31，若采用默认子网掩码，其网络标识（netid）为（ <strong>C</strong>）。<br> A. 128.11.3.31<br> B. 128<br> C. 128.11<br> D. 128.11.3</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网络协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>97.IP 多播需要使用（ <strong>C</strong>）协议和多播路由选择协议。<br> A. ICMP<br> B.RIP<br> C. IGMP<br> D. OSPF</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.7 IP** <strong>多播**</strong>——4.7.3** <strong>网际组管理协议（**</strong>IGMP**<strong>）和多播路由**</strong><br>** <strong>选择协议**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p><strong>多选题</strong></p>
+<p>1．下列 IP 地址中，不能分配给 Internet 主机的有（ <strong>ABDE</strong>）。<br> A.10.1.1.220<br> B.192.168.1.101<br> C.213.212.202.202<br> D.172.20.20.11<br> E.127.0.0.1</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址；第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>—<br> —4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.1</strong> <strong>虚拟专用网</strong> <strong>VPN<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>2．关于 OSPF 和 RIP 两个路由协议，下面说法正确的有（ <strong>AD</strong>）。<br> A.两者都是动态路由<br> B.两者都是静态路由<br> C.OSPF 根据距离向量选择最佳路径，而 RIP 根据链路状态选择最佳路径<br> D.OSPF 适合在大型的网络上使用，而 RIP 适合在小型的网络上使用<br> E.从技术上讲，RIP 路由比 OSPF 路由先进</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．以下可用于从 IPv4 过渡到 IPv6 的技术有（<strong>BCD</strong> ）。<br> A.虚拟专用网<br> B.双协议栈<br> C.隧道技术<br> D.网络地址转换<br> E.访问控制列表</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6——4.6.3** <strong>从</strong> <strong>IPv4</strong> <strong>向</strong> <strong>IPv6</strong> <strong>过渡**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>4．下列关于地址转换的描述，正确的是（ <strong>AD</strong>）。</p>
+<p>A.地址转换解决了因特网地址短缺所面临的问题<br> B.地址转换实现了对用户透明的网络外部地址的分配<br> C.使用地址转换后，对 IP 数据报加长、快速转发等不会造成影响<br> D.地址转换对内部主机提供了一定的隐私<br> E.地址转换使得网络调试变得更加简单了</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.2</strong> <strong>网络地址转**</strong><br>** <strong>换</strong> <strong>NAT<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p><strong>判断题</strong></p>
+<p>1．默认路由是在路由表中没有找到明确的目的网络时所选择的路由。（√ ）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．使用 ping 命令可以检测网络的连通性。（ √）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.2 ICMP</strong> <strong>的应用举例**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>3．使用 NAT 技术可以将私用的本地 IP 地址转换为合法的全球 IP 地址。（√ ）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.2</strong> <strong>网络地址转**</strong><br>** <strong>换</strong> <strong>NAT<br>** <strong>难度：易</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>4．默认路由是预先设定的最短路径。（× ）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>5．高速缓存中的 ARP 表保存了主机 IP 地址与物理地址的映射关系。（√ ）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>6．IPv6 地址仍然采用点分十进制记法。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6——4.6.2 IPv6** <strong>的地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>7．OSPF 是一种基于距离向量的内部网关协议。（× ）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议</strong> <strong>OSPF<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>8．网络层所提供的服务可分为面向连接的服务和无连接的服务。（ √）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.1** <strong>网络层提供的两种服务**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>9．BGP 是一种外部网关协议，用于在不同的自治系统之间进行路由选择。（√ ）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.4** <strong>外部网关协议</strong> <strong>BGP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>10．默认路由是预先设定的最短路径。（ ×）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>11.IP 数据报的校验和只校验其首部，为进一步减小校验和的工作量，IP 首部的校验和不采<br> 用 CRC 校验码。（√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>12.IGMP的两个重要应用是ping和traceroute。（ × ）</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.4**<strong>网际报文协议**</strong>ICMP——4.2.2 ICMP**<strong>的应用举例**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>13.将 IP 地址和掩码的反码进行与运算可得到主机地址。（√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>14.IGMP 的两个重要应用是 ping 和 traceroute。（× ）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际报文协议</strong> <strong>ICMP——4.2.2 ICMP</strong> <strong>的应用举例**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>15.使用子网划分网络后，路由表必须包含以下三项内容：目的网络地址、子网掩码和下一跳<br> 地址。（√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p>16.IPv6 具有更大的地址空间，但不支持无连接的传送。（× ）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6IPv6——4.6.1IPv6** <strong>的基本首部**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>17.ping 是 IGMP 的重要应用。（ ×）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP<br>** <strong>【难度】：易</strong></strong><br>** <strong>【类型】：识记</strong></p>
+<p>18.IP 数据报的校验和只校验其首部，为进一步减小校验和的工作量，IP 首部的校验和不采<br> 用 CRC 校验码。（√ ）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>19.OSPF 的更新过程收敛的快是其重要优点。（ √）</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议</strong> <strong>OSPF<br>** <strong>【难度】：易</strong></strong><br>** <strong>【类型】：识记</strong></p>
+<p><strong>填空题</strong></p>
+<p>1．IPv6 的地址长度是<strong>128</strong>位二进制位。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6——4.6.2 IPv6** <strong>的地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>2．ICMP 通常被认为是<strong>网络</strong>层的协议</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>3．IPv6 采用<strong>冒号十六进制法</strong>书写地址。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6——4.6.2 IPv6** <strong>的地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>4．IPv4 的地址长度是<strong>32</strong>位二进制位，IPv6 的地址长度是<strong>128</strong>位二进制位</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址；第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>—<br> —4.6 IPv6——4.6.2 IPv6** <strong>的地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>5．ARP 通常被认为是<strong>网络</strong>层的协议。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>6．若目的地址是 200.45.34.56，子网掩码是 255.255.240.0，则子网地址是<strong>200.45.32.0</strong>。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>7．与一个 C 类 IP 地址相对应的默认子网掩码是<strong>255.255.255.0</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：理解</strong></p>
+<p>8.在 Windows 网络操作系统中，使用（<strong>ping</strong>）命令可以测试一台远方主机的连通性，使用（<strong>netstat</strong>）命<br> 令可以显示网络状态。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.2 ICMP</strong> <strong>的应用举例**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>9.ARP 协议实现（<strong>IP</strong> <strong>地址</strong>）地址到（<strong>MAC</strong> <strong>地址</strong>）地址的映射。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>10.在 Windows 网络操作系统中，使用（ <strong>arp</strong>）命令决定一台远方主机的 MAC 地址，<br> 使用（<strong>ipconfig</strong> ）命令可以察看与主机的网络接口的相关选项和参数。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4</strong> <strong>地址解析协议</strong> <strong>ARP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>11…分组交换网络提供的两个主要服务是（<strong>数据报</strong> ）和（<strong>虚电路</strong> ）</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.1** <strong>网络层提供的两种服务**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>12．ARP 协议实现（<strong>IP</strong> ）地址解析成（<strong>MAC**</strong>（或物理、硬件）** ）地址的过程。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.3 IP</strong> <strong>地址与硬件地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>13．OSPF 是基于（ <strong>链路状态</strong>）的分布式路由选择协议，采用（<strong>迪杰斯特拉</strong> ）算法计算路由。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议</strong> <strong>OSPF<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>14．常用的分布式路由选择算法包括（ <strong>距离向量</strong>）和（ <strong>链路状态</strong>）。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>15．RIP 是基于（<strong>距离向量</strong> ）的分布式路由选择协议，距离的度量采用<br> （<strong>跳数</strong> ）。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>16．RARP 协议实现（ <strong>MAC**</strong>（或物理或硬件）地址<strong>）地址到（</strong>IP** <strong>地址</strong> ）地址的解析过程。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.3 IP</strong> <strong>地址与硬件地址**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：识记</strong></p>
+<p>17.OSPF 根据<strong>链路状态</strong>决定路由的选择，采用<strong>最短路径优先</strong>算法实现。</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议</strong> <strong>OSPF<br>** <strong>难度：易</strong></strong><br>** <strong>类型：识记</strong></p>
+<p>18.地址 192.168.86.0/28 中有<strong>14</strong>个可用的子网和<strong>14</strong>台可用的主机。</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.2** <strong>构造超网**</strong><br>** <strong>【难度】：中</strong></p>
+<p>19.ICMP的报文分为<strong>差错报告报文</strong>和<strong>询问报文</strong>两种。</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章网络层**</strong>——4.4** <strong>网际控制报文协议**</strong>ICMP——4.4.1 ICMP**<strong>的种类**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>20.网络号与主机号的32位全1的IP地址即255.255.255.255是<strong>本网广播地址或受限广播地址</strong>。</p>
+<p><strong>【知识点】：第**</strong>4**<strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议**</strong>IP——4.2.2** <strong>分类的**</strong>IP**<strong>地址**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：理解</strong></p>
+<p><strong>名词解释</strong></p>
+<p>1.RIP<br> <strong>【答案】：分布式的基于距离向量的路由选择协议</strong></p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>【难度】：中</strong></strong><br>** <strong>【类型】：理解</strong></p>
+<p>2.OSPF<br> 【<strong>答案】：**</strong>Open Shortest Path First**<strong>，开放最短通路优先</strong></p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议</strong> <strong>OSPF<br>** <strong>【难度】：易</strong></strong><br>** <strong>【类型】：识记</strong></p>
+<p>3.MPLS<br> <strong>【答案】：多协议标记交换，独立于第二和第三层协议，提供了一种方式，将</strong> <strong>IP</strong> <strong>地址映**</strong><br>** <strong>射为简单的具有固定长度的标签，用于不同的包转发和包交换技术。</strong></p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章网络层**</strong>——4.9** <strong>多协议标记交换</strong> <strong>MPLS——4.9.1 MPLS</strong> <strong>的工作原理**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p><strong>简答题</strong></p>
+<p>1．网络层向上提供的服务有哪两种？请比较各自的特点。<br> <strong>答案：**</strong><br>** <strong>网络层向上可提供两种类型的服务：面向连接的虚电路服务和无连接的数据报服务。**</strong><br>** <strong>数据报方式中，分组是独立的实体，各分组可以经由不同的路径到达终点。虚电路方式**</strong><br>** <strong>中，必须先建立一条虚电路，然后各分组沿着同一路径到达终点。虚电路的可靠通信由网络**</strong><br>** <strong>保证，数据报的可靠通信则由用户主机保证。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.1** <strong>网络层提供的两种服务**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>2．简述 RIP 路由协议的工作原理。<br> <strong>答案：**</strong><br> RIP** <strong>是一种分布式的基于距离向量的路由选择协议。**</strong>RIP** <strong>将**</strong>“**<strong>距离**</strong>”**<strong>定义为从源主机到目**</strong><br>** <strong>的主机所经过的路由器数量，也称为**</strong>“**<strong>跳数**</strong>”**<strong>。**</strong>RIP** <strong>认为好的路由就是跳数最少的路由。**</strong>RIP<br>** <strong>允许一条路由最多包含</strong> <strong>15</strong> <strong>个路由器。**</strong>RIP** <strong>仅和相邻路由器交换信息；路由器交换的信息是当**</strong><br>** <strong>前路由器所知道的全部信息，即自己的路由表；**</strong>RIP** <strong>通常每隔</strong> <strong>30</strong> <strong>秒交换一次路由信息。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>3．简述 IP 协议的基本任务。</p>
+<p><strong>答案：</strong><br> <strong>IP</strong> <strong>协议的基本任务是通过互联网传送数据报。其特点包括：主机上的网络层（**</strong>IP** <strong>层）向**</strong><br>** <strong>运输层提供服务；**</strong>IP** <strong>从源传输实体取得数据，并传送给目的主机的</strong> <strong>IP</strong> <strong>层；**</strong>IP** <strong>从不保证服务**</strong><br>** <strong>的可靠性；**</strong>IP** <strong>将高层协议数据封装为数据报，并交给下一层。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.1</strong> <strong>虚拟互联网络**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>4．请指出下列 IP 地址中的错误。<br> （1）112.56.48.76.20<br> <strong>在</strong> <strong>IP</strong> <strong>地址的点分十进制记法中，**</strong>IP** <strong>地址不能超过</strong> <strong>4</strong> <strong>个字段。</strong></p>
+<p>（2）183.256.76.253<br> <strong>在</strong> <strong>IP</strong> <strong>地址的点分十进制记法中，**</strong>IP** <strong>地址的每一个字段不能大于</strong> <strong>255</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>5．请问下列 IP 地址能否分配给主机？如果不能，请说明理由。<br> （1）131.107.256.80<br> （2）231.222.0.11<br> （3）126.1.0.0<br> （4）198.121.254.255<br> （5）202.117.34.32<br> <strong>答案：**</strong><br>** <strong>（**</strong>1**<strong>）不能分配主机，因为第三个字节</strong> <strong>256</strong> <strong>大于</strong> <strong>255**</strong>，是非法值。****<br>** <strong>（**</strong>2**<strong>）不能分配给主机，因为第一个字节</strong> <strong>231</strong> <strong>位于</strong> <strong>224</strong> <strong>和</strong> <strong>239</strong> <strong>之间，说明是组播地址。**</strong><br>** <strong>（**</strong>3**<strong>）不能分配给主机，因为以全</strong> <strong>0</strong> <strong>结尾的</strong> <strong>IP</strong> <strong>地址是网络地址。**</strong><br>** <strong>（**</strong>4**<strong>）不能分配给主机，因为以全</strong> <strong>1</strong> <strong>结尾的</strong> <strong>IP</strong> <strong>地址是广播地址。**</strong><br>** <strong>（**</strong>5**<strong>）可以分配给主机。</strong><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.2</strong> <strong>分类的</strong> <strong>IP</strong> <strong>地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>6．简述 IP 地址与 MAC 地址的区别。为什么要使用这两种不同类型的地址？<br> <strong>从层次的角度看，物理地址是数据链路层和物理层使用的地址。而</strong> <strong>IP</strong> <strong>地址是网络层及其**</strong><br>** <strong>以上各层使用的地址，是一种逻辑地址。**</strong><br>** <strong>由于全世界存在各式各样的网络，使用不同的硬件地址。要使这些异构网络能够互相通**</strong><br>** <strong>信，就必须进行非常复杂的硬件地址转换工作。由用户或用户主机来完成这项工作几乎是不**</strong><br>** <strong>可能的事。但统一的</strong> <strong>IP</strong> <strong>地址把这个复杂问题解决了。连接到</strong> <strong>Internet</strong> <strong>的主机只需拥有统一**</strong><br>** <strong>的</strong> <strong>IP</strong> <strong>地址，它们之间的通信就像连接在同一个网络上那样简单方便。当需要把</strong> <strong>IP</strong> <strong>地址转换**</strong><br>** <strong>为物理地址时，使用</strong> <strong>ARP</strong> <strong>协议即可实现。</strong><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.3 IP</strong> <strong>地址与硬件地址**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>7．为了缓解和最终解决 IPv4 地址空间耗尽的问题，IETF 提出和使用了一系列技术方案，请<br> 列举出这些技术方案。<br> <strong>答案：**</strong><br>** <strong>为了缓解和最终解决</strong> <strong>IPv4</strong> <strong>地址空间耗尽的问题，**</strong>IETF** <strong>提出和使用过的技术方案主要有：**</strong><br>** <strong>①</strong> <strong>可变长子网掩码</strong> <strong>VLSM**</strong>，将两级结构的** <strong>IP</strong> <strong>地址变换为三级结构的</strong> <strong>IP</strong> <strong>地址。**</strong><br>** <strong>②**</strong>无类域间路由** <strong>CIDR**</strong>，消除网络地址和主机地址的划分，改为网络前缀和网络后缀。****<br>** <strong>③**</strong>网络地址转换** <strong>NAT**</strong>，将** <strong>IP</strong> <strong>地址划分为本地地址和全球地址两种类型，如果本地主机要**</strong><br>** <strong>使用</strong> <strong>Internet**</strong>，可使用** <strong>NAT</strong> <strong>技术将本地</strong> <strong>IP</strong> <strong>地址转换为全球</strong> <strong>IP</strong> <strong>地址。**</strong><br>** <strong>④**</strong>IPv6** <strong>技术，将</strong> <strong>IP</strong> <strong>地址从</strong> <strong>32</strong> <strong>位扩展到</strong> <strong>128</strong> <strong>位。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网；第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.6 IPv6**<strong>；第</strong> <strong>4<br>** **章</strong> <strong>网络层**</strong>——4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>8.请简述 RIP 的三要点。</p>
+<p><strong>【答案】：**</strong><br>** <strong>（**</strong>1**<strong>）仅和相邻路由器交换信息。**</strong><br>** <strong>（**</strong>2**<strong>）交换的信息是当前本路由器所知道的全部信息，即自己的路由表。**</strong><br>** <strong>（**</strong>3**<strong>）按固定的时间间隔**</strong>(<strong>**如每隔</strong> <strong>30s)**</strong>交换路由信息。**</p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>【难度】：易</strong></strong><br>** <strong>【类型】：识记</strong></p>
+<p>9.请简述 ARP 的四种典型情况。</p>
+<p>【<strong>答案】：**</strong><br>** <strong>（**</strong>1**<strong>）发送方是主机，要把**</strong>IP** <strong>数据报发送到本网络上的另一个主机。这时发送**</strong>ARP**<strong>请求分组**</strong>(<strong><strong>在</strong></strong><br>** <strong>本网络上广播**</strong>)<strong><strong>，找到目的主机的硬件地址。</strong></strong><br>** <strong>（**</strong>2**<strong>）发送方是主机，要把</strong> <strong>IP</strong> <strong>数据报发送到另一个网络上的一个主机。这时用</strong> <strong>ARP</strong> <strong>找到本网**</strong><br>** <strong>络上的一个路由器的硬件地址，剩下的工作由这个路由器来完成。**</strong><br>** <strong>（**</strong>3**<strong>）发送方是路由器，要把</strong> <strong>IP</strong> <strong>数据报转发到本网络上的一个主机。这时用</strong> <strong>ARP</strong> <strong>找到目的主**</strong><br>** <strong>机的硬件地址。**</strong><br>** <strong>（**</strong>4**<strong>）发送方是路由器，要把</strong> <strong>IP</strong> <strong>数据报转发到另一个网络上的一个主机。这时用</strong> <strong>ARP</strong> <strong>找到本**</strong><br>** <strong>网络上的一个路由器的硬件地址，剩下的工作由这个路由器来完成</strong></p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.4 ARP</strong> <strong>地址解析协议**</strong><br>** <strong>【难度】：易**</strong><br>** <strong>【类型】：识记</strong></p>
+<p>10.请简述 OSPF 的三要点。<br> <strong>【答案】：**</strong><br>** <strong>（**</strong>1**<strong>）向本自治系统中所有路由器发送信息，使用洪泛法。**</strong><br>** <strong>（**</strong>2**<strong>）发送的信息就是与本路由器相邻的所有路由器的链路状态，但这只是路由器所知道的部**</strong><br>** <strong>分信息。**</strong><br>** <strong>（**</strong>3**<strong>）只有当链路状态发生变化时，路由器才用洪泛法向所有路由器发送此信息</strong></p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.3** <strong>内部网关协议</strong> <strong>OSPF<br>** <strong>【难度】：易</strong></strong><br>** <strong>【类型】：识记</strong></p>
+<p>11.试简单说明下列协议的作用：IP、ARP、RARP。</p>
+<p><strong>P**</strong>协议：实现网络互连，使参与互连的性能各异的网络从用户看起来好像是一个统一的网络。****<br> ARP** <strong>协议：是解决同一个局域网上的主机和路由器的</strong> <strong>IP</strong> <strong>地址和硬件地址的映射问题。**</strong><br> RARP** <strong>协议：是解决同一个局域网上的主机和路由器的硬件地址和</strong> <strong>IP</strong> <strong>地址的映射问题。</strong></p>
+<p><strong>【知识点】：第</strong> <strong>4</strong> <strong>章网络层**</strong><br>** <strong>【难度】：中**</strong><br>** <strong>【类型】：识记</strong></p>
+<p><strong>计算题</strong></p>
+<p>1．某地址块为 128.34.57.26/22。求该地址块的第一个地址和最后一个地址，以及该地址块<br> 中包含的地址个数</p>
+<p><strong>答案：**</strong><br> 128.34.57.26** <strong>对应的二进制形式是</strong> <strong>10000000 00100010 00111001 00011010**</strong>，前** <strong>22</strong> <strong>位固**</strong><br>** <strong>定不变，后</strong> <strong>10</strong> <strong>位从全</strong> <strong>0</strong> <strong>变到全</strong> <strong>1**</strong>，对应的点分十进制是** <strong>128.34.56.0**</strong>（第一个地址）～****<br> 128.34.59.255**<strong>（最后一个地址），包含的地址数共</strong> <strong>1024</strong> <strong>个。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>2．某单位分配到一个 B 类 IP 地址 129.250.0.0，该单位有 4000 台主机，分布在 16 个不同<br> 地点。若选用的子网掩码是 255.255.255.0，请给每一个地点分配一个子网号码，并计算每<br> 个地点主机号码的最小值和最大值。（注：子网号码和主机号码均从 1 开始编号）<br> <strong>答案：**</strong><br>** <strong>对</strong> <strong>B</strong> <strong>类地址设置子网掩码</strong> <strong>255.255.255.0**</strong>，说明子网位为** <strong>8</strong> <strong>位，主机位也为</strong> <strong>8</strong> <strong>位。**</strong><br> 4000** <strong>台主机均匀地分布在</strong> <strong>16</strong> <strong>个地点，则每个地点容纳的主机数为</strong> <strong>250</strong> <strong>台。**</strong><br>** <strong>子网号范围：**</strong>00000001**<strong>～**</strong>00010000**<strong>，即</strong> <strong>1**</strong>～**<strong>16<br>** <strong>主机地址范围：</strong></strong>00000001**<strong>～**</strong>11111010**<strong>，即</strong> <strong>1**</strong>～**<strong>250</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>3．一个 UDP 用户数据报的数据部分为 8192B，在数据链路层使用以太网传送。请问应划分成<br> 几个 IP 数据报？每个 IP 数据报的总长度字段和片偏移字段的值各是多少？<br> <strong>答案：**</strong><br>** <strong>包括首部，用户数据报</strong> <strong>UDP</strong> <strong>的实际长度是</strong> <strong>8200B**</strong>。根据以太网的帧格式，其数据部分最****<br>** <strong>大长度是</strong> <strong>1500B**</strong>。因此，网络层的** <strong>IP</strong> <strong>数据报的长度是</strong> <strong>1500B**</strong>，若去掉** <strong>IP</strong> <strong>首部的</strong> <strong>20B**</strong>，则** <strong>IP<br>** **数据报的数据部分最多只能有</strong> <strong>1480B**</strong>。为此，需要将该** <strong>UDP</strong> <strong>报文划分成</strong> <strong>6</strong> <strong>个</strong> <strong>IP</strong> <strong>数据报，前</strong> <strong>5<br>** **个</strong> <strong>IP</strong> <strong>数据报分片的数据部分为</strong> <strong>1480B**</strong>，最后一个** <strong>IP</strong> <strong>数据报分片的数据部分为</strong> <strong>800B**</strong>。各** <strong>IP</strong> <strong>数**</strong><br>** <strong>据报分片中的片偏移值分别是</strong> <strong>0**</strong>、**<strong>185**</strong>、**<strong>370**</strong>、**<strong>555**</strong>、**<strong>740</strong> <strong>和</strong> <strong>925**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>4．若某地址块中的某地址为 146.120.86.26/20。请问该地址块的最小地址和最大地址各是<br> 什么？该地址块有多少个地址？相当于多少个 C 类地址？<br> <strong>答案：**</strong><br>** <strong>地址</strong> <strong>146.120.86.26/20</strong> <strong>说明前</strong> <strong>20</strong> <strong>位是网络地址部分，后</strong> <strong>12</strong> <strong>位是主机地址部分。将第三**</strong><br>** <strong>字节写作二进制形式</strong> <strong>146.120.01010110.0/20**</strong>。可以得到网络地址** <strong>146.120.80.0**</strong>，广播地址****<br> 146.120.95.255**<strong>。主机地址数</strong> <strong>2<br> 12 = 4096**</strong>，相当于** <strong>16</strong> <strong>个</strong> <strong>C</strong> <strong>类地址。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>5.假设路由器 C 采用距离矢量路由选择算法，相邻路由器送来的距离矢量如下：B（5，0，8，<br> 12，6，2）、D（16，12，6，0，9，10）、E（7，6，3，9，0，4）。到 B，D 和 E 的延迟分别是<br> 6，3 和 5。计算 C 的更新路由表，给出采用的输出线路和预计延迟。<br> <strong>答案：**</strong><br>** <strong>从</strong> <strong>C</strong> <strong>结点通过</strong> <strong>B</strong> <strong>到达任意目的结点的距离为（**</strong>11**<strong>，**</strong>6**<strong>，**</strong>14**<strong>，**</strong>18**<strong>，**</strong>12**<strong>，**</strong>8**<strong>），通过</strong> <strong>D</strong> <strong>到达任意目的**</strong><br>** <strong>结点的距离为（**</strong>19**<strong>，**</strong>15**<strong>，**</strong>9**<strong>，**</strong>3**<strong>，**</strong>9**<strong>，**</strong>10**<strong>），通过</strong> <strong>E</strong> <strong>到达任意目的结点的距离为（**</strong>12**<strong>，**</strong>11**<strong>，**</strong>8**<strong>，**</strong>14**<strong>，**</strong><br> 5**<strong>，**</strong>9**<strong>）。取每个距离的最小值得到（**</strong>11**<strong>，**</strong>6**<strong>，**</strong>0**<strong>，**</strong>3**<strong>，**</strong>5**<strong>，**</strong>8**<strong>），其中</strong> <strong>C</strong> <strong>到</strong> <strong>C</strong> <strong>的最小距离取</strong> <strong>0**</strong>。对应****<br>** <strong>的输出线路分别为（**</strong>B**<strong>，**</strong>B**<strong>，**</strong>-<strong><strong>，</strong></strong>D**<strong>，**</strong>E**<strong>，**</strong>B**<strong>）。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：理解</strong></p>
+<p>6.某单位分配了一个 B 类地址，计划将内部网络分成 16 个子网，将来还要增加 12 个子网，<br> 每个子网的主机数接近 800 台，计算其可行的子网掩码方案。<br> <strong>答案：**</strong><br>** <strong>子网数可能达到</strong> <strong>28</strong> <strong>个，因此子网号至少需要</strong> <strong>5</strong> <strong>位，一个子网主机数最多达到</strong> <strong>800**</strong>，主机号至****<br>** <strong>少需要</strong> <strong>10</strong> <strong>位。**</strong>B** <strong>类地址子网号和主机号共</strong> <strong>16</strong> <strong>位，同时满足两个条件的分配方案位：**</strong>5** <strong>位子网**</strong><br>** <strong>号</strong> <strong>11</strong> <strong>位主机号，或者</strong> <strong>6</strong> <strong>位子网号</strong> <strong>10</strong> <strong>位主机号，对应的子网掩码为：**</strong>255.255.248.0** <strong>或**</strong><br> 255.255.252.0**<br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>7.网络 ID 为 154.233.96.0，子网掩码为 255.255.224.0，计算子网的 IP 地址的范围。<br> <strong>答案：</strong><br> <strong>154.233.96.1—154.233.127.254</strong><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：易**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>8.一个 ISP 已经分配了 2048 个 C 类地址的地址块，从 192.24.0.0 到 192.31.255.0。为了<br> 实现 CIDR 应该在路由表中记录什么起始地址？采用什么作为子网掩码？<br> <strong>答案：**</strong><br>** <strong>地</strong> <strong>址</strong> <strong>192.24.0.0</strong> <strong>到</strong> <strong>192.31.255.0</strong> <strong>用十进制和二进制混合书写表示为：**</strong><br> 192.00011000.00000000.00000000—192.00011111.11111111.00000000**<strong>，这</strong> <strong>2048</strong> <strong>个</strong> <strong>C</strong> <strong>类地**</strong><br>** <strong>址块中，前面</strong> <strong>13</strong> <strong>位是相同的，以相同的部分作为网络号，其他位为主机号，形成网络号为**</strong><br> 192.24.0.0** <strong>，作为汇聚路由器中路由表的一行，子网掩码取值为**</strong><br> 11111111.11111000.00000000.00000000**<strong>，即</strong> <strong>255.248.0.0**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.3** <strong>无分类编址</strong> <strong>CIDR**</strong>（构造超****<br>** <strong>网）**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>9.子网的 IP 地址范围为 61.8.0.1 到 61.15.255.254，子网掩码为多少？<br> <strong>答案：**</strong><br>** <strong>一个子网中</strong> <strong>IP</strong> <strong>地址从</strong> <strong>61.8.0.1</strong> <strong>变化到</strong> <strong>61.15.255.254**</strong>，后三个字节写成二进制即****<br> 61.00001000.00000000.00000001—61.00001111.11111111.11111110**<strong>，把不变的部分作为网**</strong><br>** <strong>络号，变化部分作为主机号，子网掩码为</strong> <strong>255.11111000. 0.0</strong> <strong>即</strong> <strong>255.248. 0.0**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>10．设网络 ID 为 190.1.48.0，子网掩码为 255.255.248.0，计算子网的主机号的范围。<br> <strong>答案：**</strong><br> 190.1.48.0**<strong>：**</strong>190.1.48.1—190.1.55.254**<br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>11．一台路由器接收到以下 IP 地址：57.6.96.0/21、57.6.104.0/21、57.6.112.0/21、<br> 57.6.120.0/21。如果所有这些地址都使用同一条输出线路，那么可以把这些地址聚合在一起<br> 吗？聚合后的地址和掩码是什么？<br> <strong>答案：**</strong><br> 57.6.01100000.0/21**<strong>、**</strong>57.6.01101000.0/21**<strong>、**</strong>57.6.01110000.0/21**<strong>、**</strong>57.6.01111000.0/21**<strong>，**</strong><br>** <strong>地址前</strong> <strong>19</strong> <strong>位相同，聚合地址为</strong> <strong>57.6.01100000.0/19**</strong>，即** <strong>57.6.96.0/19</strong><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.3** <strong>无分类编址</strong> <strong>CIDR**</strong>（构造超****<br> 12<br>** <strong>网）**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p><strong>综合题</strong></p>
+<p>1．根据给定的 IP 地址和子网掩码，填写下面的表格。<br> <img src="/posts/ef8f80d2/clip_image001.png" alt="在这里插入图片描述"></p>
+<p>答案：<br> <strong>（**</strong>1**<strong>）**</strong>28.85.245.0<br>** <strong>（**</strong>2**<strong>）**</strong>28.85.245.255<br>** <strong>（**</strong>3**<strong>）**</strong>28.85.245.1**<strong>～**</strong>28.85.245.254<br>** <strong>（**</strong>4**<strong>）**</strong>153.50.6.0<br>** <strong>（**</strong>5**<strong>）**</strong>153.50.6.127<br>** <strong>（**</strong>6**<strong>）**</strong>153.50.6.1**<strong>～**</strong>153.50.6.126<br>** <strong>（**</strong>7**<strong>）**</strong>200.12.45.96<br>** <strong>（**</strong>8**<strong>）**</strong>200.12.45.127<br>** <strong>（**</strong>9**<strong>）**</strong>200.12.45.97**<strong>～**</strong>200.12.45.126**<br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>2．一个数据报长度为 4000 字节（固定首部长度 20 字节）。现在经过一个网络传送，但此网<br> 络能够传送的最大数据长度为 1500 字节。请问应当将数据报划分为几个数据报分片？各数据<br> 报分片的数据字段长度、片偏移字段和 MF 标志应如何设置？<br> <strong>答案：**</strong><br>** <strong>数据报的总长度减去首部长度，得</strong> <strong>IP</strong> <strong>数据报的数据部分长度，**</strong><br> 4000 – 20 = 3980B<br>** <strong>划分出一个数据报分片（考虑首部有</strong> <strong>20B</strong> <strong>长），**</strong><br> 3980 - (1500-20) = 2500B<br>** <strong>剩下的数据长度大于</strong> <strong>MTU**</strong>，再划分出一个数据报分片，****<br> 2500 - (1500-20) = 1020B<br>** <strong>剩下的数据长度小于</strong> <strong>MTU**</strong>。****<br>** <strong>因此，该数据报划分为</strong> <strong>3</strong> <strong>个数据报分片，数据长度分别为</strong> <strong>1480</strong> <strong>字节、**</strong>1480** <strong>字节和</strong> <strong>1020<br>** **字节；片偏移字段的值分别是</strong> <strong>0**</strong>、**<strong>185**</strong>（**<strong>1480/8**</strong>）和** <strong>370**</strong>（**<strong>2×1480/8**</strong>）；**<strong>MF</strong> <strong>字段的值分别为</strong> <strong>1**</strong>、****<br> 1** <strong>和</strong> <strong>0**</strong>。该数据报分片情况如下图所示。**<br> <img src="/posts/ef8f80d2/clip_image002.png" alt="在这里插入图片描述"><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>3．某公司申请了一个 C 类网络地址 202.203.204.0，根据公司发展需要，内部划分成生产部、<br> 财务部、人事部和销售部 4 个部门，每个部门都有 25 台计算机。请问如何划分子网？分别写<br> 出每个子网的网络地址、子网掩码和可用 IP 地址段。<br> 答案：<br> <strong>对于该</strong> <strong>C</strong> <strong>类网络，设从主机位借</strong> <strong>n</strong> <strong>位作为子网位，则主机位为**</strong>(8-n)<strong>**位，可得关系式</strong><br> <img src="/posts/ef8f80d2/clip_image003.png" alt="在这里插入图片描述"></p>
+<p><strong>解得</strong> <strong>n = 3<br>** <strong>因此，划分后的子网前缀为</strong></strong>(24+3)=27** <strong>位，则子网掩码为</strong> <strong>255.255.255.224**</strong>，主机位长度****<br>** <strong>为</strong> <strong>5</strong> <strong>位。子网划分结果如下表所示</strong><br> <img src="/posts/ef8f80d2/clip_image004.png" alt="在这里插入图片描述"><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>4．一个 3200 位长的 TCP 报文传送到 IP 层，加上 160 位的首部后成为数据报。下面的互联网<br> 由两个局域网通过路由器连接起来。但第二个局域网所能传送的最长数据帧中的数据部分只<br> 有 1200 位。因此数据报在路由器上必须进行分片。请问第二个局域网向其上层要传送多少比<br> 特的数据？<br> <strong>答案：**</strong><br>** <strong>第二个局域网所能传送的最长数据帧中的数据部分只有</strong> <strong>1200bit**</strong>，也就是说** <strong>IP</strong> <strong>数据报的**</strong><br>** <strong>最大长度是</strong> <strong>1200bit**</strong>，故** <strong>IP</strong> <strong>数据报的数据部分（本题中是</strong> <strong>TCP</strong> <strong>报文段）最长为**</strong><br> IP** <strong>数据报的总长度</strong> <strong>- IP</strong> <strong>数据报的首部</strong> <strong>= 1200bit – 160 bit = 1040 bit<br>** **运输层交给网络层的</strong> <strong>TCP</strong> <strong>报文将划分成四个部分，即**</strong><br> 3200bit = 1040bit + 1040bit + 1040bit + 80bit**<br> <img src="/posts/ef8f80d2/clip_image005.png" alt="在这里插入图片描述"><br> <strong>每个</strong> <strong>TCP</strong> <strong>报文分组加上</strong> <strong>160bit</strong> <strong>的</strong> <strong>IP</strong> <strong>数据报首部就构成了独立的</strong> <strong>IP</strong> <strong>数据报。**</strong>4** <strong>个</strong> <strong>IP</strong> <strong>数**</strong><br>** <strong>据报长度总计为**</strong><br> (1040bit + 160bit) × 3 + (80bit + 160bit) = 3840bit<br>** <strong>也就是说第二个局域网要向上层传送</strong> <strong>3840</strong> <strong>比特的数据。</strong></p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>5．某中学打算组建局域网形式的教学机房，有计算机 80 台，24 端口的交换机 4 台，拓扑结<br> 构如下图所示。<br> <img src="/posts/ef8f80d2/clip_image006.png" alt="在这里插入图片描述"><br> 请规划设计：（1）工作组名称、计算机名称；（2）各计算机的 IP 地址、子网掩码和默认<br> 网关；（3）说明如何测试计算机之间的连通性。</p>
+<p><strong>（**</strong>1**<strong>）根据题目描述，组建的是教学机房，可将局域网的工作组命名为</strong> <strong>jiaoxuegroup**</strong>，****<br>** <strong>或使用系统默认的工作组名称</strong> <strong>workgroup**</strong>，或其它名称。**<strong>80</strong> <strong>台计算机可划分为</strong> <strong>8</strong> <strong>组（采用字**</strong><br>** <strong>母编号，分别为</strong> <strong>A**</strong>、**<strong>B**</strong>、**<strong>C**</strong>、**<strong>D**</strong>、**<strong>E**</strong>、**<strong>F**</strong>、**<strong>G**</strong>、**<strong>H**</strong>），每组** <strong>10</strong> <strong>台（使用数字序号标识，分别是</strong> <strong>01**</strong>、**<strong>02**</strong>、****<br> 03**<strong>、**</strong>04**<strong>、**</strong>05**<strong>、**</strong>06**<strong>、**</strong>07**<strong>、**</strong>08**<strong>、**</strong>09**<strong>、**</strong>10**<strong>）。这样每一台计算机的名称就由**</strong>“**<strong>字母**</strong>+<strong><strong>数字序号</strong></strong>”**<strong>构成，**</strong><br>** <strong>例如，**</strong>A01**<strong>、**</strong>H10**<strong>。**</strong><br>** <strong>（**</strong>2**<strong>）由于是局域网，故使用专用</strong> <strong>IP</strong> <strong>地址。建议采用的</strong> <strong>IP</strong> <strong>地址范围是</strong> <strong>192.168.0.1**</strong>～****<br> 192.168.0.254**<strong>，子网掩码是</strong> <strong>255.255.255.0**</strong>。其中** <strong>192.168.0.254</strong> <strong>用作默认网关，其他主机**</strong><br>** <strong>根据计算机名称分配</strong> <strong>IP</strong> <strong>地址。例如，**</strong>A01** <strong>分配</strong> <strong>IP</strong> <strong>地址</strong> <strong>192.168.0.1**</strong>，**<strong>A10</strong> <strong>分配</strong> <strong>IP</strong> <strong>地址**</strong><br> 192.168.0.10**<strong>，**</strong>B01** <strong>分配</strong> <strong>IP</strong> <strong>地址</strong> <strong>192.168.0.11**</strong>，**<strong>B10</strong> <strong>分配</strong> <strong>IP</strong> <strong>地址</strong> <strong>192.168.0.20**</strong>，依次类推。****<br>** <strong>（**</strong>3**<strong>）所有一切做好（包括连接网线、配置</strong> <strong>IP</strong> <strong>地址）后，先观测主机桌面右下角是否有**</strong><br>** <strong>红叉，如果没有，说明网络物理上已经连通。否则需要进一步检查是网线问题还是网卡问题。**</strong><br>** <strong>接下来可以使用</strong> <strong>ping</strong> <strong>命令测试主机之间逻辑上是否连通。</strong></p>
+<p><strong>知识点：第</strong> <strong>3</strong> <strong>章</strong> <strong>数据链路层**</strong>——3.4** <strong>扩展的以太网**</strong>——3.4.2** <strong>在数据链路层扩展以太网；第**</strong><br> 4** <strong>章</strong> <strong>网络层**</strong>——4.4** <strong>网际控制报文协议</strong> <strong>ICMP——4.4.2 ICMP</strong> <strong>的应用举例；第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>—<br> —4.8** <strong>虚拟专用网</strong> <strong>VPN</strong> <strong>和网络地址转换</strong> <strong>NAT——4.8.1</strong> <strong>虚拟专用网</strong> <strong>VPN<br>** <strong>难度：难</strong></strong><br>** <strong>类型：知识运用</strong></p>
+<p>6．现有一个 C 类网段 193.160.80.0，要将其划分为 6 个子网，请问如何指定子网掩码？每<br> 个子网的网络地址、广播地址分别是多少？可分配的主机地址范围是多少？</p>
+<p><strong>答案：**</strong><br>** <strong>设从主机位借</strong> <strong>n</strong> <strong>位用作子网位，则</strong> <img src="/posts/ef8f80d2/clip_image007.png" alt="在这里插入图片描述"><br> <strong>解得</strong> <strong>n = 3<br>** **因此，网络位共</strong> <strong>27</strong> <strong>位，子网掩码是</strong> <strong>255.255.255.224**</strong>。****<br>** <strong>各子网网络地址、广播地址、主机地址范围如下：**</strong><br>** <strong>①**</strong>193.160.80.32 193.160.80.63 193.160.80.33**<strong>～**</strong>193.160.80.62<br>** <strong>②**</strong>193.160.80.64 193.160.80.95 193.160.80.65**<strong>～**</strong>193.160.80.94<br>** <strong>③**</strong>193.160.80.96 193.160.80.127 193.160.80.97**<strong>～**</strong>193.160.80.126<br>** <strong>④**</strong>193.160.80.128 193.160.80.159 193.160.80.129**<strong>～**</strong>193.160.80.158<br>** <strong>⑤**</strong>193.160.80.160 193.160.80.191 193.160.80.161**<strong>～**</strong>193.160.80.190<br>** <strong>⑥**</strong>193.160.80.192 193.160.80.223 193.160.80.193**<strong>～**</strong>193.160.80.222**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>7．已知一个分组的数据部分长度为 3800 字节，网络规定分组的分片长度不能超过 1420 字节，<br> 假设 IP 分组的首部采用固定首部 20 个字节。请问原始分组需要分成几个分片？每个分片的<br> 总长度、标识字段（注：原始分组标识字段是 666）、DF 标志位（注：0 表示可分片，1 表示<br> 不可分片）、MF 标志位（注：0 表示是最后分片，1 表示后面还有分片）、分片偏移字段各是<br> 多少？</p>
+<p><strong>答案：**</strong><br> 3800÷1400 = 2.7&gt;2**<strong>，故原始分组需要分成</strong> <strong>3</strong> <strong>个分片。具体分片情况如下表所示。</strong><br> <img src="/posts/ef8f80d2/clip_image008.png" alt="在这里插入图片描述"><br> <strong>注：分组分片</strong> <strong>1</strong> <strong>距离原始分组开始位置为</strong> <strong>0**</strong>，故分片偏移字段为** <strong>0**</strong>；分组分片** <strong>2</strong> <strong>距离原始**</strong><br>** <strong>分组开始位置为</strong> <strong>1400**</strong>，分片偏移字段为** <strong>1400÷8**</strong>；分组分片** <strong>3</strong> <strong>距离原始分组开始位置为</strong> <strong>2800**</strong>，****<br>** <strong>分片偏移字段为</strong> <strong>2800÷8**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>8．某路由器所建立的路由表内容如下表所示<br> <img src="/posts/ef8f80d2/clip_image009.png" alt="在这里插入图片描述"><br> 现收到 5 个分组，其目的 IP 地址分别是：（1）128.96.39.143；（2）128.96.40.142；（3）<br> 128.96.40.15；（4）192.4.153.129；（5）192.4.153.49。请计算出它们的下一跳。</p>
+<p><strong>答案：**</strong><br>** <strong>使用</strong> <strong>IP</strong> <strong>地址与子网掩码进行与运算，可求得目的网络地址，从而根据路由表找到下一跳。**</strong><br>** <strong>（**</strong>1**<strong>）**</strong>128.96.39.143**<strong>∧**</strong>255.255.255.128 = 128.96.39.128**<strong>，故下一跳为接口</strong> <strong>1**</strong>。****<br>** <strong>（**</strong>2**<strong>）**</strong>128.96.40.142**<strong>∧**</strong>255.255.255.128 = 128.96.40.128**<strong>，路由表中没有该目的地址，**</strong><br>** <strong>故只能使用默认路由，下一跳为</strong> <strong>R4**</strong>。****<br>** <strong>（**</strong>3**<strong>）**</strong>128.96.40.15**<strong>∧**</strong>255.255.255.128 = 128.96.40.0**<strong>，故一跳为</strong> <strong>R2**</strong>。****<br>** <strong>（**</strong>4**<strong>）**</strong>192.4.153.129**<strong>∧**</strong>255.255.255.192 = 192.4.153.128**<strong>，路由表中没有该目的地址，**</strong><br>** <strong>故只能使用默认路由，下一跳为</strong> <strong>R4**</strong>。****<br>** <strong>（**</strong>5**<strong>）**</strong>192.4.153.49**<strong>∧**</strong>255.255.255.192 = 192.4.153.0**<strong>，故下一跳为</strong> <strong>R3**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.6 IP</strong> <strong>层转发分组的流程**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>9．假设 IP 数据报使用固定长度的首部（即没有选项和填充字段），其中各字段的初始数值如<br> 下表所示。<br> <img src="/posts/ef8f80d2/clip_image010.png" alt="在这里插入图片描述"><br> 请计算首部中校验和字段的数值，并填入表中。</p>
+<p><strong>答案：**</strong><br>** <strong>首部校验和规则：对首部每</strong> <strong>16</strong> <strong>位二进制位求和，进位和运算结果相加，最后求出二进制**</strong><br>** <strong>反码，即是校验和字段的值。**</strong><br>** <strong>为了便于计算，本题中可先写出各组的十六进制形式，**</strong><br> 0x4500 0x001C<br> 0x0001 0x0000<br> 0x0411 0x0000<br> 0x0A0C 0x0E05<br> 0x0C06 0x0709<br>** <strong>求和得</strong> <strong>0x744E**</strong>，对应的二进制形式为** <strong>0111010001001110**</strong>，反码得** <strong>1000101110110001**</strong>，****<br>** <strong>其十进制形式为</strong> <strong>35761**</strong>，将其填入表中，本题解毕。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>难度：难**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>10．某网络中路由器 B 的当前路由表如表 1 所示，B 收到从路由器 C 发来的路由信息如表 2 所<br> 示。请给出路由器 B 更新后的路由表。<br> 表 1 路由器 B 的当前路由：<br> <img src="/posts/ef8f80d2/clip_image011.png" alt="在这里插入图片描述"><br> 表 2 路由器 B 从路由器 C 收到的路由信息:<br> <img src="/posts/ef8f80d2/clip_image012.png" alt="在这里插入图片描述"><br> <strong>答案：路由器</strong> <strong>B</strong> <strong>更新后的路由表如下表所示**</strong>:**</p>
+<p><img src="/posts/ef8f80d2/clip_image013.png" alt="在这里插入图片描述"><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网的路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：知识运用</strong></p>
+<p>11．IP 数据报携带了 TCP 报文，其中 IP 头部长度为 20B，总长度字段内容为十六进制数 04B0，<br> TCP 头部长度为 32B。请求出 TCP 数据段中数据部分的长度。<br> <strong>答案：**</strong><br>** <strong>在</strong> <strong>IP</strong> <strong>数据报中，总长度指首部长度和数据长度之和。本题中，总长度字段内容为十六进**</strong><br>** <strong>制数</strong> <strong>04B0**</strong>，对应的十进制数是** <strong>1200**</strong>，即** <strong>IP</strong> <strong>数据报总长度为</strong> <strong>1200B**</strong>。****<br> IP** <strong>数据报总长度减去</strong> <strong>IP</strong> <strong>首部长度，得</strong> <strong>IP</strong> <strong>数据部分长度为</strong> <strong>1180B**</strong>。再减去** <strong>TCP</strong> <strong>首部长度**</strong><br>** <strong>的</strong> <strong>32B**</strong>，可得** <strong>TCP</strong> <strong>数据长度为</strong> <strong>1148B**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式；第</strong> <strong>5</strong> <strong>章</strong> <strong>运输层**</strong>—<br> —5.5 TCP** <strong>报文段的首部格式**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+<p>12．某个网络中，R1 和 R2 为相邻路由器。下面的表 1 为 R1 的原路由表，表 2 是 R1 新收到的<br> 由 R2 广播的路由信息。请给出根据距离矢量路由算法更新后的 R1 路由表。<br> 表 1 R1 的原路由表：<br> <img src="/posts/ef8f80d2/clip_image014.png" alt="在这里插入图片描述"><br> 表 2 R2 广播的路由信息:<br> <img src="/posts/ef8f80d2/clip_image015.png" alt="在这里插入图片描述"><br> <strong>答案：**</strong>R1** <strong>更新后的路由表如下**</strong>:**</p>
+<p><img src="/posts/ef8f80d2/clip_image016.png" alt="在这里插入图片描述"><br> <strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.5** <strong>互联网路由选择协议**</strong>——4.5.2** <strong>内部网关协议</strong> <strong>RIP<br>** <strong>难度：中</strong></strong><br>** <strong>类型：知识运用</strong></p>
+<p>13．计算并填写下面的表格<br> <img src="/posts/ef8f80d2/clip_image017.png" alt="在这里插入图片描述"><br> <strong>答案：**</strong><br>** <strong>（**</strong>1**<strong>）**</strong>A** <strong>类**</strong><br>** <strong>（**</strong>2**<strong>）**</strong>125.160.0.0<br>** <strong>（**</strong>3**<strong>）**</strong>125.191.255.255<br>** <strong>（**</strong>4**<strong>）**</strong>125.160.0.1<br>** <strong>（**</strong>5**<strong>）**</strong>125.191.255.254**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.3** <strong>划分子网和构造超网**</strong>——4.3.1** <strong>划分子网**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：理解</strong></p>
+<p>14.某单位有 5 个物理网络，各网络的主机数分别是 60、60、60、30、30，但该单位只申请<br> 到了一个 C 类网络 202.10.223.0。请问该如何分配 IP 地址？要求写出各个子网的网络地址、<br> 子网掩码和可用的 IP 地址范围。<br> <strong>答案：**</strong><br>** <strong>先将网络</strong> <strong>202.10.223.0</strong> <strong>划分成</strong> <strong>4</strong> <strong>个等规模的子网，每个子网</strong> <strong>60</strong> <strong>台主机，从主机位借</strong> <strong>n<br>** **位作为子网，则</strong><br> <img src="/posts/ef8f80d2/clip_image018.png" alt="在这里插入图片描述"><br> <strong>解得</strong> <strong>n=2**</strong>，也就是从原主机位借** <strong>2</strong> <strong>位作为子网，划分后的各子网网络位共</strong> <strong>26</strong> <strong>位，子网掩**</strong><br>** <strong>码是</strong> <strong>255.255.255.192**</strong>。具体分配如下**<strong>:</strong><br> <img src="/posts/ef8f80d2/clip_image019.png" alt="在这里插入图片描述"><br> <strong>按照上面的方法，再将第</strong> <strong>4</strong> <strong>个子网一分为二。**</strong>IP** <strong>地址的最终分配情况如下**</strong>:**<br> <img src="/posts/ef8f80d2/clip_image020.png" alt="在这里插入图片描述"><br> 知识点：第 4 章 网络层——4.3 划分子网和构造超网——4.3.1 划分子网<br> 难度：中<br> 类型：知识运用</p>
+<p>1.假设一个总长度为 4000 字节的 IP 数据报进入路由器，转发端口输出链路的最大传输单元<br> 为 1500 字节，请问该数据报是否需要分片，如果需要分片分成几片，写出每个 IP 数据报分<br> 片的总长度、标志和片偏移的值。（假设 IP 数据报首部长度为固定 20 字节）<br> <strong>答案：**</strong><br>** <strong>需要分片，共分</strong> <strong>3</strong> <strong>个片段。总长度字段长度分别为</strong> <strong>1500, 1500</strong> <strong>和</strong> <strong>1040</strong> <strong>字节。片偏移字段**</strong><br>** <strong>的值分别为</strong> <strong>0, 185</strong> <strong>和</strong> <strong>370**</strong>。**<strong>MF</strong> <strong>字段的值分别为</strong> <strong>1, 1</strong> <strong>和</strong> <strong>0**</strong>。**</p>
+<p><strong>知识点：第</strong> <strong>4</strong> <strong>章</strong> <strong>网络层**</strong>——4.2** <strong>网际协议</strong> <strong>IP——4.2.5 IP</strong> <strong>数据报的格式**</strong><br>** <strong>难度：中**</strong><br>** <strong>类型：知识运用</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">fejxc</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://fejxc.top/posts/ef8f80d2/">https://fejxc.top/posts/ef8f80d2/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">fejxc</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                                    <span class="chip bg-color">计算机网络期末复习</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'adPQdwOt9vYN60QrWWTaSwqq-gzGzoHsz',
+        appKey: 'rcy20AUEz7C6DK8rIqf8soKJ',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/424845d/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="ip网络实验3">
+                        
+                        <span class="card-title">ip网络实验3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ip%E7%BD%91%E7%BB%9C%E5%AE%9E%E9%AA%8C/" class="post-category">
+                                    ip网络实验
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/a9ef41eb/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="第三章-数据链路层">
+                        
+                        <span class="card-title">第三章-数据链路层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                        <span class="chip bg-color">计算机网络期末复习</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="46653054"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
+            <a href="/about" target="_blank">fejxc</a>
+            <br>
+            
+            
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/fejxc" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1031364436@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1031364436" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1031364436" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
