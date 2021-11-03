@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="数据库农用地使用权, fejxc的博客">
+    <meta name="keywords" content="省厅bi, fejxc的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>数据库农用地使用权 | fejxc的博客</title>
+    <title>省厅bi | fejxc的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -359,7 +359,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">数据库农用地使用权</h1>
+                    <h1 class="description center-align post-title">省厅bi</h1>
                 </div>
             </div>
         </div>
@@ -487,21 +487,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-04
+                    2021-09-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-04
+                    2021-09-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    57
+                    185
                 </div>
                 
 
@@ -523,16 +523,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据库农用地使用权"><a href="#数据库农用地使用权" class="headerlink" title="数据库农用地使用权"></a>数据库农用地使用权</h1><h3 id="1、农用地使用权NYDSYQ"><a href="#1、农用地使用权NYDSYQ" class="headerlink" title="1、农用地使用权NYDSYQ"></a>1、农用地使用权NYDSYQ</h3><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><img src="/posts/9b54aaf6/image-20210804090253235.png" alt="image-20210804090253235" style="zoom:80%;">
-
-<img src="/posts/9b54aaf6/image-20210804090312727.png" alt="image-20210804090312727" style="zoom:80%;">
-
-<h2 id="2、农用地使用权-单元关系NYDSYQ-DYGX"><a href="#2、农用地使用权-单元关系NYDSYQ-DYGX" class="headerlink" title="2、农用地使用权-单元关系NYDSYQ_DYGX"></a>2、农用地使用权-单元关系NYDSYQ_DYGX</h2><h3 id="结构-1"><a href="#结构-1" class="headerlink" title="结构"></a>结构</h3><img src="/posts/9b54aaf6/image-20210804090434314.png" alt="image-20210804090434314" style="zoom:80%;">
-
-<h2 id="3、农用地使用权-变化关系NYDSYQ-BHGX"><a href="#3、农用地使用权-变化关系NYDSYQ-BHGX" class="headerlink" title="3、农用地使用权-变化关系NYDSYQ_BHGX"></a>3、农用地使用权-变化关系NYDSYQ_BHGX</h2><img src="/posts/9b54aaf6/image-20210804090509793.png" alt="image-20210804090509793" style="zoom:80%;">
-
-<h2 id="3、农用地使用权-用途明细NYDSYQ-YTMX"><a href="#3、农用地使用权-用途明细NYDSYQ-YTMX" class="headerlink" title="3、农用地使用权-用途明细NYDSYQ_YTMX"></a>3、农用地使用权-用途明细NYDSYQ_YTMX</h2><img src="/posts/9b54aaf6/image-20210804090723541.png" alt="image-20210804090723541" style="zoom:80%;">
-
+                <h1 id="省厅查询量"><a href="#省厅查询量" class="headerlink" title="省厅查询量"></a>省厅查询量</h1><h2 id="1-业务量"><a href="#1-业务量" class="headerlink" title="1 业务量"></a>1 业务量</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 业务量</span>
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> 业务量 <span class="token keyword">from</span> bdcdjjg<span class="token punctuation">.</span>t_sb_dbl l <span class="token keyword">where</span> l<span class="token punctuation">.</span>qxdm <span class="token operator">like</span> <span class="token string">'3302%'</span>
+<span class="token operator">and</span> l<span class="token punctuation">.</span>dbsj<span class="token operator">=</span><span class="token string">'2021-09-04'</span></code></pre>
+<h2 id="2-配号量"><a href="#2-配号量" class="headerlink" title="2 配号量"></a>2 配号量</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 配号量 </span>
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> 配号量  <span class="token keyword">from</span> bdcdjjg<span class="token punctuation">.</span>bdcdjbh l <span class="token keyword">where</span> l<span class="token punctuation">.</span>xzqbm <span class="token operator">like</span> <span class="token string">'3301%'</span>
+<span class="token operator">and</span> l<span class="token punctuation">.</span>gxsj<span class="token operator">=</span><span class="token string">'2021-09-09'</span></code></pre>
+<h2 id="3-报省量"><a href="#3-报省量" class="headerlink" title="3 报省量"></a>3 报省量</h2><pre class=" language-sql"><code class="language-sql">
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> 报省量 <span class="token keyword">from</span> bdcdjjg<span class="token punctuation">.</span>t_sb_dbl l <span class="token keyword">where</span> l<span class="token punctuation">.</span>logbsm <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span>
+<span class="token operator">and</span> l<span class="token punctuation">.</span>logbsm<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> l<span class="token punctuation">.</span>dbsj<span class="token operator">=</span><span class="token string">'2021-09-04'</span> <span class="token operator">and</span> tszt<span class="token operator">=</span><span class="token number">1</span> <span class="token operator">and</span> l<span class="token punctuation">.</span>qxdm <span class="token operator">like</span> <span class="token string">'3302%'</span></code></pre>
+<h2 id="4-报部量"><a href="#4-报部量" class="headerlink" title="4 报部量"></a>4 报部量</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 报部量</span>
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span> 报部量 <span class="token keyword">from</span> bdcdjjg<span class="token punctuation">.</span>t_sb_dbl l <span class="token keyword">where</span> l<span class="token punctuation">.</span>bbzt<span class="token operator">=</span><span class="token number">6</span> <span class="token operator">and</span> l<span class="token punctuation">.</span>dbsj<span class="token operator">=</span><span class="token string">'2021-09-04'</span> <span class="token operator">and</span> l<span class="token punctuation">.</span>qxdm <span class="token operator">like</span> <span class="token string">'3302%'</span></code></pre>
+<h2 id="5-解析量"><a href="#5-解析量" class="headerlink" title="5 解析量"></a>5 解析量</h2><pre class=" language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 解析量</span>
+<span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">as</span>  解析量 <span class="token keyword">from</span> bdcdjjg<span class="token punctuation">.</span>t_sb_dbl l <span class="token keyword">where</span> l<span class="token punctuation">.</span>qxdm <span class="token operator">like</span> <span class="token string">'3302%'</span>
+<span class="token operator">and</span> l<span class="token punctuation">.</span>dbsj<span class="token operator">=</span><span class="token string">'2021-09-04'</span> <span class="token operator">and</span> jxzt<span class="token operator">=</span><span class="token number">1</span></code></pre>
+<h2 id="6-索引上报量"><a href="#6-索引上报量" class="headerlink" title="6 索引上报量"></a>6 索引上报量</h2><pre class=" language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> bdcdjjg<span class="token punctuation">.</span>t_ywxx l <span class="token keyword">where</span> l<span class="token punctuation">.</span>qxdm <span class="token operator">like</span> <span class="token string">'3302%'</span>
+<span class="token operator">and</span> l<span class="token punctuation">.</span>dbsj<span class="token operator">=</span><span class="token string">'2021-09-04'</span></code></pre>
 
                 
             </div>
@@ -559,7 +565,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://fejxc.top/posts/9b54aaf6/">https://fejxc.top/posts/9b54aaf6/</a>
+                    <a href="https://fejxc.top/posts/785aa831/">https://fejxc.top/posts/785aa831/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -910,13 +916,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/9ce82e8d/">
+                <a href="/posts/4b3b4cc0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="数据库登记相关表">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="区县上报登记簿省厅异常处理方案">
                         
-                        <span class="card-title">数据库登记相关表</span>
+                        <span class="card-title">区县上报登记簿省厅异常处理方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -927,7 +933,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
                         </span>
                         <span class="publish-author">
                             
@@ -947,13 +953,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ac1128a9/">
+                <a href="/posts/3d03c70/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="数据库土地使用权">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="省厅内网上报部里问题处理">
                         
-                        <span class="card-title">数据库土地使用权</span>
+                        <span class="card-title">省厅内网上报部里问题处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -964,7 +970,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                         <span class="publish-author">
                             

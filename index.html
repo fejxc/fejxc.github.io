@@ -816,28 +816,27 @@ WinSCP可以上传脚本到路由器   下方百度云链接打开可以下载
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/577792b9/">
+                    <a href="/posts/4b3b4cc0/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="tableMapSql">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="区县上报登记簿省厅异常处理方案">
                             
-                            <span class="card-title">tableMapSql</span>
+                            <span class="card-title">区县上报登记簿省厅异常处理方案</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                sql
-&lt;?xml version="1.0" encoding="utf-8" ?>
-&lt;root>
-  &lt;!--【说明1】：提取登记簿数据源配置，不依赖任何后台代码逻辑，完全靠配置去实现，配置项中格式如"{***}的代表
+                                区县上报登记簿省厅异常处理方案以温州市本级地区为例说明执行语句的时候，注意修改成正确的时间
+to_char(t.dbsj,'yyyy-mm-dd') >= '2021-01-01' 
+to_char(t.dbsj,'yyyy-mm') >=
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
                             </span>
                             <span class="publish-author">
                                 
@@ -854,29 +853,28 @@ WinSCP可以上传脚本到路由器   下方百度云链接打开可以下载
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/215e0137/">
+                    <a href="/posts/785aa831/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="tableMap">
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="省厅bi">
                             
-                            <span class="card-title">tableMap</span>
+                            <span class="card-title">省厅bi</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                table
-&lt;?xml version="1.0" encoding="utf-8" ?>
-&lt;!--接入编码映射-->
-&lt;root>
-  &lt;ywbm  ywbh="1000101"  ywmc="土地所有权首次登记"
+                                省厅查询量1 业务量-- 业务量
+select count(*) as 业务量 from bdcdjjg.t_sb_dbl l where l.qxdm like '3302%'
+and l.dbsj='2021-09-04'
+2 配号量-
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
@@ -893,29 +891,62 @@ WinSCP可以上传脚本到路由器   下方百度云链接打开可以下载
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/d7c23e61/">
+                    <a href="/posts/3d03c70/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="qlbm">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="省厅内网上报部里问题处理">
                             
-                            <span class="card-title">qlbm</span>
+                            <span class="card-title">省厅内网上报部里问题处理</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                qlbm
-&lt;?xml version="1.0" encoding="utf-8" ?>
-&lt;!--不动产权利表名和登记类型映射省厅数据包业务接入编号配置信息-->
-&lt;root>
-  &lt;item qlbm="TDSYQ
+                                省厅内网上报部里问题处理1.上报过程问题排查分析一般都是上报状态为5和上报状态为7的都属于上报部里失败的
+步骤一：先按区县(11个）分组查找对应sbzt的量（总体的看下上报情况）
+select substr(x.qxdm,1,4),l.sb
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                fejxc
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/7d27b27a/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="省厅索引表上报问题处理">
+                            
+                            <span class="card-title">省厅索引表上报问题处理</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                省厅索引表上报问题处理1.类型一数据包已接收，但索引表数据未解析到索引表1.1解决方案：前提：保证 39116  端口下 yml 文件中   ywxxInsertIfNotExists: true步骤一：查询需要处理的总量select co
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
@@ -953,112 +984,6 @@ SFBB(是否报部): 0代表不报部，1代表需要报部，2代表转移成功
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                fejxc
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/26743928/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="数据归集39006解析服务">
-                            
-                            <span class="card-title">数据归集39006解析服务</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                数据归集39006解析服务
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                fejxc
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/2566963a/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="数据上报39127服务">
-                            
-                            <span class="card-title">数据上报39127服务</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                报文上报39127supervise-transfer-bwsb1.数据包转移服务1.1先遍历xml数据包文件1.2校验数据包头部信息1.3创建数据包、数据包存储地址为YWXML\success\～1.4 开始转移数据包，路径为存储地址+x
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                fejxc
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/db65cf99/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="数据归集39006转移服务">
-                            
-                            <span class="card-title">数据归集39006转移服务</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                数据归集39006转移服务1.queryFerryGenericResponse&lt;List&gt; rst= xmlLogDataService.getFerryData();
-select tl.bsm as logbsm,tl.x
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-03
                             </span>
                             <span class="publish-author">
                                 
@@ -1122,81 +1047,6 @@ java中的sync关键字 同步锁
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/3690de57/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="温州异常处理">
-                            
-                            <span class="card-title">温州异常处理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                异常分析ß处理1.先统计应报量表：xmldb.t_sb_dbxx
---isdbcg 0未登簿或者登簿失败：699 1登簿成功：130   2除了登簿其他操作成功：6
-select to_char(xx.dbsj,'yyyy'),xx.isd
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                fejxc
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/1022e685/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="丽水异常分析处理">
-                            
-                            <span class="card-title">丽水异常分析处理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                异常分析处理1.先统计应报量表：xmldb.t_sb_dbxx
---t_sb_dbxx的数据来源与登记的SH%表
---835条应报数据
---isdbcg 0未登簿或者登簿失败：699   1登簿成功：130    2除了登簿其他操作成功：6
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                fejxc
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
                     <a href="/posts/28a5e30/">
                         <div class="card-image">
                             
@@ -1235,27 +1085,196 @@ brew install rabbitmq
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/99a0f610/">
+                    <a href="/posts/d36bd08c/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="数据上报小记录">
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="sql笔记">
                             
-                            <span class="card-title">数据上报小记录</span>
+                            <span class="card-title">sql笔记</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                数据上报小记录1.通过.net工具生成解析xml包先开启MicroSuperviseCollectionApp模块33906的服务
-select mx.jzmj,mx.zyjzmj,mx.ftjzmj,t4.* 
-from(select z
+                                sql笔记8月9号表结构
+
+
+insert into `user`(name,age,sex)
+values('suny',20,1),('hauhua',19,1),('meimei',33,0);
+
+-- 当表中主键存在数据就执行更新操
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                fejxc
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/25b8c557/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="collect模块调试步骤">
+                            
+                            <span class="card-title">collect模块调试步骤</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                collect模块调试步骤步骤1
+
+步骤2
+
+步骤3
+
+
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                fejxc
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/800ff1eb/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="frp服务端正常客户端连不上">
+                            
+                            <span class="card-title">frp服务端正常客户端连不上</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                frp服务端正常客户端连不上问题客户端报错
+
+
+解决
+
+tls_enable = true
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                fejxc
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/2fda6c00/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="数据推送项目小总结">
+                            
+                            <span class="card-title">数据推送项目小总结</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                数据推送项目小总结1.多数据源配置1.1核心配置application.yml
+gisq:
+  platform:
+    auth:
+      checkToken: false
+    web:
+      cross:
+      
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                fejxc
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/b349adba/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="mybatis-generator-gui的使用">
+                            
+                            <span class="card-title">mybatis-generator-gui的使用</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                mybatis-generator-gui的使用例子
+
+对应效果
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
                             </span>
                             <span class="publish-author">
                                 
@@ -1286,7 +1305,7 @@ from(select z
             
         </div>
         <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 8</div>
+            <div class="center-align b-text-gray">1 / 7</div>
         </div>
         <div class="col s6 m4 l4">
             
