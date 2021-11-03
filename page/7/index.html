@@ -542,12 +542,12 @@ git config --g
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
-                            <span class="chip bg-color">踩坑记录</span>
-                        </a>
-                        
                         <a href="/tags/git/">
                             <span class="chip bg-color">git</span>
+                        </a>
+                        
+                        <a href="/tags/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+                            <span class="chip bg-color">踩坑记录</span>
                         </a>
                         
                     </div>
@@ -1098,16 +1098,6 @@ root用户切换 sudo su
             
             
             
-                <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
             
             <br>
 
@@ -1281,6 +1271,14 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/"><\/script>');
+            }
+        </script>
     
 
     <!-- Baidu Analytics -->
@@ -1301,8 +1299,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
 

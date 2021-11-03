@@ -907,16 +907,6 @@ scan:当此属性设置为true时，配置文件如果发生改变，将会被�
             
             
             
-                <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
             
             <br>
 
@@ -1090,6 +1080,14 @@ $(function () {
     
 
     <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/"><\/script>');
+            }
+        </script>
     
 
     <!-- Baidu Analytics -->
@@ -1110,8 +1108,6 @@ $(function () {
     })();
 </script>
 
-    
-    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
 
