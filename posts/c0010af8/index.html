@@ -1325,28 +1325,28 @@ shiroFilterFactoryBean<span class="token punctuation">.</span><span class="token
 <h3 id="6-8-授权实现"><a href="#6-8-授权实现" class="headerlink" title="6.8 授权实现"></a>6.8 授权实现</h3><h5 id="0-页面资源授权"><a href="#0-页面资源授权" class="headerlink" title="0.页面资源授权"></a>0.页面资源授权</h5><pre class="line-numbers language-jsp"><code class="language-jsp"><%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <shiro:hasAnyRoles name="user,admin">
-        <li><a href="">用户管理</a>
+        <li><a href>用户管理</a>
             <ul>
                 <shiro:hasPermission name="user:add:*">
-                <li><a href="">添加</a></li>
+                <li><a href>添加</a></li>
                 </shiro:hasPermission>
                 <shiro:hasPermission name="user:delete:*">
-                    <li><a href="">删除</a></li>
+                    <li><a href>删除</a></li>
                 </shiro:hasPermission>
                 <shiro:hasPermission name="user:update:*">
-                    <li><a href="">修改</a></li>
+                    <li><a href>修改</a></li>
                 </shiro:hasPermission>
                 <shiro:hasPermission name="user:find:*">
-                    <li><a href="">查询</a></li>
+                    <li><a href>查询</a></li>
                 </shiro:hasPermission>
             </ul>
         </li>
         </shiro:hasAnyRoles>
         <shiro:hasRole name="admin">
-            <li><a href="">商品管理</a></li>
-            <li><a href="">订单管理</a></li>
-            <li><a href="">物流管理</a></li>
-        </shiro:hasRole><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            <li><a href>商品管理</a></li>
+            <li><a href>订单管理</a></li>
+            <li><a href>物流管理</a></li>
+        </shiro:hasRole><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></%@taglib></code></pre>
 <h5 id="1-代码方式授权"><a href="#1-代码方式授权" class="headerlink" title="1.代码方式授权"></a>1.代码方式授权</h5><pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"save"</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> String <span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"进入方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -2571,13 +2571,11 @@ redis<span class="token operator">-</span>benchmark redis<span class="token oper
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             

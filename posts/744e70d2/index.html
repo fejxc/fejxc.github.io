@@ -568,40 +568,7 @@ aaa
  accounting-scheme default
  domain default 
  domain default_admin 
- local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$
- local-user admin service-type http
-#
-firewall zone Local
- priority 15
-#
-interface GigabitEthernet0/0/0
- ip address 2.2.2.1 255.255.255.252 
-#
-interface GigabitEthernet0/0/1
- ip address 1.1.1.2 255.255.255.252 
-#
-interface GigabitEthernet0/0/2
-#
-interface NULL0
-#
-interface LoopBack0
- ip address 11.11.11.10 255.255.255.255 
-#
-ospf 1 router-id 11.11.11.10 
- area 0.0.0.0 
-  network 2.2.2.0 0.0.0.3 
- area 0.0.0.100 
-  network 1.1.1.0 0.0.0.3 
-#
-user-interface con 0
- authentication-mode password
-user-interface vty 0 4
-user-interface vty 16 20
-#
-wlan ac
-#
-return
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$ 0 1 2 4 15 16 20 local-user admin service-type http # firewall zone local priority interface gigabitethernet0 ip address 2.2.2.1 255.255.255.252 1.1.1.2 null0 loopback0 11.11.11.10 255.255.255.255 ospf router-id area 0.0.0.0 network 2.2.2.0 0.0.0.3 0.0.0.100 1.1.1.0 user-interface con authentication-mode password vty wlan ac return <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></0`8bmE3Uw}%$%$></code></pre>
 <pre class="line-numbers language-BASH"><code class="language-BASH">int lo 0
 area 0
 area 100
@@ -760,42 +727,7 @@ aaa
  accounting-scheme default
  domain default 
  domain default_admin 
- local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$
- local-user admin service-type http
-#
-firewall zone Local
- priority 15
-#
-interface GigabitEthernet0/0/0
- ip address 3.3.3.2 255.255.255.252 
-#
-interface GigabitEthernet0/0/1
- ip address 172.16.1.1 255.255.255.0 
-#
-interface GigabitEthernet0/0/2
- ip address 172.16.2.1 255.255.255.0 
-#
-interface NULL0
-#
-interface LoopBack0
- ip address 11.11.11.13 255.255.255.255 
-#
-ospf 1 router-id 11.11.11.13 
- silent-interface GigabitEthernet0/0/1
- silent-interface GigabitEthernet0/0/2
- area 0.0.0.200 
-  network 3.3.3.0 0.0.0.3 
-  network 172.16.1.0 0.0.0.255 
-  network 172.16.2.0 0.0.0.255 
-#
-user-interface con 0
- authentication-mode password
-user-interface vty 0 4
-user-interface vty 16 20
-#
-wlan ac
-#
-return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$ 0 1 2 4 15 16 20 local-user admin service-type http # firewall zone local priority interface gigabitethernet0 ip address 3.3.3.2 255.255.255.252 172.16.1.1 255.255.255.0 172.16.2.1 null0 loopback0 11.11.11.13 255.255.255.255 ospf router-id silent-interface area 0.0.0.200 network 3.3.3.0 0.0.0.3 172.16.1.0 0.0.0.255 172.16.2.0 user-interface con authentication-mode password vty wlan ac return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></0`8bmE3Uw}%$%$></code></pre>
 <img src="/posts/744e70d2/image-20210101212931868.png" alt="peer-brief" style="zoom:50%;">
 
 <img src="/posts/744e70d2/image-20210101213033630.png" alt="brief" style="zoom:50%;">
@@ -1477,13 +1409,11 @@ return<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
             
             
                 <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
                     <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
                 <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
                     <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
