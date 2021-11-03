@@ -30,7 +30,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -561,20 +562,20 @@
 <li><p>一套完全图形化的创建和管理 Vue.js 项目的用户界面。</p>
 </li>
 </ul>
-<h3 id="1-4Vue-CLI安装"><a href="#1-4Vue-CLI安装" class="headerlink" title="1.4Vue CLI安装"></a>1.4Vue CLI安装</h3><h4 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h4><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.下载nodejs</span>
+<h3 id="1-4Vue-CLI安装"><a href="#1-4Vue-CLI安装" class="headerlink" title="1.4Vue CLI安装"></a>1.4Vue CLI安装</h3><h4 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h4><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.下载nodejs</span>
 <span class="token code keyword">    http://nodejs.cn/download/</span>
 <span class="token code keyword">    windows .msi(exe)  .zip（压缩包）直接解压路径</span>
-<span class="token code keyword">    mac .pkg(安装包)自动配置  .tar.gz（压缩包)</span></code></pre>
+<span class="token code keyword">    mac .pkg(安装包)自动配置  .tar.gz（压缩包)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://i.loli.net/2020/10/27/lQuBxM9ntbTaGzP.png"></p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 2.nodejs环境配置</span>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 2.nodejs环境配置</span>
 <span class="token code keyword">    windows系统：</span>
 <span class="token code keyword">        1.计算机属性---》 高级属性 ----》 环境变量 添加如下配置：</span>
 <span class="token code keyword">            NODE_HOME = nodejs安装目录</span>
 <span class="token code keyword">            PATH = xxxx;%NODE_HOME%/bin</span>
 <span class="token code keyword">    mac系统：</span>
-<span class="token code keyword">        pkg 自动配置</span></code></pre>
+<span class="token code keyword">        pkg 自动配置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://i.loli.net/2020/10/27/7zgK4GMbOTFHlJq.png" alt="mac下pkg安装"></p>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 3.检查安装</span>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 3.检查安装</span>
 <span class="token code keyword">    node -v</span>
 
 <span class="token title important"><span class="token punctuation">#</span> 4.npm的介绍</span>
@@ -592,9 +593,9 @@
 <span class="token title important"><span class="token punctuation">#</span> 7.配置npm下载依赖的位置  (不推荐配置 配置后mac输入vue会报错)</span>
 <span class="token code keyword">    查看默认位置：npm config ls  </span>
 <span class="token code keyword">    npm config set cache /Users/sunyun/Documents/nodereps/...</span>
-<span class="token code keyword">    npm config set prefix /Users/sunyun/Documents/nodereps/...</span></code></pre>
+<span class="token code keyword">    npm config set prefix /Users/sunyun/Documents/nodereps/...</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://i.loli.net/2020/10/27/CKLpm31hOYTUXM7.png"></p>
-<h4 id="2-安装脚手架"><a href="#2-安装脚手架" class="headerlink" title="2.安装脚手架"></a>2.安装脚手架</h4><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 0.删除旧的版本的脚手架</span>
+<h4 id="2-安装脚手架"><a href="#2-安装脚手架" class="headerlink" title="2.安装脚手架"></a>2.安装脚手架</h4><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 0.删除旧的版本的脚手架</span>
 <span class="token code keyword">    npm uninstall -g @vue/cli  //3版本</span>
 <span class="token code keyword">    num uninstall -g vue-cli //2版本</span>
 <span class="token title important"><span class="token punctuation">#</span> 1.Vue CLI的安装</span>
@@ -614,8 +615,8 @@ npm WARN deprecated har-validator@5.1.5: this
 <span class="token list punctuation">+</span> vue-cli@2.9.6
 updated 1 package in 6.825s
 sunyun@MacBook-Pro ~ % 
-</code></pre>
-<h4 id="3-第一个Vue-CLI脚手架项目"><a href="#3-第一个Vue-CLI脚手架项目" class="headerlink" title="3.第一个Vue CLI脚手架项目"></a>3.第一个Vue CLI脚手架项目</h4><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.创建vue脚手架的第一个项目</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-第一个Vue-CLI脚手架项目"><a href="#3-第一个Vue-CLI脚手架项目" class="headerlink" title="3.第一个Vue CLI脚手架项目"></a>3.第一个Vue CLI脚手架项目</h4><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.创建vue脚手架的第一个项目</span>
 <span class="token code keyword">    vue init webpack hello(项目名)</span>
 <span class="token title important"><span class="token punctuation">#</span> 2.创建第一个项目</span>
 <span class="token code keyword">    sunyun@MacBook-Pro Vue_CLI % vue init webpack hello</span>
@@ -654,11 +655,11 @@ sunyun@MacBook-Pro Vue_CLI %
 <span class="token code keyword">    2.日后在使用不饿cli开发时候，不再书写html，编写的是一个组件，日后打包成vue时，cli会将vue编译成运行的html</span>
 
 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://i.loli.net/2020/10/27/XQJvBfLFRThwSrC.png" alt="运行成功界面"></p>
 <p><img src="https://i.loli.net/2020/10/27/YZ9rn3gXTh4tuM8.png" alt="vue cli项目文件结构"></p>
 <h3 id="1-5vue-CLI的第一个入门案例"><a href="#1-5vue-CLI的第一个入门案例" class="headerlink" title="1.5vue CLI的第一个入门案例"></a>1.5vue CLI的第一个入门案例</h3><p><a href="https://gitee.com/fejxc/vue-cli" target="_blank" rel="noopener">源码在码云Gitee上</a></p>
-<h2 id="2-在脚手架中安装axios"><a href="#2-在脚手架中安装axios" class="headerlink" title="2.在脚手架中安装axios"></a>2.在脚手架中安装axios</h2><h3 id="2-1安装axios"><a href="#2-1安装axios" class="headerlink" title="2.1安装axios"></a>2.1安装axios</h3><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.安装axios</span>
+<h2 id="2-在脚手架中安装axios"><a href="#2-在脚手架中安装axios" class="headerlink" title="2.在脚手架中安装axios"></a>2.在脚手架中安装axios</h2><h3 id="2-1安装axios"><a href="#2-1安装axios" class="headerlink" title="2.1安装axios"></a>2.1安装axios</h3><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.安装axios</span>
 <span class="token code keyword">    npm install axios --save-dev</span>
 
 <span class="token title important"><span class="token punctuation">#</span> 2.配置main.js中引入axios</span>
@@ -669,15 +670,15 @@ sunyun@MacBook-Pro Vue_CLI %
 <span class="token title important"><span class="token punctuation">#</span> 3.使用axios</span>
 <span class="token code keyword">    在需要发异步请求的地方： this.$http.get("url").then((res))=>{})</span>
 <span class="token code keyword">    this.$http.post("url").then((res))=>{})</span>
-</code></pre>
-<h2 id="3-Vue-CLI脚手架项目的打包和部署"><a href="#3-Vue-CLI脚手架项目的打包和部署" class="headerlink" title="3.Vue CLI脚手架项目的打包和部署"></a>3.Vue CLI脚手架项目的打包和部署</h2><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.在项目的根目录，就是有package.json文件的同级目录，执行如下命令</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-Vue-CLI脚手架项目的打包和部署"><a href="#3-Vue-CLI脚手架项目的打包和部署" class="headerlink" title="3.Vue CLI脚手架项目的打包和部署"></a>3.Vue CLI脚手架项目的打包和部署</h2><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 1.在项目的根目录，就是有package.json文件的同级目录，执行如下命令</span>
 <span class="token code keyword">    npm run build</span>
 <span class="token code keyword">    b</span>
 <span class="token code keyword">    注意：vue cli 打包的项目必须在服务器上运行，不能直接双击运行</span>
 
 <span class="token title important"><span class="token punctuation">#</span> 2.大包之后变化</span>
 <span class="token code keyword">    在打包后，项目中出现dist目录，就是vue cli 的部署目录</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>

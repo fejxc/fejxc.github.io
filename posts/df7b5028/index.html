@@ -34,7 +34,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -544,7 +545,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="1-Vue入门"><a href="#1-Vue入门" class="headerlink" title="1.Vue入门"></a>1.Vue入门</h2><h3 id="1-1下载Vuejs"><a href="#1-1下载Vuejs" class="headerlink" title="1.1下载Vuejs"></a>1.1下载Vuejs</h3><p>[<a href="https://cn.vuejs.org]">https://cn.vuejs.org]</a></p>
-<h3 id="1-2Vue入门"><a href="#1-2Vue入门" class="headerlink" title="1.2Vue入门"></a>1.2Vue入门</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<h3 id="1-2Vue入门"><a href="#1-2Vue入门" class="headerlink" title="1.2Vue入门"></a>1.2Vue入门</h3><pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
 <span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
 <span class="token operator">&lt;</span>head<span class="token operator">></span>
     <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
@@ -612,15 +613,15 @@
         <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></code></pre>
-<pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span>总结</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span>总结</span>
 <span class="token code keyword">    1.vue实例对象中的el属性： 代表Vue的作用范围  日后Vue的用作范围都可以用Vue语法</span>
 <span class="token code keyword">    2.Vue实例中的data属性： 用来给Vue实例绑定一些相关的数据，绑定的数据可以通过{{变量名}}在Vue作用范围内去取出来</span>
 <span class="token code keyword">    3.在使用{{}}取值可以书写表达式以及逻辑运算，调用相关的方法</span>
-<span class="token code keyword">    4.el属性可以书写任意的css选择器，在Vue开发时候推荐使用id选择器</span></code></pre>
-<h2 id="2-v-text和v-html"><a href="#2-v-text和v-html" class="headerlink" title="2. v-text和v-html"></a>2. v-text和v-html</h2><h3 id="2-1-v-text"><a href="#2-1-v-text" class="headerlink" title="2.1 v-text"></a>2.1 v-text</h3><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span>总结</span>
+<span class="token code keyword">    4.el属性可以书写任意的css选择器，在Vue开发时候推荐使用id选择器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-v-text和v-html"><a href="#2-v-text和v-html" class="headerlink" title="2. v-text和v-html"></a>2. v-text和v-html</h2><h3 id="2-1-v-text"><a href="#2-1-v-text" class="headerlink" title="2.1 v-text"></a>2.1 v-text</h3><pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span>总结</span>
 1.使用v-text取值会覆盖标签中原有的数据，使用{{}}则不会覆盖
-2.使用v-text可以避免在网络环境差的情况下出现插值闪烁</code></pre>
+2.使用v-text可以避免在网络环境差的情况下出现插值闪烁<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-2-v-html"><a href="#2-2-v-html" class="headerlink" title="2.2 v-html"></a>2.2 v-html</h3><pre><code></code></pre>
 
                 

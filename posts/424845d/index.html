@@ -47,7 +47,8 @@ n">
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 
@@ -563,7 +564,7 @@ n">
 <img src="/posts/424845d/image-20201226213654340.png" alt="image-20201226213654340" style="zoom:33%;">
 
 <h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><p>实现pc1、pc2、pc3之间互相ping通对方</p>
-<h2 id="实验代码参考"><a href="#实验代码参考" class="headerlink" title="实验代码参考"></a>实验代码参考</h2><h3 id="LSW1："><a href="#LSW1：" class="headerlink" title="LSW1："></a>LSW1：</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
+<h2 id="实验代码参考"><a href="#实验代码参考" class="headerlink" title="实验代码参考"></a>实验代码参考</h2><h3 id="LSW1："><a href="#LSW1：" class="headerlink" title="LSW1："></a>LSW1：</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#</span>
 sysname Huawei
 <span class="token comment" spellcheck="true">#</span>
 vlan batch 100 200
@@ -603,9 +604,9 @@ interface Ethernet0/0/3
  port link-type access
  port default vlan 200
 <span class="token comment" spellcheck="true">#</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>注意：配置e0/0/1的接口的时候</p>
-<pre class=" language-bash"><code class="language-bash">int e0/0/1.100
+<pre class="line-numbers language-bash"><code class="language-bash">int e0/0/1.100
 ip add 192.168.100.1 24
 dotp1 termination vid 100
 arp broadcast <span class="token function">enable</span>
@@ -614,8 +615,8 @@ int e0/0/1.200
 ip add 192.168.200.1 24
 dotp1 termination vid 200
 arp broadcast <span class="token function">enable</span>
-</code></pre>
-<h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="AR1"><a href="#AR1" class="headerlink" title="AR1:"></a>AR1:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  snmp-agent local-engineid 800007DB03000000000000
  snmp-agent 
@@ -670,8 +671,8 @@ user-interface vty 16 20
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
 <span class="token keyword">return</span>
-</code></pre>
-<pre class=" language-bash"><code class="language-bash">Route Flags: R - relay, D - download to fib
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">Route Flags: R - relay, D - download to fib
 ------------------------------------------------------------------------------
 Routing Tables: Public
          Destinations <span class="token keyword">:</span> 17       Routes <span class="token keyword">:</span> 17       
@@ -708,8 +709,8 @@ Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
 192.168.200.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet
 0/0/1.200
 255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
-</code></pre>
-<h3 id="AR4"><a href="#AR4" class="headerlink" title="AR4:"></a>AR4:</h3><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="AR4"><a href="#AR4" class="headerlink" title="AR4:"></a>AR4:</h3><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">[</span>V200R003C00<span class="token punctuation">]</span>
 <span class="token comment" spellcheck="true">#</span>
  snmp-agent local-engineid 800007DB03000000000000
  snmp-agent 
@@ -755,8 +756,8 @@ user-interface vty 16 20
 <span class="token comment" spellcheck="true">#</span>
 wlan ac
 <span class="token comment" spellcheck="true">#</span>
-<span class="token keyword">return</span></code></pre>
-<pre class=" language-bash"><code class="language-bash">Route Flags: R - relay, D - download to fib
+<span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">Route Flags: R - relay, D - download to fib
 ------------------------------------------------------------------------------
 Routing Tables: Public
          Destinations <span class="token keyword">:</span> 15       Routes <span class="token keyword">:</span> 15       
@@ -789,7 +790,7 @@ Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
   192.168.200.0/24  Static  60   0          RD   1.1.1.1         GigabitEthernet
 0/0/0
 255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="实验效果："><a href="#实验效果：" class="headerlink" title="实验效果："></a>实验效果：</h2><p><img src="/posts/424845d/image-20201226214805417.png" alt="image-20201226214805417" style="zoom:50%;"><img src="/posts/424845d/%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E5%92%8C%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%5Cimage-20201226214845539.png" alt="image-20201226214845539"><img src="/posts/424845d/image-20201226214805417.png" alt="image-20201226214805417" style="zoom:50%;"><img src="/posts/424845d/%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E5%92%8C%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%5Cimage-20201226214845539.png" alt="image-20201226214845539"></p>
 <p><img src="/posts/424845d/image-20201226214845539.png" alt="image-20201226214845539" style="zoom:50%;"><img src="/posts/424845d/image-20201226214935018.png" alt="image-20201226214935018" style="zoom:50%;"></p>
 
