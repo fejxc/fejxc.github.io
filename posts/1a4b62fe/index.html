@@ -5,7 +5,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="设计模式之单例模式, fejxc的博客">
-    <meta name="description" content="设计模式之单例模式 | fejxc的博客">
+    <meta name="description" content="设计模式之单例模式1package sjms.dlms;
+
+/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午10:41
+ * @Description: 饿汉单例模式（静态常量）
+ */
+
+/**
+ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -514,14 +523,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -536,7 +545,287 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="设计模式之单例模式"><a href="#设计模式之单例模式" class="headerlink" title="设计模式之单例模式"></a>设计模式之单例模式</h1><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午10:41
+ * @Description: 饿汉单例模式（静态常量）
+ */</span>
+
+<span class="token comment" spellcheck="true">/**
+ *  优点：类加载的时候就完成类的实例化，没有线程同步的问题，实现比较简单
+ *
+ *  缺点：没有达到懒加载的效果，如果从始至终没用过，就有点浪费内存
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test01</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singer singer1 <span class="token operator">=</span> Singer<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Singer singer2 <span class="token operator">=</span> Singer<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1 <span class="token operator">==</span> singer2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer2<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singer</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//1.私有化构造方法</span>
+    <span class="token keyword">private</span> <span class="token function">Singer</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//2.构造内部创建对象实例</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">static</span> Singer INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//3.静态公有的获得实例方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singer <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午10:52
+ * @Description: 单例模式 饿汉（静态代码块）应用实例
+ */</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 优点：简单，不存在线程同步问题
+ * 缺点：可能浪费内存空间
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singer02 singer1 <span class="token operator">=</span> Singer02<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Singer02 singer2 <span class="token operator">=</span> Singer02<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1 <span class="token operator">==</span> singer2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer2<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singer02</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token function">Singer02</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singer02 INSTANCE<span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singer02</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singer02 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午11:00
+ * @Description: 懒汉（线程不安全的写法）
+ */</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 优点： 实现类懒加载效果，是能在单线程。
+ * 缺点：执行获得实例的时候，如果一个线程进去了还没创建，这时候另一个也近来了，就会创建两个实例，破坏了单例模式
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singer03 singer1 <span class="token operator">=</span> Singer03<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Singer03 singer2 <span class="token operator">=</span> Singer03<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1 <span class="token operator">==</span> singer2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer2<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singer03</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singer03 instance<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Singer03</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//提供一个静态创建方法，当使用类实例的时候创建</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singer03 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singer03</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午11:05
+ * @Description: 懒汉（线程安全，同步方法）
+ */</span>
+
+<span class="token comment" spellcheck="true">/**
+ * 优点：解决了线程不安全
+ *
+ * 缺点：方法进行同步的话效率低
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test04</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singer04 singer1 <span class="token operator">=</span> Singer04<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Singer04 singer2 <span class="token operator">=</span> Singer04<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1 <span class="token operator">==</span> singer2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer2<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singer04</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singer04 instance<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Singer04</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * synchronized 在静态方法和成员方法上的区别？
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> Singer04 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singer04</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午11:10
+ * @Description: 懒汉（线程安全，同步代码块）
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test05</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">class</span> <span class="token class-name">Singer05</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singer05 instance<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Singer05</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 不能保证线程安全。不推荐使用
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singer05 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>Singer05<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singer05</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午11:14
+ * @Description: 推荐使用 实现懒懒加载 线程安全问题，保证效率
+ *  两次检查，实例化只执行一次，延迟加载也完成懒
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test06</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singer06 singer1 <span class="token operator">=</span> Singer06<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Singer06 singer2 <span class="token operator">=</span> Singer06<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1 <span class="token operator">==</span> singer2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer2<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singer06</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">// volatile 防止指令重排</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">volatile</span> Singer06 instance<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Singer06</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singer06 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>Singer06<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singer06</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午11:25
+ * @Description: 静态内部类创建单例  推荐使用
+ * 分析：
+ * 在类加载的时候，静态内部类是不会加载的，这样依赖实现类懒加载，节省了内存空间
+ * 调用创建实例的方法也是线程安全的
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test07</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singer07 singer1 <span class="token operator">=</span> Singer07<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Singer07 singer2 <span class="token operator">=</span> Singer07<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1 <span class="token operator">==</span> singer2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer2<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Singer07</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token function">Singer07</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//写一个静态内部类  final会进行内部优化</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">SingerInstance</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Singer07 INSTANCE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singer07</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//静态公有方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singer07 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> SingerInstance<span class="token punctuation">.</span>INSTANCE<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">package</span> sjms<span class="token punctuation">.</span>dlms<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/**
+ * @Author: suny
+ * @Date: 2021/11/05 下午11:32
+ * @Description: 枚举类实现单例  枚举JDK1.5增加
+ * 优点： 避免多线程嗯题，防止反序列化重写创建对象问题
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test08</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Singer09 singer <span class="token operator">=</span> Singer09<span class="token punctuation">.</span>INSTANCE<span class="token punctuation">;</span>
+        Singer09 singer1 <span class="token operator">=</span> Singer09<span class="token punctuation">.</span>INSTANCE<span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1 <span class="token operator">==</span> singer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>singer1<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 枚举的每个属性都是一个对象</span>
+<span class="token keyword">enum</span> Singer09<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//属性</span>
+    INSTANCE<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello SunY!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
