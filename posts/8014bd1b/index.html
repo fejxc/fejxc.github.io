@@ -499,7 +499,7 @@ data_length 返回的字节大小
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-05
+                    2021-11-06
                 </div>
                 
 
@@ -541,7 +541,8 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 <span class="token keyword">where</span> table_schema <span class="token operator">=</span> <span class="token string">'bdcdjjg'</span>
 <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>data_length<span class="token punctuation">)</span>
 <span class="token keyword">DESC</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="0-2保留索引参考标准（参考于温州智治库）"><a href="#0-2保留索引参考标准（参考于温州智治库）" class="headerlink" title="0.2保留索引参考标准（参考于温州智治库）"></a>0.2保留索引参考标准（参考于温州智治库）</h3><img src="/posts/8014bd1b/image-20211105191259403.png" alt="image-20211105191259403" style="zoom:80%;">
+<h3 id="0-2保留索引参考标准（参考于温州智治库）"><a href="#0-2保留索引参考标准（参考于温州智治库）" class="headerlink" title="0.2保留索引参考标准（参考于温州智治库）"></a>0.2保留索引参考标准（参考于温州智治库）</h3><p>登簿时间DBSJ</p>
+<img src="/posts/8014bd1b/image-20211105191259403.png" alt="image-20211105191259403" style="zoom:80%;">
 
 <img src="/posts/8014bd1b/image-20211105191332879.png" alt="image-20211105191332879" style="zoom:50%;">
 
@@ -559,7 +560,31 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 <h3 id="0-4优化表结构-腾出更多的存储空间"><a href="#0-4优化表结构-腾出更多的存储空间" class="headerlink" title="0.4优化表结构(腾出更多的存储空间)"></a>0.4优化表结构(腾出更多的存储空间)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">OPTIMIZE</span> <span class="token keyword">TABLE</span> <span class="token keyword">ON</span> <span class="token string">'T_YWXX'</span><span class="token punctuation">;</span>
 <span class="token keyword">OPTIMIZE</span> <span class="token keyword">TABLE</span> <span class="token keyword">ON</span> <span class="token string">'T_YWDYXX'</span><span class="token punctuation">;</span>
 <span class="token keyword">OPTIMIZE</span> <span class="token keyword">TABLE</span> <span class="token keyword">ON</span> <span class="token string">'T_YWQLRXX'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/8014bd1b/image-20211106094521538.png" alt="image-20211106094521538" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106094813594.png" alt="image-20211106094813594" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106094905203.png" alt="image-20211106094905203" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106105328815.png" alt="image-20211106105328815" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106105354066.png" alt="image-20211106105354066" style="zoom:50%;">
+
 <h3 id="0-5查看表的数据占有存储和索引占有存储"><a href="#0-5查看表的数据占有存储和索引占有存储" class="headerlink" title="0.5查看表的数据占有存储和索引占有存储"></a>0.5查看表的数据占有存储和索引占有存储</h3><h1 id="执行方案1："><a href="#执行方案1：" class="headerlink" title="执行方案1："></a>执行方案1：</h1><p>在删除完多余索引，优化表结构后，进行添加字段耗时，删除字段耗时，修改字段耗时测试</p>
+<img src="/posts/8014bd1b/image-20211106101237282.png" alt="image-20211106101237282" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106101635658.png" alt="image-20211106101635658" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106102101276.png" alt="image-20211106102101276" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106103321868.png" alt="image-20211106103321868" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106112647164.png" alt="image-20211106112647164" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106112702369.png" alt="image-20211106112702369" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106112718491.png" alt="image-20211106112718491" style="zoom:50%;">
+
 <h1 id="执行方案2："><a href="#执行方案2：" class="headerlink" title="执行方案2："></a>执行方案2：</h1><p>采用临时表导数据方案</p>
 <h2 id="1-处理t-ywxx表"><a href="#1-处理t-ywxx表" class="headerlink" title="1.处理t_ywxx表"></a>1.处理t_ywxx表</h2><h3 id="1-1建立t-ywxx-temp表-GXSJ字段属性已经将DATE改成DATETIME"><a href="#1-1建立t-ywxx-temp表-GXSJ字段属性已经将DATE改成DATETIME" class="headerlink" title="1.1建立t_ywxx_temp表 (GXSJ字段属性已经将DATE改成DATETIME)"></a>1.1建立t_ywxx_temp表 (GXSJ字段属性已经将DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
   <span class="token punctuation">`</span>BSM<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'标识码'</span><span class="token punctuation">,</span>
@@ -761,6 +786,8 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
  PARTITION T_YWXX_331181 VALUES IN ('331181') ENGINE = InnoDB,
  PARTITION T_YWXX_331000 VALUES IN ('331000') ENGINE = InnoDB) */</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="/posts/8014bd1b/image-20211105160722345.png" alt="image-20211105160722345" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106105551675.png" alt="image-20211106105551675" style="zoom:50%;">
 
 <h3 id="1-2-在t-ywxx-temp表中添加字段"><a href="#1-2-在t-ywxx-temp表中添加字段" class="headerlink" title="1.2 在t_ywxx_temp表中添加字段"></a>1.2 在t_ywxx_temp表中添加字段</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 本批次t_ywxx表新增字段如下：</span>
 <span class="token comment" spellcheck="true">/*以下所有字段都不确定数据来源，暂时只加数据库字段，程序不实现数据源提取*/</span>
