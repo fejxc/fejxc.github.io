@@ -673,6 +673,9 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 
 <img src="/posts/8014bd1b/image-20211106124847028.png" alt="t_ywqlrxx添加单值普通索引耗时" style="zoom:50%;">
 
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>删除索引之后，添加字段按平均一个1100s一个，添加索引按平均1100s一个统计。</p>
+<p>添加10个字段的时间是10*1100=11000s，后期添加5个索引的时间为5 * 1100 = 5500s</p>
+<p>共计 16500s = 275 min = 4.58 h</p>
 <h2 id="执行方案2："><a href="#执行方案2：" class="headerlink" title="执行方案2："></a>执行方案2：</h2><blockquote>
 <p>采用临时表导数据方案</p>
 </blockquote>
@@ -1114,6 +1117,7 @@ JZTJHYQ
 <img src="/posts/8014bd1b/image-20211106185949737.png" alt="临时表重命名后-添加索引耗时497s" style="zoom:80%;">
 
 <p>删除索引的耗时都是1秒之内</p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>2900 + 700*6 =  3606s</p>
 <h2 id="2-处理t-ywdyxx表"><a href="#2-处理t-ywdyxx表" class="headerlink" title="2.处理t_ywdyxx表"></a>2.处理t_ywdyxx表</h2><h3 id="2-1建立t-ywdyxx-temp表-GXSJ字段属性DATE改成DATETIME"><a href="#2-1建立t-ywdyxx-temp表-GXSJ字段属性DATE改成DATETIME" class="headerlink" title="2.1建立t_ywdyxx_temp表(GXSJ字段属性DATE改成DATETIME)"></a>2.1建立t_ywdyxx_temp表(GXSJ字段属性DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
   <span class="token punctuation">`</span>BSM<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'标识码'</span><span class="token punctuation">,</span>
   <span class="token punctuation">`</span>QXDM<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'区县代码'</span><span class="token punctuation">,</span>
@@ -1667,7 +1671,7 @@ qlbm<span class="token punctuation">,</span>
 ISEFFECT<span class="token punctuation">,</span>
 SLQXDM
 <span class="token keyword">from</span> t_ywqlrxx<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<h3 id><a href="#" class="headerlink" title></a></h3>
                 
             </div>
             <hr/>
