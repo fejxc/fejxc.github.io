@@ -5,12 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="省厅增加字段工作, fejxc的博客">
-    <meta name="description" content="省厅亿万级别MYSQL库增加字段工作0.前提准备工作（确保存储空间足够）8bit(位)=1Byte(字节)
-1024Byte(字节)=1KB
-1024KB=1MB
-1024MB=1GB
-data_length 返回的字节大小
-0.1查看表的">
+    <meta name="description" content="省厅亿万级别MYSQL库增加字段工作
+如果添加的字段小于4个，建议采用方案1
+如果添加的字段大于4个，建议采用方案2
+停掉所有对T_YWXX，T_YWDYXX，T_QLRXX表有影响的服务
+
+0.前提准备工作（确保存储空间足够）8bit(位">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -506,14 +506,14 @@ data_length 返回的字节大小
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7k
+                    7.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    37 分
+                    39 分
                 </div>
                 
 
@@ -528,7 +528,12 @@ data_length 返回的字节大小
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="省厅亿万级别MYSQL库增加字段工作"><a href="#省厅亿万级别MYSQL库增加字段工作" class="headerlink" title="省厅亿万级别MYSQL库增加字段工作"></a>省厅亿万级别MYSQL库增加字段工作</h1><h2 id="0-前提准备工作（确保存储空间足够）"><a href="#0-前提准备工作（确保存储空间足够）" class="headerlink" title="0.前提准备工作（确保存储空间足够）"></a>0.前提准备工作（确保存储空间足够）</h2><pre class="line-numbers language-bash"><code class="language-bash">8bit<span class="token punctuation">(</span>位<span class="token punctuation">)</span><span class="token operator">=</span>1Byte<span class="token punctuation">(</span>字节<span class="token punctuation">)</span>
+                <h1 id="省厅亿万级别MYSQL库增加字段工作"><a href="#省厅亿万级别MYSQL库增加字段工作" class="headerlink" title="省厅亿万级别MYSQL库增加字段工作"></a>省厅亿万级别MYSQL库增加字段工作</h1><blockquote>
+<p>如果添加的字段小于4个，建议采用方案1</p>
+<p>如果添加的字段大于4个，建议采用方案2</p>
+<p>停掉所有对T_YWXX，T_YWDYXX，T_QLRXX表有影响的服务</p>
+</blockquote>
+<h2 id="0-前提准备工作（确保存储空间足够）"><a href="#0-前提准备工作（确保存储空间足够）" class="headerlink" title="0.前提准备工作（确保存储空间足够）"></a>0.前提准备工作（确保存储空间足够）</h2><pre class="line-numbers language-bash"><code class="language-bash">8bit<span class="token punctuation">(</span>位<span class="token punctuation">)</span><span class="token operator">=</span>1Byte<span class="token punctuation">(</span>字节<span class="token punctuation">)</span>
 1024Byte<span class="token punctuation">(</span>字节<span class="token punctuation">)</span><span class="token operator">=</span>1KB
 1024KB<span class="token operator">=</span>1MB
 1024MB<span class="token operator">=</span>1GB
@@ -541,12 +546,41 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 <span class="token keyword">where</span> table_schema <span class="token operator">=</span> <span class="token string">'bdcdjjg'</span>
 <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> <span class="token punctuation">(</span>data_length<span class="token punctuation">)</span>
 <span class="token keyword">DESC</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>数据存储暂用量</p>
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>表</th>
+<th>数据量大小(GB)</th>
+<th>索引量(GB)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bdcdjjg</td>
+<td>t_ywdyxx</td>
+<td>40.38</td>
+<td>57.62</td>
+</tr>
+<tr>
+<td>bdcdjjg</td>
+<td>t_ywqlrxx</td>
+<td>39.18</td>
+<td>108.73</td>
+</tr>
+<tr>
+<td>bdcdjjg</td>
+<td>t_ywxx</td>
+<td>27.27</td>
+<td>27.03</td>
+</tr>
+</tbody></table>
 <h3 id="0-2保留索引参考标准（参考于温州智治库）"><a href="#0-2保留索引参考标准（参考于温州智治库）" class="headerlink" title="0.2保留索引参考标准（参考于温州智治库）"></a>0.2保留索引参考标准（参考于温州智治库）</h3><p>登簿时间DBSJ</p>
-<img src="/posts/8014bd1b/image-20211105191259403.png" alt="image-20211105191259403" style="zoom:80%;">
+<img src="/posts/8014bd1b/image-20211105191259403.png" alt="T_YWXX索引" style="zoom:80%;">
 
-<img src="/posts/8014bd1b/image-20211105191332879.png" alt="image-20211105191332879" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211105191332879.png" alt="T_YWDYXX索引" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211105191357245.png" alt="image-20211105191357245" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211105191357245.png" alt="T_YWQLRXX索引" style="zoom:50%;">
 
 <h3 id="0-3删多余索引"><a href="#0-3删多余索引" class="headerlink" title="0.3删多余索引"></a>0.3删多余索引</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 删除index索引</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> table_name <span class="token keyword">DROP</span> <span class="token keyword">INDEX</span> index_name
@@ -560,32 +594,73 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 <h3 id="0-4优化表结构-腾出更多的存储空间"><a href="#0-4优化表结构-腾出更多的存储空间" class="headerlink" title="0.4优化表结构(腾出更多的存储空间)"></a>0.4优化表结构(腾出更多的存储空间)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">OPTIMIZE</span> <span class="token keyword">TABLE</span> <span class="token keyword">ON</span> <span class="token string">'T_YWXX'</span><span class="token punctuation">;</span>
 <span class="token keyword">OPTIMIZE</span> <span class="token keyword">TABLE</span> <span class="token keyword">ON</span> <span class="token string">'T_YWDYXX'</span><span class="token punctuation">;</span>
 <span class="token keyword">OPTIMIZE</span> <span class="token keyword">TABLE</span> <span class="token keyword">ON</span> <span class="token string">'T_YWQLRXX'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<img src="/posts/8014bd1b/image-20211106094521538.png" alt="image-20211106094521538" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211106094521538.png" alt="优化T_YWXX表耗时" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106094813594.png" alt="image-20211106094813594" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211106094813594.png" alt="优化T_YWDYXX表结构耗时" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106094905203.png" alt="image-20211106094905203" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211106094905203.png" alt="优化T_YWQLRXX表结构耗时" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106105328815.png" alt="image-20211106105328815" style="zoom:50%;">
+<p>优化后的存储：</p>
+<table>
+<thead>
+<tr>
+<th>数据库</th>
+<th>表</th>
+<th>数据量大小(GB)</th>
+<th>索引量(GB)</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bdcdjjg</td>
+<td>t_ywdyxx</td>
+<td>40.78</td>
+<td>0</td>
+<td>删除索引索引</td>
+</tr>
+<tr>
+<td>bdcdjjg</td>
+<td>t_ywxx</td>
+<td>28.59</td>
+<td>7.34</td>
+<td>仅保留组合唯一索引</td>
+</tr>
+<tr>
+<td>bdcdjjg</td>
+<td>sqr</td>
+<td>15.64</td>
+<td>3.56</td>
+<td>仅保留组合唯一索引</td>
+</tr>
+</tbody></table>
+<h3 id="0-5查看表的数据占有存储和索引占有存储"><a href="#0-5查看表的数据占有存储和索引占有存储" class="headerlink" title="0.5查看表的数据占有存储和索引占有存储"></a>0.5查看表的数据占有存储和索引占有存储</h3><h1 id="执行方案1："><a href="#执行方案1：" class="headerlink" title="执行方案1："></a>执行方案1：</h1><pre class="line-numbers language-basic"><code class="language-basic">在删除完多余索引，优化表结构后，进行添加字段操作，最后将删除的索引重写添加上<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="T-YWDYXX："><a href="#T-YWDYXX：" class="headerlink" title="T_YWDYXX："></a>T_YWDYXX：</h3><p>添加字段</p>
+<img src="/posts/8014bd1b/image-20211106101237282.png" alt="T_YWDYXX添加字段耗时1221s" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106105354066.png" alt="image-20211106105354066" style="zoom:50%;">
+<p>修改字段</p>
+<img src="/posts/8014bd1b/image-20211106112702369.png" alt="T_YWXX删除字段耗时2096s" style="zoom:50%;">
 
-<h3 id="0-5查看表的数据占有存储和索引占有存储"><a href="#0-5查看表的数据占有存储和索引占有存储" class="headerlink" title="0.5查看表的数据占有存储和索引占有存储"></a>0.5查看表的数据占有存储和索引占有存储</h3><h1 id="执行方案1："><a href="#执行方案1：" class="headerlink" title="执行方案1："></a>执行方案1：</h1><p>在删除完多余索引，优化表结构后，进行添加字段耗时，删除字段耗时，修改字段耗时测试</p>
-<img src="/posts/8014bd1b/image-20211106101237282.png" alt="image-20211106101237282" style="zoom:50%;">
+<h3 id="T-YWXX："><a href="#T-YWXX：" class="headerlink" title="T_YWXX："></a>T_YWXX：</h3><p>添加字段</p>
+<img src="/posts/8014bd1b/image-20211106101635658.png" alt="T_YWXX添加字段耗时1594s" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106101635658.png" alt="image-20211106101635658" style="zoom:50%;">
+<p>删除字段</p>
+<img src="/posts/8014bd1b/image-20211106112718491.png" alt="T_YWXX删除字段耗时1485s" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106102101276.png" alt="image-20211106102101276" style="zoom:50%;">
+<p>修改字段</p>
+<img src="/posts/8014bd1b/image-20211106102101276.png" alt="T_YWXX修改字段耗时" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106103321868.png" alt="image-20211106103321868" style="zoom:50%;">
+<p>T_YWQLRXX：</p>
+<p>添加字段</p>
+<img src="/posts/8014bd1b/image-20211106103321868.png" alt="删除所有索引前提T_YWQLRXX添加字段耗时905s" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106112647164.png" alt="image-20211106112647164" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211106105328815.png" alt="删除所有索引前提T_YWQLRXX添加字段耗时1031s" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106112702369.png" alt="image-20211106112702369" style="zoom:50%;">
+<p>添加索引</p>
+<img src="/posts/8014bd1b/image-20211106112647164.png" alt="T_YWQLRXX添加组合唯一索引耗时1444s" style="zoom:50%;">
 
-<img src="/posts/8014bd1b/image-20211106112718491.png" alt="image-20211106112718491" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211106124847028.png" alt="t_ywqlrxx添加单值普通索引耗时" style="zoom:50%;">
 
-<h1 id="执行方案2："><a href="#执行方案2：" class="headerlink" title="执行方案2："></a>执行方案2：</h1><p>采用临时表导数据方案</p>
+<h1 id="执行方案2："><a href="#执行方案2：" class="headerlink" title="执行方案2："></a>执行方案2：</h1><pre class="line-numbers language-basic"><code class="language-basic">采用临时表导数据方案<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="1-处理t-ywxx表"><a href="#1-处理t-ywxx表" class="headerlink" title="1.处理t_ywxx表"></a>1.处理t_ywxx表</h2><h3 id="1-1建立t-ywxx-temp表-GXSJ字段属性已经将DATE改成DATETIME"><a href="#1-1建立t-ywxx-temp表-GXSJ字段属性已经将DATE改成DATETIME" class="headerlink" title="1.1建立t_ywxx_temp表 (GXSJ字段属性已经将DATE改成DATETIME)"></a>1.1建立t_ywxx_temp表 (GXSJ字段属性已经将DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
   <span class="token punctuation">`</span>BSM<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'标识码'</span><span class="token punctuation">,</span>
   <span class="token punctuation">`</span>QXDM<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'区县代码'</span><span class="token punctuation">,</span>
@@ -785,9 +860,7 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
  PARTITION T_YWXX_331127 VALUES IN ('331127') ENGINE = InnoDB,
  PARTITION T_YWXX_331181 VALUES IN ('331181') ENGINE = InnoDB,
  PARTITION T_YWXX_331000 VALUES IN ('331000') ENGINE = InnoDB) */</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<img src="/posts/8014bd1b/image-20211105160722345.png" alt="image-20211105160722345" style="zoom:50%;">
-
-<img src="/posts/8014bd1b/image-20211106105551675.png" alt="image-20211106105551675" style="zoom:50%;">
+<img src="/posts/8014bd1b/image-20211106124519393.png" alt="创建表耗时" style="zoom:50%;">
 
 <h3 id="1-2-在t-ywxx-temp表中添加字段"><a href="#1-2-在t-ywxx-temp表中添加字段" class="headerlink" title="1.2 在t_ywxx_temp表中添加字段"></a>1.2 在t_ywxx_temp表中添加字段</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 本批次t_ywxx表新增字段如下：</span>
 <span class="token comment" spellcheck="true">/*以下所有字段都不确定数据来源，暂时只加数据库字段，程序不实现数据源提取*/</span>
@@ -807,6 +880,10 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>FHYWQLRXXSL<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'复核业务权利人信息数量（数据复核功能）'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>FHYWXXJGZT<span class="token punctuation">`</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'复核业务信息结果状态（数据复核功能）'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>FHYWXXJG<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'复核业务信息结果（数据复核功能）'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/8014bd1b/image-20211106124614667.png" alt="临时表添加字段" style="zoom:50%;">
+
+<img src="/posts/8014bd1b/image-20211106124640018.png" alt="临时表添加备用字段" style="zoom:50%;">
+
 <h4 id="备用字段"><a href="#备用字段" class="headerlink" title="备用字段"></a>备用字段</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>VAR1<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'字符型备用字段1'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>VAR2<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'字符型备用字段2'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>VAR3<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'字符型备用字段3'</span><span class="token punctuation">;</span>
@@ -833,6 +910,8 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DECIMAL3<span class="token punctuation">`</span> <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'精准数据类型备用字段3'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DECIMAL4<span class="token punctuation">`</span> <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'精准数据类型备用字段4'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DECIMAL5<span class="token punctuation">`</span> <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'精准数据类型备用字段5'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/8014bd1b/image-20211106124733933.png" alt="image-20211106124733933" style="zoom:50%;">
+
 <h3 id="1-3-将t-ywxx的数据全部导入到t-ywxx-temp表"><a href="#1-3-将t-ywxx的数据全部导入到t-ywxx-temp表" class="headerlink" title="1.3 将t_ywxx的数据全部导入到t_ywxx_temp表"></a>1.3 将t_ywxx的数据全部导入到t_ywxx_temp表</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> t_ywxx_temp<span class="token punctuation">(</span>
 BSM<span class="token punctuation">,</span>
 QXDM<span class="token punctuation">,</span>
@@ -964,10 +1043,14 @@ DJJG<span class="token punctuation">,</span>
 JZZZFW<span class="token punctuation">,</span>
 JZTJHYQ
 <span class="token keyword">from</span> t_ywxx<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/8014bd1b/image-20211106133650207.png" alt="原表T_YWXX插入T_YWXX_TEMP临时表耗时" style="zoom:50%;">
+
 <h3 id="1-4检查t-ywxx-temp表的数据量和数据"><a href="#1-4检查t-ywxx-temp表的数据量和数据" class="headerlink" title="1.4检查t_ywxx_temp表的数据量和数据"></a>1.4检查t_ywxx_temp表的数据量和数据</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> t_ywxx<span class="token punctuation">;</span>
 <span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> t_ywxx_temp<span class="token punctuation">;</span>
 <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> t_ywxx_temp <span class="token keyword">limit</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>验证数据量是否一致，数据是否有乱码等情况</p>
+<p>t_ywxx:120502989</p>
+<p>t_ywxx_temp:120502989</p>
 <h3 id="1-5给t-ywxx-temp添加索引"><a href="#1-5给t-ywxx-temp添加索引" class="headerlink" title="1.5给t_ywxx_temp添加索引"></a>1.5给t_ywxx_temp添加索引</h3><p>参考语法</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token number">1</span><span class="token punctuation">.</span>添加<span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">(</span>主键索引<span class="token punctuation">)</span>
 <span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>table_name<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span><span class="token punctuation">`</span><span class="token keyword">column</span><span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -985,8 +1068,18 @@ JZTJHYQ
 <span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>table_name<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> index_name<span class="token punctuation">(</span><span class="token punctuation">`</span>column1<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>column2<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>column3<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>执行语句</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">unique</span> <span class="token keyword">index</span> INDEX_T_YWXX_JX<span class="token punctuation">(</span><span class="token punctuation">`</span>QXDM<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>FWQBM<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>YWH<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>DJBSM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="1-6-bsm自动属性改成自增"><a href="#1-6-bsm自动属性改成自增" class="headerlink" title="1.6 bsm自动属性改成自增"></a>1.6 bsm自动属性改成自增</h3><h3 id="1-7重命名表t-ywxx为t-ywxx-bak"><a href="#1-7重命名表t-ywxx为t-ywxx-bak" class="headerlink" title="1.7重命名表t_ywxx为t_ywxx_bak"></a>1.7重命名表t_ywxx为t_ywxx_bak</h3><h3 id="1-8重命名表t-ywxx-tmep为t-ywxx"><a href="#1-8重命名表t-ywxx-tmep为t-ywxx" class="headerlink" title="1.8重命名表t_ywxx_tmep为t_ywxx"></a>1.8重命名表t_ywxx_tmep为t_ywxx</h3><h2 id="2-处理t-ywdyxx表"><a href="#2-处理t-ywdyxx表" class="headerlink" title="2.处理t_ywdyxx表"></a>2.处理t_ywdyxx表</h2><h3 id="2-1建立t-ywdyxx-temp表-GXSJ字段属性DATE改成DATETIME"><a href="#2-1建立t-ywdyxx-temp表-GXSJ字段属性DATE改成DATETIME" class="headerlink" title="2.1建立t_ywdyxx_temp表(GXSJ字段属性DATE改成DATETIME)"></a>2.1建立t_ywdyxx_temp表(GXSJ字段属性DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWXX_QSZT<span class="token punctuation">(</span><span class="token punctuation">`</span>QSZT<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWXX_QLBM<span class="token punctuation">(</span><span class="token punctuation">`</span>QLBM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWXX_DJBSM<span class="token punctuation">(</span><span class="token punctuation">`</span>DJBSM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/8014bd1b/image-20211106150841870.png" alt="临时表添加索引耗时" style="zoom:50%;">
+
+<h3 id="1-6-bsm自动属性改成自增"><a href="#1-6-bsm自动属性改成自增" class="headerlink" title="1.6 bsm自动属性改成自增"></a>1.6 bsm自动属性改成自增</h3><img src="/posts/8014bd1b/image-20211106151247504.png" alt="image-20211106151247504" style="zoom:80%;">
+
+<p>耗时监测</p>
+<img src="/posts/8014bd1b/image-20211106151732924.png" alt="将BSM自动改成自动递增的内部操作" style="zoom:80%;">
+
+<p><a href="http://www.04007.cn/article/402.html" target="_blank" rel="noopener">http://www.04007.cn/article/402.html</a></p>
+<h3 id="1-7重命名表t-ywxx为t-ywxx-bak"><a href="#1-7重命名表t-ywxx为t-ywxx-bak" class="headerlink" title="1.7重命名表t_ywxx为t_ywxx_bak"></a>1.7重命名表t_ywxx为t_ywxx_bak</h3><h3 id="1-8重命名表t-ywxx-tmep为t-ywxx"><a href="#1-8重命名表t-ywxx-tmep为t-ywxx" class="headerlink" title="1.8重命名表t_ywxx_tmep为t_ywxx"></a>1.8重命名表t_ywxx_tmep为t_ywxx</h3><h2 id="2-处理t-ywdyxx表"><a href="#2-处理t-ywdyxx表" class="headerlink" title="2.处理t_ywdyxx表"></a>2.处理t_ywdyxx表</h2><h3 id="2-1建立t-ywdyxx-temp表-GXSJ字段属性DATE改成DATETIME"><a href="#2-1建立t-ywdyxx-temp表-GXSJ字段属性DATE改成DATETIME" class="headerlink" title="2.1建立t_ywdyxx_temp表(GXSJ字段属性DATE改成DATETIME)"></a>2.1建立t_ywdyxx_temp表(GXSJ字段属性DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
   <span class="token punctuation">`</span>BSM<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'标识码'</span><span class="token punctuation">,</span>
   <span class="token punctuation">`</span>QXDM<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'区县代码'</span><span class="token punctuation">,</span>
   <span class="token punctuation">`</span>FWQBM<span class="token punctuation">`</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'服务器编码'</span><span class="token punctuation">,</span>
@@ -1186,6 +1279,8 @@ JZTJHYQ
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DJDB<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'宗地等级或宗海等别'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DYSX<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'抵押顺序'</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/8014bd1b/image-20211106124158635.png" alt="临时表添加字段" style="zoom:50%;">
+
 <h4 id="备用字段-1"><a href="#备用字段-1" class="headerlink" title="备用字段"></a>备用字段</h4><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>VAR1<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'字符型备用字段1'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>VAR2<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'字符型备用字段2'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>VAR3<span class="token punctuation">`</span> <span class="token keyword">VARCHAR</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'字符型备用字段3'</span><span class="token punctuation">;</span>
@@ -1203,6 +1298,8 @@ JZTJHYQ
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DATE3<span class="token punctuation">`</span> <span class="token keyword">DATETIME</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'日期备用字段3'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DATE4<span class="token punctuation">`</span> <span class="token keyword">DATETIME</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'日期备用字段4'</span><span class="token punctuation">;</span>
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>T_YWDYXX_TEMP<span class="token punctuation">`</span> <span class="token keyword">ADD</span> <span class="token punctuation">`</span>DATE5<span class="token punctuation">`</span> <span class="token keyword">DATETIME</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'日期备用字段5'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/posts/8014bd1b/image-20211106124240931.png" alt="临时表添加备用字段" style="zoom:50%;">
+
 <h3 id="2-3将t-ywdyxx的数据全部导入到t-ywdyxx-temp表"><a href="#2-3将t-ywdyxx的数据全部导入到t-ywdyxx-temp表" class="headerlink" title="2.3将t_ywdyxx的数据全部导入到t_ywdyxx_temp表"></a>2.3将t_ywdyxx的数据全部导入到t_ywdyxx_temp表</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">insert</span> <span class="token keyword">into</span> t_ywdyxx_temp<span class="token punctuation">(</span>
 BSM<span class="token punctuation">,</span>
 QXDM<span class="token punctuation">,</span>
@@ -1286,7 +1383,20 @@ GHYTMC<span class="token punctuation">,</span>
 GHYT<span class="token punctuation">,</span>
 SFTDDZ
 <span class="token keyword">from</span> t_ywdyxx<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-处理t-ywqlrxx表"><a href="#3-处理t-ywqlrxx表" class="headerlink" title="3.处理t_ywqlrxx表"></a>3.处理t_ywqlrxx表</h2><h3 id="3-1建立t-ywqlrxx-temp表-GXSJ字段属性DATE改成DATETIME"><a href="#3-1建立t-ywqlrxx-temp表-GXSJ字段属性DATE改成DATETIME" class="headerlink" title="3.1建立t_ywqlrxx_temp表(GXSJ字段属性DATE改成DATETIME)"></a>3.1建立t_ywqlrxx_temp表(GXSJ字段属性DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywqlrxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
+<img src="/posts/8014bd1b/image-20211106132532239.png" alt="原表T_YWDYXX插入T_YWDYXX_TEMP临时表耗时" style="zoom:50%;">
+
+<h3 id="2-4-检查t-ywdyxx表的数量和数据"><a href="#2-4-检查t-ywdyxx表的数量和数据" class="headerlink" title="2.4 检查t_ywdyxx表的数量和数据"></a>2.4 检查t_ywdyxx表的数量和数据</h3><p>t_ywdyxx:137730898</p>
+<p>t_ywdyxx_temp:137730898</p>
+<h3 id="2-5添加索引"><a href="#2-5添加索引" class="headerlink" title="2.5添加索引"></a>2.5添加索引</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">unique</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_JX<span class="token punctuation">(</span><span class="token punctuation">`</span>QXDM<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>FWQBM<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>YWH<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>DJBSM<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>DJDYBSM<span class="token punctuation">`</span><span class="token punctuation">,</span><span class="token punctuation">`</span>QTDJBSM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_BDCDYH<span class="token punctuation">(</span><span class="token punctuation">`</span>BDCDYH<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_BDCZL<span class="token punctuation">(</span><span class="token punctuation">`</span>OTLCOL_QIHJS<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_ZDZHBSM<span class="token punctuation">(</span><span class="token punctuation">`</span>ZDZHBSM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_ZDZHQLBSM<span class="token punctuation">(</span><span class="token punctuation">`</span>ZDZHQLBSM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_QLBM<span class="token punctuation">(</span><span class="token punctuation">`</span>QLBM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_QSZT<span class="token punctuation">(</span><span class="token punctuation">`</span>QSZT<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_DJBSM<span class="token punctuation">(</span><span class="token punctuation">`</span>DJBSM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> <span class="token keyword">table</span> <span class="token punctuation">`</span>t_ywdyxx_temp<span class="token punctuation">`</span> <span class="token keyword">add</span> <span class="token keyword">index</span> INDEX_T_YWDYXX_DJDYBSM<span class="token punctuation">(</span><span class="token punctuation">`</span>DJDYBSM<span class="token punctuation">`</span><span class="token punctuation">)</span><span class="token punctuation">;</span>å<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-处理t-ywqlrxx表-添加字段比较少，采用方案1"><a href="#3-处理t-ywqlrxx表-添加字段比较少，采用方案1" class="headerlink" title="3.处理t_ywqlrxx表(添加字段比较少，采用方案1)"></a>3.处理t_ywqlrxx表(添加字段比较少，采用方案1)</h2><h3 id="3-1建立t-ywqlrxx-temp表-GXSJ字段属性DATE改成DATETIME"><a href="#3-1建立t-ywqlrxx-temp表-GXSJ字段属性DATE改成DATETIME" class="headerlink" title="3.1建立t_ywqlrxx_temp表(GXSJ字段属性DATE改成DATETIME)"></a>3.1建立t_ywqlrxx_temp表(GXSJ字段属性DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywqlrxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
   <span class="token punctuation">`</span>BSM<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">COMMENT</span> <span class="token string">'标识码'</span><span class="token punctuation">,</span>
   <span class="token punctuation">`</span>QXDM<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'区县代码'</span><span class="token punctuation">,</span>
   <span class="token punctuation">`</span>YWH<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'业务号'</span><span class="token punctuation">,</span>
