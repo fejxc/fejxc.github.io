@@ -633,7 +633,9 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 <td>仅保留组合唯一索引</td>
 </tr>
 </tbody></table>
-<h3 id="0-5查看表的数据占有存储和索引占有存储"><a href="#0-5查看表的数据占有存储和索引占有存储" class="headerlink" title="0.5查看表的数据占有存储和索引占有存储"></a>0.5查看表的数据占有存储和索引占有存储</h3><h2 id="执行方案1："><a href="#执行方案1：" class="headerlink" title="执行方案1："></a>执行方案1：</h2><pre class="line-numbers language-basic"><code class="language-basic">在删除完多余索引，优化表结构后，进行添加字段操作，最后将删除的索引重写添加上<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="0-5查看表的数据占有存储和索引占有存储"><a href="#0-5查看表的数据占有存储和索引占有存储" class="headerlink" title="0.5查看表的数据占有存储和索引占有存储"></a>0.5查看表的数据占有存储和索引占有存储</h3><h2 id="执行方案1："><a href="#执行方案1：" class="headerlink" title="执行方案1："></a>执行方案1：</h2><blockquote>
+<p>在删除完多余索引，优化表结构后，进行添加字段操作，最后将删除的索引重写添加上</p>
+</blockquote>
 <h3 id="T-YWDYXX："><a href="#T-YWDYXX：" class="headerlink" title="T_YWDYXX："></a>T_YWDYXX：</h3><p>添加字段</p>
 <img src="/posts/8014bd1b/image-20211106101237282.png" alt="T_YWDYXX添加字段耗时1221s" style="zoom:50%;">
 
@@ -660,7 +662,9 @@ table_name <span class="token keyword">AS</span> <span class="token string">'表
 
 <img src="/posts/8014bd1b/image-20211106124847028.png" alt="t_ywqlrxx添加单值普通索引耗时" style="zoom:50%;">
 
-<h2 id="执行方案2："><a href="#执行方案2：" class="headerlink" title="执行方案2："></a>执行方案2：</h2><pre class="line-numbers language-basic"><code class="language-basic">采用临时表导数据方案<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="执行方案2："><a href="#执行方案2：" class="headerlink" title="执行方案2："></a>执行方案2：</h2><blockquote>
+<p>采用临时表导数据方案</p>
+</blockquote>
 <h2 id="1-处理t-ywxx表"><a href="#1-处理t-ywxx表" class="headerlink" title="1.处理t_ywxx表"></a>1.处理t_ywxx表</h2><h3 id="1-1建立t-ywxx-temp表-GXSJ字段属性已经将DATE改成DATETIME"><a href="#1-1建立t-ywxx-temp表-GXSJ字段属性已经将DATE改成DATETIME" class="headerlink" title="1.1建立t_ywxx_temp表 (GXSJ字段属性已经将DATE改成DATETIME)"></a>1.1建立t_ywxx_temp表 (GXSJ字段属性已经将DATE改成DATETIME)</h3><pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_ywxx_temp<span class="token punctuation">`</span> <span class="token punctuation">(</span>
   <span class="token punctuation">`</span>BSM<span class="token punctuation">`</span> <span class="token keyword">bigint</span><span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span>  <span class="token keyword">COMMENT</span> <span class="token string">'标识码'</span><span class="token punctuation">,</span>
   <span class="token punctuation">`</span>QXDM<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'区县代码'</span><span class="token punctuation">,</span>
