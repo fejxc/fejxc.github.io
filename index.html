@@ -1276,27 +1276,28 @@ String dataJson= JsonObjectU
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/4b3b4cc0/">
+                    <a href="/posts/785aa831/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="区县上报登记簿省厅异常处理方案">
+                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="省厅bi">
                             
-                            <span class="card-title">区县上报登记簿省厅异常处理方案</span>
+                            <span class="card-title">省厅bi</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                区县上报登记簿省厅异常处理方案以温州市本级地区为例说明执行语句的时候，注意修改成正确的时间
-to_char(t.dbsj,'yyyy-mm-dd') >= '2021-01-01' 
-to_char(t.dbsj,'yyyy-mm') >=
+                                省厅查询量1 业务量-- 业务量
+select count(*) as 业务量 from bdcdjjg.t_sb_dbl l where l.qxdm like '3302%'
+and l.dbsj='2021-09-04'
+2 配号量-
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
                             </span>
                             <span class="publish-author">
                                 
@@ -1315,23 +1316,22 @@ to_char(t.dbsj,'yyyy-mm') >=
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/posts/785aa831/">
+                    <a href="/posts/3d03c70/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="省厅bi">
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="省厅内网上报部里问题处理">
                             
-                            <span class="card-title">省厅bi</span>
+                            <span class="card-title">省厅内网上报部里问题处理</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                省厅查询量1 业务量-- 业务量
-select count(*) as 业务量 from bdcdjjg.t_sb_dbl l where l.qxdm like '3302%'
-and l.dbsj='2021-09-04'
-2 配号量-
+                                省厅内网上报部里问题处理1.上报过程问题排查分析一般都是上报状态为5和上报状态为7的都属于上报部里失败的
+步骤一：先按区县(11个）分组查找对应sbzt的量（总体的看下上报情况）
+select substr(x.qxdm,1,4),l.sb
                             
                         </div>
                         <div class="publish-info">
@@ -1446,7 +1446,7 @@ and l.dbsj='2021-09-04'
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2021</span>
+                <span id="year">2019-2022</span>
             
             <a href="/about" target="_blank">fejxc</a>
        
